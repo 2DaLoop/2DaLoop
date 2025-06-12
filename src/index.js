@@ -1,5 +1,5 @@
 const { Map } = await google.maps.importLibrary("maps");
-const { Place } = await google.maps.importLibrary("places");
+const { Place, SearchBox } = await google.maps.importLibrary("places");
 const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
 const { LatLngBounds, event } = await google.maps.importLibrary("core");
 
@@ -7,7 +7,7 @@ const centerPosition = { lat: 39.8283, lng: -98.5795 }; // Geographic center of 
 let map;
 let markers = [];
 
-initMap();
+initAutoComplete();
 
 // search based on current location
 document.getElementById("btnCurrLocation").addEventListener("click", async () => {
@@ -22,7 +22,7 @@ document.getElementById("btnCurrLocation").addEventListener("click", async () =>
                 await searchLocation(userLocation);
             },
             function (error) {
-                strError = "";
+                let strError = "";
 
                 // alert user to enable location sharing if denied or other error
                 if (error.code === error.PERMISSION_DENIED) {
@@ -37,26 +37,28 @@ document.getElementById("btnCurrLocation").addEventListener("click", async () =>
     }
 });
 
+document.getElementById("location-input").addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+        e.preventDefault();
+    }
+});
+
 // initialize map centered on the U.S.
 async function initMap() {
+    const content = document.querySelector(".main-content")
+    content.innerHTML = `<div id="map" style="height: 100%; width: 100%;"></div>`;
+
     map = new Map(document.getElementById("map"), {
         center: centerPosition,
         zoom: 4,
         mapId: "e8f578253d8c676318b940c1-",
     });
-
-    initAutoComplete();
 }
 
 // initialize autocomplete search box
 function initAutoComplete() {
-    const input = document.getElementById("txtSearch");
-    const searchBox = new google.maps.places.SearchBox(input);
-
-    // bias searchBox results to the current map bounds
-    event.addListener(map, "bounds_changed", () => {
-        searchBox.setBounds(map.getBounds());
-    })
+    const input = document.getElementById("location-input");
+    const searchBox = new SearchBox(input);
 
     // listener for searching a different location
     event.addListener(searchBox, "places_changed", () => {
@@ -66,15 +68,16 @@ function initAutoComplete() {
             return;
         }
 
-        const bounds = new google.maps.LatLngBounds();
+        // when clicking "Next", search for that location
+        document.getElementById("btnNext").addEventListener("click", async () => {
+            places.forEach(async (place) => {
+                if (!place.geometry || !place.geometry.location) {
+                    console.log("Returned place contains no geometry");
+                    return;
+                }
 
-        places.forEach(async (place) => {
-            if (!place.geometry || !place.geometry.location) {
-                console.log("Returned place contains no geometry");
-                return;
-            }
-
-            await searchLocation(place.geometry.location);
+                await searchLocation(place.geometry.location);
+            });
         });
     });
 }
@@ -95,6 +98,8 @@ async function initGeoJson() {
 
 // searches "electronics_stores" within 10km of given location
 async function searchLocation(location) {
+    await initMap();
+
     const request = {
         fields: ["displayName", "location", "businessStatus"],
         locationRestriction: {
@@ -149,11 +154,11 @@ async function performTextSearch(query, includedType) {
 
         const bounds = new LatLngBounds();
         places.forEach((place) => {
-            new AdvancedMarkerElement({
+            markers.push(new AdvancedMarkerElement({
                 map,
                 position: place.location,
                 title: place.displayName,
-            });
+            }));
             bounds.extend(place.location);
         });
 
