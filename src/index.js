@@ -1,66 +1,41 @@
 const { Map } = await google.maps.importLibrary("maps");
 const { Place } = await google.maps.importLibrary("places");
 const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
-const { LatLngBounds } = await google.maps.importLibrary("core");
-const { Geocoder } = await google.maps.importLibrary("geocoding");
+const { LatLngBounds, event } = await google.maps.importLibrary("core");
 
 const centerPosition = { lat: 39.8283, lng: -98.5795 }; // Geographic center of continental U.S.
 let map;
+let markers = [];
 
 initMap();
 
-// search a location, can't be too broad
-document.getElementById("btnSearch").addEventListener("click", async () => {
-    const locationText = document.getElementById("txtSearch").value;
-    if (locationText.trim() !== "") {
-        const geocoder = new Geocoder();
-
-        geocoder.geocode({ address: locationText }, async (results, status) => {
-            if (status === "OK" && results[0]) {
-                const location = results[0].geometry.location;
-                const latLng = {
-                    lat: location.lat(),
-                    lng: location.lng(),
+// search based on current location
+document.getElementById("btnCurrLocation").addEventListener("click", async () => {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+            async function (location) {
+                const userLocation = {
+                    lat: location.coords.latitude,
+                    lng: location.coords.longitude,
                 };
-                console.log(latLng);
 
-                await searchLocation(latLng);
-            } else {
-                alert("Geocoding failed: " + status);
+                await searchLocation(userLocation);
+            },
+            function (error) {
+                strError = "";
+
+                // alert user to enable location sharing if denied or other error
+                if (error.code === error.PERMISSION_DENIED) {
+                    strError =
+                        "Please enable location sharing in your settings!";
+                } else {
+                    strError = "There was an issue getting your location!";
+                }
+                alert(strError);
             }
-        });
+        );
     }
 });
-
-// search based on current location
-document
-    .getElementById("btnCurrLocation")
-    .addEventListener("click", async () => {
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(
-                async function (location) {
-                    const userLocation = {
-                        lat: location.coords.latitude,
-                        lng: location.coords.longitude,
-                    };
-
-                    await searchLocation(userLocation);
-                },
-                function (error) {
-                    strError = "";
-
-                    // alert user to enable location sharing if denied or other error
-                    if (error.code === error.PERMISSION_DENIED) {
-                        strError =
-                            "Please enable location sharing in your settings!";
-                    } else {
-                        strError = "There was an issue getting your location!";
-                    }
-                    alert(strError);
-                }
-            );
-        }
-    });
 
 // initialize map centered on the U.S.
 async function initMap() {
@@ -68,6 +43,39 @@ async function initMap() {
         center: centerPosition,
         zoom: 4,
         mapId: "e8f578253d8c676318b940c1-",
+    });
+
+    initAutoComplete();
+}
+
+// initialize autocomplete search box
+function initAutoComplete() {
+    const input = document.getElementById("txtSearch");
+    const searchBox = new google.maps.places.SearchBox(input);
+
+    // bias searchBox results to the current map bounds
+    event.addListener(map, "bounds_changed", () => {
+        searchBox.setBounds(map.getBounds());
+    })
+
+    // listener for searching a different location
+    event.addListener(searchBox, "places_changed", () => {
+        const places = searchBox.getPlaces();
+
+        if (places.length == 0) {
+            return;
+        }
+
+        const bounds = new google.maps.LatLngBounds();
+
+        places.forEach(async (place) => {
+            if (!place.geometry || !place.geometry.location) {
+                console.log("Returned place contains no geometry");
+                return;
+            }
+
+            await searchLocation(place.geometry.location);
+        });
     });
 }
 
@@ -98,6 +106,8 @@ async function searchLocation(location) {
         region: "us",
     };
 
+    clearMarkers();
+
     const { places } = await Place.searchNearby(request);
 
     if (places.length) {
@@ -105,11 +115,11 @@ async function searchLocation(location) {
 
         const bounds = new LatLngBounds();
         places.forEach((place) => {
-            new AdvancedMarkerElement({
+            markers.push(new AdvancedMarkerElement({
                 map,
                 position: place.location,
                 title: place.displayName,
-            });
+            }));
             bounds.extend(place.location);
         });
 
@@ -129,6 +139,8 @@ async function performTextSearch(query, includedType) {
         region: "us",
         useStrictTypeFiltering: false,
     };
+
+    clearMarkers();
 
     const { places } = await Place.searchByText(request);
 
@@ -151,15 +163,20 @@ async function performTextSearch(query, includedType) {
     }
 }
 
+// clear old markers
+function clearMarkers() {
+    markers.forEach((marker) => {
+        marker.setMap(null);
+    });
+    markers = [];
+}
+
 /*
 NOTES:
 
     Either figure out how to search all the facilities we need to show on the map
     or use GeoJSON data and manually filter.
     Or both??
-    For first option, we'd have to use the textSearch method for all places that might be relevant. 
+    For first option, we'd have to use the textSearch method for all places that might be relevant.
 
-    Instead of using geocoding to search locations, we could use the Places Search Box. It would
-    auto fill for users and more user friendly.
-    https://developers.google.com/maps/documentation/javascript/examples/places-searchbox
 */
