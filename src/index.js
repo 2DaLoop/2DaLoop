@@ -1,9 +1,10 @@
 const { Map } = await google.maps.importLibrary("maps");
 const { Place, SearchBox } = await google.maps.importLibrary("places");
-const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
+const { AdvancedMarkerElement, PinElement } = await google.maps.importLibrary("marker");
 const { LatLngBounds, event } = await google.maps.importLibrary("core");
 
 const centerPosition = { lat: 39.8283, lng: -98.5795 }; // Geographic center of continental U.S.
+let searchedLocation = null;
 let map;
 let markers = [];
 
@@ -14,12 +15,14 @@ document.getElementById("btnCurrLocation").addEventListener("click", async () =>
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(
             async function (location) {
-                const userLocation = {
+                searchedLocation = {
                     lat: location.coords.latitude,
                     lng: location.coords.longitude,
                 };
 
-                await searchLocation(userLocation);
+                await initMap();
+                await searchText();
+                // await searchLocation();
             },
             function (error) {
                 let strError = "";
@@ -52,7 +55,33 @@ async function initMap() {
         center: centerPosition,
         zoom: 4,
         mapId: "e8f578253d8c676318b940c1-",
+        mapTypeControlOptions: {
+            style: google.maps.MapTypeControlStyle.DEFAULT,
+            position: google.maps.ControlPosition.TOP_RIGHT,
+        },
     });
+
+    // create 'Recyle' and 'Repair' button options
+    const optionsDiv = document.createElement("div");
+
+    const recycleBtn = document.createElement("button");
+    recycleBtn.textContent = "Recycle";
+    recycleBtn.type = "button";
+
+    const repairBtn = document.createElement("button");
+    repairBtn.textContent = "Repair";
+    repairBtn.type = "button";
+
+    recycleBtn.addEventListener("click", async () => {
+        await searchGeoJson();
+    })
+
+    repairBtn.addEventListener("click", async () => {
+        await searchText();
+    })
+
+    optionsDiv.append(repairBtn, recycleBtn);
+    map.controls[google.maps.ControlPosition.TOP_LEFT].push(optionsDiv);
 }
 
 // initialize autocomplete search box
@@ -75,35 +104,77 @@ function initAutoComplete() {
                     console.log("Returned place contains no geometry");
                     return;
                 }
+                searchedLocation = place.geometry.location;
 
-                await searchLocation(place.geometry.location);
+                await initMap();
+                await searchText();
+                // await searchLocation();
             });
         });
     });
 }
 
-// load GeoJSON data
-// can't use google maps api to filter this data based on location and radius, have to do manually
-async function initGeoJson() {
-    map.data.loadGeoJson("src/assets/geojson/MRFs.geojson");
-    map.data.loadGeoJson("src/assets/geojson/ElectronicsRecyclers.geojson");
+// load GeoJSON data for recyclers and manually filter on radius
+async function searchGeoJson() {
+    await google.maps.importLibrary("geometry");
+    clearMarkers();
 
-    // Optional styling for GeoJSON features
-    map.data.setStyle({
-        icon: {
-            url: "http://maps.google.com/mapfiles/ms/icons/green-dot.png",
-        },
-    });
+    // get geojson data
+    const [res1, res2] = await Promise.all([
+        fetch("src/assets/geojson/MRFs.geojson"),
+        fetch("src/assets/geojson/ElectronicsRecyclers.geojson"),
+    ]);
+
+    const [geojson1, geojson2] = await Promise.all([
+        res1.json(),
+        res2.json(),
+    ]);
+
+    const combinedGeojson = {
+        type: "FeatureCollection",
+        features: [...geojson1.features, ...geojson2.features],
+    };
+
+    const radius = 10000;
+
+    combinedGeojson.features.forEach(feature => {
+        // create LatLng object for each feature
+        const [lng, lat] = feature.geometry.coordinates;
+        const point = new google.maps.LatLng(lat, lng);
+
+        // calc distance from searched location
+        const distance = google.maps.geometry.spherical.computeDistanceBetween(
+            searchedLocation,
+            point,
+        );
+
+        if (distance <= radius) {
+            // custom marker for recycling facilities
+            const greenPin = new PinElement({
+                background: "lightgreen",
+                borderColor: "black",
+                glyphColor: "green",
+            });
+            markers.push(new AdvancedMarkerElement({
+                map,
+                position: point,
+                title: feature.properties.name,
+                content: greenPin.element,
+            }));
+        }
+    })
+
+    console.log("Found places:", markers);
 }
 
 // searches "electronics_stores" within 10km of given location
-async function searchLocation(location) {
+async function searchLocation() {
     await initMap();
 
     const request = {
         fields: ["displayName", "location", "businessStatus"],
         locationRestriction: {
-            center: location,
+            center: searchedLocation,
             radius: 10000,
         },
         includedTypes: ["electronics_store"],
@@ -130,19 +201,19 @@ async function searchLocation(location) {
 
         map.fitBounds(bounds);
     } else {
-        console.log("No results for:", location);
+        console.log("No results for:", searchedLocation);
     }
 }
 
-// example of textSearch method
-async function performTextSearch(query, includedType) {
+// textSearch method for "electronics repair store"
+// idk the range for this
+async function searchText(location) {
     const request = {
-        textQuery: query,
+        locationBias: searchedLocation,
+        textQuery: "electronics repair store",
         fields: ["displayName", "location", "businessStatus"],
-        includedType,
         language: "en-US",
         region: "us",
-        useStrictTypeFiltering: false,
     };
 
     clearMarkers();
@@ -164,7 +235,7 @@ async function performTextSearch(query, includedType) {
 
         map.fitBounds(bounds);
     } else {
-        console.log("No results found for:", query);
+        console.log("No results found for:", searchedLocation);
     }
 }
 
@@ -184,4 +255,9 @@ NOTES:
     Or both??
     For first option, we'd have to use the textSearch method for all places that might be relevant.
 
+    Figure out how to switch from SearchBox to Autocomplete since SearchBox isn't allowed for new customers.
+
+    Does there need to be a "Back" button.
+
+    Next step: Let the user select a location and go to next page.
 */
