@@ -67,10 +67,12 @@ async function initMap() {
     const recycleBtn = document.createElement("button");
     recycleBtn.textContent = "Recycle";
     recycleBtn.type = "button";
+    recycleBtn.classList.add("btn", "btn-light", "btn-lg");
 
     const repairBtn = document.createElement("button");
     repairBtn.textContent = "Repair";
     repairBtn.type = "button";
+    repairBtn.classList.add("btn", "btn-light", "btn-lg");
 
     recycleBtn.addEventListener("click", async () => {
         await searchGeoJson();
@@ -135,7 +137,7 @@ async function searchGeoJson() {
         features: [...geojson1.features, ...geojson2.features],
     };
 
-    const radius = 10000;
+    const radius = 50000;
 
     combinedGeojson.features.forEach(feature => {
         // create LatLng object for each feature
@@ -158,7 +160,7 @@ async function searchGeoJson() {
             markers.push(new AdvancedMarkerElement({
                 map,
                 position: point,
-                title: feature.properties.name,
+                title: feature.properties.Name,
                 content: greenPin.element,
             }));
         }
@@ -210,11 +212,13 @@ async function searchLocation() {
 async function searchText(location) {
     const request = {
         locationBias: searchedLocation,
-        textQuery: "electronics repair store",
+        textQuery: "electronics repair",
         fields: ["displayName", "location", "businessStatus"],
+        includedType: "electronics_store",
         language: "en-US",
         region: "us",
     };
+    const bannedWords = ["walmart", "staples", "subway", "autozone", "auto parts", "o'reilly", "ace hardware", "home depot", "lowes", "target", "costco", "kroger", "safeway", "aldi", "food lion", "publix"];
 
     clearMarkers();
 
@@ -225,12 +229,14 @@ async function searchText(location) {
 
         const bounds = new LatLngBounds();
         places.forEach((place) => {
-            markers.push(new AdvancedMarkerElement({
-                map,
-                position: place.location,
-                title: place.displayName,
-            }));
-            bounds.extend(place.location);
+            if (!bannedWords.some(word => place.displayName.toLowerCase().includes(word))) {
+                markers.push(new AdvancedMarkerElement({
+                    map,
+                    position: place.location,
+                    title: place.displayName,
+                }));
+                bounds.extend(place.location);
+            }
         });
 
         map.fitBounds(bounds);
@@ -249,15 +255,16 @@ function clearMarkers() {
 
 /*
 NOTES:
-
-    Either figure out how to search all the facilities we need to show on the map
-    or use GeoJSON data and manually filter.
-    Or both??
-    For first option, we'd have to use the textSearch method for all places that might be relevant.
-
     Figure out how to switch from SearchBox to Autocomplete since SearchBox isn't allowed for new customers.
 
-    Does there need to be a "Back" button.
+    Possibly add more text searches.
 
-    Next step: Let the user select a location and go to next page.
+    Add "Back" and "Next" buttons to the bottom right to switch back and forth.
+    Add search bar on top of map.
+
+SIDEBAR:
+    Home is first page
+    Nearby Facilities is map
+    Asset Data Submission is form
+    ESG Dashboard goes next
 */
