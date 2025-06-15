@@ -40,20 +40,19 @@ document.getElementById("btnCurrLocation").addEventListener("click", async () =>
     }
 });
 
-document.getElementById("location-input").addEventListener("keydown", (e) => {
-    if (e.key === "Enter") {
-        e.preventDefault();
-    }
-});
+// document.getElementById("location-input").addEventListener("keydown", (e) => {
+//     if (e.key === "Enter") {
+//         e.preventDefault();
+//     }
+// });
 
 // initialize map centered on the U.S.
 async function initMap() {
-    const content = document.querySelector(".main-content")
+    const content = document.getElementById("main-content")
     content.innerHTML = `<div id="map" style="height: 100%; width: 100%;"></div>`;
 
     map = new Map(document.getElementById("map"), {
         center: centerPosition,
-        zoom: 4,
         mapId: "e8f578253d8c676318b940c1-",
         mapTypeControlOptions: {
             style: google.maps.MapTypeControlStyle.DEFAULT,
@@ -61,57 +60,62 @@ async function initMap() {
         },
     });
 
-    // create 'Recyle' and 'Repair' button options
+    // create search input, 'Recyle', and 'Repair' button options
     const optionsDiv = document.createElement("div");
+    optionsDiv.classList.add("card", "card-body", "gap-2");
+
+    const placeAutocomplete = new google.maps.places.PlaceAutocompleteElement();
+    placeAutocomplete.id = "place-autocomplete-input";
 
     const recycleBtn = document.createElement("button");
     recycleBtn.textContent = "Recycle";
     recycleBtn.type = "button";
-    recycleBtn.classList.add("btn", "btn-light", "btn-lg");
+    recycleBtn.classList.add("btn", "btn-light");
 
     const repairBtn = document.createElement("button");
     repairBtn.textContent = "Repair";
     repairBtn.type = "button";
-    repairBtn.classList.add("btn", "btn-light", "btn-lg");
+    repairBtn.classList.add("btn", "btn-light");
+
+    optionsDiv.append(placeAutocomplete, repairBtn, recycleBtn);
+    map.controls[google.maps.ControlPosition.TOP_LEFT].push(optionsDiv);
+
+    // listeners for search input and filter options
+    placeAutocomplete.addEventListener("gmp-select", async ({ placePrediction }) => {
+        const place = placePrediction.toPlace();
+        await place.fetchFields({ fields: ['location'] });
+
+        searchedLocation = place.location;
+        await searchText();
+    });
 
     recycleBtn.addEventListener("click", async () => {
         await searchGeoJson();
-    })
+    });
 
     repairBtn.addEventListener("click", async () => {
         await searchText();
-    })
-
-    optionsDiv.append(repairBtn, recycleBtn);
-    map.controls[google.maps.ControlPosition.TOP_LEFT].push(optionsDiv);
+    });
 }
 
 // initialize autocomplete search box
 function initAutoComplete() {
-    const input = document.getElementById("location-input");
-    const searchBox = new SearchBox(input);
+    const placeAutocomplete = new google.maps.places.PlaceAutocompleteElement();
+    placeAutocomplete.id = "place-autocomplete-input";
+    placeAutocomplete.classList.add("location-input");
+    document.getElementById("input-group").appendChild(placeAutocomplete);
 
-    // listener for searching a different location
-    event.addListener(searchBox, "places_changed", () => {
-        const places = searchBox.getPlaces();
-
-        if (places.length == 0) {
-            return;
-        }
-
-        // when clicking "Next", search for that location
+    placeAutocomplete.addEventListener("gmp-select", async ({ placePrediction }) => {
+        // listener for "Next" button, search for that location
         document.getElementById("btnNext").addEventListener("click", async () => {
-            places.forEach(async (place) => {
-                if (!place.geometry || !place.geometry.location) {
-                    console.log("Returned place contains no geometry");
-                    return;
-                }
-                searchedLocation = place.geometry.location;
+            const place = placePrediction.toPlace();
+            await place.fetchFields({ fields: ['location'] });
 
-                await initMap();
-                await searchText();
-                // await searchLocation();
-            });
+            searchedLocation = place.location;
+
+            await initMap();
+            await searchText();
+            // await searchLocation();
         });
     });
 }
@@ -137,8 +141,9 @@ async function searchGeoJson() {
         features: [...geojson1.features, ...geojson2.features],
     };
 
-    const radius = 50000;
+    const radius = 30000;
 
+    const bounds = new LatLngBounds();
     combinedGeojson.features.forEach(feature => {
         // create LatLng object for each feature
         const [lng, lat] = feature.geometry.coordinates;
@@ -154,7 +159,7 @@ async function searchGeoJson() {
             // custom marker for recycling facilities
             const greenPin = new PinElement({
                 background: "lightgreen",
-                borderColor: "black",
+                borderColor: "green",
                 glyphColor: "green",
             });
             markers.push(new AdvancedMarkerElement({
@@ -163,8 +168,11 @@ async function searchGeoJson() {
                 title: feature.properties.Name,
                 content: greenPin.element,
             }));
+            bounds.extend(point);
         }
     })
+
+    fixBounds(bounds);
 
     console.log("Found places:", markers);
 }
@@ -201,14 +209,14 @@ async function searchLocation() {
             bounds.extend(place.location);
         });
 
-        map.fitBounds(bounds);
+        fixBounds(bounds);
     } else {
         console.log("No results for:", searchedLocation);
     }
 }
 
-// textSearch method for "electronics repair store"
-// idk the range for this
+// textSearch method for "electronics repair"
+// range around 20km?
 async function searchText(location) {
     const request = {
         locationBias: searchedLocation,
@@ -239,7 +247,7 @@ async function searchText(location) {
             }
         });
 
-        map.fitBounds(bounds);
+        fixBounds(bounds);
     } else {
         console.log("No results found for:", searchedLocation);
     }
@@ -251,6 +259,19 @@ function clearMarkers() {
         marker.setMap(null);
     });
     markers = [];
+}
+
+// if no markers don't change bounds, and set max zoom
+function fixBounds(bounds) {
+    if (markers.length > 0) {
+        map.fitBounds(bounds);
+
+        const currZoom = map.getZoom();
+        const maxZoom = 12;
+        if (currZoom > maxZoom) {
+            map.setZoom(maxZoom);
+        }
+    }
 }
 
 /*
