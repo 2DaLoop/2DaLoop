@@ -11,6 +11,10 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sansita:wght@700&display=swap" rel="stylesheet">
+    <!-- Add this to your <head> section to import Nunito Sans -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap" rel="stylesheet">
+
     <style>
         * {
             margin: 0;
@@ -20,14 +24,17 @@
 
         body {
             font-family: "Inter", sans-serif;
-            overflow: hidden;
+            overflow-x: hidden;
+            /* Allow vertical scrolling */
         }
 
         .main-container {
             display: flex;
             width: 100vw;
-            height: 100vh;
+            min-height: 100vh;
+            /* Allow content to grow and scroll */
             background: #fff;
+            position: relative;
         }
 
         .navigation-sidebar {
@@ -42,7 +49,11 @@
             background-color: #3766a5;
             transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             overflow: hidden;
-            z-index: 10;
+            z-index: 1000;
+            position: absolute;
+            /* Overlay the sidebar */
+            top: 0;
+            left: 0;
         }
 
         .navigation-sidebar:hover {
@@ -111,38 +122,51 @@
         }
 
         .main-content {
-            flex: 1;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            min-height: 100vh;
+            /* Vertically center */
+            width: 100%;
             padding: 40px;
+            margin-left: 71px;
+            /* Space for sidebar */
+            box-sizing: border-box;
             position: relative;
+        }
+
+        .navigation-sidebar:hover~.main-content {
+            margin-left: 71px;
+            /* Do not shift content when sidebar pops out */
         }
 
         .hero-section {
             display: flex;
-            align-items: center;
-            justify-content: space-between;
-            width: 100%;
-            max-width: 1200px;
-            margin-bottom: 80px;
+            align-items: flex-start;
+            /* Align items at the top */
+            justify-content: center;
+            gap: 40px;
+            /* Space between logo and text */
         }
 
         .hero-content {
-            flex: 1;
-            max-width: 600px;
-            margin-top: 150px;
-            /* Add top margin to the header */
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
         }
 
         .hero-title {
+            font-family: 'Sansita', sans-serif;
             font-size: 64px;
             font-weight: 700;
             line-height: 1.1;
             color: #111;
             margin-bottom: 20px;
             letter-spacing: -0.02em;
+            padding-bottom: 40px;
+            /* Add bottom padding to the header */
         }
 
         .hero-subtitle {
@@ -158,8 +182,11 @@
         }
 
         .hero-graphic {
-            flex-shrink: 0;
-            margin-left: 60px;
+            margin-top: 0;
+            /* Remove extra margin */
+            align-self: flex-start;
+            /* Align logo with the top of text block */
+            /* Optionally, add a small margin-top to fine-tune vertical alignment */
         }
 
         .location-form-container {
@@ -335,6 +362,13 @@
                 padding: 24px;
             }
         }
+
+        .hero-subtitle,
+        p {
+            font-family: 'Nunito Sans', sans-serif;
+            padding-bottom: 24px;
+            /* Add bottom padding to the paragraph */
+        }
     </style>
 </head>
 
@@ -357,16 +391,6 @@
                 </svg>
             </button>
 
-            <button class="nav-icon-button" aria-label="ESG Dashboard">
-                <!-- White desktop screen icon for ESG Dashboard -->
-                <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
-                    <rect width="44" height="44" rx="8" fill="none" />
-                    <rect x="12" y="16" width="20" height="14" rx="2" stroke="white" stroke-width="2.5" fill="none" />
-                    <rect x="18" y="32" width="8" height="2" rx="1" fill="white" />
-                    <rect x="20" y="28" width="4" height="2" rx="1" fill="white" />
-                </svg>
-            </button>
-
             <button class="nav-icon-button" aria-label="Asset Data Submission">
                 <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
                     <rect width="44" height="44" rx="8" fill="none" />
@@ -378,7 +402,18 @@
                 </svg>
             </button>
 
-            <button class="nav-icon-button" aria-label="Help">
+            <button class="nav-icon-button" aria-label="ESG Dashboard">
+                <!-- White desktop screen icon for ESG Dashboard -->
+                <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
+                    <rect width="44" height="44" rx="8" fill="none" />
+                    <rect x="12" y="16" width="20" height="14" rx="2" stroke="white" stroke-width="2.5" fill="none" />
+                    <rect x="18" y="32" width="8" height="2" rx="1" fill="white" />
+                    <rect x="20" y="28" width="4" height="2" rx="1" fill="white" />
+                </svg>
+            </button>
+
+            <!-- Help Button with CTA and click event -->
+            <button class="nav-icon-button" aria-label="Help" onclick="window.location.href='help.html'">
                 <!-- White "i" (information) icon for Help -->
                 <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
                     <rect width="44" height="44" rx="8" fill="none" />
@@ -416,11 +451,10 @@
         <main class="main-content">
             <section class="hero-section">
                 <header class="hero-content">
-                    <h1 class="hero-title">Navigate the Future of E-Waste with 2DaLoop!</h1>
+                    <h1 class="hero-title">Revolutionizing E-Waste Management for a Sustainable Future</h1>
                     <!-- Hero subtitle section -->
                     <p class="hero-subtitle">
-                        <span class="hero-subtitle-line">Guiding individuals and organizations</span>
-                        <span class="hero-subtitle-line">through smarter, cleaner tech disposal.</span>
+                        Revolutionize your approach to e-waste management with our cutting-edge solutions that redefine efficiency and sustainability. Join us in transforming how we manage our planet's precious resources, paving the way for a cleaner, greener future.
                     </p>
                 </header>
 
