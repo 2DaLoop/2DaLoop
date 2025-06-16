@@ -1,0 +1,397 @@
+*{    margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            overflow-x: hidden;
+            /* Allow vertical scrolling */
+        }
+
+        .main-container {
+            display: flex;
+            width: 100vw;
+            min-height: 100vh;
+            /* Allow content to grow and scroll */
+            background: #fff;
+            position: relative;
+        }
+
+        .navigation-sidebar {
+            width: 71px;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 40px;
+            gap: 30px;
+            flex-shrink: 0;
+            background-color: #3766a5;
+            transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow: hidden;
+            z-index: 1000;
+            position: absolute;
+            /* Overlay the sidebar */
+            top: 0;
+            left: 0;
+        }
+
+        .navigation-sidebar:hover {
+            width: 320px;
+            /* Increased width for more space between icons and labels */
+            box-shadow: 2px 0 16px rgba(0, 0, 0, 0.08);
+            align-items: flex-start;
+        }
+
+        .nav-icon-button {
+            width: 100%;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background 0.2s, opacity 0.2s;
+            background: none;
+            border: none;
+            padding: 0 12px;
+            position: relative;
+        }
+
+        .navigation-sidebar:hover .nav-icon-button {
+            justify-content: flex-start;
+        }
+
+        .nav-icon-button img,
+        .nav-icon-button svg {
+            flex-shrink: 0;
+            margin-right: 0;
+            transition: margin 0.3s;
+        }
+
+        .navigation-sidebar:hover .nav-icon-button img,
+        .navigation-sidebar:hover .nav-icon-button svg {
+            margin-right: 32px;
+            /* More space between icon and label */
+        }
+
+        .nav-icon-button[aria-label]:after {
+            content: attr(aria-label);
+            color: #fff;
+            font-size: 16px;
+            font-weight: 500;
+            opacity: 0;
+            margin-left: 12px;
+            white-space: nowrap;
+            pointer-events: none;
+            transition: opacity 0.2s;
+            position: absolute;
+            left: 100px;
+            /* Move label further right to match new sidebar width and spacing */
+            top: 50%;
+            transform: translateY(-50%);
+            text-align: left;
+            /* Align text to the left */
+            max-width: 200px;
+            /* Allow longer labels if needed */
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .navigation-sidebar:hover .nav-icon-button[aria-label]:after {
+            opacity: 1;
+        }
+
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            /* Vertically center */
+            width: 100%;
+            padding: 40px;
+            margin-left: 71px;
+            /* Space for sidebar */
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        .navigation-sidebar:hover~.main-content {
+            margin-left: 71px;
+            /* Do not shift content when sidebar pops out */
+        }
+
+        .hero-section {
+            display: flex;
+            align-items: flex-start;
+            /* Align items at the top */
+            justify-content: center;
+            gap: 40px;
+            /* Space between logo and text */
+        }
+
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+        }
+
+        .hero-title {
+            font-family: 'Sansita', sans-serif;
+            font-size: 64px;
+            font-weight: 700;
+            line-height: 1.1;
+            color: #111;
+            margin-bottom: 20px;
+            letter-spacing: -0.02em;
+            padding-bottom: 40px;
+            /* Add bottom padding to the header */
+        }
+
+        .hero-subtitle {
+            font-size: 24px;
+            font-weight: 400;
+            color: #222;
+            line-height: 1.4;
+            opacity: 0.9;
+        }
+
+        .hero-subtitle-line {
+            display: block;
+        }
+
+        .hero-graphic {
+            margin-top: 0;
+            /* Remove extra margin */
+            align-self: flex-start;
+            /* Align logo with the top of text block */
+            /* Optionally, add a small margin-top to fine-tune vertical alignment */
+        }
+
+        .location-form-container {
+            width: 100%;
+            max-width: 600px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .location-form-card {
+            background: white;
+            border-radius: 16px;
+            padding: 40px;
+            width: 100%;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .form-icon-container {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 16px;
+            background-color: #f0f7ff;
+        }
+
+        .form-title {
+            font-size: 24px;
+            font-weight: 600;
+            color: #1f2937;
+            line-height: 1.2;
+        }
+
+        .form-description {
+            font-size: 16px;
+            color: #6b7280;
+            margin-bottom: 32px;
+            margin-left: 56px;
+        }
+
+        .input-group {
+            margin-bottom: 24px;
+        }
+
+        .input-label {
+            font-size: 14px;
+            font-weight: 500;
+            color: #374151;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .location-input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            font-size: 16px;
+            color: #1f2937;
+            background: white;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .location-input:focus {
+            outline: none;
+            border-color: #4a90e2;
+            box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
+        }
+
+        .location-input::placeholder {
+            color: #9ca3af;
+        }
+
+        .current-location-button {
+            width: 100%;
+            padding: 12px 16px;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            margin-bottom: 16px;
+            background-color: #4a90e2;
+        }
+
+        .current-location-button:hover {
+            background-color: #357abd;
+        }
+
+        .next-button {
+            width: 100%;
+            padding: 12px 16px;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            background-color: #6b7280;
+        }
+
+        .next-button:hover {
+            background-color: #4b5563;
+        }
+
+        .home-menu-wrapper {
+            position: relative;
+        }
+
+        .home-popup-menu {
+            display: none;
+            position: absolute;
+            left: 60px;
+            top: 0;
+            background: #fff;
+            color: #222;
+            border-radius: 8px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+            padding: 12px 0;
+            min-width: 160px;
+            z-index: 2000;
+            flex-direction: column;
+        }
+
+        .home-popup-menu a {
+            display: block;
+            padding: 10px 24px;
+            color: #222;
+            text-decoration: none;
+            font-weight: 500;
+            font-family: 'Inter', sans-serif;
+            transition: background 0.2s, color 0.2s;
+        }
+
+        .home-popup-menu a:hover {
+            background: #4A90E2;
+            color: #fff;
+        }
+
+        .home-menu-wrapper:hover .home-popup-menu,
+        .home-menu-wrapper:focus-within .home-popup-menu,
+        .home-btn:hover + .home-popup-menu,
+        .home-label:hover + .home-popup-menu {
+            display: flex;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 991px) {
+            .hero-section {
+                flex-direction: column;
+                text-align: center;
+                margin-bottom: 60px;
+            }
+
+            .hero-title {
+                font-size: 48px;
+            }
+
+            .hero-subtitle {
+                font-size: 20px;
+            }
+
+            .hero-graphic {
+                margin-left: 0;
+                margin-top: 40px;
+            }
+
+            .location-form-card {
+                padding: 32px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .navigation-sidebar {
+                display: none;
+            }
+
+            .main-content {
+                padding: 20px;
+            }
+
+            .hero-title {
+                font-size: 36px;
+            }
+
+            .hero-subtitle {
+                font-size: 18px;
+            }
+
+            .form-title {
+                font-size: 20px;
+            }
+
+            .form-description {
+                margin-left: 48px;
+            }
+
+            .location-form-card {
+                padding: 24px;
+            }
+        }
+
+        .hero-subtitle,
+        p {
+            font-family: 'Nunito Sans', sans-serif;
+            padding-bottom: 24px;
+            /* Add bottom padding to the paragraph */
+        }
+
+
+
+

@@ -15,373 +15,35 @@
     <!-- Add this to your <head> section to import Nunito Sans -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap" rel="stylesheet">
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    <link rel="stylesheet" href="src/assets/styles/main.css">
 
-        body {
-            font-family: "Inter", sans-serif;
-            overflow-x: hidden;
-            /* Allow vertical scrolling */
-        }
 
-        .main-container {
-            display: flex;
-            width: 100vw;
-            min-height: 100vh;
-            /* Allow content to grow and scroll */
-            background: #fff;
-            position: relative;
-        }
-
-        .navigation-sidebar {
-            width: 71px;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding-top: 40px;
-            gap: 30px;
-            flex-shrink: 0;
-            background-color: #3766a5;
-            transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            overflow: hidden;
-            z-index: 1000;
-            position: absolute;
-            /* Overlay the sidebar */
-            top: 0;
-            left: 0;
-        }
-
-        .navigation-sidebar:hover {
-            width: 320px;
-            /* Increased width for more space between icons and labels */
-            box-shadow: 2px 0 16px rgba(0, 0, 0, 0.08);
-            align-items: flex-start;
-        }
-
-        .nav-icon-button {
-            width: 100%;
-            height: 48px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: background 0.2s, opacity 0.2s;
-            background: none;
-            border: none;
-            padding: 0 12px;
-            position: relative;
-        }
-
-        .navigation-sidebar:hover .nav-icon-button {
-            justify-content: flex-start;
-        }
-
-        .nav-icon-button img,
-        .nav-icon-button svg {
-            flex-shrink: 0;
-            margin-right: 0;
-            transition: margin 0.3s;
-        }
-
-        .navigation-sidebar:hover .nav-icon-button img,
-        .navigation-sidebar:hover .nav-icon-button svg {
-            margin-right: 32px;
-            /* More space between icon and label */
-        }
-
-        .nav-icon-button[aria-label]:after {
-            content: attr(aria-label);
-            color: #fff;
-            font-size: 16px;
-            font-weight: 500;
-            opacity: 0;
-            margin-left: 12px;
-            white-space: nowrap;
-            pointer-events: none;
-            transition: opacity 0.2s;
-            position: absolute;
-            left: 100px;
-            /* Move label further right to match new sidebar width and spacing */
-            top: 50%;
-            transform: translateY(-50%);
-            text-align: left;
-            /* Align text to the left */
-            max-width: 200px;
-            /* Allow longer labels if needed */
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
-        .navigation-sidebar:hover .nav-icon-button[aria-label]:after {
-            opacity: 1;
-        }
-
-        .main-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            /* Vertically center */
-            width: 100%;
-            padding: 40px;
-            margin-left: 71px;
-            /* Space for sidebar */
-            box-sizing: border-box;
-            position: relative;
-        }
-
-        .navigation-sidebar:hover~.main-content {
-            margin-left: 71px;
-            /* Do not shift content when sidebar pops out */
-        }
-
-        .hero-section {
-            display: flex;
-            align-items: flex-start;
-            /* Align items at the top */
-            justify-content: center;
-            gap: 40px;
-            /* Space between logo and text */
-        }
-
-        .hero-content {
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: flex-start;
-        }
-
-        .hero-title {
-            font-family: 'Sansita', sans-serif;
-            font-size: 64px;
-            font-weight: 700;
-            line-height: 1.1;
-            color: #111;
-            margin-bottom: 20px;
-            letter-spacing: -0.02em;
-            padding-bottom: 40px;
-            /* Add bottom padding to the header */
-        }
-
-        .hero-subtitle {
-            font-size: 24px;
-            font-weight: 400;
-            color: #222;
-            line-height: 1.4;
-            opacity: 0.9;
-        }
-
-        .hero-subtitle-line {
-            display: block;
-        }
-
-        .hero-graphic {
-            margin-top: 0;
-            /* Remove extra margin */
-            align-self: flex-start;
-            /* Align logo with the top of text block */
-            /* Optionally, add a small margin-top to fine-tune vertical alignment */
-        }
-
-        .location-form-container {
-            width: 100%;
-            max-width: 600px;
-            display: flex;
-            justify-content: center;
-        }
-
-        .location-form-card {
-            background: white;
-            border-radius: 16px;
-            padding: 40px;
-            width: 100%;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-        }
-
-        .form-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 8px;
-        }
-
-        .form-icon-container {
-            width: 40px;
-            height: 40px;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 16px;
-            background-color: #f0f7ff;
-        }
-
-        .form-title {
-            font-size: 24px;
-            font-weight: 600;
-            color: #1f2937;
-            line-height: 1.2;
-        }
-
-        .form-description {
-            font-size: 16px;
-            color: #6b7280;
-            margin-bottom: 32px;
-            margin-left: 56px;
-        }
-
-        .input-group {
-            margin-bottom: 24px;
-        }
-
-        .input-label {
-            font-size: 14px;
-            font-weight: 500;
-            color: #374151;
-            margin-bottom: 8px;
-            display: block;
-        }
-
-        .location-input {
-            width: 100%;
-            padding: 12px 16px;
-            border: 1px solid #d1d5db;
-            border-radius: 8px;
-            font-size: 16px;
-            color: #1f2937;
-            background: white;
-            transition: border-color 0.2s ease, box-shadow 0.2s ease;
-        }
-
-        .location-input:focus {
-            outline: none;
-            border-color: #4a90e2;
-            box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
-        }
-
-        .location-input::placeholder {
-            color: #9ca3af;
-        }
-
-        .current-location-button {
-            width: 100%;
-            padding: 12px 16px;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            font-size: 16px;
-            font-weight: 500;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            cursor: pointer;
-            transition: background-color 0.2s ease;
-            margin-bottom: 16px;
-            background-color: #4a90e2;
-        }
-
-        .current-location-button:hover {
-            background-color: #357abd;
-        }
-
-        .next-button {
-            width: 100%;
-            padding: 12px 16px;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            font-size: 16px;
-            font-weight: 500;
-            cursor: pointer;
-            transition: background-color 0.2s ease;
-            background-color: #6b7280;
-        }
-
-        .next-button:hover {
-            background-color: #4b5563;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 991px) {
-            .hero-section {
-                flex-direction: column;
-                text-align: center;
-                margin-bottom: 60px;
-            }
-
-            .hero-title {
-                font-size: 48px;
-            }
-
-            .hero-subtitle {
-                font-size: 20px;
-            }
-
-            .hero-graphic {
-                margin-left: 0;
-                margin-top: 40px;
-            }
-
-            .location-form-card {
-                padding: 32px;
-            }
-        }
-
-        @media (max-width: 640px) {
-            .navigation-sidebar {
-                display: none;
-            }
-
-            .main-content {
-                padding: 20px;
-            }
-
-            .hero-title {
-                font-size: 36px;
-            }
-
-            .hero-subtitle {
-                font-size: 18px;
-            }
-
-            .form-title {
-                font-size: 20px;
-            }
-
-            .form-description {
-                margin-left: 48px;
-            }
-
-            .location-form-card {
-                padding: 24px;
-            }
-        }
-
-        .hero-subtitle,
-        p {
-            font-family: 'Nunito Sans', sans-serif;
-            padding-bottom: 24px;
-            /* Add bottom padding to the paragraph */
-        }
-    </style>
 </head>
 
+
 <body>
+
     <div class="main-container">
-        <nav class="navigation-sidebar" role="navigation" aria-label="Get Started">
-            <!-- Logo button at the top of the sidebar -->
-            <button class="nav-icon-button" aria-label="Home">
-                <img src="src/assets/images/logo_white.png" alt="2DaLoop Logo" style="width: 44px; height: 64px;">
-            </button>
+        <!-- Example sidebar navigation with click events for each button -->
+        <nav class="navigation-sidebar" role="navigation" aria-label="Sidebar">
+            <!-- Home button with hover menu -->
+            <div class="home-menu-wrapper" style="position: relative;">
+                <button class="nav-icon-button home-btn" aria-label="Home" id="homeButton">
+                    <!-- Home icon SVG or image -->
+                    <img src="src/assets/images/logo_white.png" alt="2DaLoop Logo" style="width: 44px; height: 64px;">
+                </button>
+                <div class="home-popup-menu">
+                    <a href="src/pages/services.html">Services</a>
+                    <a href="about.html">About</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="partnerships.html">Partnerships</a>
+                    <a href="https://www.linkedin.com/" target="_blank">LinkedIn</a>
+                </div>
+            </div>
 
             <!--Nearby Facility button -->
-            <button class="nav-icon-button" aria-label="Nearby Facilities">
+            <button class="nav-icon-button" aria-label="Nearby Facilities"
+                onclick="window.location.href='facilities.html'">
                 <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
                     <rect width="44" height="44" rx="8" fill="none" />
                     <path
@@ -391,7 +53,8 @@
                 </svg>
             </button>
 
-            <button class="nav-icon-button" aria-label="Asset Data Submission">
+            <button class="nav-icon-button" aria-label="Asset Data Submission"
+                onclick="window.location.href='asset-submission.html'">
                 <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
                     <rect width="44" height="44" rx="8" fill="none" />
                     <path d="M12 32V12H32V32H12Z" stroke="white" stroke-width="2.5" stroke-linecap="round"
@@ -402,7 +65,7 @@
                 </svg>
             </button>
 
-            <button class="nav-icon-button" aria-label="ESG Dashboard">
+            <button class="nav-icon-button" aria-label="ESG Dashboard" onclick="window.location.href='dashboard.html'">
                 <!-- White desktop screen icon for ESG Dashboard -->
                 <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
                     <rect width="44" height="44" rx="8" fill="none" />
@@ -423,7 +86,7 @@
                 </svg>
             </button>
 
-            <button class="nav-icon-button" aria-label="FAQ">
+            <button class="nav-icon-button" aria-label="FAQ" onclick="window.location.href='faq.html'">
                 <!-- White comment bubble icon for FAQ -->
                 <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
                     <rect width="44" height="44" rx="8" fill="none" />
@@ -433,7 +96,7 @@
                 </svg>
             </button>
 
-            <button class="nav-icon-button" aria-label="Settings">
+            <button class="nav-icon-button" aria-label="Settings" onclick="window.location.href='settings.html'">
                 <!-- White gear icon for Settings -->
                 <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
                     <rect width="44" height="44" rx="8" fill="none" />
@@ -454,7 +117,9 @@
                     <h1 class="hero-title">Revolutionizing E-Waste Management for a Sustainable Future</h1>
                     <!-- Hero subtitle section -->
                     <p class="hero-subtitle">
-                        Revolutionize your approach to e-waste management with our cutting-edge solutions that redefine efficiency and sustainability. Join us in transforming how we manage our planet's precious resources, paving the way for a cleaner, greener future.
+                        Revolutionize your approach to e-waste management with our cutting-edge solutions that redefine
+                        efficiency and sustainability. Join us in transforming how we manage our planet's precious
+                        resources, paving the way for a cleaner, greener future.
                     </p>
                 </header>
 
@@ -507,7 +172,19 @@
 
                     <button type="submit" class="next-button">Next</button>
                 </form>
+
             </section>
+            <div>
+                <!-- Footer section with terms and privacy links -->
+                <footer>
+                    <div class="footer-spacer"></div>
+                    <footer class="location-form-footer">
+                        <div class="footer-links">
+                            <a href="terms.html">Terms of Service</a>
+                            <span>|</span>
+                            <a href="privacy.html">Privacy Policy</a>
+                        </div>
+                    </footer>
         </main>
     </div>
 
