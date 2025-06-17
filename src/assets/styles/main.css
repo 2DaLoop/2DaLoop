@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 *{    margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -20,22 +19,20 @@
         }
 
         .navigation-sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
             width: 71px;
-            height: 100vh;
+            height: 100vh; /* Full viewport height */
             display: flex;
             flex-direction: column;
             align-items: center;
             padding-top: 40px;
             gap: 30px;
-            flex-shrink: 0;
             background-color: #3766a5;
             transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             overflow: hidden;
             z-index: 1000;
-            position: absolute;
-            /* Overlay the sidebar */
-            top: 0;
-            left: 0;
         }
 
         .navigation-sidebar:hover {
@@ -396,9 +393,7 @@
 
 
 
-=======
 #map {
     height: 70vh;
     width: 100%;
 }
->>>>>>> mapsAPITesting
