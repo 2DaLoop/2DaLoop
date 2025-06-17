@@ -71,11 +71,16 @@ async function initMap() {
     recycleBtn.textContent = "Recycle";
     recycleBtn.type = "button";
     recycleBtn.classList.add("btn", "btn-light");
+    // show navy blue icon of recycling symbol in button
+    
+
+  
 
     const repairBtn = document.createElement("button");
     repairBtn.textContent = "Repair";
     repairBtn.type = "button";
     repairBtn.classList.add("btn", "btn-light");
+
 
     optionsDiv.append(placeAutocomplete, repairBtn, recycleBtn);
     map.controls[google.maps.ControlPosition.TOP_LEFT].push(optionsDiv);
@@ -291,3 +296,18 @@ SIDEBAR:
     Asset Data Submission is form
     ESG Dashboard goes next
 */
+
+// Add this script after your form or at the end of your HTML
+document.getElementById('btnNext').addEventListener('click', function() {
+    const addressInput = document.getElementById('btnCurrLocation'); // Replace with your address input's ID
+    if (!addressInput.value.trim()) {
+        Swal.fire({
+            icon: 'warning',
+            title: 'Address Required',
+            text: 'Please enter your address before proceeding.',
+            confirmButtonColor: '#4A90E2'
+        });
+    } else {
+        // Proceed to next step
+    }
+});
