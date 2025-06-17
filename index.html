@@ -28,12 +28,14 @@
         <nav class="navigation-sidebar" role="navigation" aria-label="Sidebar">
             <!-- Home button with hover menu -->
             <div class="home-menu-wrapper" style="position: relative;">
-                <button class="nav-icon-button home-btn" aria-label="Home" id="homeButton">
+                <button class="nav-icon-button home-btn" aria-label="Home" onclick="window.location.href='index.html'"
+                    id="homeButton">
                     <!-- Home icon SVG or image -->
                     <img src="src/assets/images/logo_white.png" alt="2DaLoop Logo" style="width: 44px; height: 64px;">
                 </button>
                 <div class="home-popup-menu">
                     <!-- links to original website -->
+                    <a href="index.html">Home</a>
                     <a href="https://www.2daloop.com/services">Services</a>
                     <a href="https://www.2daloop.com/about">About</a>
                     <a href="https://www.2daloop.com/contact">Contact</a>
@@ -41,6 +43,16 @@
                     <a href="https://www.linkedin.com/showcase/2daloop/" target="_blank">LinkedIn</a>
                 </div>
             </div>
+
+            <!--Get Started button -->
+            <button class="nav-icon-button" aria-label="Get Started" onclick="window.location.href='getstarted.html'">
+                <!-- White play button icon, sized and centered like other sidebar icons -->
+                <svg width="44" height="44" viewBox="0 0 44 44" fill="none" style="display:block;">
+                    <rect width="44" height="44" rx="8" fill="none" />
+                    <polygon points="18,14 32,22 18,30" fill="white" />
+                </svg>
+             </button>
+
 
             <!--Nearby Facility button -->
             <button class="nav-icon-button" aria-label="Nearby Facilities"
