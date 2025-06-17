@@ -227,7 +227,9 @@ async function searchText(location) {
         region: "us",
     };
     const bannedWords = ["walmart", "staples", "subway", "autozone", "auto parts", "o'reilly", "ace hardware", "home depot", "lowes", "target", "costco", "kroger", "safeway", "aldi", "food lion", "publix"];
-
+    
+    // create feature that will not accept any variations of the words in the bannedWords array
+ 
     clearMarkers();
 
     const { places } = await Place.searchByText(request);
