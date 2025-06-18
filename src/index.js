@@ -50,7 +50,7 @@ document.getElementById("btnCurrLocation").addEventListener("click", async () =>
 // initialize map centered on the U.S.
 window.initMap = async function () {
     const content = document.getElementById("main-content")
-    content.innerHTML = `<div id="map" style="height: 100%; width: 100%;"></div>`;
+    content.innerHTML = `<div id="map"></div>`;
 
     map = new Map(document.getElementById("map"), {
         center: centerPosition,
