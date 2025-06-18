@@ -333,6 +333,12 @@ p {
     /* Add bottom padding to the paragraph */
 }
 
+.hero-content p:last-child {
+    text-align: center;
+    align-self: center;
+    width: 100%;
+}
+
 #map {
     height: 100%;
     width: 100%;
