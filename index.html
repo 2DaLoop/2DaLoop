@@ -29,28 +29,22 @@
     <div class="main-container">
         <!-- Example sidebar navigation with click events for each button -->
         <nav class="navigation-sidebar" role="navigation" aria-label="Sidebar">
-            <!-- Home button with hover menu -->
-            <div class="home-menu-wrapper" style="position: relative;">
-                <button class="nav-icon-button home-btn" aria-label="Home" onclick="window.location.href='index.html'"
-                    id="homeButton">
-                    <!-- Home icon SVG or image -->
-                    <img src="src/assets/images/logo_white.png" alt="2DaLoop Logo" style="width: 44px; height: 64px;">
-                </button>
+            <!-- Home button -->
+            <button class="nav-icon-button home-btn" aria-label="Home" onclick="window.location.href='index.html'"
+                id="homeButton">
+                <!-- Home icon SVG or image -->
+                <img src="src/assets/images/logo_white.png" alt="2DaLoop Logo" style="width: 44px; height: 64px;">
+            </button>
 
-            </div>
-
-            <!-- Get Started button
-            <button class="nav-icon-button" aria-label="Get Started" onclick="window.location.href='getstarted.html'">
-                 White play button icon-->
-            <!-- <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
+            <!-- Get Started button -->
+            <!-- <button class="nav-icon-button" aria-label="Get Started" onclick="window.location.href='getstarted.html'">
+                <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
                     <rect width="44" height="44" rx="8" fill="none" />
                     <path
                         d="M16 12L32 22L16 32V12Z"
                         stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
-
-                
+                </svg>
             </button> -->
-
 
             <!--Nearby Facility button -->
             <button class="nav-icon-button" aria-label="Nearby Facilities" onclick="initMap()">
@@ -119,9 +113,10 @@
                     </g>
                 </svg>
             </button>
+
             <!--Learn More button -->
             <button class="nav-icon-button" aria-label="Learn More"
-                onclick="window.location.href='https://www.2daloop.com'">
+                onclick="window.location.href='https\:\/\/www.2daloop.com'">
                 <!-- white icon of reading-->
                 <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
                     <rect width="44" height="44" rx="8" fill="none" />
@@ -130,9 +125,8 @@
                         stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
                     <path d="M14 20H30" stroke="white" stroke-width="2.5" stroke-linecap="round" />
                     <path d="M14 24H26" stroke="white" stroke-width="2.5" stroke-linecap="round" />
-
+                </svg>
             </button>
-
         </nav>
 
         <main class="main-content" id="main-content">
@@ -197,8 +191,7 @@
             </section>
 
             <!-- Footer section with terms and privacy links -->
-            <div class="footer-spacer"></div>
-            <footer class="location-form-footer">
+            <footer class="location-form-footer mt-3">
                 <div class="footer-links">
                     <a href="terms.html">Terms of Service</a>
                     <span>|</span>
