@@ -36,25 +36,20 @@
                     <!-- Home icon SVG or image -->
                     <img src="src/assets/images/logo_white.png" alt="2DaLoop Logo" style="width: 44px; height: 64px;">
                 </button>
-                <div class="home-popup-menu">
-                    <!-- links to original website -->
-                    <a href="index.html">Home</a>
-                    <a href="https://www.2daloop.com/services">Services</a>
-                    <a href="https://www.2daloop.com/about">About</a>
-                    <a href="https://www.2daloop.com/contact">Contact</a>
-                    <a href="https://www.2daloop.com/partnerships">Partnerships</a>
-                    <a href="https://www.linkedin.com/showcase/2daloop/" target="_blank">LinkedIn</a>
-                </div>
+
             </div>
 
-            <!--Get Started button -->
+            <!-- Get Started button
             <button class="nav-icon-button" aria-label="Get Started" onclick="window.location.href='getstarted.html'">
-                <!-- White play button icon, sized and centered like other sidebar icons -->
-                <svg width="44" height="44" viewBox="0 0 44 44" fill="none" style="display:block;">
+                 White play button icon-->
+            <!-- <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
                     <rect width="44" height="44" rx="8" fill="none" />
-                    <polygon points="18,14 32,22 18,30" fill="white" />
-                </svg>
-             </button>
+                    <path
+                        d="M16 12L32 22L16 32V12Z"
+                        stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+
+                
+            </button> -->
 
 
             <!--Nearby Facility button -->
@@ -125,6 +120,20 @@
                     </g>
                 </svg>
             </button>
+            <!--Learn More button -->
+            <button class="nav-icon-button" aria-label="Learn More"
+                onclick="window.location.href='https://www.2daloop.com'">
+                <!-- white icon of reading-->
+                <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
+                    <rect width="44" height="44" rx="8" fill="none" />
+                    <path
+                        d="M12 16H32C33.1046 16 34 16.8954 34 18V30C34 31.1046 33.1046 32 32 32H12C10.8954 32 10 31.1046 10 30V18C10 16.8954 10.8954 16 12 16Z"
+                        stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M14 20H30" stroke="white" stroke-width="2.5" stroke-linecap="round" />
+                    <path d="M14 24H26" stroke="white" stroke-width="2.5" stroke-linecap="round" />
+
+            </button>
+
         </nav>
 
         <main class="main-content" id="main-content">
@@ -172,7 +181,8 @@
                         <label class="input-label">Location</label>
                     </div>
 
-                    <button id="btnCurrLocation" type="button" class="current-location-button" aria-label="Use current location">
+                    <button id="btnCurrLocation" type="button" class="current-location-button"
+                        aria-label="Use current location">
                         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"
                             aria-hidden="true">
                             <path
