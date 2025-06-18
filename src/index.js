@@ -14,6 +14,7 @@ const centerPosition = { lat: 39.8283, lng: -98.5795 }; // Geographic center of 
 let searchedLocation = null;
 let map;
 let markers = [];
+let selectedPlace = null;
 
 initAutoComplete();
 
@@ -111,17 +112,7 @@ function initAutoComplete() {
     document.getElementById("input-group").appendChild(placeAutocomplete);
 
     placeAutocomplete.addEventListener("gmp-select", async ({ placePrediction }) => {
-        // listener for "Next" button, search for that location
-        document.getElementById("btnNext").addEventListener("click", async () => {
-            const place = placePrediction.toPlace();
-            await place.fetchFields({ fields: ['location'] });
-
-            searchedLocation = place.location;
-
-            await initMap();
-            await searchText();
-            // await searchLocation();
-        });
+        selectedPlace = placePrediction;
     });
 }
 
@@ -299,15 +290,14 @@ SIDEBAR:
 
 // Add this script after your form or at the end of your HTML
 document.getElementById('btnNext').addEventListener('click', function() {
-    const addressInput = document.getElementById('btnCurrLocation'); // Replace with your address input's ID
-    if (!addressInput.value.trim()) {
+    if (!selectedPlace) {
         Swal.fire({
             icon: 'warning',
-            title: 'Address Required',
-            text: 'Please enter your address before proceeding.',
+            title: 'Location Required',
+            text: 'Please enter your location before proceeding.',
             confirmButtonColor: '#4A90E2'
         });
-    } else {
-        // Proceed to next step
+        return;
     }
+    // Proceed as normal if a place is selected
 });
