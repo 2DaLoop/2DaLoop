@@ -14,6 +14,7 @@ const centerPosition = { lat: 39.8283, lng: -98.5795 }; // Geographic center of 
 let searchedLocation = null;
 let map;
 let markers = [];
+let selectedPlace = null;
 
 initAutoComplete();
 
@@ -111,17 +112,7 @@ function initAutoComplete() {
     document.getElementById("input-group").appendChild(placeAutocomplete);
 
     placeAutocomplete.addEventListener("gmp-select", async ({ placePrediction }) => {
-        // listener for "Next" button, search for that location
-        document.getElementById("btnNext").addEventListener("click", async () => {
-            const place = placePrediction.toPlace();
-            await place.fetchFields({ fields: ['location'] });
-
-            searchedLocation = place.location;
-
-            await initMap();
-            await searchText();
-            // await searchLocation();
-        });
+        selectedPlace = placePrediction;
     });
 }
 
@@ -298,16 +289,22 @@ SIDEBAR:
 */
 
 // Add this script after your form or at the end of your HTML
-document.getElementById('btnNext').addEventListener('click', function() {
-    const addressInput = document.getElementById('btnCurrLocation'); // Replace with your address input's ID
-    if (!addressInput.value.trim()) {
-        Swal.fire({
-            icon: 'warning',
-            title: 'Address Required',
-            text: 'Please enter your address before proceeding.',
-            confirmButtonColor: '#4A90E2'
-        });
-    } else {
-        // Proceed to next step
+document.getElementById('btnNext').addEventListener('click', async function() {
+    // Only allow proceeding if a place is selected from the dropdown
+    if (selectedPlace) {
+        const place = selectedPlace.toPlace ? await selectedPlace.toPlace() : selectedPlace;
+        await place.fetchFields({ fields: ['location'] });
+        searchedLocation = place.location;
+        await initMap();
+        await searchGeoJson(); // Show nearby facilities (recyclers)
+        await searchText();    // Show nearby repair places
+        return;
     }
+    // If no place is selected, show SweetAlert2
+    Swal.fire({
+        icon: 'warning',
+        title: 'Location Required',
+        text: 'Please select a location from the dropdown before proceeding.',
+        confirmButtonColor: '#4A90E2'
+    });
 });
