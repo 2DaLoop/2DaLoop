@@ -47,19 +47,14 @@ document.getElementById("btnCurrLocation").addEventListener("click", async () =>
     }
 });
 
-// document.getElementById("location-input").addEventListener("keydown", (e) => {
-//     if (e.key === "Enter") {
-//         e.preventDefault();
-//     }
-// });
-
 // initialize map centered on the U.S.
-async function initMap() {
+window.initMap = async function () {
     const content = document.getElementById("main-content")
-    content.innerHTML = `<div id="map" style="height: 100%; width: 100%;"></div>`;
+    content.innerHTML = `<div id="map"></div>`;
 
     map = new Map(document.getElementById("map"), {
         center: centerPosition,
+        zoom: 4,
         mapId: "e8f578253d8c676318b940c1-",
         mapTypeControlOptions: {
             style: google.maps.MapTypeControlStyle.DEFAULT,
@@ -79,9 +74,7 @@ async function initMap() {
     recycleBtn.type = "button";
     recycleBtn.classList.add("btn", "btn-light");
     // show navy blue icon of recycling symbol in button
-    
 
-  
 
     const repairBtn = document.createElement("button");
     repairBtn.textContent = "Repair";
@@ -239,9 +232,9 @@ async function searchText(location) {
         region: "us",
     };
     const bannedWords = ["walmart", "staples", "subway", "autozone", "auto parts", "o'reilly", "ace hardware", "home depot", "lowes", "target", "costco", "kroger", "safeway", "aldi", "food lion", "publix"];
-    
+
     // create feature that will not accept any variations of the words in the bannedWords array
- 
+
     clearMarkers();
 
     const { places } = await Place.searchByText(request);
