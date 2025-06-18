@@ -228,23 +228,6 @@
 
         .location-input {
             width: 100%;
-            padding: 12px 16px;
-            border: 1px solid #d1d5db;
-            border-radius: 8px;
-            font-size: 16px;
-            color: #1f2937;
-            background: white;
-            transition: border-color 0.2s ease, box-shadow 0.2s ease;
-        }
-
-        .location-input:focus {
-            outline: none;
-            border-color: #4a90e2;
-            box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
-        }
-
-        .location-input::placeholder {
-            color: #9ca3af;
         }
 
         .current-location-button {
