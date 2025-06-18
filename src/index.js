@@ -290,29 +290,21 @@ SIDEBAR:
 
 // Add this script after your form or at the end of your HTML
 document.getElementById('btnNext').addEventListener('click', async function() {
-    const placeInput = document.getElementById('place-autocomplete-input');
-    // If user selected a place from dropdown
+    // Only allow proceeding if a place is selected from the dropdown
     if (selectedPlace) {
         const place = selectedPlace.toPlace ? await selectedPlace.toPlace() : selectedPlace;
         await place.fetchFields({ fields: ['location'] });
         searchedLocation = place.location;
         await initMap();
-        await searchGeoJson();
+        await searchGeoJson(); // Show nearby facilities (recyclers)
+        await searchText();    // Show nearby repair places
         return;
     }
-    // If user typed something but didn't select from dropdown
-    if (placeInput && placeInput.value.trim()) {
-        // Use text search for the typed value
-        searchedLocation = null; // or keep previous location if you want
-        await initMap();
-        await searchText();
-        return;
-    }
-    // If nothing entered, show SweetAlert
+    // If no place is selected, show SweetAlert2
     Swal.fire({
         icon: 'warning',
         title: 'Location Required',
-        text: 'Please enter your location before proceeding.',
+        text: 'Please select a location from the dropdown before proceeding.',
         confirmButtonColor: '#4A90E2'
     });
 });
