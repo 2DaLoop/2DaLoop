@@ -1,3 +1,4 @@
+import { loadSidebar } from './components/sidebar.js';
 const API_KEY = window.ENV.API_KEY;
 
 (g => {var h, a, k, p = "The Google Maps JavaScript API", c = "google", l = "importLibrary", q = "__ib__", m = document, b = window; b = b[c] || (b[c] = {}); var d = b.maps || (b.maps = {}), r = new Set, e = new URLSearchParams, u = () => h || (h = new Promise(async (f, n) => {await (a = m.createElement("script")); e.set("libraries", [...r] + ""); for (k in g) e.set(k.replace(/[A-Z]/g, t => "_" + t[0].toLowerCase()), g[k]); e.set("callback", c + ".maps." + q); a.src = `https://maps.${c}apis.com/maps/api/js?` + e; d[q] = f; a.onerror = () => h = n(Error(p + " could not load.")); a.nonce = m.querySelector("script[nonce]")?.nonce || ""; m.head.append(a)})); d[l] ? console.warn(p + " only loads once. Ignoring:", g) : d[l] = (f, ...n) => r.add(f) && u().then(() => d[l](f, ...n))})({
@@ -16,7 +17,10 @@ let map;
 let markers = [];
 let selectedPlace = null;
 
-initAutoComplete();
+window.addEventListener("load", () => {
+    initAutoComplete();
+    loadSidebar();
+})
 
 // search based on current location
 document.getElementById("btnCurrLocation").addEventListener("click", async () => {
@@ -274,18 +278,9 @@ function fixBounds(bounds) {
 
 /*
 NOTES:
-    Figure out how to switch from SearchBox to Autocomplete since SearchBox isn't allowed for new customers.
-
     Possibly add more text searches.
 
     Add "Back" and "Next" buttons to the bottom right to switch back and forth.
-    Add search bar on top of map.
-
-SIDEBAR:
-    Home is first page
-    Nearby Facilities is map
-    Asset Data Submission is form
-    ESG Dashboard goes next
 */
 
 // Add this script after your form or at the end of your HTML
@@ -296,8 +291,7 @@ document.getElementById('btnNext').addEventListener('click', async function() {
         await place.fetchFields({ fields: ['location'] });
         searchedLocation = place.location;
         await initMap();
-        await searchGeoJson(); // Show nearby facilities (recyclers)
-        await searchText();    // Show nearby repair places
+        await searchText();
         return;
     }
     // If no place is selected, show SweetAlert2
