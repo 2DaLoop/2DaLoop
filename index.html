@@ -48,70 +48,77 @@
 
             <!--Nearby Facility button -->
             <button class="nav-icon-button" aria-label="Nearby Facilities" onclick="initMap()">
-                <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
-                    <rect width="44" height="44" rx="8" fill="none" />
-                    <path
-                        d="M22 38C22 38 34 28.36 34 20C34 13.3726 28.6274 8 22 8C15.3726 8 10 13.3726 10 20C10 28.36 22 38 22 38Z"
-                        stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
-                    <circle cx="22" cy="20" r="4" stroke="white" stroke-width="2.5" />
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true">
+                    <!-- Location pin outline -->
+                    <path d="M8 14s4-3 4-6.5S10.5 2 8 2 4 4.5 4 7.5 8 14 8 14z" stroke="white" stroke-width="1.5"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                    <!-- Inner circle -->
+                    <circle cx="8" cy="7.5" r="1.5" stroke="white" stroke-width="1.5" />
                 </svg>
+
             </button>
 
             <button class="nav-icon-button" aria-label="Asset Data Submission"
                 onclick="window.location.href='asset-submission.html'">
-                <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
-                    <rect width="44" height="44" rx="8" fill="none" />
-                    <path d="M12 32V12H32V32H12Z" stroke="white" stroke-width="2.5" stroke-linecap="round"
-                        stroke-linejoin="round" />
-                    <path d="M16 16H28" stroke="white" stroke-width="2.5" stroke-linecap="round" />
-                    <path d="M16 22H28" stroke="white" stroke-width="2.5" stroke-linecap="round" />
-                    <path d="M16 28H24" stroke="white" stroke-width="2.5" stroke-linecap="round" />
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <rect width="24" height="24" rx="4" fill="none" />
+                    <rect x="4" y="4" width="16" height="16" rx="2" stroke="white" stroke-width="2" fill="none" />
+                    <path d="M7 8H17" stroke="white" stroke-width="2" stroke-linecap="round" />
+                    <path d="M7 12H17" stroke="white" stroke-width="2" stroke-linecap="round" />
+                    <path d="M7 16H13" stroke="white" stroke-width="2" stroke-linecap="round" />
                 </svg>
             </button>
 
             <button class="nav-icon-button" aria-label="ESG Dashboard" onclick="window.location.href='dashboard.html'">
                 <!-- White desktop screen icon for ESG Dashboard -->
-                <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
-                    <rect width="44" height="44" rx="8" fill="none" />
-                    <rect x="12" y="16" width="20" height="14" rx="2" stroke="white" stroke-width="2.5" fill="none" />
-                    <rect x="18" y="32" width="8" height="2" rx="1" fill="white" />
-                    <rect x="20" y="28" width="4" height="2" rx="1" fill="white" />
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Outer circular border -->
+                    <circle cx="12" cy="12" r="10" stroke="white" stroke-width="2" fill="none" />
+
+                    <!-- Screen rectangle -->
+                    <rect x="6" y="8" width="12" height="8" rx="1" stroke="white" stroke-width="2" fill="none" />
+
+                    <!-- Stand base (larger bar) -->
+                    <rect x="9" y="18" width="6" height="1" rx="0.5" fill="white" />
+
+                    <!-- Stand base (smaller bar) -->
+                    <rect x="10" y="15" width="4" height="1" rx="0.5" fill="white" />
                 </svg>
+
+
             </button>
 
             <!-- Help Button with CTA and click event -->
             <button class="nav-icon-button" aria-label="Help" onclick="window.location.href='help.html'">
                 <!-- White "i" (information) icon for Help with a fitting circle -->
-                <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="18" cy="18" r="14" stroke="white" stroke-width="2" fill="none" />
-                    <path d="M18 26h.01" stroke="white" stroke-width="2" stroke-linecap="round"
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <circle cx="12" cy="12" r="10" stroke="white" stroke-width="2" fill="none" />
+                    <path d="M12 17h.01" stroke="white" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round" />
-                    <path d="M18 22c0-1.333.667-2 2-3 1.333-1 2-1.667 2-3a4 4 0 10-8 0" stroke="white" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M12 15c0-1 .5-1.5 1.5-2.25C14.5 12 15 11.5 15 11c0-2-2-3-3-3s-3 1-3 3" stroke="white"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
             </button>
 
             <button class="nav-icon-button" aria-label="FAQ" onclick="window.location.href='faq.html'">
                 <!-- White comment bubble icon for FAQ -->
-                <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
-                    <rect width="44" height="44" rx="8" fill="none" />
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
-                        d="M32 14C32 12.8954 31.1046 12 30 12H14C12.8954 12 12 12.8954 12 14V26C12 27.1046 12.8954 28 14 28H18V34L25 28H30C31.1046 28 32 27.1046 32 26V14Z"
-                        stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+                        d="M20 7C20 6.44772 19.5523 6 19 6H5C4.44772 6 4 6.44772 4 7V17C4 17.5523 4.44772 18 5 18H7V21L17 18H19C19.5523 18 20 17.5523 20 17V7Z"
+                        stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" />
                 </svg>
+
             </button>
 
             <button class="nav-icon-button" aria-label="Settings" onclick="window.location.href='settings.html'">
-                <!-- White gear icon for Settings -->
-                <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
-                    <rect width="44" height="44" rx="8" fill="none" />
-                    <g>
-                        <circle cx="22" cy="22" r="10" stroke="white" stroke-width="2.5" />
-                        <circle cx="22" cy="22" r="3" fill="white" />
-                        <path
-                            d="M22 13V11M22 33V31M31 22H33M11 22H13M28.4853 15.5147L29.8995 14.1005M14.1005 29.8995L15.5147 28.4853M28.4853 28.4853L29.8995 29.8995M14.1005 14.1005L15.5147 15.5147"
-                            stroke="white" stroke-width="2" stroke-linecap="round" />
-                    </g>
+                <!-- White SVG settings icon inside a circle -->
+                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <!-- Gear shape -->
+                    <path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                    <path
+                        d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9c0 .66.39 1.25 1 1.51H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" />
                 </svg>
             </button>
 
@@ -119,11 +126,17 @@
             <button class="nav-icon-button" aria-label="Learn More"
                 onclick="window.location.href='https://www.2daloop.com'">
                 <!-- SVG "i" icon with matching circle -->
-                <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="18" cy="18" r="14" stroke="white" stroke-width="2" fill="none" />
-                    <circle cx="18" cy="13" r="1.5" fill="white" />
-                    <rect x="17" y="17" width="2" height="8" rx="1" fill="white" />
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Outer circle centered in 24x24 -->
+                    <circle cx="12" cy="12" r="10" stroke="white" stroke-width="2" fill="none" />
+
+                    <!-- Dot of the "i" -->
+                    <circle cx="12" cy="9" r="1.5" fill="white" />
+
+                    <!-- Vertical stem of the "i" -->
+                    <rect x="11" y="12" width="2" height="6" rx="1" fill="white" />
                 </svg>
+
             </button>
         </nav>
 
@@ -177,11 +190,13 @@
                         aria-label="Use current location">
                         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"
                             aria-hidden="true">
-                            <path
-                                d="M14 7C14 11.3333 8 15.3333 8 15.3333S2 11.3333 2 7C2 5.67392 2.52678 4.40215 3.46447 3.63604C4.40215 2.52678 5.67392 2 7 2C8.32608 2 9.59785 2.52678 10.5355 3.46447C11.4732 4.40215 12 5.67392 12 7Z"
-                                stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                            <circle cx="8" cy="7" r="2" stroke="white" stroke-width="1.5"></circle>
+                            <!-- Location pin outline -->
+                            <path d="M8 14s4-3 4-6.5S10.5 2 8 2 4 4.5 4 7.5 8 14 8 14z" stroke="white"
+                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <!-- Inner circle -->
+                            <circle cx="8" cy="7.5" r="1.5" stroke="white" stroke-width="1.5" />
                         </svg>
+
                         <span>Use Current Location</span>
                     </button>
 
@@ -200,11 +215,7 @@
         </main>
     </div>
 
-    <!-- bootstrap js cdn -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-    <script src="env.js"></script>
-    <script type="module" src="src/index.js"></script>
 </body>
 
 </html>
