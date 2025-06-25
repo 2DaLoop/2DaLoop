@@ -1,11 +1,10 @@
-import { loadSidebar } from './components/sidebar.js';
 const API_KEY = window.ENV.API_KEY;
-
 (g => {var h, a, k, p = "The Google Maps JavaScript API", c = "google", l = "importLibrary", q = "__ib__", m = document, b = window; b = b[c] || (b[c] = {}); var d = b.maps || (b.maps = {}), r = new Set, e = new URLSearchParams, u = () => h || (h = new Promise(async (f, n) => {await (a = m.createElement("script")); e.set("libraries", [...r] + ""); for (k in g) e.set(k.replace(/[A-Z]/g, t => "_" + t[0].toLowerCase()), g[k]); e.set("callback", c + ".maps." + q); a.src = `https://maps.${c}apis.com/maps/api/js?` + e; d[q] = f; a.onerror = () => h = n(Error(p + " could not load.")); a.nonce = m.querySelector("script[nonce]")?.nonce || ""; m.head.append(a)})); d[l] ? console.warn(p + " only loads once. Ignoring:", g) : d[l] = (f, ...n) => r.add(f) && u().then(() => d[l](f, ...n))})({
     key: API_KEY,
     v: "weekly",
 });
 
+import { loadSidebar } from './components/sidebar.js';
 const { Map } = await google.maps.importLibrary("maps");
 const { Place, SearchBox } = await google.maps.importLibrary("places");
 const { AdvancedMarkerElement, PinElement } = await google.maps.importLibrary("marker");
@@ -37,16 +36,20 @@ document.getElementById("btnCurrLocation").addEventListener("click", async () =>
                 // await searchLocation();
             },
             function (error) {
-                let strError = "";
+                let strError = '';
 
                 // alert user to enable location sharing if denied or other error
                 if (error.code === error.PERMISSION_DENIED) {
-                    strError =
-                        "Please enable location sharing in your settings!";
+                    strError = 'Please enable location sharing in your settings!'
                 } else {
-                    strError = "There was an issue getting your location!";
+                    strError = 'There was an issue getting your location!'
                 }
-                alert(strError);
+
+                Swal.fire({
+                    title: strError,
+                    icon: 'warning',
+                    confirmButtonColor: '#4A90E2'
+                });
             }
         );
     }
