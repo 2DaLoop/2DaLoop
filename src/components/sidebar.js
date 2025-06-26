@@ -1,10 +1,10 @@
 export function loadSidebar() {
-    const nav = document.getElementById('nav');
-    if (nav) {
+    const sidebar = document.getElementById('sidebar');
+    if (sidebar) {
         fetch('src/components/sidebar.html')
             .then(response => response.text())
-            .then(data => {
-                nav.innerHTML = data;
+            .then(html => {
+                sidebar.innerHTML = html;
             })
     }
 }
