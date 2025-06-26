@@ -27,9 +27,12 @@ body {
     height: 100vh; /* Full viewport height */
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     align-items: center;
     padding-top: 40px;
-    gap: 30px;
+    padding-bottom: 40px;
+    gap: 0;
+    /* Increased gap to add more spacing between each icon */
     background-color: #3766a5;
     transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     overflow: hidden;
@@ -37,8 +40,8 @@ body {
 }
 
 .navigation-sidebar:hover {
-    width: 320px;
-    /* Increased width for more space between icons and labels */
+    width: 25vw;
+    /* Sidebar pops out to half of the page width */
     box-shadow: 2px 0 16px rgba(0, 0, 0, 0.08);
     align-items: flex-start;
 }
@@ -56,6 +59,24 @@ body {
     padding: 0 12px;
     position: relative;
 }
+.nav-icon-button {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 8px 0; /* space between buttons */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+}
+
+.nav-icon-button svg,
+.nav-icon-button img {
+    width: 36px;
+    height: 36px;
+}
+
 
 .navigation-sidebar:hover .nav-icon-button {
     justify-content: flex-start;
@@ -72,13 +93,15 @@ body {
 .navigation-sidebar:hover .nav-icon-button svg {
     margin-right: 32px;
     /* More space between icon and label */
+    margin-left: 32px !important;
+    /* More space between the left edge and icons when sidebar is popped out */
 }
 
 .nav-icon-button[aria-label]:after {
     content: attr(aria-label);
     color: #fff;
-    font-size: 16px;
-    font-weight: 500;
+    font-size: 22px;
+    font-weight: 600;
     opacity: 0;
     margin-left: 12px;
     white-space: nowrap;
@@ -97,8 +120,21 @@ body {
     text-overflow: ellipsis;
 }
 
+
 .navigation-sidebar:hover .nav-icon-button[aria-label]:after {
     opacity: 1;
+    max-width: none;
+    overflow: visible;
+    text-overflow: unset;
+    white-space: normal;
+    left: 48px;
+    /* Set a consistent left offset for all labels */
+    padding-left: 16px;
+    /* Add padding for visual spacing from the icon/left edge */
+    margin-left: 32px;
+    /* 32px space between icon and label text */
+    position: relative;
+    /* Ensure position is relative for proper alignment */
 }
 
 .main-content {
@@ -263,11 +299,17 @@ body {
     font-weight: 500;
     cursor: pointer;
     transition: background-color 0.2s ease;
-    background-color: #6b7280;
+    background-color: #142850; /* dark navy blue */
 }
 
 .next-button:hover {
-    background-color: #4b5563;
+    background-color: #223a5f; /* slightly lighter navy blue for hover */
+}
+
+/* Fine-tune spacing for Help and Learn More icons to match other icons */
+.nav-icon-button[aria-label="Help"] svg,
+.nav-icon-button[aria-label="Learn More"] svg {
+    margin-left: 4px !important;
 }
 
 /* Responsive Design */
@@ -331,6 +373,12 @@ p {
     font-family: 'Nunito Sans', sans-serif;
     padding-bottom: 24px;
     /* Add bottom padding to the paragraph */
+}
+
+.hero-content p:last-child {
+    text-align: center;
+    align-self: center;
+    width: 100%;
 }
 
 #map {
