@@ -4,13 +4,14 @@ const { AdvancedMarkerElement, PinElement } = await google.maps.importLibrary("m
 const { LatLngBounds, event } = await google.maps.importLibrary("core");
 
 const centerPosition = { lat: 39.8283, lng: -98.5795 }; // Geographic center of continental U.S.
-let searchedLocation = JSON.parse(sessionStorage.getItem("searchedLocation")).location || null;
+let searchedLocation = JSON.parse(sessionStorage.getItem("searchedLocation")) || null;
 let map;
 let markers = [];
 let selectedPlace = null;
 
 initMap();
 if (searchedLocation) {
+    searchedLocation = searchedLocation.location
     searchText();
 }
 
