@@ -1,5 +1,6 @@
-const express = require("express");
-const puppeteer = require("puppeteer");
+import express from 'express';
+import puppeteer from 'puppeteer';
+
 const app = express();
 const HTTP_PORT = 3000;
 
