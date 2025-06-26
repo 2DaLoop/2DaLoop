@@ -15,10 +15,12 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npx live-server --entry-file=index.html"
   },
   "dependencies": {
-    "@supabase/supabase-js": "^2.50.0",
+    "@supabase/supabase-js": "^2.50.2",
+    "cors": "^2.8.5",
     "express": "^5.1.0",
     "puppeteer": "^24.10.2"
   }

@@ -1,14 +1,17 @@
 import express from 'express';
+import cors from 'cors';
 import puppeteer from 'puppeteer';
 
 const app = express();
 const HTTP_PORT = 3000;
 
+app.use(cors());
 app.use(express.json());
 
 app.post("/puppeteer", async (req, res) => {
     try {
         const { inputValues } = req.body;
+        console.log(inputValues);   
         if (!inputValues) {
             return res.status(400).json({ error: "Input values are required" });
         }
@@ -34,15 +37,21 @@ app.post("/puppeteer", async (req, res) => {
         ];
 
         // go to itad calculator
-        const browser = await puppeteer.launch();
+        const browser = await puppeteer.launch({
+            headless: false,
+            defaultViewport: false,
+        });
         const page = await browser.newPage();
         await page.goto("https://calculator.itadusa.com/");
+
+        // toggle button
+        await page.click('#btn_service');
 
         // input values in all fields
         for (const input of inputElements) {
             const element = await page.$(`#${input}`);
             await element.click({ clickCount: 3 });
-            await element.type(inputValues[input]);
+            await element.type(inputValues[input].toString());
         }
 
         // click submit
@@ -56,10 +65,12 @@ app.post("/puppeteer", async (req, res) => {
                 const resultText = await page.evaluate((el) => el.value, element);
                 resultValues[result] = resultText;
             }
+            console.log(resultValues);
+
+            // return results
+            res.status(200).json({ resultValues });
         }, 1000);
 
-        // return results
-        res.status(200).json({ resultValues });
     } catch (error) {
         console.error(error);
         res.status(500).json({

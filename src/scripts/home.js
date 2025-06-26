@@ -1,4 +1,5 @@
 import { navigate } from '../utils/pageRouter.js';
+import { supabase } from '../supabase/supabaseClient.js';
 let selectedPlace = null;
 
 initAutoComplete();
@@ -55,22 +56,27 @@ async function initAutoComplete() {
 
 // Add this script after your form or at the end of your HTML
 document.getElementById('btnNext').addEventListener('click', async function() {
-    if (selectedPlace) {
-        const place = selectedPlace.toPlace ? await selectedPlace.toPlace() : selectedPlace;
-        await place.fetchFields({ fields: ['location'] });
+    const { data, error } = await supabase
+    .from('tblAssetSubmission')
+    .select('*')
+    console.log(data, error);
 
-        sessionStorage.setItem("searchedLocation", JSON.stringify({
-            location: place.location
-        }));
+    // if (selectedPlace) {
+    //     const place = selectedPlace.toPlace ? await selectedPlace.toPlace() : selectedPlace;
+    //     await place.fetchFields({ fields: ['location'] });
 
-        navigate('#/nearby-facilities');
-        return;
-    }
-    // If no place is selected, show SweetAlert2
-    Swal.fire({
-        icon: 'warning',
-        title: 'Location Required',
-        text: 'Please select a location from the dropdown before proceeding.',
-        confirmButtonColor: '#4A90E2'
-    });
+    //     sessionStorage.setItem("searchedLocation", JSON.stringify({
+    //         location: place.location
+    //     }));
+
+    //     navigate('#/nearby-facilities');
+    //     return;
+    // }
+    // // If no place is selected, show SweetAlert2
+    // Swal.fire({
+    //     icon: 'warning',
+    //     title: 'Location Required',
+    //     text: 'Please select a location from the dropdown before proceeding.',
+    //     confirmButtonColor: '#4A90E2'
+    // });
 });
