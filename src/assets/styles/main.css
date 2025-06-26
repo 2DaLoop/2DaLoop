@@ -60,21 +60,21 @@ body {
     position: relative;
 }
 .nav-icon-button {
-  background: none;
-  border: none;
-  padding: 0;
-  margin: 8px 0; /* space between buttons */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 44px;
-  height: 44px;
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 8px 0; /* space between buttons */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
 }
 
 .nav-icon-button svg,
 .nav-icon-button img {
-  width: 36px;
-  height: 36px;
+    width: 36px;
+    height: 36px;
 }
 
 
