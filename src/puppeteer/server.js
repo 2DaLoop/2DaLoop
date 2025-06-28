@@ -11,7 +11,6 @@ app.use(express.json());
 app.post("/puppeteer", async (req, res) => {
     try {
         const { inputValues } = req.body;
-        console.log(inputValues);   
         if (!inputValues) {
             return res.status(400).json({ error: "Input values are required" });
         }
@@ -65,7 +64,6 @@ app.post("/puppeteer", async (req, res) => {
                 const resultText = await page.evaluate((el) => el.value, element);
                 resultValues[result] = resultText;
             }
-            console.log(resultValues);
 
             // return results
             res.status(200).json({ resultValues });
