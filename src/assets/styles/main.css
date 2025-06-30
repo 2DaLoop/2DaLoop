@@ -104,9 +104,9 @@ body {
     font-size: 22px;
     font-weight: 600;
     opacity: 0;
-    margin-left: 12px;
+    margin-left: 6px;
     white-space: nowrap;
-    pointer-events: none;
+    pointer-events: auto;
     transition: opacity 0.2s;
     position: absolute;
     left: 100px;
@@ -114,11 +114,8 @@ body {
     top: 50%;
     transform: translateY(-50%);
     text-align: left;
-    /* Align text to the left */
-    max-width: 200px;
-    /* Allow longer labels if needed */
-    overflow: hidden;
-    text-overflow: ellipsis;
+
+
 }
 
 
@@ -127,8 +124,8 @@ body {
     max-width: none;
     overflow: visible;
     text-overflow: unset;
-    white-space: normal;
-    left: 48px;
+    white-space: nowrap;
+    left: 1px;
     /* Set a consistent left offset for all labels */
     padding-left: 16px;
     /* Add padding for visual spacing from the icon/left edge */
@@ -136,6 +133,7 @@ body {
     /* 10px space between icon and label text */
     position: relative;
     /* Ensure position is relative for proper alignment */
+    
 }
 
 .main-content {
