@@ -235,7 +235,7 @@ body {
 .quantity-input,
 .age-input {
     width: 100%;
-    height: 63px;
+    height: 40px;
     border-radius: 8px;
     border: 2px solid #d1d5db;
     color: #999;

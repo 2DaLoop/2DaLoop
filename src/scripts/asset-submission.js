@@ -1,5 +1,7 @@
+// EquipmentInventory class manages the inventory logic and UI interactions
 class EquipmentInventory {
     constructor() {
+        // Define equipment categories and descriptions
         this.equipmentData = [
             { category: 'Desktops', description: 'Desktop PCs' },
             { category: 'Laptops', description: 'Laptop PCs' },
@@ -8,6 +10,7 @@ class EquipmentInventory {
             { category: 'Servers', description: 'Towers, Rackmount, or Blade' }
         ];
 
+        // Sample data for demonstration or import simulation
         this.sampleData = [
             { quantity: 25, age: 3.5 },
             { quantity: 40, age: 2.1 },
@@ -19,12 +22,14 @@ class EquipmentInventory {
         this.init();
     }
 
+    // Initialize event bindings and status updates
     init() {
         this.bindEvents();
         this.setupInputValidation();
         this.updateAllStatus();
     }
 
+    // Bind button and input events
     bindEvents() {
         // Clear All Data button
         const clearBtn = document.querySelector('.clear-btn');
@@ -42,7 +47,7 @@ class EquipmentInventory {
         const calculateBtn = document.querySelector('.calculate-btn');
         calculateBtn.addEventListener('click', () => this.calculateTotals());
 
-        // Input change events
+        // Input change events for quantity and age fields
         const inputs = document.querySelectorAll('.quantity-input, .age-input');
         inputs.forEach(input => {
             input.addEventListener('input', () => this.updateRowStatus(input));
@@ -50,6 +55,7 @@ class EquipmentInventory {
         });
     }
 
+    // Set up input validation for numeric fields
     setupInputValidation() {
         const inputs = document.querySelectorAll('.quantity-input, .age-input');
         inputs.forEach(input => {
@@ -66,20 +72,20 @@ class EquipmentInventory {
         });
     }
 
+    // Clear all input fields and reset status
     clearAllData() {
-        // Clear all input fields
         const inputs = document.querySelectorAll('.quantity-input, .age-input');
         inputs.forEach(input => {
             input.value = '';
         });
 
-        // Reset all status displays
         this.updateAllStatus();
 
         // Show confirmation message
         this.showMessage('All data has been cleared successfully!', 'success');
     }
 
+    // Handle import data action (simulate file import)
     importData() {
         // Create a file input element
         const fileInput = document.createElement('input');
@@ -97,8 +103,8 @@ class EquipmentInventory {
         fileInput.click();
     }
 
+    // Simulate importing data from a file
     simulateImport(fileName) {
-        // Simulate file processing delay
         this.showMessage('Importing data from ' + fileName + '...', 'info');
 
         setTimeout(() => {
@@ -108,11 +114,13 @@ class EquipmentInventory {
         }, 1500);
     }
 
+    // Generate and populate sample data
     generateSampleData() {
         this.populateData(this.sampleData);
         this.showMessage('Sample data generated successfully!', 'success');
     }
 
+    // Populate input fields with provided data
     populateData(data) {
         const quantityInputs = document.querySelectorAll('.quantity-input');
         const ageInputs = document.querySelectorAll('.age-input');
@@ -129,6 +137,7 @@ class EquipmentInventory {
         this.updateAllStatus();
     }
 
+    // Calculate totals and show results
     calculateTotals() {
         const quantityInputs = document.querySelectorAll('.quantity-input');
         const ageInputs = document.querySelectorAll('.age-input');
@@ -164,6 +173,7 @@ class EquipmentInventory {
         this.updateAllStatus();
     }
 
+    // Update the status for a single row when input changes
     updateRowStatus(changedInput) {
         const row = changedInput.closest('.equipment-row');
         const quantityInput = row.querySelector('.quantity-input');
@@ -180,6 +190,7 @@ class EquipmentInventory {
         this.updateStatusBadge(statusBadge, quantity);
     }
 
+    // Update the status for all rows (used after data changes)
     updateAllStatus() {
         const rows = document.querySelectorAll('.equipment-row');
         rows.forEach(row => {
@@ -195,6 +206,7 @@ class EquipmentInventory {
         });
     }
 
+    // Update the status badge appearance and text based on quantity
     updateStatusBadge(badge, quantity) {
         // Remove existing status classes
         badge.classList.remove('empty-status', 'low-status', 'normal-status', 'high-status');
@@ -214,6 +226,7 @@ class EquipmentInventory {
         }
     }
 
+    // Validate input for positive numbers only
     validateInput(input) {
         const value = parseFloat(input.value);
 
@@ -225,6 +238,7 @@ class EquipmentInventory {
         }
     }
 
+    // Show a message at the top of the inventory container
     showMessage(message, type = 'info', duration = 3000) {
         // Remove existing message if any
         const existingMessage = document.querySelector('.inventory-message');
@@ -255,8 +269,9 @@ document.addEventListener('DOMContentLoaded', () => {
     new EquipmentInventory();
 });
 
-// Add some utility functions for potential future use
+// Utility functions for exporting and downloading inventory data
 window.EquipmentInventoryUtils = {
+    // Export data as an array of objects
     exportData: function() {
         const data = [];
         const rows = document.querySelectorAll('.equipment-row');
@@ -278,6 +293,7 @@ window.EquipmentInventoryUtils = {
         return data;
     },
 
+    // Download inventory data as a CSV file
     downloadCSV: function() {
         const data = this.exportData();
         const csv = 'Category,Description,Quantity,Age\n' +
