@@ -15,13 +15,18 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npx live-server --entry-file=index.html"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.50.2",
+    "apexcharts": "^4.7.0",
     "cors": "^2.8.5",
     "express": "^5.1.0",
     "puppeteer": "^24.10.2"
+  },
+  "devDependencies": {
+    "vite": "^7.0.1"
   }
 }
