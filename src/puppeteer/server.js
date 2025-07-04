@@ -60,7 +60,7 @@ app.post("/itad/no_packing", async (req, res) => {
             }
 
             // return results
-            res.status(200).json({ resultValues });
+            res.status(200).json({ data: resultValues });
         }, 1000);
 
     } catch (error) {
@@ -126,7 +126,7 @@ app.post("/itad/packing_services", async (req, res) => {
             }
 
             // return results
-            res.status(200).json({ resultValues });
+            res.status(200).json({ data: resultValues });
         }, 1000);
 
     } catch (error) {
