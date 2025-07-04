@@ -173,29 +173,6 @@ body {
     }
 }
 
-/* Category indicator dots */
-.category-indicator {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    flex-shrink: 0;
-}
-.desktop-indicator {
-    background-color: #3b82f6;
-}
-.laptop-indicator {
-    background-color: #10b981;
-}
-.network-indicator {
-    background-color: #f59e0b;
-}
-.telecom-indicator {
-    background-color: #ef4444;
-}
-.server-indicator {
-    background-color: #8b5cf6;
-}
-
 /* Equipment name and description */
 .equipment-name {
     color: #1f2937;
