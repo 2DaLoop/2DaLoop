@@ -8,17 +8,18 @@
         <div class="table-header">
             <div class="header-category">EQUIPMENT CATEGORY</div>
             <div class="header-description">DESCRIPTION</div>
-            <div class="header-quantity">QUANTITY</div>
-            <div class="header-age">AVERAGE AGE (YEARS)</div>
+            <div class="header-quantity">QUANTITY OF ASSETS</div>
+            <div class="header-age">AVERAGE AGE OF ASSET (YEARS)</div>
         </div>
 
         <div class="equipment-row">
             <div class="equipment-info">
-                <div class="category-indicator desktop-indicator"></div>
-                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#3766A5"
-                    class="bi bi-pc-display-horizontal" viewBox="0 0 16 16">
+                <div class="category-indicator"></div>
+
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#3766A5" class="bi bi-pc"
+                    viewBox="0 0 16 16">
                     <path
-                        d="M1.5 0A1.5 1.5 0 0 0 0 1.5v7A1.5 1.5 0 0 0 1.5 10H6v1H1a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1h-5v-1h4.5A1.5 1.5 0 0 0 16 8.5v-7A1.5 1.5 0 0 0 14.5 0zm0 1h13a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-7a.5.5 0 0 1 .5-.5M12 12.5a.5.5 0 1 1 1 0 .5.5 0 0 1-1 0m2 0a.5.5 0 1 1 1 0 .5.5 0 0 1-1 0M1.5 12h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1M1 14.25a.25.25 0 0 1 .25-.25h5.5a.25.25 0 1 1 0 .5h-5.5a.25.25 0 0 1-.25-.25" />
+                        d="M5 0a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1zm.5 14a.5.5 0 1 1 0 1 .5.5 0 0 1 0-1m2 0a.5.5 0 1 1 0 1 .5.5 0 0 1 0-1M5 1.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5M5.5 3h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1" />
                     </ svg>
                     <h3 class="equipment-name">Desktops</h3>
             </div>
@@ -31,6 +32,7 @@
             </div>
 
         </div>
+
 
         <div class="equipment-row">
             <div class="equipment-info">
@@ -54,33 +56,70 @@
 
         <div class="equipment-row">
             <div class="equipment-info">
-                <div class="category-indicator network-indicator"></div>
-                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#3766A5" class="bi bi-router"
+                <div class="category-indicator "></div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#3766A5" class="bi bi-battery"
                     viewBox="0 0 16 16">
                     <path
-                        d="M5.525 3.025a3.5 3.5 0 0 1 4.95 0 .5.5 0 1 0 .707-.707 4.5 4.5 0 0 0-6.364 0 .5.5 0 0 0 .707.707" />
-                    <path
-                        d="M6.94 4.44a1.5 1.5 0 0 1 2.12 0 .5.5 0 0 0 .708-.708 2.5 2.5 0 0 0-3.536 0 .5.5 0 0 0 .707.707ZM2.5 11a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1m4.5-.5a.5.5 0 1 0 1 0 .5.5 0 0 0-1 0m2.5.5a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1m1.5-.5a.5.5 0 1 0 1 0 .5.5 0 0 0-1 0m2 0a.5.5 0 1 0 1 0 .5.5 0 0 0-1 0" />
-                    <path
-                        d="M2.974 2.342a.5.5 0 1 0-.948.316L3.806 8H1.5A1.5 1.5 0 0 0 0 9.5v2A1.5 1.5 0 0 0 1.5 13H2a.5.5 0 0 0 .5.5h2A.5.5 0 0 0 5 13h6a.5.5 0 0 0 .5.5h2a.5.5 0 0 0 .5-.5h.5a1.5 1.5 0 0 0 1.5-1.5v-2A1.5 1.5 0 0 0 14.5 8h-2.306l1.78-5.342a.5.5 0 1 0-.948-.316L11.14 8H4.86zM14.5 9a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 1 .5-.5z" />
-                    <path d="M8.5 5.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0" />
+                        d="M0 6a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1zm14 3a1.5 1.5 0 0 1-1.5 1.5v-3A1.5 1.5 0 0 1 16 8" />
                     </ svg>
-                    <h3 class="equipment-name">Network Devices</h3>
+                    <h3 class="equipment-name">Battery Backups</h3>
             </div>
-            <p class="equipment-description">Switches and Routers</p>
+            <p class="equipment-description"></p>
             <div class="input-wrapper">
-                <input type="text" placeholder="Enter quantity" class="quantity-input" id="network-quantity" />
+                <input type="text" placeholder="Enter quantity" class="quantity-input" id="battery-quantity" />
             </div>
             <div class="input-wrapper">
-                <input type="text" placeholder="Enter age" class="age-input" id="network-age" />
+                <input type="text" placeholder="Enter age" class="age-input" id=" battery-age" />
+            </div>
+
+        </div>
+
+        <div class="equipment-row">
+            <div class="equipment-info">
+                <div class="category-indicator"></div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#3766A5" class="bi bi-phone"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M11 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM5 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z" />
+                    <path d="M8 14a1 1 0 1 0 0-2 1 1 0 0 0 0 2" />
+                    </ svg>
+                    <h3 class="equipment-name">Mobile Devices</h3>
+            </div>
+            <p class="equipment-description">Cellular phone, iPad, NestPad</p>
+            <div class="input-wrapper">
+                <input type="text" placeholder="Enter quantity" class="quantity-input" id="mobile-quantity" />
+            </div>
+            <div class="input-wrapper">
+                <input type="text" placeholder="Enter age" class="age-input" id=" mobile-age" />
+            </div>
+
+        </div>
+
+        <div class="equipment-row">
+            <div class="equipment-info">
+                <div class="category-indicator"></div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#3766A5" class="bi bi-printer"
+                    viewBox="0 0 16 16">
+                    <path d="M2.5 8a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1" />
+                    <path
+                        d="M5 1a2 2 0 0 0-2 2v2H2a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h1v1a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-1h1a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-1V3a2 2 0 0 0-2-2zM4 3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2H4zm1 5a2 2 0 0 0-2 2v1H2a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v-1a2 2 0 0 0-2-2zm7 2v3a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1" />
+                    </ svg>
+                    <h3 class="equipment-name">Printer</h3>
+            </div>
+            <p class="equipment-description">Printer</p>
+            <div class="input-wrapper">
+                <input type="text" placeholder="Enter quantity" class="quantity-input" id="printer-quantity" />
+            </div>
+            <div class="input-wrapper">
+                <input type="text" placeholder="Enter age" class="age-input" id="printer-age" />
             </div>
         </div>
 
         <div class="equipment-row">
             <div class="equipment-info">
-                <div class="category-indicator telecom-indicator"></div>
-                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#3766A5"
-                    class="bi bi-device-ssd" viewBox="0 0 16 16">
+                <div class="category-indicator"></div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#3766A5" class="bi bi-device-ssd"
+                    viewBox="0 0 16 16">
                     <path
                         d="M4.75 4a.75.75 0 0 0-.75.75v3.5c0 .414.336.75.75.75h6.5a.75.75 0 0 0 .75-.75v-3.5a.75.75 0 0 0-.75-.75zM5 8V5h6v3zm0-5.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0m7 0a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0M4.5 11a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1m7 0a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1" />
                     <path
@@ -90,36 +129,44 @@
             </div>
             <p class="equipment-description">SSD Cards, RAM sticks, HDD, PCB, Power Supplies</p>
             <div class="input-wrapper">
-                <input type="text" placeholder="Enter (lbs/kgs)" class="quantity-input" id="MISC Comp-quantity" />
+                <input type="text" placeholder="Enter quantity" class="quantity-input" id="MISC Comp-quantity" />
             </div>
             <div class="input-wrapper">
-                <input type="text" placeholder="Enter age" class="age-input" id="telecom-age" />
+                <input type="text" placeholder="Enter age" class="age-input" id="MISC-age" />
             </div>
 
         </div>
 
         <div class="equipment-row">
             <div class="equipment-info">
-                <div class="category-indicator server-indicator"></div>
-                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#3766A5" class="bi bi-server"
+                <div class="category-indicator"></div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#3766A5" class="bi bi-display"
                     viewBox="0 0 16 16">
                     <path
-                        d="M1.333 2.667C1.333 1.194 4.318 0 8 0s6.667 1.194 6.667 2.667V4c0 1.473-2.985 2.667-6.667 2.667S1.333 5.473 1.333 4z" />
-                    <path
-                        d="M1.333 6.334v3C1.333 10.805 4.318 12 8 12s6.667-1.194 6.667-2.667V6.334a6.5 6.5 0 0 1-1.458.79C11.81 7.684 9.967 8 8 8s-3.809-.317-5.208-.876a6.5 6.5 0 0 1-1.458-.79z" />
-                    <path
-                        d="M14.667 11.668a6.5 6.5 0 0 1-1.458.789c-1.4.56-3.242.876-5.21.876-1.966 0-3.809-.316-5.208-.876a6.5 6.5 0 0 1-1.458-.79v1.666C1.333 14.806 4.318 16 8 16s6.667-1.194 6.667-2.667z" />
+                        d="M0 4s0-2 2-2h12s2 0 2 2v6s0 2-2 2h-4q0 1 .25 1.5H11a.5.5 0 0 1 0 1H5a.5.5 0 0 1 0-1h.75Q6 13 6 12H2s-2 0-2-2zm1.398-.855a.76.76 0 0 0-.254.302A1.5 1.5 0 0 0 1 4.01V10c0 .325.078.502.145.602q.105.156.302.254a1.5 1.5 0 0 0 .538.143L2.01 11H14c.325 0 .502-.078.602-.145a.76.76 0 0 0 .254-.302 1.5 1.5 0 0 0 .143-.538L15 9.99V4c0-.325-.078-.502-.145-.602a.76.76 0 0 0-.302-.254A1.5 1.5 0 0 0 13.99 3H2c-.325 0-.502.078-.602.145" />
                     </ svg>
-                    <h3 class="equipment-name">Servers</h3>
+                    <h3 class="equipment-name">Monitor</h3>
             </div>
-            <p class="equipment-description">Towers, Rackmount, or Blade</p>
+            <p class="equipment-description"></p>
             <div class="input-wrapper">
-                <input type="text" placeholder="Enter quantity" class="quantity-input" id=" server-quantity" />
+                <input type="text" placeholder="Enter quantity" class="quantity-input" id=" monitor-quantity" />
             </div>
             <div class="input-wrapper">
-                <input type="text" placeholder="Enter age" class="age-input" id=" server-age" />
+                <input type="text" placeholder="Enter age" class="age-input" id=" monitor-age" />
             </div>
         </div>
+
+        <div class="equipment-row">
+            <div class="equipment-info">
+                <h3 class="equipment-name">Total Estimated Weight : </h3>
+            </div>
+            <p class="equipment-description"></p>
+            <div class="input-wrapper">
+                <input type="text" placeholder="#Lb/Kg" id=" weight-amt" />
+            </div>
+        </div>
+
+
     </section>
 
     <section class="action-buttons">
@@ -149,8 +196,8 @@
                     d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z" />
                 <path fill-rule="evenodd"
                     d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z" />
-            </svg>
-            <span class="btn-text">Export</span>
+                </ svg>
+                <span class="btn-text">Export</span>
         </button>
 
         <button class="action-btn calculate-btn">
