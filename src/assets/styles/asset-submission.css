@@ -258,7 +258,7 @@ body {
 .quantity-input:focus,
 .age-input:focus {
     outline: none;
-    border-color: #3b82f6;
+    border-color: #0B1444;
     color: #1f2937;
 }
 
@@ -382,7 +382,11 @@ body {
     color: #374151;
 }
 .clear-btn:hover {
-    background-color: #e5e7eb;
+    background-color: #3766A5;
+    color: #fff;
+    svg {
+        stroke: #fff;
+    }
 }
 
 .import-btn {
@@ -392,7 +396,11 @@ body {
     color: #374151;
 }
 .import-btn:hover {
-    background-color: #2563eb;
+    background-color: #3766A5;
+    color: #fff;
+    svg {
+        stroke: #fff;
+    }
 }
 
 .generate-btn {
@@ -402,7 +410,9 @@ body {
     color: #374151;
 }
 .generate-btn:hover {
-    background-color: #059669;
+    background-color: #3766A5;
+    color: #fff;
+    
 }
 
 .calculate-btn {
@@ -412,7 +422,11 @@ body {
     color: #374151;
 }
 .calculate-btn:hover {
-    background-color: #374151;
+    background-color: #3766A5;
+    color: #fff;
+    svg {
+        stroke: #fff;
+    }
 }
 @media (max-width: 991px) {
     .calculate-btn {
