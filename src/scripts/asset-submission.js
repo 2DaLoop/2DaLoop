@@ -35,6 +35,7 @@ inputs.forEach(input => {
             input.style.borderColor = '#d1d5db';
         }
     });
+
 });
 // create a click event listener for the import button
 let importButton = document.querySelector('.import-btn');
