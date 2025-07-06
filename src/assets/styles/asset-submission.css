@@ -170,29 +170,6 @@ body {
     }
 }
 
-/* Category indicator dots */
-.category-indicator {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    flex-shrink: 0;
-}
-.desktop-indicator {
-    background-color: #3b82f6;
-}
-.laptop-indicator {
-    background-color: #10b981;
-}
-.network-indicator {
-    background-color: #f59e0b;
-}
-.telecom-indicator {
-    background-color: #ef4444;
-}
-.server-indicator {
-    background-color: #8b5cf6;
-}
-
 /* Equipment name and description */
 .equipment-name {
     color: #1f2937;
@@ -255,7 +232,7 @@ body {
 .quantity-input:focus,
 .age-input:focus {
     outline: none;
-    border-color: #3b82f6;
+    border-color: #0B1444;
     color: #1f2937;
 }
 
@@ -379,7 +356,11 @@ body {
     color: #374151;
 }
 .clear-btn:hover {
-    background-color: #e5e7eb;
+    background-color: #3766A5;
+    color: #fff;
+    svg {
+        stroke: #fff;
+    }
 }
 
 .import-btn {
@@ -389,17 +370,23 @@ body {
     color: #374151;
 }
 .import-btn:hover {
-    background-color: #2563eb;
+    background-color: #3766A5;
+    color: #fff;
+    svg {
+        stroke: #fff;
+    }
 }
 
-.generate-btn {
+.export-btn {
     width: 200px;
     border: 1px solid #d1d5db;
     background-color: #f3f4f6;
     color: #374151;
 }
-.generate-btn:hover {
-    background-color: #059669;
+.export-btn:hover {
+    background-color: #3766A5;
+    color: #fff;
+    
 }
 
 .calculate-btn {
@@ -409,7 +396,11 @@ body {
     color: #374151;
 }
 .calculate-btn:hover {
-    background-color: #374151;
+    background-color: #3766A5;
+    color: #fff;
+    svg {
+        stroke: #fff;
+    }
 }
 @media (max-width: 991px) {
     .calculate-btn {
@@ -434,7 +425,7 @@ body {
 @media (max-width: 640px) {
     .clear-btn,
     .import-btn,
-    .generate-btn,
+    .export-btn,
     .calculate-btn {
         width: 100%;
     }
