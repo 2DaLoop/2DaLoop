@@ -96,6 +96,7 @@ function loadCharts(noPackingData, packingData) {
             type: 'bar',
             height: 400
         },
+        colors: ['#feb019d9', '#feb019d9', '#FF2C2C', '#00e396d9'],
         plotOptions: {
             bar: {
                 horizontal: false,
@@ -158,6 +159,7 @@ function loadCharts(noPackingData, packingData) {
             type: 'bar',
             height: 400
         },
+        colors: ['#feb019d9', '#feb019d9', '#FF2C2C', '#00e396d9'],
         plotOptions: {
             bar: {
                 horizontal: false,
