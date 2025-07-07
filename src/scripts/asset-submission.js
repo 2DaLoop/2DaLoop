@@ -20,7 +20,7 @@ inputs.forEach(input => {
             value &&
             (
                 !/^\d*\.?\d+$/.test(value) ||
-                parseFloat(value) <= 0 ||
+                parseFloat(value) < 0 ||
                 (isAge && parseFloat(value) > 30)
             )
         ) {
@@ -83,6 +83,26 @@ if (calculateButton) {
     calculateButton.addEventListener('click', (e) => {
         e.preventDefault(); // Prevent default form submission
 
+        // Check for blank fields
+        let hasBlank = false;
+        inputs.forEach(input => {
+            if (input.value === '' || input.value === null) {
+                hasBlank = true;
+            }
+        });
+
+        if (hasBlank && typeof Swal !== "undefined") {
+            Swal.fire({
+                icon: 'warning',
+                title: 'Blank Fields Detected',
+                text: 'Please fill all intentional blank fields with "0" before calculating.',
+                confirmButtonText: 'OK',
+                confirmButtonColor: '#3085d6'
+            });
+            return; // Stop further execution until fields are filled
+        }
+
+        // If all fields are filled, show confirmation
         if (typeof Swal !== "undefined") {
             Swal.fire({
                 icon: 'question',
@@ -96,7 +116,7 @@ if (calculateButton) {
             }).then((result) => {
                 if (result.isConfirmed) {
                     // Proceed with calculation logic here
-                    // calculateResults();
+                    // calculateResults();  
                 }
                 // If cancelled, do nothing so user can edit fields
             });
