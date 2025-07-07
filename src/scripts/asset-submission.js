@@ -9,16 +9,19 @@ btnclear.addEventListener('click', () => {
     });
 });
 
-// SweetAlert2 validation: only allow positive numbers (integers or decimals) in inputs, and limit to 30 years
+// SweetAlert2 validation: only allow positive numbers (integers or decimals) in inputs,
+// and limit to 30 years ONLY for age fields
 inputs.forEach(input => {
     input.addEventListener('input', () => {
-        // If input is not a positive number or greater than 30, show SweetAlert2 and clear the field
+        const isAge = input.classList.contains('age-input');
+        const value = input.value;
+
         if (
-            input.value &&
+            value &&
             (
-                !/^\d*\.?\d+$/.test(input.value) ||
-                parseFloat(input.value) <= 0 ||
-                parseFloat(input.value) > 30
+                !/^\d*\.?\d+$/.test(value) ||
+                parseFloat(value) < 0 ||
+                (isAge && parseFloat(value) > 30)
             )
         ) {
             input.style.borderColor = '#ef4444';
@@ -26,7 +29,9 @@ inputs.forEach(input => {
                 Swal.fire({
                     icon: 'error',
                     title: 'Invalid Input',
-                    text: 'Please enter a positive number not greater than 30.',
+                    text: isAge
+                        ? 'Please enter a positive whole number not greater than 30 for age.'
+                        : 'Please enter a positive whole number only.',
                     confirmButtonColor: '#3085d6'
                 });
             }
@@ -72,29 +77,55 @@ importButton.addEventListener('click', () => {
     fileInput.click();
 });
 
-// create a click event listener for the export button
-let exportButton = document.querySelector('.export-btn');
-exportButton.addEventListener('click', () => {
-    // create a JSON object from the inputs
-    let data = [];
-    inputs.forEach(input => {
-        if (input.value) {
-            data.push({
-                id: input.id,
-                value: input.value
+// create a click event listener for the calculate button to confirm all information is correct
+let calculateButton = document.querySelector('.calculate-btn');
+if (calculateButton) {
+    calculateButton.addEventListener('click', (e) => {
+        e.preventDefault(); // Prevent default form submission
+
+        // Check for blank fields
+        let hasBlank = false;
+        inputs.forEach(input => {
+            if (input.value === '' || input.value === null) {
+                hasBlank = true;
+            }
+        });
+
+        if (hasBlank && typeof Swal !== "undefined") {
+            Swal.fire({
+                icon: 'warning',
+                title: 'Blank Fields Detected',
+                text: 'Please fill all intentional blank fields with "0" before calculating.',
+                confirmButtonText: 'OK',
+                confirmButtonColor: '#3085d6'
             });
+            return; // Stop further execution until fields are filled
+        }
+
+        // If all fields are filled, show confirmation
+        if (typeof Swal !== "undefined") {
+            Swal.fire({
+                icon: 'question',
+                title: 'Confirm Submission',
+                text: 'Are you sure all information is correct before calculating?',
+                showCancelButton: true,
+                confirmButtonText: 'Continue',
+                cancelButtonText: 'Edit',
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    // Proceed with calculation logic here
+                    // calculateResults();  
+                }
+                // If cancelled, do nothing so user can edit fields
+            });
+        } else {
+            // Proceed with calculation logic here if Swal is not available
+            // calculateResults();
         }
     });
+}
 
-    // create a blob from the JSON object
-    let blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
-    let url = URL.createObjectURL(blob);
 
-    // create a link element to download the blob
-    let a = document.createElement('a');
-    a.href = url;
-    a.download = 'asset-data.json';
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-});
+
