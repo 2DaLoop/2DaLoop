@@ -1,3 +1,7 @@
+import ApexCharts from 'apexcharts';
+import { supabase } from '../supabase/supabaseClient.js';
+import { navigate } from '../utils/pageRouter.js';
+
 // clear button functionality for asset submission page
 let btnclear = document.querySelector('.clear-btn');
 let inputs = document.querySelectorAll('.quantity-input, .age-input');
@@ -9,8 +13,7 @@ btnclear.addEventListener('click', () => {
     });
 });
 
-// SweetAlert2 validation: only allow positive numbers (integers or decimals) in inputs,
-// and limit to 30 years ONLY for age fields
+// input validation, only positive integers and 0-30 for age
 inputs.forEach(input => {
     input.addEventListener('input', () => {
         const isAge = input.classList.contains('age-input');
@@ -30,8 +33,8 @@ inputs.forEach(input => {
                     icon: 'error',
                     title: 'Invalid Input',
                     text: isAge
-                        ? 'Please enter a positive whole number not greater than 30 for age.'
-                        : 'Please enter a positive whole number only.',
+                        ? 'Age must be a positive integer below 30.'
+                        : 'Please enter a positive integer.',
                     confirmButtonColor: '#3085d6'
                 });
             }
@@ -40,92 +43,370 @@ inputs.forEach(input => {
             input.style.borderColor = '#d1d5db';
         }
     });
-
 });
+
 // create a click event listener for the import button
 let importButton = document.querySelector('.import-btn');
 importButton.addEventListener('click', () => {
+    // TODO: implement import functionality for csv files
+
     // create a file input element
-    let fileInput = document.createElement('input');
-    fileInput.type = 'file';
-    // accept csv files too
-    fileInput.accept = '.json, .csv'; // accept only JSON and CSV files
+    // let fileInput = document.createElement('input');
+    // fileInput.type = 'file';
+    // // accept csv files too
+    // fileInput.accept = '.json, .csv, .txt'; // accept only JSON and CSV files
 
-    // create a change event listener for the file input
-    fileInput.addEventListener('change', (event) => {
-        let file = event.target.files[0];
-        if (file) {
-            let reader = new FileReader();
-            reader.onload = function(e) {
-                try {
-                    let data = JSON.parse(e.target.result);
-                    data.forEach(item => {
-                        let quantityInput = document.getElementById(item.id);
-                        if (quantityInput) {
-                            quantityInput.value = item.value;
-                        }
-                    });
-                } catch (error) {
-                    console.error('Error parsing JSON:', error);
-                }
-            };
-            reader.readAsText(file);
-        }
-    });
+    // const file = e.target.files[0];
+    // if (!file) return;
 
-    // trigger the file input click
-    fileInput.click();
+    // const fileType = file.name.split('.').pop().toLowerCase();
+
+    // const reader = new FileReader();
+
+    // reader.onload = function (event) {
+    //     let data = [];
+
+    //     if (fileType === 'csv') {
+    //         const text = event.target.result;
+    //         data = parseCSV(text);
+    //     } else {
+    //         alert("Unsupported file type.");
+    //         return;
+    //     }
+
+    //     const structured = restructureData(data);
+    //     fillFormFromData(structured);
+    // };
+
+    // if (fileType === 'csv') {
+    //     reader.readAsText(file);
+    // }
+
+    // // create a change event listener for the file input
+    // fileInput.addEventListener('change', (event) => {
+    //     let file = event.target.files[0];
+    //     if (file) {
+    //         let reader = new FileReader();
+    //         reader.onload = function(e) {
+    //             try {
+    //                 let data = JSON.parse(e.target.result);
+    //                 data.forEach(item => {
+    //                     let quantityInput = document.getElementById(item.id);
+    //                     if (quantityInput) {
+    //                         quantityInput.value = item.value;
+    //                     }
+    //                 });
+    //             } catch (error) {
+    //                 console.error('Error parsing JSON:', error);
+    //             }
+    //         };
+    //         reader.readAsText(file);
+    //     }
+    // });
+
+    // // trigger the file input click
+    // fileInput.click();
 });
 
-// create a click event listener for the calculate button to confirm all information is correct
-let calculateButton = document.querySelector('.calculate-btn');
-if (calculateButton) {
-    calculateButton.addEventListener('click', (e) => {
-        e.preventDefault(); // Prevent default form submission
-
-        // Check for blank fields
-        let hasBlank = false;
-        inputs.forEach(input => {
-            if (input.value === '' || input.value === null) {
-                hasBlank = true;
-            }
-        });
-
-        if (hasBlank && typeof Swal !== "undefined") {
-            Swal.fire({
-                icon: 'warning',
-                title: 'Blank Fields Detected',
-                text: 'Please fill all intentional blank fields with "0" before calculating.',
-                confirmButtonText: 'OK',
-                confirmButtonColor: '#3085d6'
+// create a click event listener for the export button
+let exportButton = document.querySelector('.export-btn');
+exportButton.addEventListener('click', () => {
+    // create a JSON object from the inputs
+    let data = [];
+    inputs.forEach(input => {
+        if (input.value) {
+            data.push({
+                id: input.id,
+                value: input.value
             });
-            return; // Stop further execution until fields are filled
-        }
-
-        // If all fields are filled, show confirmation
-        if (typeof Swal !== "undefined") {
-            Swal.fire({
-                icon: 'question',
-                title: 'Confirm Submission',
-                text: 'Are you sure all information is correct before calculating?',
-                showCancelButton: true,
-                confirmButtonText: 'Continue',
-                cancelButtonText: 'Edit',
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33'
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    // Proceed with calculation logic here
-                    // calculateResults();  
-                }
-                // If cancelled, do nothing so user can edit fields
-            });
-        } else {
-            // Proceed with calculation logic here if Swal is not available
-            // calculateResults();
         }
     });
+
+    // create a blob from the JSON object
+    let blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+    let url = URL.createObjectURL(blob);
+
+    // create a link element to download the blob
+    let a = document.createElement('a');
+    a.href = url;
+    a.download = 'asset-data.json';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+});
+
+// input validation and submit asset data to calculator
+document.querySelector('.calculate-btn').addEventListener('click', async () => {
+    // get all data from form
+    const quantityInputs = document.querySelectorAll('.quantity-input');
+    const ageInputs = document.querySelectorAll('.age-input');
+
+    // input validation
+    let hasAnyInput = false;
+    let hasMismatch = false;
+
+    for (let i = 0; i < quantityInputs.length; i++) {
+        const qty = quantityInputs[i].value.trim();
+        const age = ageInputs[i].value.trim();
+
+        const qtyFilled = qty !== '' && qty !== '0';
+        const ageFilled = age !== '' && age !== '0';
+
+        if (qtyFilled || ageFilled) {
+            hasAnyInput = true;
+        }
+
+        if ((qtyFilled && !ageFilled) || (!qtyFilled && ageFilled)) {
+            hasMismatch = true;
+            break;
+        }
+    }
+
+    // Check for no inputs at all
+    if (!hasAnyInput && typeof Swal !== "undefined") {
+        await Swal.fire({
+            icon: 'warning',
+            title: 'No Data Detected',
+            text: 'Please enter quantities and ages before calculating.',
+            confirmButtonText: 'OK',
+            confirmButtonColor: '#3085d6'
+        });
+        return;
+    }
+
+    // Check for mismatched inputs
+    if (hasMismatch && typeof Swal !== "undefined") {
+        await Swal.fire({
+            icon: 'warning',
+            title: 'Empty Field(s)',
+            text: 'Each quantity field with a value must have a corresponding age field filled (and vice versa).',
+            confirmButtonText: 'OK',
+            confirmButtonColor: '#3085d6'
+        });
+        return;
+    }
+
+    // if all input is valid
+    if (typeof Swal !== "undefined") {
+        Swal.fire({
+            icon: 'question',
+            title: 'Confirm Submission',
+            text: 'Are you sure all information is correct before calculating?',
+            showCancelButton: true,
+            confirmButtonText: 'Continue',
+            cancelButtonText: 'Edit',
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33'
+        }).then(async (result) => {
+            if (result.isConfirmed) {
+                // show loader and hide inventory form
+                document.querySelector('.inventory-container').classList.add('hidden');
+                document.querySelector('.loader').classList.remove('hidden');
+            
+                // get results from itad calculator
+                const noPackingResponse = await submitAssetsNoPacking(quantityInputs, ageInputs);
+                const packingResponse = await submitAssetsPackingServices(quantityInputs, ageInputs);
+            
+                // convert strings to numbers
+                const noPackingData = convertToNums(noPackingResponse.data);
+                const packingData = convertToNums(packingResponse.data);
+            
+                // store in supabase and load charts
+                storeData(quantityInputs, ageInputs);
+                loadChart(noPackingData, packingData);
+            }
+        });
+    }
+})
+
+// submit to esg calculator and go to dashbaord
+document.querySelector('#next-btn').addEventListener('click', async () => {
+    const quantityInputs = document.querySelectorAll('.quantity-input');
+
+    const esgResults = await submitESGAssets(quantityInputs);
+    console.log(esgResults);
+
+    // store to be used on dashboard page
+    sessionStorage.setItem('esgResults', JSON.stringify({
+        results: esgResults
+    }));
+
+    navigate('#/dashboard')
+})
+
+async function submitAssetsNoPacking(quantityInputs, ageInputs) {
+    // calculate totals for no packing services
+    return await fetch('http://localhost:3000/itad/no_packing', {
+        method: 'POST',
+        headers: { "Content-Type":"application/json" },
+        body: JSON.stringify({
+            inputValues: {
+                desktop_pc_quantity: quantityInputs[0].value || 0,
+                laptop_pc_quantity: quantityInputs[1].value || 0,
+                network_device_quantity: quantityInputs[5].value || 0,
+                telecom_quantity: quantityInputs[3].value || 0,
+                server_quantity: 0,
+                desktop_pc_age: ageInputs[0].value || 0,
+                laptop_pc_age: ageInputs[1].value || 0,
+                network_device_age: ageInputs[5].value || 0,
+                telecom_age: ageInputs[3].value || 0,
+                server_age: 0
+            }
+        })
+    })
+    .then(response => response.json())
 }
 
+async function submitAssetsPackingServices(quantityInputs, ageInputs) {
+    // calculate totals with packing services
+    return await fetch('http://localhost:3000/itad/packing_services', {
+        method: 'POST',
+        headers: { "Content-Type":"application/json" },
+        body: JSON.stringify({
+            inputValues: {
+                desktop_pc_quantity: quantityInputs[0].value || 0,
+                laptop_pc_quantity: quantityInputs[1].value || 0,
+                network_device_quantity: quantityInputs[5].value || 0,
+                telecom_quantity: quantityInputs[3].value || 0,
+                server_quantity: 0,
+                desktop_pc_age: ageInputs[0].value || 0,
+                laptop_pc_age: ageInputs[1].value || 0,
+                network_device_age: ageInputs[5].value || 0,
+                telecom_age: ageInputs[3].value || 0,
+                server_age: 0
+            }
+        })
+    })
+    .then(response => response.json())
+}
 
+async function submitESGAssets(quantityInputs) {
+    // use puppeteer to calculate totals
+    return await fetch('http://localhost:3000/esg/calculate', {
+        method: 'POST',
+        headers: { "Content-Type":"application/json" },
+        body: JSON.stringify({
+            inputValues: {
+                Laptops: quantityInputs[1].value || 0,
+                Servers: 0,
+                Desktops: quantityInputs[0].value || 0,
+                Battery: quantityInputs[2].value || 0,
+                Mobile: quantityInputs[3].value || 0,
+                Printers: quantityInputs[4].value || 0,
+                Storage: quantityInputs[5].value || 0,
+                Monitors: quantityInputs[6].value || 0
+            }
+        })
+    })
+    .then(response => response.json())
+}
 
+async function storeData(quantityInputs, ageInputs) {
+    // store in supabase
+    const { error } = await supabase
+        .from('tblAssetSubmission')
+        .insert({
+            desktop_quantity: quantityInputs[0].value || 0,
+            laptop_quantity: quantityInputs[1].value || 0,
+            network_device_quantity: quantityInputs[2].value || 0,
+            telecom_quantity: quantityInputs[3].value || 0,
+            server_quantity: quantityInputs[4].value || 0,
+            desktop_age: ageInputs[0].value || 0,
+            laptop_age: ageInputs[1].value || 0,
+            network_device_age: ageInputs[2].value || 0,
+            telecom_age: ageInputs[3].value || 0,
+            server_age: ageInputs[4].value || 0
+        })
+}
+
+function loadChart(noPackingData, packingData) {
+    document.querySelector('.loader').classList.add('hidden');
+    document.getElementById('comparison-chart').classList.remove('hidden');
+
+    const options = {
+        chart: {
+            type: 'bar',
+            height: 500
+        },
+        plotOptions: {
+            bar: {
+                horizontal: false,
+                distributed: true,
+            }
+        },
+        dataLabels: {
+            formatter: function (val) {
+                return val < 0 ? `-$${Math.abs(val).toLocaleString()}` : `$${val.toLocaleString()}`;
+            },
+        },
+        series: [{
+            name: 'Packing Services',
+            data: [
+                Number(packingData.total_service_fees) || 0,
+                Number(packingData.total_value_recovery) || 0,
+                -(Number(packingData.total_pickup_cost)) || 0,
+                Number(packingData.net_financial_settlement) || 0
+            ]}, {
+            name: 'No Packing Services',
+            data: [
+                Number(noPackingData.total_service_fees) || 0,
+                Number(noPackingData.total_value_recovery) || 0,
+                -(Number(noPackingData.total_pickup_cost)) || 0,
+                Number(noPackingData.net_financial_settlement) || 0
+            ]
+        }],
+        title: {
+            text: 'Standard Burden Shift ITAD Process vs 2DaLoop Reintegration Potential',
+            align: 'center',
+            style: {
+                fontSize: '20px'
+            }
+        },
+        xaxis: {
+            categories: ['Total Service Fees', "Total Value Recovery", "Total Pickup Cost", "Net Financial Settlement"],
+            title: {
+                text: 'Revenue and Costs',
+                style: {
+                    fontSize: "16px"
+                }
+            },
+        },
+        yaxis: {
+            title: {
+                text: 'Price ($)',
+                style: {
+                    fontSize: "16px"
+                }
+            },
+            labels: {
+                formatter: function(val) {
+                    return val < 0 ? `-$${Math.abs(val).toLocaleString()}` : `$${val.toLocaleString()}`;
+                },
+                style: {
+                    fontSize: '16px',
+                }
+            }
+        },
+        legend: {
+            show: false
+        }
+    };
+
+    const chart = new ApexCharts(document.getElementById('grouped-bar-chart'), options);
+
+    chart.render();
+}
+
+function convertToNums(results) {
+    // convert results to numbers
+    const data = {};
+    for (const key in results) {
+        if (results.hasOwnProperty(key)) {
+            let value = results[key];
+            // remove $, commas, and (), then convert to number
+            value = Number(value.replace(/[$,()]/g, ''));
+            data[key] = isNaN(value) ? 0 : value; // handle NaN values
+        }
+    }
+    return data;
+}
