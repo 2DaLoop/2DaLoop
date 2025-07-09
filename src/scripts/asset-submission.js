@@ -1,5 +1,6 @@
 import ApexCharts from 'apexcharts';
 import { supabase } from '../supabase/supabaseClient.js';
+import { navigate } from '../utils/pageRouter.js';
 
 // clear button functionality for asset submission page
 let btnclear = document.querySelector('.clear-btn');
@@ -43,36 +44,64 @@ inputs.forEach(input => {
 // create a click event listener for the import button
 let importButton = document.querySelector('.import-btn');
 importButton.addEventListener('click', () => {
+    // TODO: implement import functionality for csv files
+
     // create a file input element
-    let fileInput = document.createElement('input');
-    fileInput.type = 'file';
-    // accept csv files too
-    fileInput.accept = '.json, .csv'; // accept only JSON and CSV files
+    // let fileInput = document.createElement('input');
+    // fileInput.type = 'file';
+    // // accept csv files too
+    // fileInput.accept = '.json, .csv, .txt'; // accept only JSON and CSV files
 
-    // create a change event listener for the file input
-    fileInput.addEventListener('change', (event) => {
-        let file = event.target.files[0];
-        if (file) {
-            let reader = new FileReader();
-            reader.onload = function(e) {
-                try {
-                    let data = JSON.parse(e.target.result);
-                    data.forEach(item => {
-                        let quantityInput = document.getElementById(item.id);
-                        if (quantityInput) {
-                            quantityInput.value = item.value;
-                        }
-                    });
-                } catch (error) {
-                    console.error('Error parsing JSON:', error);
-                }
-            };
-            reader.readAsText(file);
-        }
-    });
+    // const file = e.target.files[0];
+    // if (!file) return;
 
-    // trigger the file input click
-    fileInput.click();
+    // const fileType = file.name.split('.').pop().toLowerCase();
+
+    // const reader = new FileReader();
+
+    // reader.onload = function (event) {
+    //     let data = [];
+
+    //     if (fileType === 'csv') {
+    //         const text = event.target.result;
+    //         data = parseCSV(text);
+    //     } else {
+    //         alert("Unsupported file type.");
+    //         return;
+    //     }
+
+    //     const structured = restructureData(data);
+    //     fillFormFromData(structured);
+    // };
+
+    // if (fileType === 'csv') {
+    //     reader.readAsText(file);
+    // }
+
+    // // create a change event listener for the file input
+    // fileInput.addEventListener('change', (event) => {
+    //     let file = event.target.files[0];
+    //     if (file) {
+    //         let reader = new FileReader();
+    //         reader.onload = function(e) {
+    //             try {
+    //                 let data = JSON.parse(e.target.result);
+    //                 data.forEach(item => {
+    //                     let quantityInput = document.getElementById(item.id);
+    //                     if (quantityInput) {
+    //                         quantityInput.value = item.value;
+    //                     }
+    //                 });
+    //             } catch (error) {
+    //                 console.error('Error parsing JSON:', error);
+    //             }
+    //         };
+    //         reader.readAsText(file);
+    //     }
+    // });
+
+    // // trigger the file input click
+    // fileInput.click();
 });
 
 // create a click event listener for the export button
@@ -102,7 +131,7 @@ exportButton.addEventListener('click', () => {
     document.body.removeChild(a);
 });
 
-// TODO: make alert if there is an input for quantity but not age, and vice versa
+// TODO: make alert if there is an input for quantity but not age, and vice versa. and if no inputs are filled
 // TODO: fix so the new category fields correspond to the ITAD calculator correctly
 document.querySelector('.calculate-btn').addEventListener('click', async () => {
     // get all data from form
@@ -123,11 +152,26 @@ document.querySelector('.calculate-btn').addEventListener('click', async () => {
 
     // store in supabase and load charts
     storeData(quantityInputs, ageInputs);
-    loadCharts(noPackingData, packingData);
+    loadChart(noPackingData, packingData);
+})
+
+// submit to esg calculator and go to dashbaord
+document.querySelector('#next-btn').addEventListener('click', async () => {
+    const quantityInputs = document.querySelectorAll('.quantity-input');
+
+    const esgResults = await submitESGAssets(quantityInputs);
+    console.log(esgResults);
+
+    // store to be used on dashboard page
+    sessionStorage.setItem('esgResults', JSON.stringify({
+        results: esgResults
+    }));
+
+    navigate('#/dashboard')
 })
 
 async function submitAssetsNoPacking(quantityInputs, ageInputs) {
-    // use puppeteer to calculate totals
+    // calculate totals for no packing services
     return await fetch('http://localhost:3000/itad/no_packing', {
         method: 'POST',
         headers: { "Content-Type":"application/json" },
@@ -135,14 +179,14 @@ async function submitAssetsNoPacking(quantityInputs, ageInputs) {
             inputValues: {
                 desktop_pc_quantity: quantityInputs[0].value || 0,
                 laptop_pc_quantity: quantityInputs[1].value || 0,
-                network_device_quantity: quantityInputs[2].value || 0,
+                network_device_quantity: quantityInputs[5].value || 0,
                 telecom_quantity: quantityInputs[3].value || 0,
-                server_quantity: quantityInputs[4].value || 0,
+                server_quantity: 0,
                 desktop_pc_age: ageInputs[0].value || 0,
                 laptop_pc_age: ageInputs[1].value || 0,
-                network_device_age: ageInputs[2].value || 0,
+                network_device_age: ageInputs[5].value || 0,
                 telecom_age: ageInputs[3].value || 0,
-                server_age: ageInputs[4].value || 0
+                server_age: 0
             }
         })
     })
@@ -150,7 +194,7 @@ async function submitAssetsNoPacking(quantityInputs, ageInputs) {
 }
 
 async function submitAssetsPackingServices(quantityInputs, ageInputs) {
-    // use puppeteer to calculate totals
+    // calculate totals with packing services
     return await fetch('http://localhost:3000/itad/packing_services', {
         method: 'POST',
         headers: { "Content-Type":"application/json" },
@@ -158,14 +202,35 @@ async function submitAssetsPackingServices(quantityInputs, ageInputs) {
             inputValues: {
                 desktop_pc_quantity: quantityInputs[0].value || 0,
                 laptop_pc_quantity: quantityInputs[1].value || 0,
-                network_device_quantity: quantityInputs[2].value || 0,
+                network_device_quantity: quantityInputs[5].value || 0,
                 telecom_quantity: quantityInputs[3].value || 0,
-                server_quantity: quantityInputs[4].value || 0,
+                server_quantity: 0,
                 desktop_pc_age: ageInputs[0].value || 0,
                 laptop_pc_age: ageInputs[1].value || 0,
-                network_device_age: ageInputs[2].value || 0,
+                network_device_age: ageInputs[5].value || 0,
                 telecom_age: ageInputs[3].value || 0,
-                server_age: ageInputs[4].value || 0
+                server_age: 0
+            }
+        })
+    })
+    .then(response => response.json())
+}
+
+async function submitESGAssets(quantityInputs) {
+    // use puppeteer to calculate totals
+    return await fetch('http://localhost:3000/esg/calculate', {
+        method: 'POST',
+        headers: { "Content-Type":"application/json" },
+        body: JSON.stringify({
+            inputValues: {
+                Laptops: quantityInputs[1].value || 0,
+                Servers: 0,
+                Desktops: quantityInputs[0].value || 0,
+                Battery: quantityInputs[2].value || 0,
+                Mobile: quantityInputs[3].value || 0,
+                Printers: quantityInputs[4].value || 0,
+                Storage: quantityInputs[5].value || 0,
+                Monitors: quantityInputs[6].value || 0
             }
         })
     })
@@ -190,79 +255,17 @@ async function storeData(quantityInputs, ageInputs) {
         })
 }
 
-function loadCharts(noPackingData, packingData) {
+// TODO: change comparison view to "Standard ITAD "
+
+function loadChart(noPackingData, packingData) {
     document.querySelector('.loader').classList.add('hidden');
-    document.getElementById('comparison-charts').classList.remove('hidden');
+    document.getElementById('comparison-chart').classList.remove('hidden');
 
-    const noPackingOptions = {
+    const options = {
         chart: {
             type: 'bar',
-            height: 400
+            height: 500
         },
-        colors: ['#feb019d9', '#feb019d9', '#FF2C2C', '#00e396d9'],
-        plotOptions: {
-            bar: {
-                horizontal: false,
-                distributed: true,
-            }
-        },
-        dataLabels: {
-            formatter: function (val) {
-                return val< 0 ? `-$${Math.abs(val).toLocaleString()}` : `$${val.toLocaleString()}`;
-            },
-        },
-        series: [{
-            name: 'Price',
-            data: [
-                Number(noPackingData.total_service_fees) || 0,
-                Number(noPackingData.total_value_recovery) || 0,
-                Number(noPackingData.total_pickup_cost) || 0,
-                Number(noPackingData.net_financial_settlement) || 0
-            ]
-        }],
-        title: {
-            text: 'No Packing Services',
-            align: 'center',
-            style: {
-                fontSize: '20px'
-            }
-        },
-        xaxis: {
-            categories: ['Total Service Fees', "Total Value Recovery", "Total Pickup Cost", "Net Financial Settlement"],
-            title: {
-                text: 'Revenue and Costs',
-                style: {
-                    fontSize: "16px"
-                }
-            },
-        },
-        yaxis: {
-            title: {
-                text: 'Price ($)',
-                style: {
-                    fontSize: "16px"
-                }
-            },
-            labels: {
-                formatter: function(val) {
-                    return val < 0 ? `-$${Math.abs(val).toLocaleString()}` : `$${val.toLocaleString()}`;
-                },
-                style: {
-                    fontSize: '16px',
-                }
-            }
-        },
-        legend: {
-            show: false
-        }
-    };
-
-    const packingOptions = {
-        chart: {
-            type: 'bar',
-            height: 400
-        },
-        colors: ['#feb019d9', '#feb019d9', '#FF2C2C', '#00e396d9'],
         plotOptions: {
             bar: {
                 horizontal: false,
@@ -275,16 +278,23 @@ function loadCharts(noPackingData, packingData) {
             },
         },
         series: [{
-            name: 'Price',
+            name: 'Packing Services',
             data: [
                 Number(packingData.total_service_fees) || 0,
                 Number(packingData.total_value_recovery) || 0,
-                Number(packingData.total_pickup_cost) || 0,
+                -(Number(packingData.total_pickup_cost)) || 0,
                 Number(packingData.net_financial_settlement) || 0
+            ]}, {
+            name: 'No Packing Services',
+            data: [
+                Number(noPackingData.total_service_fees) || 0,
+                Number(noPackingData.total_value_recovery) || 0,
+                -(Number(noPackingData.total_pickup_cost)) || 0,
+                Number(noPackingData.net_financial_settlement) || 0
             ]
         }],
         title: {
-            text: 'Packing Services',
+            text: 'Standard Burden Shift ITAD Process vs 2DaLoop Reintegration Potential',
             align: 'center',
             style: {
                 fontSize: '20px'
@@ -320,11 +330,9 @@ function loadCharts(noPackingData, packingData) {
         }
     };
 
-    const noPackingChart = new ApexCharts(document.getElementById('no-packing-chart'), noPackingOptions);
-    const packingChart = new ApexCharts(document.getElementById('packing-chart'), packingOptions);
+    const chart = new ApexCharts(document.getElementById('grouped-bar-chart'), options);
 
-    noPackingChart.render();
-    packingChart.render();
+    chart.render();
 }
 
 function convertToNums(results) {
