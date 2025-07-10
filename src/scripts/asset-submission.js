@@ -307,15 +307,19 @@ async function storeData(quantityInputs, ageInputs) {
         .from('tblAssetSubmission')
         .insert({
             desktop_quantity: quantityInputs[0].value || 0,
-            laptop_quantity: quantityInputs[1].value || 0,
-            network_device_quantity: quantityInputs[2].value || 0,
-            telecom_quantity: quantityInputs[3].value || 0,
-            server_quantity: quantityInputs[4].value || 0,
             desktop_age: ageInputs[0].value || 0,
+            laptop_quantity: quantityInputs[1].value || 0,
             laptop_age: ageInputs[1].value || 0,
-            network_device_age: ageInputs[2].value || 0,
-            telecom_age: ageInputs[3].value || 0,
-            server_age: ageInputs[4].value || 0
+            battery_backup_quantity: quantityInputs[2].value || 0,
+            battery_backup_age: ageInputs[2].value || 0,
+            mobile_device_quantity: quantityInputs[3].value || 0,
+            mobile_device_age: ageInputs[3].value || 0,
+            printer_quantity: quantityInputs[4].value || 0,
+            printer_age: ageInputs[4].value || 0,
+            misc_comp_quantity: quantityInputs[5].value || 0,
+            misc_comp_age: ageInputs[5].value || 0,
+            monitor_quantity: quantityInputs[6].value || 0,
+            monitor_age: ageInputs[6].value || 0
         })
 }
 
@@ -393,7 +397,6 @@ function loadChart(noPackingData, packingData) {
     };
 
     const chart = new ApexCharts(document.getElementById('grouped-bar-chart'), options);
-
     chart.render();
 }
 
