@@ -202,15 +202,15 @@ document.querySelector('.calculate-btn').addEventListener('click', async () => {
                 // show loader and hide inventory form
                 document.querySelector('.inventory-container').classList.add('hidden');
                 document.querySelector('.loader').classList.remove('hidden');
-            
+
                 // get results from itad calculator
                 const noPackingResponse = await submitAssetsNoPacking(quantityInputs, ageInputs);
                 const packingResponse = await submitAssetsPackingServices(quantityInputs, ageInputs);
-            
+
                 // convert strings to numbers
                 const noPackingData = convertToNums(noPackingResponse.data);
                 const packingData = convertToNums(packingResponse.data);
-            
+
                 // store in supabase and load charts
                 storeData(quantityInputs, ageInputs);
                 loadChart(noPackingData, packingData);
@@ -332,10 +332,10 @@ function loadChart(noPackingData, packingData) {
             type: 'bar',
             height: 500
         },
+        colors: ['#00A721', '#3766a5'],
         plotOptions: {
             bar: {
                 horizontal: false,
-                distributed: true,
             }
         },
         dataLabels: {
@@ -344,16 +344,14 @@ function loadChart(noPackingData, packingData) {
             },
         },
         series: [{
-            name: 'Packing Services',
+            name: 'Standard Burden Shift',
             data: [
-                Number(packingData.total_service_fees) || 0,
                 Number(packingData.total_value_recovery) || 0,
                 -(Number(packingData.total_pickup_cost)) || 0,
                 Number(packingData.net_financial_settlement) || 0
             ]}, {
-            name: 'No Packing Services',
+            name: '2DaLoop Potential',
             data: [
-                Number(noPackingData.total_service_fees) || 0,
                 Number(noPackingData.total_value_recovery) || 0,
                 -(Number(noPackingData.total_pickup_cost)) || 0,
                 Number(noPackingData.net_financial_settlement) || 0
@@ -367,7 +365,7 @@ function loadChart(noPackingData, packingData) {
             }
         },
         xaxis: {
-            categories: ['Total Service Fees', "Total Value Recovery", "Total Pickup Cost", "Net Financial Settlement"],
+            categories: ["Total Value Recovery", "Total Pickup Cost", "Net Financial Settlement"],
             title: {
                 text: 'Revenue and Costs',
                 style: {
@@ -392,7 +390,10 @@ function loadChart(noPackingData, packingData) {
             }
         },
         legend: {
-            show: false
+            show: true,
+            position: 'top',
+            horizontalAlign: 'left',
+            offsetY: -20
         }
     };
 
