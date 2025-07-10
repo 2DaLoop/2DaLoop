@@ -462,3 +462,17 @@ body {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
+
+.disclaimer-box {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    padding: 15px;
+    font-size: 0.9rem;
+    color: #555;
+    margin-top: 50px;
+}
+
+.disclaimer-box p {
+    margin-bottom: -25px;
+}
