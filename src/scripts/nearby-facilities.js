@@ -17,56 +17,58 @@ if (searchedLocation) {
 
 // initialize map centered on the U.S.
 async function initMap() {
-    map = new Map(document.getElementById("map"), {
-        center: centerPosition,
-        zoom: 4,
-        mapId: "e8f578253d8c676318b940c1-",
-        mapTypeControlOptions: {
-            style: google.maps.MapTypeControlStyle.DEFAULT,
-            position: google.maps.ControlPosition.TOP_RIGHT,
-        },
-    });
-
-    // create search input, 'Recyle', and 'Repair' button options
-    const optionsDiv = document.createElement("div");
-    optionsDiv.classList.add("card", "card-body", "gap-2");
-
-    const placeAutocomplete = new google.maps.places.PlaceAutocompleteElement();
-    placeAutocomplete.id = "place-autocomplete-input";
-
-    const recycleBtn = document.createElement("button");
-    recycleBtn.textContent = "Recycle";
-    recycleBtn.type = "button";
-    recycleBtn.classList.add("btn", "btn-light");
-    // show navy blue icon of recycling symbol in button
-
-
-    const repairBtn = document.createElement("button");
-    repairBtn.textContent = "Repair";
-    repairBtn.type = "button";
-    repairBtn.classList.add("btn", "btn-light");
-
-
-    optionsDiv.append(placeAutocomplete, repairBtn, recycleBtn);
-    map.controls[google.maps.ControlPosition.TOP_LEFT].push(optionsDiv);
-
-    // listeners for search input and filter options
-    placeAutocomplete.addEventListener("gmp-select", async ({ placePrediction }) => {
-        const place = placePrediction.toPlace();
-        await place.fetchFields({ fields: ['location'] });
-
-        searchedLocation = place.location;
-        console.log(searchedLocation)
-        await searchText();
-    });
-
-    recycleBtn.addEventListener("click", async () => {
-        await searchGeoJson();
-    });
-
-    repairBtn.addEventListener("click", async () => {
-        await searchText();
-    });
+    const mapDiv = document.getElementById("map")
+    if (mapDiv) {
+        map = new Map(mapDiv, {
+            center: centerPosition,
+            zoom: 4,
+            mapId: "e8f578253d8c676318b940c1-",
+            mapTypeControlOptions: {
+                style: google.maps.MapTypeControlStyle.DEFAULT,
+                position: google.maps.ControlPosition.TOP_RIGHT,
+            },
+        });
+    
+        // create search input, 'Recyle', and 'Repair' button options
+        const optionsDiv = document.createElement("div");
+        optionsDiv.classList.add("card", "card-body", "gap-2");
+    
+        const placeAutocomplete = new google.maps.places.PlaceAutocompleteElement();
+        placeAutocomplete.id = "place-autocomplete-input";
+    
+        const recycleBtn = document.createElement("button");
+        recycleBtn.textContent = "Recycle";
+        recycleBtn.type = "button";
+        recycleBtn.classList.add("btn", "btn-light");
+        // show navy blue icon of recycling symbol in button
+    
+    
+        const repairBtn = document.createElement("button");
+        repairBtn.textContent = "Repair";
+        repairBtn.type = "button";
+        repairBtn.classList.add("btn", "btn-light");
+    
+    
+        optionsDiv.append(placeAutocomplete, repairBtn, recycleBtn);
+        map.controls[google.maps.ControlPosition.TOP_LEFT].push(optionsDiv);
+    
+        // listeners for search input and filter options
+        placeAutocomplete.addEventListener("gmp-select", async ({ placePrediction }) => {
+            const place = placePrediction.toPlace();
+            await place.fetchFields({ fields: ['location'] });
+    
+            searchedLocation = place.location;
+            await searchText();
+        });
+    
+        recycleBtn.addEventListener("click", async () => {
+            await searchGeoJson();
+        });
+    
+        repairBtn.addEventListener("click", async () => {
+            await searchText();
+        });
+    }
 }
 
 // load GeoJSON data for recyclers and manually filter on radius
@@ -122,8 +124,6 @@ async function searchGeoJson() {
     })
 
     fixBounds(bounds);
-
-    console.log("Found places:", markers);
 }
 
 // searches "electronics_stores" within 10km of given location
@@ -146,8 +146,6 @@ async function searchLocation() {
     const { places } = await Place.searchNearby(request);
 
     if (places.length) {
-        console.log("Found places:", places);
-
         const bounds = new LatLngBounds();
         places.forEach((place) => {
             markers.push(new AdvancedMarkerElement({
@@ -177,15 +175,11 @@ async function searchText(location) {
     };
     const bannedWords = ["walmart", "staples", "subway", "autozone", "auto parts", "o'reilly", "ace hardware", "home depot", "lowes", "target", "costco", "kroger", "safeway", "aldi", "food lion", "publix"];
 
-    // create feature that will not accept any variations of the words in the bannedWords array
-
     clearMarkers();
 
     const { places } = await Place.searchByText(request);
 
     if (places.length) {
-        console.log("Found places:", places);
-
         const bounds = new LatLngBounds();
         places.forEach((place) => {
             if (!bannedWords.some(word => place.displayName.toLowerCase().includes(word))) {
