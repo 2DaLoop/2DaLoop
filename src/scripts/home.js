@@ -46,11 +46,14 @@ async function initAutoComplete() {
     const placeAutocomplete = new google.maps.places.PlaceAutocompleteElement();
     placeAutocomplete.id = "place-autocomplete-input";
     placeAutocomplete.classList.add("location-input");
-    document.getElementById("input-group").appendChild(placeAutocomplete);
 
-    placeAutocomplete.addEventListener("gmp-select", async ({ placePrediction }) => {
-        selectedPlace = placePrediction;
-    });
+    const inputGroup = document.getElementById("input-group")
+    if (inputGroup) {
+        inputGroup.appendChild(placeAutocomplete);
+        placeAutocomplete.addEventListener("gmp-select", async ({ placePrediction }) => {
+            selectedPlace = placePrediction;
+        });
+    }
 }
 
 // Add this script after your form or at the end of your HTML
