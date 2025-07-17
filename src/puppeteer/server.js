@@ -156,7 +156,7 @@ app.post("/esg/calculate", async (req, res) => {
         ];
 
         const resultLabels = [
-            "esg_emissions",
+            "ghg_emissions",
             "powering_houses",
             "passenger_cars",
             "solid_waste",
@@ -217,6 +217,11 @@ app.post("/esg/calculate", async (req, res) => {
                 const label = labels[index] || `unknown_${index}`;
                 data[label] = numberText;
             });
+
+            const totalEstWeight = document.querySelector('span.font-bold');
+            if (totalEstWeight) {
+                data['total_est_weight'] = totalEstWeight.textContent.split(" ")[0];
+            }
 
             return data;
         }, resultLabels);
