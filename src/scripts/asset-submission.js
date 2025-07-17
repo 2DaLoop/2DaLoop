@@ -203,17 +203,15 @@ document.querySelector('.calculate-btn').addEventListener('click', async () => {
                 document.querySelector('.inventory-container').classList.add('hidden');
                 document.querySelector('.loader').classList.remove('hidden');
 
-                // get results from itad calculator
-                const noPackingResponse = await submitAssetsNoPacking(quantityInputs, ageInputs);
-                const packingResponse = await submitAssetsPackingServices(quantityInputs, ageInputs);
+                // get results for budget
+                const response = await submitAssetsForBudget(quantityInputs, ageInputs);
 
                 // convert strings to numbers
-                const noPackingData = convertToNums(noPackingResponse.data);
-                const packingData = convertToNums(packingResponse.data);
+                const data = convertToNums(response.data);
 
                 // store in supabase and load charts
                 storeData(quantityInputs, ageInputs);
-                loadChart(noPackingData, packingData);
+                loadChart(data);
             }
         });
     }
@@ -221,22 +219,22 @@ document.querySelector('.calculate-btn').addEventListener('click', async () => {
 
 // submit to esg calculator and go to dashbaord
 document.querySelector('#next-btn').addEventListener('click', async () => {
+    navigate('#/dashboard')
+
     const quantityInputs = document.querySelectorAll('.quantity-input');
 
-    const esgResults = await submitESGAssets(quantityInputs);
-    console.log(esgResults);
+    const ghgResults = await submitAssetsForGHG(quantityInputs);
+    console.log(ghgResults);
 
     // store to be used on dashboard page
-    sessionStorage.setItem('esgResults', JSON.stringify({
-        results: esgResults
+    sessionStorage.setItem('ghgResults', JSON.stringify({
+        results: ghgResults
     }));
-
-    navigate('#/dashboard')
 })
 
-async function submitAssetsNoPacking(quantityInputs, ageInputs) {
-    // calculate totals for no packing services
-    return await fetch('http://localhost:3000/itad/no_packing', {
+// calculate totals for budget
+async function submitAssetsForBudget(quantityInputs, ageInputs) {
+    return await fetch('http://localhost:3000/calculate/budget', {
         method: 'POST',
         headers: { "Content-Type":"application/json" },
         body: JSON.stringify({
@@ -257,32 +255,9 @@ async function submitAssetsNoPacking(quantityInputs, ageInputs) {
     .then(response => response.json())
 }
 
-async function submitAssetsPackingServices(quantityInputs, ageInputs) {
-    // calculate totals with packing services
-    return await fetch('http://localhost:3000/itad/packing_services', {
-        method: 'POST',
-        headers: { "Content-Type":"application/json" },
-        body: JSON.stringify({
-            inputValues: {
-                desktop_pc_quantity: quantityInputs[0].value || 0,
-                laptop_pc_quantity: quantityInputs[1].value || 0,
-                network_device_quantity: quantityInputs[5].value || 0,
-                telecom_quantity: quantityInputs[3].value || 0,
-                server_quantity: 0,
-                desktop_pc_age: ageInputs[0].value || 0,
-                laptop_pc_age: ageInputs[1].value || 0,
-                network_device_age: ageInputs[5].value || 0,
-                telecom_age: ageInputs[3].value || 0,
-                server_age: 0
-            }
-        })
-    })
-    .then(response => response.json())
-}
-
-async function submitESGAssets(quantityInputs) {
-    // use puppeteer to calculate totals
-    return await fetch('http://localhost:3000/esg/calculate', {
+// calculate results for emissions, etc
+async function submitAssetsForGHG(quantityInputs) {
+    return await fetch('http://localhost:3000/calculate/ghg', {
         method: 'POST',
         headers: { "Content-Type":"application/json" },
         body: JSON.stringify({
@@ -301,8 +276,8 @@ async function submitESGAssets(quantityInputs) {
     .then(response => response.json())
 }
 
+// store in supabase
 async function storeData(quantityInputs, ageInputs) {
-    // store in supabase
     const { error } = await supabase
         .from('tblAssetSubmission')
         .insert({
@@ -323,7 +298,7 @@ async function storeData(quantityInputs, ageInputs) {
         })
 }
 
-function loadChart(noPackingData, packingData) {
+function loadChart(data) {
     document.querySelector('.loader').classList.add('hidden');
     document.getElementById('comparison-chart').classList.remove('hidden');
 
@@ -346,15 +321,15 @@ function loadChart(noPackingData, packingData) {
         series: [{
             name: 'Standard Burden Shift',
             data: [
-                Number(packingData.total_value_recovery) || 0,
-                -(Number(packingData.total_pickup_cost)) || 0,
-                Number(packingData.net_financial_settlement) || 0
+                Number(data.packing.total_value_recovery) || 0,
+                -(Number(data.packing.total_pickup_cost)) || 0,
+                Number(data.packing.net_financial_settlement) || 0
             ]}, {
             name: '2DaLoop Potential',
             data: [
-                Number(noPackingData.total_value_recovery) || 0,
-                -(Number(noPackingData.total_pickup_cost)) || 0,
-                Number(noPackingData.net_financial_settlement) || 0
+                Number(data.noPacking.total_value_recovery) || 0,
+                -(Number(data.noPacking.total_pickup_cost)) || 0,
+                Number(data.noPacking.net_financial_settlement) || 0
             ]
         }],
         title: {
@@ -402,15 +377,21 @@ function loadChart(noPackingData, packingData) {
 }
 
 function convertToNums(results) {
-    // convert results to numbers
     const data = {};
-    for (const key in results) {
-        if (results.hasOwnProperty(key)) {
-            let value = results[key];
-            // remove $, commas, and (), then convert to number
-            value = Number(value.replace(/[$,()]/g, ''));
-            data[key] = isNaN(value) ? 0 : value; // handle NaN values
+
+    for (const category in results) {
+        if (results.hasOwnProperty(category)) {
+            data[category] = {};
+
+            for (const key in results[category]) {
+                if (results[category].hasOwnProperty(key)) {
+                    let value = results[category][key];
+                    value = Number(value.replace(/[$,()]/g, ''));
+                    data[category][key] = isNaN(value) ? 0 : value;
+                }
+            }
         }
     }
+
     return data;
 }

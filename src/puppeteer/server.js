@@ -10,7 +10,7 @@ app.use(express.json());
 
 const sleep = ms => new Promise(res => setTimeout(res, ms));
 
-app.post("/itad/no_packing", async (req, res) => {
+app.post("/calculate/budget", async (req, res) => {
     try {
         const { inputValues } = req.body;
         if (!inputValues) {
@@ -52,13 +52,30 @@ app.post("/itad/no_packing", async (req, res) => {
         // click submit
         await page.click("#button_submit");
 
-        // get results after submission
+        // result object for both
+        const resultValues = {
+            noPacking: {},
+            packing: {},
+        };
+
+        // get results for no packing services
         await sleep(1000);
-        const resultValues = {};
         for (const result of resultElements) {
             const element = await page.$(`#${result}`);
             const resultText = await page.evaluate((el) => el.value, element);
-            resultValues[result] = resultText;
+            resultValues.noPacking[result] = resultText;
+        }
+
+        // toggle button for packing services
+        await page.click('#btn_service');
+        await page.click("#button_submit");
+
+        // get results after submission
+        await sleep(1000);
+        for (const result of resultElements) {
+            const element = await page.$(`#${result}`);
+            const resultText = await page.evaluate((el) => el.value, element);
+            resultValues.packing[result] = resultText;
         }
 
         // return results
@@ -137,7 +154,7 @@ app.post("/itad/packing_services", async (req, res) => {
     }
 });
 
-app.post("/esg/calculate", async (req, res) => {
+app.post("/calculate/ghg", async (req, res) => {
     try {
         const { inputValues } = req.body;
         if (!inputValues) {
