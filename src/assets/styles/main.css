@@ -11,7 +11,7 @@ body {
 }
 
 .hidden {
-    display: none;
+    display: none !important;
 }
 
 .main-container {
@@ -391,4 +391,40 @@ p {
 
 #place-autocomplete-input {
     color-scheme: light !important;
+}
+
+.ghl-form {
+    position: fixed;
+    top: 10%;
+    left: 54%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 600px;
+    height: 80%;
+    background: white;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.5); /* semi-transparent black */
+    backdrop-filter: blur(4px);  /* optional blur */
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+/* When visible */
+.overlay.active {
+    opacity: 1;
+    pointer-events: auto;
 }
