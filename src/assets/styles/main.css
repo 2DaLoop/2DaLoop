@@ -395,6 +395,7 @@ p {
 
 .ghl-form {
     position: fixed;
+    z-index: 1001; /* Ensure it's above the overlay */
     top: 10%;
     left: 54%;
     transform: translateX(-50%);
@@ -412,16 +413,18 @@ p {
 
 .overlay {
     position: fixed;
+    z-index: 1000; /* Slightly lower than the form */
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(0,0,0,0.5); /* semi-transparent black */
-    backdrop-filter: blur(4px);  /* optional blur */
+    background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(2px);
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.3s ease;
 }
+
 
 /* When visible */
 .overlay.active {

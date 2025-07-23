@@ -175,7 +175,7 @@ app.post("/calculate/ghg", async (req, res) => {
         const resultLabels = [
             "ghg_emissions",
             "powering_houses",
-            "passenger_cars",
+            "removing_cars",
             "solid_waste",
             "air_emissions",
             "water_emissions",
@@ -188,7 +188,8 @@ app.post("/calculate/ghg", async (req, res) => {
         ];
 
         const browser = await puppeteer.launch({
-            headless: true,
+            headless: false,
+            defaultViewport: false,
             userDataDir: "./profile"
         });
         const page = await browser.newPage();
