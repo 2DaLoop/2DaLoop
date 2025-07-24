@@ -23,8 +23,4 @@ export const ROUTES = {
         page: 'src/pages/faq.html',
         script: 'src/scripts/faq.js'
     },
-    '#/settings': {
-        page: 'src/pages/settings.html',
-        script: 'src/scripts/settings.js'
-    },
 }
