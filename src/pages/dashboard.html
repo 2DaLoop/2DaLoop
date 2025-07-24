@@ -1,16 +1,24 @@
 <div class="dashboard-container">
     <main class="main-content">
-        <section class="chart-section">
-            <h1 class="dashboard-title" style="margin-bottom: 32px;">Sustainability Dashboard</h1>
-            <article class="carbon-footprint-container" style="width: 100%; max-width: 1200px; margin: 0 auto;">
-                <h2 class="chart-title">Carbon Footprint Graph</h2>
-                <!-- Insert chart here -->
-                <!-- <div class="emissions-data"> -->
-                <p class="emissions-label-bottom">Greenhouse Gas Emissions Reduced:</p>
-                <div class="emissions-value-container">
-                    <span class="emissions-label-bottom" id="ghg-emissions"></span>
-                </div>
-            </article>
+        <h1 class="dashboard-title" style="margin-bottom: 32px;">Sustainability Dashboard</h1>
+        <section class="card-container">
+            <div class="chart-card">
+                <div class="card-title">Annual CO₂ Emissions – United States</div>
+                <div id="carbon-footprint-chart"></div>
+                <div class="data-source">Data Source: Global Carbon Budget (2024) – with major processing by Our World in Data</div>
+            </div>
+
+            <div class="chart-card">
+                <div class="card-title">Electronic Waste Recycling Rate</div>
+                <div id="ewaste-chart"></div>
+                <div class="data-source">Data Source: United Nations Environment Programme, United Nations Statistics Division and the United Nations Institute for Training and Research – processed by Our World in Data</div>
+            </div>
+        </section>
+
+        <section class="card-container">
+            <div class="emissions-card">
+                <p class="emissions-label" id="ghg-emissions">Greenhouse Gas Emissions Reduced by </p>
+            </div>
         </section>
 
         <section class="equivalents-section">
