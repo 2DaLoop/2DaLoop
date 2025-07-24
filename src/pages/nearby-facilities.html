@@ -1,6 +1,42 @@
-<div class="main-container">
-    <div class="main-content">
+<div class="main-container" style="display: flex;">
+    <div class="main-content" style="flex: 1;">
         <div id="map"></div>
         <button class="next-button mt-3" id="next-btn">Next</button>
     </div>
+    <!-- Facilities List Sidebar -->
+    <div id="facilities-list"
+        style="width: 350px; background: #f7f9fc; border-left: 1px solid #3766A5; padding: 24px; overflow-y: auto;">
+        <h3 style="color: #3766A5; font-family: 'Nunito Sans', sans-serif;">Nearby Facilities</h3>
+        <ul id="facility-items" style="list-style: none; padding: 0; margin: 0;">
+            <!-- Facility items will be injected here by JS -->
+        </ul>
+    </div>
 </div>
+<script>
+    // Example data structure for pins (replace with your actual map data)
+    const facilities = [
+        { id: 1, name: "Facility A", address: "123 Main St", type: "Recycling", lat: 40.1, lng: -74.1 },
+        { id: 2, name: "Facility B", address: "456 Oak Ave", type: "Compost", lat: 40.2, lng: -74.2 },
+        // ...add more facilities as needed
+    ];
+
+    // Render facility list
+    const facilityList = document.getElementById('facility-items');
+    facilities.forEach(facility => {
+        const li = document.createElement('li');
+        li.style.padding = '12px 0';
+        li.style.borderBottom = '1px solid #e0e6ed';
+        li.style.cursor = 'pointer';
+        li.innerHTML = `
+            <strong>${facility.name}</strong><br>
+            <span>${facility.address}</span><br>
+            <span>Type: ${facility.type}</span>
+        `;
+        li.onclick = function () {
+            // Example: Center map on facility pin and/or open info window
+            // Replace with your actual map logic
+            alert('Clicked: ' + facility.name);
+        };
+        facilityList.appendChild(li);
+    });
+</script>

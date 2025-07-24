@@ -22,6 +22,7 @@
 </head>
 
 <body>
+
     <div id="sidebar"></div>
     <div id="app"></div>
 
@@ -31,6 +32,29 @@
 
     <script src="env.js"></script>
     <script type="module" src="src/index.js"></script>
+
+    <!-- Cookie Consent Popup -->
+    <div id="cookieConsent"
+        style="position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); background: #3766A5; color: #fff; padding: 24px 32px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.15); z-index: 9999; display: none; font-family: 'Nunito Sans', sans-serif;">
+        <span>
+            This website uses cookies to ensure you get the best experience.
+            <a href="#" style="color: #fff; text-decoration: underline;">Learn more</a>
+        </span>
+        <button id="acceptCookies"
+            style="margin-left: 24px; background: #fff; color: #3766A5; border: none; border-radius: 6px; padding: 8px 18px; font-weight: bold; cursor: pointer;">
+            Accept
+        </button>
+    </div>
+    <script>
+        // Show cookie popup if not accepted
+        if (!localStorage.getItem('cookieAccepted')) {
+            document.getElementById('cookieConsent').style.display = 'flex';
+        }
+        document.getElementById('acceptCookies').onclick = function () {
+            localStorage.setItem('cookieAccepted', 'true');
+            document.getElementById('cookieConsent').style.display = 'none';
+        };
+    </script>
 </body>
 
 </html>
