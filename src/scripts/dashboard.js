@@ -3,7 +3,7 @@ import ApexCharts from 'apexcharts';
 initDashboard();
 
 function initDashboard() {
-    // showWaitlistForm();
+    showWaitlistForm();
     drawCO2EmissionsChart()
     drawEwasteChart()
     insertValues();
