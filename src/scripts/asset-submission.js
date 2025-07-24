@@ -219,7 +219,8 @@ document.querySelector('.calculate-btn').addEventListener('click', async () => {
 
 // submit to esg calculator and go to dashbaord
 document.querySelector('#next-btn').addEventListener('click', async () => {
-    navigate('#/dashboard')
+    document.getElementById('comparison-chart').classList.add('hidden');
+    document.querySelector('.loader').classList.remove('hidden');
 
     const quantityInputs = document.querySelectorAll('.quantity-input');
 
@@ -230,6 +231,8 @@ document.querySelector('#next-btn').addEventListener('click', async () => {
     sessionStorage.setItem('ghgResults', JSON.stringify({
         results: ghgResults
     }));
+
+    navigate('#/dashboard')
 })
 
 // calculate totals for budget
