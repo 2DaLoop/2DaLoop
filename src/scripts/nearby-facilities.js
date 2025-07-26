@@ -45,7 +45,7 @@ async function initMap() {
         recycleBtn.textContent = "Recycle";
         recycleBtn.type = "button";
         recycleBtn.classList.add("btn", "btn-light");
-        // show navy blue icon of recycling symbol in button
+        // show navy blue icon of recycling symbol
     
     
         const repairBtn = document.createElement("button");
@@ -173,7 +173,7 @@ async function searchText(location) {
     const request = {
         locationBias: searchedLocation,
         textQuery: "electronics repair",
-        fields: ["displayName", "location", "businessStatus"],
+        fields: ["displayName", "location", "businessStatus", "formattedAddress"],
         includedType: "electronics_store",
         language: "en-US",
         region: "us",
@@ -186,6 +186,7 @@ async function searchText(location) {
 
     if (places.length) {
         const bounds = new LatLngBounds();
+        let sidebarPlaces = [];
         places.forEach((place) => {
             if (!bannedWords.some(word => place.displayName.toLowerCase().includes(word))) {
                 markers.push(new AdvancedMarkerElement({
@@ -194,13 +195,87 @@ async function searchText(location) {
                     title: place.displayName,
                 }));
                 bounds.extend(place.location);
+                sidebarPlaces.push(place);
             }
         });
 
         fixBounds(bounds);
+
+        // Update the sidebar with repair locations
+        updateSidebarWithRepairs(sidebarPlaces);
     } else {
+        // Clear sidebar if no results
+        updateSidebarWithRepairs([]);
         console.log("No results found for:", searchedLocation);
     }
+}
+
+// Helper to update the sidebar with repair locations
+function updateSidebarWithRepairs(places) {
+    const sidebar = document.getElementById('facilities-list');
+    if (!sidebar) return;
+
+    // Set the sidebar title to "Repair"
+    let title = sidebar.querySelector('h3');
+    if (!title) {
+        title = document.createElement('h3');
+        sidebar.prepend(title);
+    }
+    title.textContent = 'Repair';
+
+    // Get the list container or create it
+    let list = document.getElementById('facility-items');
+    if (!list) {
+        list = document.createElement('ul');
+        list.id = 'facility-items';
+        list.style.listStyle = 'none';
+        list.style.padding = '0';
+        list.style.margin = '0';
+        sidebar.appendChild(list);
+    }
+    list.innerHTML = '';
+
+    // Sort places alphabetically by displayName
+    const sortedPlaces = [...places].sort((a, b) =>
+        (a.displayName || '').localeCompare(b.displayName || '')
+    );
+
+    console.log("Sorted places:", sortedPlaces);
+
+    // Add each place as a card with all available info from the pin
+    sortedPlaces.forEach((place, i) => {
+        const li = document.createElement('li');
+        li.style.padding = '16px';
+        li.style.marginBottom = '16px';
+        li.style.borderRadius = '12px';
+        li.style.background = '#fff';
+        li.style.boxShadow = '0 2px 8px rgba(55,102,165,0.08)';
+        li.style.border = '1px solid #e0e6ed';
+        li.style.cursor = 'pointer';
+
+        li.innerHTML = `
+            <strong style="font-size:18px;color:#3766A5;">${place.displayName || 'Unknown'}</strong><br>
+            <span style="font-size:15px;">${place.formattedAddress || ''}</span><br>
+            <span style="font-size:15px;">Status: ${place.businessStatus || 'N/A'}</span><br>
+            ${place.phoneNumber ? `<span style="font-size:15px;">Phone: ${place.phoneNumber}</span><br>` : ''}
+            ${place.websiteUri ? `<a href="${place.websiteUri}" target="_blank" style="color:#3766A5;">Website</a><br>` : ''}
+        `;
+
+        li.onclick = function () {
+            // Center map on this marker if available
+            if (markers[i]) {
+                map.panTo(markers[i].position);
+                map.setZoom(15);
+                // Optionally, add a highlight effect
+                markers[i].element.style.filter = 'drop-shadow(0 0 8px #3766A5)';
+                setTimeout(() => {
+                    markers[i].element.style.filter = '';
+                }, 1200);
+            }
+        };
+
+        list.appendChild(li);
+    });
 }
 
 // clear old markers
