@@ -1,6 +1,14 @@
-<div class="main-container">
-    <div class="main-content">
+<div class="main-container" style="display: flex;">
+    <div class="main-content" style="flex: 1;">
         <div id="map"></div>
         <button class="next-button mt-3" id="next-btn">Next</button>
+    </div>
+    <!-- Facilities List Sidebar -->
+    <div id="facilities-list"
+        style="width: 350px; background: #f7f9fc; border-left: 1px solid #3766A5; padding: 24px; overflow-y: auto;">
+        <h3 style="color: #3766A5; font-family: 'Nunito Sans', sans-serif;">Nearby Facilities</h3>
+        <ul id="facility-items" style="list-style: none; padding: 0; margin: 0;">
+            <!-- Facility items will be injected here by JS -->
+        </ul>
     </div>
 </div>
