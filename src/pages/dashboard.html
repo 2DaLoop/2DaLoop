@@ -1,5 +1,171 @@
-<div class="main-container">
-    <div class="main-content">
-        <h1>Dashboard</h1>
-    </div>
+<div class="dashboard-container">
+    <nav class="sidebar-navigation">
+        <div class="sidebar-background"></div>
+        <img src="https://api.builder.io/api/v1/image/assets/TEMP/4a1fbf5f91ec33fd1d96c1a21defb472f2baf96e?width=97"
+            alt="Company Logo" class="company-logo">
+
+        <div class="nav-icon-container briefcase-icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"
+                class="nav-icon">
+                <path
+                    d="M2.70618 6.37978V14.2407C2.70618 14.6576 2.8772 15.0575 3.18163 15.3523C3.48606 15.6472 3.89894 15.8129 4.32947 15.8129H15.6924C16.123 15.8129 16.5359 15.6472 16.8403 15.3523C17.1447 15.0575 17.3158 14.6576 17.3158 14.2407V7.95196C17.3158 7.53499 17.1447 7.13511 16.8403 6.84027C16.5359 6.54543 16.123 6.37978 15.6924 6.37978H4.32947C4.32947 5.96283 4.15844 5.56293 3.85401 5.26809C3.54959 4.97325 3.1367 4.80762 2.70618 4.80762V6.37978Z"
+                    stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path
+                    d="M6.76447 4.80753C6.76447 4.39056 6.93549 3.99067 7.23991 3.69583C7.54434 3.40099 7.95723 3.23535 8.38775 3.23535H11.6343C12.0649 3.23535 12.4777 3.40099 12.7822 3.69583C13.0866 3.99067 13.2576 4.39056 13.2576 4.80753V9.52405H6.76447V4.80753Z"
+                    stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+        </div>
+
+        <div class="nav-icon-container package-icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"
+                class="nav-icon">
+                <path
+                    d="M16.5041 6.37481L10.0109 3.23047L3.51776 6.37481M16.5041 6.37481L10.0109 9.51916M16.5041 6.37481V14.2357L10.0109 17.38M3.51776 6.37481L10.0109 9.51916M3.51776 6.37481V14.2357L10.0109 17.38M10.0109 9.51916V17.38"
+                    stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+        </div>
+
+        <div class="nav-icon-container clipboard-icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"
+                class="nav-icon">
+                <path
+                    d="M7.5761 4.79776H5.95281C5.52229 4.79776 5.1094 4.9634 4.80497 5.25824C4.50055 5.55308 4.32953 5.95297 4.32953 6.36993V14.2308C4.32953 14.6478 4.50055 15.0476 4.80497 15.3425C5.1094 15.6373 5.52229 15.8029 5.95281 15.8029H12.446C12.8765 15.8029 13.2893 15.6373 13.5938 15.3425C13.8983 15.0476 14.0692 14.6478 14.0692 14.2308V6.36993C14.0692 5.95297 13.8983 5.55308 13.5938 5.25824C13.2893 4.9634 12.8765 4.79776 12.446 4.79776M7.5761 4.79776C7.5761 5.21472 7.74713 5.61462 8.05156 5.90946C8.35598 6.20429 8.76887 6.36993 9.19939 6.36993H10.8227C11.2532 6.36993 11.6661 6.20429 11.9705 5.90946C12.275 5.61462 12.446 5.21472 12.446 4.79776M7.5761 4.79776C7.5761 4.38079 7.74713 3.98091 8.05156 3.68607C8.35598 3.39122 8.76887 3.22559 9.19939 3.22559H10.8227C11.2532 3.22559 11.6661 3.39122 11.9705 3.68607C12.275 3.98091 12.446 4.38079 12.446 4.79776M12.446 4.79776H10.8227M10.0111 10.3004H12.446M10.0111 13.4447H12.446M7.5761 10.3004H7.58421M7.5761 13.4447H7.58421"
+                    stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+        </div>
+
+        <div class="nav-icon-container download-icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"
+                class="nav-icon">
+                <path
+                    d="M10.0111 8.72331V13.4398M10.0111 13.4398L7.5761 11.0815M10.0111 13.4398L12.446 11.0815M14.0692 17.3703H5.95281C5.52229 17.3703 5.1094 17.2046 4.80497 16.9097C4.50055 16.615 4.32953 16.2151 4.32953 15.7981V4.79288C4.32953 4.37591 4.50055 3.97603 4.80497 3.68119C5.1094 3.38634 5.52229 3.2207 5.95281 3.2207H10.4866C10.7019 3.22075 10.9083 3.3036 11.0605 3.45103L15.4547 7.7069C15.6069 7.85429 15.6925 8.05419 15.6925 8.26266V15.7981C15.6925 16.2151 15.5215 16.615 15.2171 16.9097C14.9127 17.2046 14.4998 17.3703 14.0692 17.3703Z"
+                    stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+        </div>
+
+        <div class="nav-icon-container help-icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"
+                class="nav-icon">
+                <path
+                    d="M6.94945 7.93234C7.39505 7.01655 8.59708 6.36016 10.011 6.36016C11.8047 6.36016 13.2575 7.41588 13.2575 8.71842C13.2575 9.81895 12.2202 10.7426 10.8177 11.0035C10.3779 11.0853 10.011 11.428 10.011 11.8628M10.011 14.2211H10.0191M17.3158 10.2906C17.3158 11.2197 17.1268 12.1397 16.7597 12.998C16.3926 13.8564 15.8545 14.6363 15.1762 15.2932C14.498 15.9501 13.6927 16.4713 12.8064 16.8268C11.9202 17.1824 10.9702 17.3654 10.011 17.3654C9.0517 17.3654 8.10181 17.1824 7.21554 16.8268C6.32929 16.4713 5.52402 15.9501 4.8457 15.2932C4.16739 14.6363 3.62932 13.8564 3.26222 12.998C2.89512 12.1397 2.70618 11.2197 2.70618 10.2906C2.70618 8.41426 3.47579 6.61475 4.8457 5.28798C6.21561 3.9612 8.07362 3.21582 10.011 3.21582C11.9483 3.21582 13.8063 3.9612 15.1762 5.28798C16.5461 6.61475 17.3158 8.41426 17.3158 10.2906Z"
+                    stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+        </div>
+
+        <div class="nav-icon-container settings-icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"
+                class="nav-icon">
+                <g clip-path="url(#clip0_347_30)">
+                    <mask id="mask0_347_30" style="mask-type: luminance" maskUnits="userSpaceOnUse" x="0" y="0"
+                        width="20" height="20">
+                        <path d="M19.7507 0.852539H0.27124V19.7186H19.7507V0.852539Z" fill="white"></path>
+                    </mask>
+                    <g mask="url(#mask0_347_30)">
+                        <path
+                            d="M15.1762 5.28279L12.3063 8.06238M12.3063 12.5085L15.1762 15.2881M7.71562 8.06238L4.84564 5.28279M7.71562 12.5085L4.84564 15.2881M10.0109 2.62109C8.44579 2.62109 6.9158 3.0706 5.61443 3.91277C4.31305 4.75494 3.29875 5.95195 2.6998 7.35242C2.10084 8.7529 1.94413 10.2939 2.24947 11.7807C2.55482 13.2674 3.30851 14.633 4.41523 15.7049C5.52196 16.7768 6.93202 17.5068 8.46709 17.8025C10.0022 18.0983 11.5934 17.9465 13.0393 17.3664C14.4854 16.7863 15.7212 15.804 16.5908 14.5435C17.4604 13.2832 17.9245 11.8013 17.9245 10.2854C17.9245 8.25273 17.0907 6.30327 15.6066 4.86593C14.1226 3.42858 12.1098 2.62109 10.0109 2.62109ZM10.0109 2.62109V10.2854M10.0109 10.2854L13.0546 7.33761M10.0109 10.2854L6.96728 7.33761"
+                            stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </g>
+                </g>
+                <defs>
+                    <clipPath id="clip0_347_30">
+                        <rect width="19.4795" height="18.8661" fill="white" transform="translate(0.27124 0.852539)">
+                        </rect>
+                    </clipPath>
+                </defs>
+            </svg>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <section class="chart-section">
+            <h1 class="dashboard-title" style="margin-bottom: 32px;">Sustainability Dashboard</h1>
+            <article class="carbon-footprint-container" style="width: 100%; max-width: 1200px; margin: 0 auto;">
+                <h2 class="chart-title">Carbon Footprint Graph</h2>
+                <!-- Insert chart here -->
+                <!-- <div class="emissions-data"> -->
+                <p class="emissions-label-bottom">Greenhouse Gas Emissions Reduced:</p>
+                <div class="emissions-value-container">
+                    <!-- insert data here -->
+                    <!-- </div> -->
+                    <span class="emissions-label-bottom">lbs</span>
+                </div>
+            </article>
+        </section>
+
+        <section class="equivalents-section">
+            <h2 class="equivalents-title">This Is Equivalent To:</h2>
+            <div class="metrics-grid" style="grid-template-rows: 1fr; min-height: 220px;">
+                <article class="metric-card" style="min-height: 220px;">
+                    <div class="metric-icon-container">
+                        <img src="https://api.builder.io/api/v1/image/assets/TEMP/d48d6c0f4a07a306db0155a700cf7300aec89597?width=124"
+                            alt="Power icon" class="metric-icon">
+                    </div>
+                    <p class="metric-action">Powering</p>
+                    <div class="metric-value-bar"></div>
+                    <p class="metric-description">US household(s) in a year</p>
+                </article>
+
+                <article class="metric-card" style="min-height: 220px;">
+                    <div class="metric-icon-container">
+                        <img src="https://api.builder.io/api/v1/image/assets/TEMP/faa71636cda24eddbbae4365a660cc37f86e60c9?width=114"
+                            alt="Car icon" class="metric-icon">
+                    </div>
+                    <p class="metric-action">Removing</p>
+                    <div class="metric-value-bar"></div>
+                    <p class="metric-description">passenger car(s) from the road per year</p>
+                </article>
+
+                <article class="metric-card" style="min-height: 220px;">
+                    <div class="metric-icon-container">
+                        <img src="https://api.builder.io/api/v1/image/assets/TEMP/4312dc80d817dae03f8002b23e1ccef3566d7741?width=114"
+                            alt="Waste icon" class="metric-icon">
+                    </div>
+                    <p class="metric-action">Solid waste reduced by</p>
+                    <div class="metric-value-bar"></div>
+                    <p class="metric-description">US household(s) in a year</p>
+                </article>
+
+                <article class="metric-card" style="min-height: 220px;">
+                    <div class="metric-icon-container">
+                        <img src="https://api.builder.io/api/v1/image/assets/TEMP/3b8925578d303767167d8f916f8cb46397670d30?width=114"
+                            alt="Air emissions icon" class="metric-icon">
+                    </div>
+                    <p class="metric-action">Air emissions =</p>
+                    <div class="metric-value-bar"></div>
+                    <p class="metric-description">metric ton(s)</p>
+                </article>
+
+                <article class="metric-card" style="min-height: 220px;">
+                    <div class="metric-icon-container">
+                        <img src="https://api.builder.io/api/v1/image/assets/TEMP/406639cd7ac73473ed1edd11b370363f13426b0c?width=114"
+                            alt="Water emissions icon" class="metric-icon">
+                    </div>
+                    <p class="metric-action">Water emissions =</p>
+                    <div class="metric-value-bar"></div>
+                    <p class="metric-description">metric ton(s)</p>
+                </article>
+            </div>
+        </section>
+        <div class="ghl-form hidden">
+            <iframe
+                src="https://api.leadconnectorhq.com/widget/form/U2IRuZSbtnyxBHIcinWQ"
+                style="width:100%;height:100%;border:none;border-radius:3px"
+                id="inline-U2IRuZSbtnyxBHIcinWQ" 
+                data-layout="{'id':'INLINE'}"
+                data-trigger-type="alwaysShow"
+                data-trigger-value=""
+                data-activation-type="alwaysActivated"
+                data-activation-value=""
+                data-deactivation-type="neverDeactivate"
+                data-deactivation-value=""
+                data-form-name="Form 4 - Waitlist Form [Recycler / Manufacture / Retailer]"
+                data-height="1072"
+                data-layout-iframe-id="inline-U2IRuZSbtnyxBHIcinWQ"
+                data-form-id="U2IRuZSbtnyxBHIcinWQ"
+                title="Form 4 - Waitlist Form [Recycler / Manufacture / Retailer]"
+                    >
+            </iframe>
+        </div>
+    </main>
 </div>
+<script src="https://link.msgsndr.com/js/form_embed.js"></script>
