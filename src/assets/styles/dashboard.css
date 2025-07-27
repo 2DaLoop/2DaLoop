@@ -17,79 +17,19 @@ body {
     display: flex;
 }
 
-/* Sidebar Navigation */
-.sidebar-navigation {
-    width: 69px;
-    height: 100vh;
-    position: fixed;
-    left: 0;
-    top: 0;
-    z-index: 100;
+.join-waitlist-btn {
+    background-color: #142850;
+    color: white;
+    padding: 16px 32px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    transition: background-color 0.2s ease, transform 0.1s ease;
 }
 
-.sidebar-background {
-    width: 69px;
-    height: 100vh;
-    position: absolute;
-    left: 0;
-    top: 0;
-    background-color: #3766a5;
-}
-
-.company-logo {
-    width: 49px;
-    height: 47px;
-    position: absolute;
-    left: 12px;
-    top: 23px;
-    object-fit: contain;
-}
-
-.nav-icon-container {
-    width: 41px;
-    height: 42px;
-    border-radius: 4px;
-    position: absolute;
-    left: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-}
-
-.nav-icon-container:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-}
-
-.briefcase-icon {
-    top: 100px;
-}
-
-.package-icon {
-    top: 160px;
-}
-
-.clipboard-icon {
-    top: 220px;
-}
-
-.download-icon {
-    top: 280px;
-}
-
-.help-icon {
-    top: 340px;
-}
-
-.settings-icon {
-    top: 400px;
-}
-
-.nav-icon {
-    width: 19px;
-    height: 19px;
-    flex-shrink: 0;
+.join-waitlist-btn:hover {
+    background-color: #223a5f;
 }
 
 /* Main Content */
@@ -113,105 +53,67 @@ body {
     line-height: 33px;
 }
 
-/* Chart Section */
-.chart-section {
-    margin-bottom: 123px;
-}
-
-.carbon-footprint-container {
-    /* width: 100%; */
-    max-width: 1123px;
-    height: 533px;
-    border-radius: 20px;
-    border: 1px solid #000;
-    position: relative;
-    margin: 0 auto;
-    background-color: #3766a5;
-}
-
-.chart-title {
-    color: #fff;
-    text-align: center;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 35px;
-    width: 407px;
-    font-family: 'Nunito Sans', sans-serif;
-    font-size: 36px;
-    font-weight: 400;
-    line-height: 33px;
-}
-
-.chart-placeholder {
-    width: 930px;
-    height: 354px;
-    position: absolute;
-    left: 96px;
-    top: 89px;
-    background-color: #fff;
-}
-
-.emissions-data {
-    position: absolute;
-    bottom: 60px;
-    left: 50%;
-    transform: translateX(-50%);
+/* Charts section */
+.card-container {
     display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 40px;
+    width: 100%;
+}
+
+.chart-card {
+    background-color: #3766a5;
+    border-radius: 8px;
+    padding: 1rem;
+    flex: 1 1 48%;
+    min-width: 400px;
+    max-width: 600px;
+    box-sizing: border-box;
+}
+
+.card-title {
+    margin-top: 0;
+    font-size: 1.5rem;
+    text-align: center;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .chart-card {
+        flex: 1 1 100%;
+    }
+}
+
+.data-source {
+    text-align: center;
+    font-size: 0.7rem;
+    color: #ffffffde;
+    max-width: 800px;
+    padding: 0 1rem;
+}
+
+.emissions-card {
+    background-color: #fff;
+    display: flex;
+    border-radius: 20px;
+    border: 1px solid #3766a5;
+    padding-top: 20px;
+    padding-inline: 20px;
     align-items: center;
-    gap: 20px;
 }
 
 .emissions-label {
-    color: #fff;
-    text-align: center;
-    font-family: 'Nunito Sans', sans-serif;
-    font-size: 20px;
-    font-weight: 500;
-    line-height: 20px;
-}
-
-.emissions-label-bottom {
-    color: #fff;
-    text-align: center;
-    font-family: 'Nunito Sans', sans-serif;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 24px; /* Place at the bottom of the chart container */
-    width: 100%;
-    font-size: 20px;
-    font-weight: 500;
-    line-height: 20px;
-    z-index: 2;
-}
-
-.emissions-value-container {
-    display: flex;
-    align-items: center;
-    gap: 38px;
-}
-
-.emissions-value-bar {
-    width: 190px;
-    height: 39px;
-    border-radius: 20px;
-    border: 1px solid #000;
-    background-color: #d9d9d9;
-}
-
-.emissions-unit {
-    color: #fff;
-    text-align: center;
-    font-family: 'Nunito Sans', sans-serif;
-    font-size: 36px;
-    font-weight: 500;
-    line-height: 33px;
+    font-size: 24px;
+    margin-bottom: 0;
+    padding-bottom: 20px;
 }
 
 /* Equivalents Section */
 .equivalents-section {
     text-align: center;
+    margin-bottom: 30px;
 }
 
 .equivalents-title {
@@ -224,8 +126,6 @@ body {
     line-height: 33px;
 }
 
-
-
 .metrics-grid {
     display: flex;
     gap: 15px;
@@ -235,7 +135,7 @@ body {
 
 .metric-card {
     width: 240px;
-    height: 186px;
+    height: 170px;
     border-radius: 20px;
     border: 1px solid #3766a5;
     position: relative;
@@ -264,12 +164,13 @@ body {
     width: 57px;
     height: 57px;
     object-fit: contain;
+    margin-bottom: -10px;
 }
 
 .metric-action {
     color: #000;
     text-align: center;
-    margin-bottom: 5px;
+    margin-bottom: -15px;
     font-family: 'Nunito Sans', sans-serif;
     font-size: 16px;
     font-weight: 500;
@@ -304,32 +205,6 @@ body {
     .dashboard-title {
         font-size: 36px;
         margin-bottom: 40px;
-    }
-
-    .carbon-footprint-container {
-        height: 400px;
-    }
-
-    .chart-title {
-        font-size: 28px;
-    }
-
-    /* .chart-placeholder {
-        width: 80%;
-        height: 250px;
-        left: 10%;
-        top: 80px;
-    } */
-
-    .emissions-data {
-        flex-direction: column;
-        gap: 15px;
-        bottom: 40px;
-    }
-
-    .emissions-label,
-    .emissions-unit {
-        font-size: 28px;
     }
 
     .equivalents-title {
@@ -380,41 +255,6 @@ body {
         font-size: 28px;
         line-height: 32px;
         margin-bottom: 30px;
-    }
-
-    .chart-section {
-        margin-bottom: 60px;
-    }
-
-    .carbon-footprint-container {
-        height: 350px;
-    }
-
-    .chart-title {
-        font-size: 24px;
-        width: 300px;
-        top: 25px;
-    }
-
-    .chart-placeholder {
-        width: 85%;
-        height: 200px;
-        left: 7.5%;
-        top: 70px;
-    }
-
-    .emissions-data {
-        bottom: 30px;
-    }
-
-    .emissions-label,
-    .emissions-unit {
-        font-size: 20px;
-    }
-
-    .emissions-value-bar {
-        width: 120px;
-        height: 30px;
     }
 
     .equivalents-title {

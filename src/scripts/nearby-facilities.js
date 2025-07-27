@@ -61,7 +61,11 @@ async function initMap() {
         placeAutocomplete.addEventListener("gmp-select", async ({ placePrediction }) => {
             const place = placePrediction.toPlace();
             await place.fetchFields({ fields: ['location'] });
-    
+
+            sessionStorage.setItem("searchedLocation", JSON.stringify({
+                location: place.location
+            }));
+
             searchedLocation = place.location;
             await searchText();
         });
