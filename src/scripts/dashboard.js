@@ -226,8 +226,6 @@ function insertValues() {
         document.getElementById('emissions-section').classList.add('hidden')
         document.getElementById('equivalents-section').classList.add('hidden')
     }
-
-
 }
 
 // TODO: maybe add metric card for carbon footprint reduction

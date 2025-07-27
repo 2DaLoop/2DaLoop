@@ -425,7 +425,6 @@ p {
     transition: opacity 0.3s ease;
 }
 
-
 /* When visible */
 .overlay.active {
     opacity: 1;
