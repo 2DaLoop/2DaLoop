@@ -2,17 +2,33 @@ import ApexCharts from 'apexcharts';
 
 initDashboard();
 
-function initDashboard() {
-    // showWaitlistForm();
-    drawCO2EmissionsChart()
-    drawEwasteChart()
-    insertValues();
-    calcCarbonFootprint();
-    initPostMessageListener();
-}
+document.getElementById('waitlist-btn').addEventListener('click', () => {
+    showWaitlistForm();
+})
 
-// TODO: event listener for clicking off waitlist form
-//       add join waitlist button
+// hide waitlist form if user clicks off
+document.querySelector('.overlay')?.addEventListener('click', (event) => {
+    const form = document.querySelector('.ghl-form');
+    if (form && !form.contains(event.target)) {
+        form.classList.add('hidden');
+        event.currentTarget.classList.remove('active');
+    }
+});
+
+function initDashboard() {
+    // TODO: check cookie for waitlistSubmitted, if true don't show
+    if (true) {
+        setTimeout(() => {
+            showWaitlistForm();
+        }, 4000);
+    }
+
+    drawCO2EmissionsChart();
+    drawEwasteChart();
+    insertValues();
+    initPostMessageListener();
+    // calcCarbonFootprint();
+}
 
 // hide the form after submitting
 function initPostMessageListener() {
@@ -37,13 +53,9 @@ function initPostMessageListener() {
     }, 100); // small delay to ensure DOM and iframe are ready
 }
 
-function showWaitlistForm() {
-    // TODO: check cookie for waitlistSubmitted, if true don't show
-
-    setTimeout(() => {
-        document.querySelector('.ghl-form').classList.remove('hidden');
-        document.querySelector('.overlay').classList.add('active');
-    }, 4000);
+function showWaitlistForm() {    
+    document.querySelector('.ghl-form').classList.remove('hidden');
+    document.querySelector('.overlay').classList.add('active');
 }
 
 async function drawCO2EmissionsChart() {
@@ -70,7 +82,6 @@ async function drawCO2EmissionsChart() {
         const entity = row[entityIndex];
         const year = parseInt(row[yearIndex]);
         const value = parseFloat(row[emissionsIndex]);
-        console.log(entity)
 
         if (selectedEntities.includes(entity) && !isNaN(year) && !isNaN(value)) {
             entityData[entity].push([new Date(year, 0).getTime(), value]);
@@ -145,7 +156,6 @@ async function drawEwasteChart() {
         const entity = row[entityIndex];
         const year = parseInt(row[yearIndex]);
         const value = parseFloat(row[valueIndex]);
-        console.log(entity)
 
         if (selectedEntities.includes(entity) && !isNaN(year) && !isNaN(value)) {
             entityData[entity].push([new Date(year, 0).getTime(), value]);
@@ -231,6 +241,8 @@ function calcCarbonFootprint() {
     
         const estKilograms = estPounds / 2.205;
         const estEmissions = estKilograms * 25;
+
+        return estEmissions
     }
 }
 

@@ -17,79 +17,19 @@ body {
     display: flex;
 }
 
-/* Sidebar Navigation */
-.sidebar-navigation {
-    width: 69px;
-    height: 100vh;
-    position: fixed;
-    left: 0;
-    top: 0;
-    z-index: 100;
+.join-waitlist-btn {
+    background-color: #142850;
+    color: white;
+    padding: 18px 32px;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    transition: background-color 0.2s ease, transform 0.1s ease;
 }
 
-.sidebar-background {
-    width: 69px;
-    height: 100vh;
-    position: absolute;
-    left: 0;
-    top: 0;
-    background-color: #3766a5;
-}
-
-.company-logo {
-    width: 49px;
-    height: 47px;
-    position: absolute;
-    left: 12px;
-    top: 23px;
-    object-fit: contain;
-}
-
-.nav-icon-container {
-    width: 41px;
-    height: 42px;
-    border-radius: 4px;
-    position: absolute;
-    left: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-}
-
-.nav-icon-container:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-}
-
-.briefcase-icon {
-    top: 100px;
-}
-
-.package-icon {
-    top: 160px;
-}
-
-.clipboard-icon {
-    top: 220px;
-}
-
-.download-icon {
-    top: 280px;
-}
-
-.help-icon {
-    top: 340px;
-}
-
-.settings-icon {
-    top: 400px;
-}
-
-.nav-icon {
-    width: 19px;
-    height: 19px;
-    flex-shrink: 0;
+.join-waitlist-btn:hover {
+    background-color: #223a5f;
 }
 
 /* Main Content */
