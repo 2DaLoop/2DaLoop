@@ -16,8 +16,7 @@ document.querySelector('.overlay')?.addEventListener('click', (event) => {
 });
 
 function initDashboard() {
-    // TODO: check cookie for waitlistSubmitted, if true don't show
-    if (true) {
+    if (!hasCookie('waitlistSubmitted')) {
         setTimeout(() => {
             showWaitlistForm();
         }, 4000);
@@ -36,7 +35,7 @@ function initPostMessageListener() {
 
     setTimeout(() => {
         window.addEventListener("message", (event) => {
-            if (event.origin.includes("leadconnectorhq.com")) {
+            if (event.origin.includes("leadconnectorhq.com") && Array.isArray(event.data) && event.data.length === 5) {
                 ghlMessageCount++;
 
                 if (ghlMessageCount === 2) {
@@ -44,8 +43,9 @@ function initPostMessageListener() {
                         document.querySelector('.ghl-form')?.classList.add('hidden');
                         document.querySelector('.overlay')?.classList.remove('active');
 
-                        // TODO: set cookie for waitlistSubmitted = true
-
+                        if (localStorage.getItem('cookieAccepted')) {
+                            document.cookie = "waitlistSubmitted=true; max-age=31536000;";
+                        }
                     }, 2000);
                 }
             }
@@ -54,8 +54,8 @@ function initPostMessageListener() {
 }
 
 function showWaitlistForm() {    
-    document.querySelector('.ghl-form').classList.remove('hidden');
-    document.querySelector('.overlay').classList.add('active');
+    document.querySelector('.ghl-form')?.classList.remove('hidden');
+    document.querySelector('.overlay')?.classList.add('active');
 }
 
 async function drawCO2EmissionsChart() {
@@ -251,4 +251,9 @@ function getGHGResults() {
     } else {
         return null
     }
+}
+
+// check if a cookie exists
+function hasCookie(name) {
+    return document.cookie.split('; ').some(cookie => cookie.trim().startsWith(`${name}=`));
 }

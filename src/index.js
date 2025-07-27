@@ -9,3 +9,20 @@ import { loadSidebar } from './components/sidebar.js';
 
 loadSidebar();
 initializeRoutes();
+
+// Show cookie popup if not accepted
+if (!localStorage.getItem('cookieAccepted')) {
+    const cookieEl = document.getElementById('cookie-popup');
+    if (cookieEl) {
+        cookieEl.classList.remove('hidden');
+        fetch('src/components/cookie-popup.html')
+            .then(response => response.text())
+            .then(html => {
+                cookieEl.innerHTML = html;
+
+                const script = document.createElement('script');
+                script.src = 'src/components/cookie-popup.js';
+                document.body.appendChild(script);
+            })
+    }
+}

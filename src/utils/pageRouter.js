@@ -51,7 +51,6 @@ const navigate = async (route) => {
 window.addEventListener('hashchange', async () => {
     const newRoute = location.hash || '#/';
     const routeInfo = ROUTES[newRoute];
-    console.log(`Navigating to: ${newRoute}`);
     if (newRoute !== currentRoute) {
         currentRoute = newRoute;
         renderContent(newRoute);

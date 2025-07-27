@@ -430,3 +430,34 @@ p {
     opacity: 1;
     pointer-events: auto;
 }
+
+/* cookie popup */
+#cookie-popup {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #3766A5;
+    color: #fff;
+    padding: 24px 32px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    z-index: 9999;
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+#accept-cookie-btn {
+    margin-left: 24px;
+    background: #fff;
+    color: #3766A5;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.cookie-learn-more {
+    color: #fff;
+    text-decoration: underline;
+}
