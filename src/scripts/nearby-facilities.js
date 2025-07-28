@@ -239,15 +239,8 @@ function updateSidebarWithRepairs(places) {
     }
     list.innerHTML = '';
 
-    // Sort places alphabetically by displayName
-    const sortedPlaces = [...places].sort((a, b) =>
-        (a.displayName || '').localeCompare(b.displayName || '')
-    );
-
-    console.log("Sorted places:", sortedPlaces);
-
     // Add each place as a card with all available info from the pin
-    sortedPlaces.forEach((place, i) => {
+    places.forEach((place, i) => {
         const li = document.createElement('li');
         li.style.padding = '16px';
         li.style.marginBottom = '16px';
