@@ -38,7 +38,12 @@ app.post("/calculate/budget", async (req, res) => {
         ];
 
         // go to itad calculator
-        const browser = await puppeteer.launch();
+        const browser = await puppeteer.launch({
+            headless: 'shell',
+            args: ['--enable-gpu'],
+            enableExtensions: true,
+            userDataDir: "./profile",
+        });
         const page = await browser.newPage();
         await page.goto("https://calculator.itadusa.com/");
 
@@ -123,11 +128,15 @@ app.post("/calculate/ghg", async (req, res) => {
         ];
 
         const browser = await puppeteer.launch({
-            headless: true,
-            userDataDir: "./profile"
+            headless: 'shell',
+            args: ['--enable-gpu'],
+            enableExtensions: true,
+            userDataDir: "./profile",
         });
         const page = await browser.newPage();
-        await page.goto("https://www.greenteksolutionsllc.com/itad-environmental-impact-calculator/");
+        await page.goto("https://www.greenteksolutionsllc.com/itad-environmental-impact-calculator/", {
+            waitUntil: 'networkidle2'
+        });
 
         // mouse needs to hover on site to work
         await sleep(1000);
@@ -160,7 +169,7 @@ app.post("/calculate/ghg", async (req, res) => {
         await page.click('xpath=//button[contains(@class, "secondary-button") and contains(., "Calculate")]');
 
         // get results
-        await sleep(1000);
+        await sleep(1500);
         const results = await page.$$eval('span.number', (spans, labels) => {
             const data = {};
 

@@ -199,19 +199,29 @@ document.querySelector('.calculate-btn').addEventListener('click', async () => {
             cancelButtonColor: '#d33'
         }).then(async (result) => {
             if (result.isConfirmed) {
+                // remove existing ghg results if available
+                sessionStorage.removeItem('ghgResults');
+                sessionStorage.setItem('newAssetSubmission', true);
+
                 // show loader and hide inventory form
                 document.querySelector('.inventory-container').classList.add('hidden');
                 document.querySelector('.loader').classList.remove('hidden');
 
-                // get results for budget
-                const response = await submitAssetsForBudget(quantityInputs, ageInputs);
-
-                // convert strings to numbers
-                const data = convertToNums(response.data);
+                // get budget results
+                const budgetResponse = await submitAssetsForBudget(quantityInputs, ageInputs);
+                const data = convertToNums(budgetResponse.data);
 
                 // store in supabase and load charts
                 storeData(quantityInputs, ageInputs);
                 loadChart(data);
+
+                // get ghg results
+                const ghgResults = await submitAssetsForGHG(quantityInputs);
+
+                // store to be used on dashboard page
+                sessionStorage.setItem('ghgResults', JSON.stringify({
+                    results: ghgResults
+                }));
             }
         });
     }
@@ -219,19 +229,6 @@ document.querySelector('.calculate-btn').addEventListener('click', async () => {
 
 // submit to esg calculator and go to dashbaord
 document.querySelector('#next-btn').addEventListener('click', async () => {
-    document.getElementById('comparison-chart').classList.add('hidden');
-    document.querySelector('.loader').classList.remove('hidden');
-
-    const quantityInputs = document.querySelectorAll('.quantity-input');
-
-    const ghgResults = await submitAssetsForGHG(quantityInputs);
-    console.log(ghgResults);
-
-    // store to be used on dashboard page
-    sessionStorage.setItem('ghgResults', JSON.stringify({
-        results: ghgResults
-    }));
-
     navigate('#/dashboard')
 })
 
