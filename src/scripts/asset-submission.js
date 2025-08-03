@@ -48,65 +48,60 @@ inputs.forEach(input => {
 // create a click event listener for the import button
 let importButton = document.querySelector('.import-btn');
 importButton.addEventListener('click', () => {
-    // TODO: implement import functionality for csv files
-
-    // create a file input element
-    // let fileInput = document.createElement('input');
-    // fileInput.type = 'file';
-    // // accept csv files too
-    // fileInput.accept = '.json, .csv, .txt'; // accept only JSON and CSV files
-
-    // const file = e.target.files[0];
-    // if (!file) return;
-
-    // const fileType = file.name.split('.').pop().toLowerCase();
-
-    // const reader = new FileReader();
-
-    // reader.onload = function (event) {
-    //     let data = [];
-
-    //     if (fileType === 'csv') {
-    //         const text = event.target.result;
-    //         data = parseCSV(text);
-    //     } else {
-    //         alert("Unsupported file type.");
-    //         return;
-    //     }
-
-    //     const structured = restructureData(data);
-    //     fillFormFromData(structured);
-    // };
-
-    // if (fileType === 'csv') {
-    //     reader.readAsText(file);
-    // }
-
-    // // create a change event listener for the file input
-    // fileInput.addEventListener('change', (event) => {
-    //     let file = event.target.files[0];
-    //     if (file) {
-    //         let reader = new FileReader();
-    //         reader.onload = function(e) {
-    //             try {
-    //                 let data = JSON.parse(e.target.result);
-    //                 data.forEach(item => {
-    //                     let quantityInput = document.getElementById(item.id);
-    //                     if (quantityInput) {
-    //                         quantityInput.value = item.value;
-    //                     }
-    //                 });
-    //             } catch (error) {
-    //                 console.error('Error parsing JSON:', error);
-    //             }
-    //         };
-    //         reader.readAsText(file);
-    //     }
-    // });
-
-    // // trigger the file input click
-    // fileInput.click();
+    triggerFileInput();
 });
+
+// When a file is selected, parse and process the CSV
+document.getElementById('csvFileInput').addEventListener('change', function () {
+    const file = this.files[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = function (e) {
+        processCSV(e.target.result);
+    };
+    reader.readAsText(file);
+});
+
+// Mapping CSV category names to field ID prefixes
+const categoryMap = {
+    "desktops": "desktop",
+    "laptops": "laptop",
+    "battery backups": "battery",
+    "mobile devices": "mobile",
+    "printer": "printer",
+    "misc components": "misc-comp",
+    "monitor": "monitor"
+};
+
+function processCSV(csvText) {
+    const lines = csvText.trim().split("\n");
+    const headers = lines[0].split(",").map(h => h.trim().toLowerCase());
+
+    for (let i = 1; i < lines.length; i++) {
+        const row = lines[i].split(",").map(cell => cell.trim());
+
+        const categoryName = row[0].trim().toLowerCase();
+        const quantity = row[1];
+        const age = row[2];
+
+        const idPrefix = categoryMap[categoryName];
+        if (!idPrefix) {
+            console.warn(`Unknown category: ${categoryName}`);
+            continue;
+        }
+
+        const quantityInput = document.getElementById(`${idPrefix}-quantity`);
+        const ageInput = document.getElementById(`${idPrefix}-age`);
+
+        if (quantityInput) quantityInput.value = quantity;
+        if (ageInput) ageInput.value = age;
+    }
+}
+
+function triggerFileInput() {
+    document.getElementById('csvFileInput').click();
+}
 
 // create a click event listener for the export button
 let exportButton = document.querySelector('.export-btn');
