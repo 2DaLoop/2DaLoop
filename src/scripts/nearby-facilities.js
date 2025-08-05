@@ -139,13 +139,31 @@ async function searchGeoJson() {
                     borderColor: "green",
                     glyphColor: "green",
                 });
-                markers.push(new AdvancedMarkerElement({
+                const marker = new AdvancedMarkerElement({
                     map,
                     position: point,
                     title: feature.properties.Name,
                     content: greenPin.element,
-                }));
+                });
+                markers.push(marker);
                 bounds.extend(point);
+
+                // Add click event to marker to show only the corresponding card
+                marker.addListener('click', () => {
+                    const sidebar = document.getElementById('facilities-list');
+                    if (!sidebar) return;
+                    let list = document.getElementById('facility-items');
+                    if (!list) return;
+                    // Find the facility index
+                    const facilityIndex = sidebarFacilities.findIndex(f => f.name === feature.properties.Name);
+                    if (facilityIndex !== -1) {
+                        // Only show the matching card
+                        const lis = list.querySelectorAll('li');
+                        lis.forEach((li, idx) => {
+                            li.style.display = (idx === facilityIndex) ? '' : 'none';
+                        });
+                    }
+                });
 
                 // Collect info for sidebar
                 sidebarFacilities.push({
@@ -223,12 +241,30 @@ async function searchText(location) {
             let sidebarPlaces = [];
             places.forEach((place) => {
                 if (!bannedWords.some(word => place.displayName.toLowerCase().includes(word))) {
-                    markers.push(new AdvancedMarkerElement({
+                    const marker = new AdvancedMarkerElement({
                         map,
                         position: place.location,
                         title: place.displayName,
-                    }));
+                    });
+                    markers.push(marker);
                     bounds.extend(place.location);
+
+                    // Add click event to marker to show only the corresponding card
+                    marker.addListener('click', () => {
+                        const sidebar = document.getElementById('facilities-list');
+                        if (!sidebar) return;
+                        let list = document.getElementById('facility-items');
+                        if (!list) return;
+                        // Find the place index
+                        const placeIndex = sidebarPlaces.findIndex(f => f.displayName === place.displayName);
+                        if (placeIndex !== -1) {
+                            // Only show the matching card
+                            const lis = list.querySelectorAll('li');
+                            lis.forEach((li, idx) => {
+                                li.style.display = (idx === placeIndex) ? '' : 'none';
+                            });
+                        }
+                    });
                     sidebarPlaces.push(place);
                 }
             });
