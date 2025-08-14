@@ -257,8 +257,7 @@ function insertValues(data) {
 
     // calculate estimated carbon footprint
     const estPounds = Number(data.total_est_weight.replace(/[$,()]/g, ''));
-    const estKilograms = estPounds / 2.205;
-    const estEmissions = estKilograms * 25;
+    const estEmissions = estPounds * 25;
 
     document.getElementById('carbon-footprint').textContent = estEmissions.toFixed(2);
 }
