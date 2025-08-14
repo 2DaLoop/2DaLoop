@@ -230,7 +230,7 @@ async function searchText(location) {
             language: "en-US",
             region: "us",
         };
-        const bannedWords = ["walmart", "staples", "subway", "autozone", "auto parts", "o'reilly", "ace hardware", "home depot", "lowes", "target", "costco", "kroger", "safeway", "aldi", "food lion", "publix"];
+        const bannedWords = ["walmart", "staples", "subway", "autozone", "auto parts", "o'reilly", "ace hardware", "home depot", "lowes", "target", "costco", "kroger", "safeway", "aldi", "food lion", "publix", "best buy", "fedex"];
     
         clearMarkers();
     
