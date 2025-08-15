@@ -2,5 +2,4 @@ steps:
   - name: 'gcr.io/cloud-builders/gcloud'
     args: ['app', 'deploy', 'app.yaml', '--quiet']
 
-logsBucket: NONE       # no bucket, logs only in Cloud Logging
-logsBucket: CLOUD_LOGGING_ONLY
+logsBucket: gs://2daloop_bucket
