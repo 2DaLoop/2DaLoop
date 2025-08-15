@@ -1,3 +1,4 @@
 env.js
 .config/
-src/puppeteer/profile
+backend/profile/
+node_modules/
