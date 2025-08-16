@@ -8,7 +8,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const app = express();
-const HTTP_PORT = 8080;
+const PORT = process.env.PORT || 8080;
 
 // Serve static files from "src"
 app.use(express.static(path.join(__dirname, '..')));
@@ -208,6 +208,6 @@ app.get("/", (req, res) => {
     res.status(200).json({ message: "Hello World" });
 });
 
-app.listen(HTTP_PORT, () => {
-    console.log("Server running on", HTTP_PORT);
+app.listen(PORT, () => {
+    console.log("Server running on", PORT);
 });
