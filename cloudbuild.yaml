@@ -1,7 +1,7 @@
 # cloudbuild.yaml
 #steps:
   # Step 1: Pre-check for required files
-  - # name: 'gcr.io/cloud-builders/gcloud'
+  # name: 'gcr.io/cloud-builders/gcloud'
     #entrypoint: 'bash'
     #args:
      # - '-c'
@@ -43,6 +43,7 @@ logsBucket: gs://2daloop_bucket
 # Optional: Extend build timeout if needed
 timeout: '900s'
 
+logging: CLOUD_LOGGING_ONLY
 
 
 
