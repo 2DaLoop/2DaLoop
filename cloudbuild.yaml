@@ -42,7 +42,7 @@ logsBucket: gs://2daloop_bucket
 # Optional: Extend build timeout if needed
 timeout: '900s'
 
-logging: CLOUD_LOGGING_ONLY
+
 
 
 
