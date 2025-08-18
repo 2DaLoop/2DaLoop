@@ -1,5 +1,5 @@
 # cloudbuild.yaml
-#steps:
+steps:
   # Step 1: Pre-check for required files
   # name: 'gcr.io/cloud-builders/gcloud'
     #entrypoint: 'bash'
@@ -27,7 +27,6 @@
   # Step 3: Deploy to App Engine Basic Environment
 
 
-  
   - name: 'gcr.io/cloud-builders/npm'
     args: ['install']
 
