@@ -16,7 +16,7 @@
         #echo "✅ All required files found"
 
   # Step 2: Debug — show current working directory & files
-  - #name: 'gcr.io/cloud-builders/gcloud'
+  #name: 'gcr.io/cloud-builders/gcloud'
     #entrypoint: 'bash'
     #args:
      # - '-c'
