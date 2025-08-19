@@ -2,8 +2,8 @@ runtime: nodejs20
 instance_class: F1
 env: flex
 automatic_scaling:
-  min_instances: 1
-  max_instances: 5
+  min_num_instances: 1
+  max_num_instances: 3
 
 
 resources:
