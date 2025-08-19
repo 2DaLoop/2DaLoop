@@ -1,6 +1,26 @@
 runtime: nodejs20
 instance_class: F1
-env: standard
+env: flex
 automatic_scaling:
   min_instances: 1
   max_instances: 5
+
+
+resources:
+  cpu: 2
+  memory_gb: 2
+  disk_size_gb: 10
+
+# Puppeteer-compatible settings
+env_variables:
+  NODE_ENV: 'production'
+  PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: 'true'
+
+# Start your server
+entrypoint: node backend/server.js
+
+# Enable access to the browser
+network:
+  forwarded_ports:
+    - 3000
+

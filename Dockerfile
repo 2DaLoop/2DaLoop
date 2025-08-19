@@ -37,7 +37,7 @@ RUN npm install
 COPY . .
 
 # Expose port (Cloud Run expects port 8080)
-ENV PORT=8080
+ENV PORT=3000
 ENV NODE_ENV=production
 
 # Puppeteer requirement: disable sandbox in cloud environments
