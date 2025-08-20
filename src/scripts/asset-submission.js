@@ -202,6 +202,39 @@ document.querySelector('.calculate-btn').addEventListener('click', async () => {
                 document.querySelector('.inventory-container').classList.add('hidden');
                 document.querySelector('.loader').classList.remove('hidden');
 
+                // Show "Why Recycling Tech Matters" facts card below loader
+                let factsDiv = document.getElementById('ewaste-facts');
+                if (!factsDiv) {
+                    factsDiv = document.createElement('div');
+                    factsDiv.id = 'ewaste-facts';
+                    factsDiv.style.margin = '32px auto 0 auto';
+                    factsDiv.style.maxWidth = '600px';
+                    factsDiv.style.background = '#f7f9fc';
+                    factsDiv.style.border = '1px solid #3766A5';
+                    factsDiv.style.borderRadius = '12px';
+                    factsDiv.style.padding = '24px 28px';
+                    factsDiv.style.fontSize = '1.1rem';
+                    factsDiv.style.color = '#222';
+                    factsDiv.style.boxShadow = '0 2px 12px rgba(55,102,165,0.08)';
+                    factsDiv.innerHTML = `
+                        <div style="font-size:1.5rem;margin-bottom:12px;text-align:center;">🌍 Why Recycling Tech Matters: 5 Key Facts</div>
+                        <ul style="padding-left:18px;line-height:1.7;">
+                            <li><b>Precious metals are inside</b> – Old electronics contain gold, silver, copper, palladium, and rare earth elements. Recycling helps recover these resources instead of mining new ones.</li>
+                            <li><b>Improper disposal is toxic</b> – Devices often contain lead, mercury, and cadmium. If thrown in the trash, these chemicals can leak into soil and water, harming the environment and public health.</li>
+                            <li><b>E-waste is the fastest-growing waste stream</b> – Globally, we produce over 60 million tons of electronic waste every year, and less than 20% is properly recycled.</li>
+                            <li><b>Certified recyclers matter</b> – Not all “recyclers” are equal. Some illegally ship e-waste overseas, where it’s dismantled unsafely. Using R2 or e-Stewards certified recyclers ensures responsible handling.</li>
+                            <li><b>Recycling laptops saves big energy</b> – Recycling one million laptops saves enough energy to power over 3,600 U.S. homes for a year.</li>
+                        </ul>
+                    `;
+                    // Insert after loader
+                    const loader = document.querySelector('.loader');
+                    if (loader && loader.parentNode) {
+                        loader.parentNode.insertBefore(factsDiv, loader.nextSibling);
+                    }
+                } else {
+                    factsDiv.style.display = '';
+                }
+
                 // get budget results
                 const budgetResponse = await submitAssetsForBudget(quantityInputs, ageInputs);
                 const data = convertToNums(budgetResponse.data);
