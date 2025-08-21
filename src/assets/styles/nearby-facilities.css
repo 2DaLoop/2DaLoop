@@ -29,3 +29,8 @@
 .recycle-button:hover, #recycle-btn:hover {
     background-color: #2e7031; /* Darker green on hover */
 }
+
+.map-disclaimer {
+    margin-bottom: 0;
+    padding: 7px;
+}
