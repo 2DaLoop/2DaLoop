@@ -25,10 +25,13 @@
     "apexcharts": "^4.7.0",
     "cors": "^2.8.5",
     "express": "^5.1.0",
-    "puppeteer": "^24.10.2"
+    "puppeteer": "^24.10.2",
+    "node": "24.x"
   },
   "devDependencies": {
     "vite": "^7.0.1"
   }
+
+  
 }
 
