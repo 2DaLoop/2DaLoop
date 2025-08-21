@@ -1,0 +1,23 @@
+runtime: nodejs
+instance_class: F2
+env: flex
+
+
+resources:
+  cpu: 2
+  memory_gb: 2
+  disk_size_gb: 10
+
+# Puppeteer-compatible settings
+env_variables:
+  NODE_ENV: 'production'
+  PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: 'true'
+
+# Start your server
+entrypoint: node backend/server.js
+
+# Enable access to the browser
+network:
+  forwarded_ports:
+    - 8080
+
