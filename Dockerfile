@@ -27,17 +27,17 @@ RUN apt-get update && apt-get install -y \
   && rm -rf /var/lib/apt/lists/*
 
 # Set working directory
-WORKDIR /app
+WORKDIR /2daloopengine
 
 # Copy package files and install
-COPY package*.json ./
+COPY package.json ./
 RUN npm install
 
 # Copy rest of the app
 COPY . .
 
 # Expose port (Cloud Run expects port 8080)
-ENV PORT=3000
+ENV PORT=8080
 ENV NODE_ENV=production
 
 # Puppeteer requirement: disable sandbox in cloud environments
