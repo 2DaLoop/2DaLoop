@@ -47,8 +47,19 @@ inputs.forEach(input => {
 
 // create a click event listener for the import button
 let importButton = document.querySelector('.import-btn');
-importButton.addEventListener('click', () => {
-    triggerFileInput();
+importButton.addEventListener('click', function (e) {
+    e.preventDefault();
+    Swal.fire({
+        title: 'Example of accepted data',
+        html: `<img src="src/assets/images/CSVExample.png" alt="Example of accepted data" style="width:700px;max-width:95vw;border-radius:8px;margin-bottom:10px;display:block;margin-left:auto;margin-right:auto;">`,
+        confirmButtonText: 'OK',
+        confirmButtonColor: '#3766A5',
+        width: 750
+    }).then((result) => {
+        if (result.isConfirmed) {
+            triggerFileInput();
+        }
+    });
 });
 
 // When a file is selected, parse and process the CSV
