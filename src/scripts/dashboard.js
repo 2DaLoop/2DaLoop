@@ -20,6 +20,8 @@ function initDashboard() {
         setTimeout(() => {
             showWaitlistForm();
         }, 4000);
+    } else {
+        showFullReport();
     }
 
     drawCO2EmissionsChart();
@@ -27,6 +29,20 @@ function initDashboard() {
     checkForValues();
     initPostMessageListener();
 }
+
+document.getElementById("export-pdf-btn").addEventListener("click", () => {
+    const element = document.querySelector(".dashboard-container");
+
+    const opt = {
+        margin:       0.5,
+        filename:     'dashboard.pdf',
+        image:        { type: 'jpeg', quality: 1 },
+        html2canvas:  { scale: 2, useCORS: true }, // scale improves quality, useCORS allows external images
+        jsPDF:        { unit: 'in', format: 'a4', orientation: 'landscape' }
+    };
+
+    html2pdf().set(opt).from(element).save();
+});
 
 // hide the form after submitting
 function initPostMessageListener() {
@@ -45,6 +61,9 @@ function initPostMessageListener() {
                         if (localStorage.getItem('cookieAccepted')) {
                             document.cookie = "waitlistSubmitted=true; max-age=31536000;";
                         }
+
+                        // show full report data
+                        showFullReport();
                     }, 2000);
                 }
             }
@@ -218,7 +237,6 @@ function checkForValues(maxRetries = 30, interval = 1000) {
     } else {
         // check if new data was submitted
         if (!sessionStorage.getItem('newAssetSubmission')) {
-            console.log("he")
             document.getElementById('emissions-section').classList.add('hidden');
             document.getElementById('equivalents-section').classList.add('hidden');
             return;
@@ -260,6 +278,88 @@ function insertValues(data) {
     const estEmissions = estPounds * 25;
 
     document.getElementById('carbon-footprint').textContent = estEmissions.toFixed(2);
+}
+
+function showFullReport() {
+    // show comparison chart
+    document.getElementById('comparison-section').classList.remove('hidden');
+    const data = JSON.parse(sessionStorage.getItem('comparisonData'))
+    loadChart(data);
+
+    // show location
+    document.getElementById('location-section').classList.remove('hidden');
+    const location = JSON.parse(sessionStorage.getItem('searchedLocation'))?.address;
+    if (location) {
+        document.querySelector('.location-text').textContent = location;
+    }
+}
+
+function loadChart(data) {
+    const options = {
+        chart: {
+            type: 'bar',
+            height: 500
+        },
+        colors: ['#00A721', '#3766a5'],
+        plotOptions: {
+            bar: {
+                horizontal: false,
+            }
+        },
+        dataLabels: {
+            formatter: function (val) {
+                return val < 0 ? `-$${Math.abs(val).toLocaleString()}` : `$${val.toLocaleString()}`;
+            },
+        },
+        series: [{
+            name: 'Standard Burden Shift',
+            data: [
+                Number(data.packing.total_value_recovery) || 0,
+                -(Number(data.packing.total_pickup_cost)) || 0,
+                Number(data.packing.net_financial_settlement) || 0
+            ]}, {
+            name: '2DaLoop Potential',
+            data: [
+                Number(data.noPacking.total_value_recovery) || 0,
+                -(Number(data.noPacking.total_pickup_cost)) || 0,
+                Number(data.noPacking.net_financial_settlement) || 0
+            ]
+        }],
+        xaxis: {
+            categories: ["Total Value Recovery", "Total Pickup Cost", "Net Financial Settlement"],
+            title: {
+                text: 'Revenue and Costs',
+                style: {
+                    fontSize: "16px"
+                }
+            },
+        },
+        yaxis: {
+            title: {
+                text: 'Price ($)',
+                style: {
+                    fontSize: "16px"
+                }
+            },
+            labels: {
+                formatter: function(val) {
+                    return val < 0 ? `-$${Math.abs(val).toLocaleString()}` : `$${val.toLocaleString()}`;
+                },
+                style: {
+                    fontSize: '16px',
+                }
+            }
+        },
+        legend: {
+            show: true,
+            position: 'top',
+            horizontalAlign: 'left',
+            offsetY: -20
+        }
+    };
+
+    const chart = new ApexCharts(document.getElementById('grouped-bar-chart'), options);
+    chart.render();
 }
 
 function getGHGResults() {

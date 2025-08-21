@@ -14,7 +14,8 @@ document.getElementById("btnCurrLocation").addEventListener("click", async () =>
                 }
 
                 sessionStorage.setItem('searchedLocation', JSON.stringify({
-                    location: currLocation
+                    location: currLocation,
+                    address: "Current Location"
                 }));
 
                 navigate('#/nearby-facilities');
@@ -60,10 +61,11 @@ async function initAutoComplete() {
 document.getElementById('btnNext').addEventListener('click', async function() {
     if (selectedPlace) {
         const place = selectedPlace.toPlace ? await selectedPlace.toPlace() : selectedPlace;
-        await place.fetchFields({ fields: ['location'] });
+        await place.fetchFields({ fields: ['location', 'formattedAddress'] });
 
         sessionStorage.setItem("searchedLocation", JSON.stringify({
-            location: place.location
+            location: place.location,
+            address: place.formattedAddress
         }));
 
         navigate('#/nearby-facilities');

@@ -32,6 +32,21 @@ body {
     background-color: #223a5f;
 }
 
+.export-pdf-btn {
+    background-color: #4a90e2;
+    color: white;
+    padding: 16px 32px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.export-pdf-btn:hover {
+    background-color: #357abd;
+}
+
 /* Main Content */
 .main-content {
     margin-left: 69px;
@@ -292,4 +307,40 @@ body {
         font-size: 14px;
         line-height: 18px;
     }
+}
+
+.location-title {
+    color: #0b1444;
+    text-align: center;
+    margin-bottom: 53px;
+    font-family: 'Sansita', sans-serif;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 33px;
+}
+
+.location-card {
+    background-color: #fff;
+    display: flex;
+    border-radius: 20px;
+    border: 1px solid #3766a5;
+    padding-top: 20px;
+    padding-inline: 20px;
+    align-items: center;
+}
+
+.location-text {
+    font-size: 24px;
+    margin-bottom: 0;
+    padding-bottom: 20px;
+}
+
+.comparison-title {
+    color: #0b1444;
+    text-align: center;
+    margin-bottom: 53px;
+    font-family: 'Sansita', sans-serif;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 33px;
 }
