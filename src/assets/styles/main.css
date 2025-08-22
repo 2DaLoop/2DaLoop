@@ -44,8 +44,9 @@ body {
 }
 
 .navigation-sidebar:hover {
-    width: 25vw;
-    /* Sidebar pops out to half of the page width */
+    width: 25vw !important; /* Sidebar pops out to 25% of viewport width */
+    min-width: 200px !important; /* Ensure enough space for labels */
+    max-width: 350px !important;
     box-shadow: 2px 0 16px rgba(0, 0, 0, 0.08);
     align-items: flex-start;
 }
@@ -96,10 +97,8 @@ body {
 
 .navigation-sidebar:hover .nav-icon-button img,
 .navigation-sidebar:hover .nav-icon-button svg {
-    margin-right: 32px;
-    /* More space between icon and label */
-    margin-left: 32px !important;
-    /* More space between the left edge and icons when sidebar is popped out */
+    margin-right: 8px !important;   /* Was 32px, now 8px */
+    margin-left: 8px !important;    /* Was 32px, now 8px */
 }
 
 .nav-icon-button[aria-label]:after {
@@ -131,7 +130,8 @@ body {
     white-space: nowrap;
     left: 1px;
     /* Set a consistent left offset for all labels */
-    padding-left: 16px;
+    padding-left: 4px;   /* Was 16px, now 4px */
+    margin-left: 2.5px;  /* Was 10px, now 2.5px */
     /* Add padding for visual spacing from the icon/left edge */
     margin-left: 10px;
     /* 10px space between icon and label text */
@@ -343,11 +343,15 @@ body {
 
 @media (max-width: 640px) {
     .navigation-sidebar {
-        display: none;
+        display: flex !important; /* Always show sidebar */
+        position: fixed;
+        width: 71px;
+        height: 100vh;
+        z-index: 1000;
     }
-
     .main-content {
-        padding: 20px;
+        margin-left: 71px;
+        padding: 12px;
     }
 
     .hero-title {
@@ -368,6 +372,39 @@ body {
 
     .location-form-card {
         padding: 24px;
+    }
+
+    /* Divide the navigation sidebar width by 2 on small screens */
+    .navigation-sidebar {
+        width: 35.5px !important; /* 71px / 2 */
+        min-width: 35.5px !important;
+        max-width: 35.5px !important;
+    }
+    .main-content {
+        margin-left: 35.5px !important;
+    }
+    .nav-icon-button {
+        width: 28px !important;
+        height: 28px !important;
+        min-width: 28px !important;
+        min-height: 28px !important;
+        padding: 0 !important;
+    }
+    .nav-icon-button svg,
+    .nav-icon-button img {
+        width: 24px !important;   /* Increased from 18px to 24px */
+        height: 24px !important;
+        min-width: 24px !important;
+        min-height: 24px !important;
+    }
+    .navigation-sidebar .nav-icon-button:first-child,
+    .navigation-sidebar .nav-icon-button:first-child svg,
+    .navigation-sidebar .nav-icon-button:first-child img {
+        width: 25px !important;   /* Example: make first icon larger */
+        height: 33px !important;
+        /* min-width: 36px !important; */
+        /* min-height: 29px !important; */
+        /* aspect-ratio: 2 / 1 !important; */
     }
 }
 
@@ -460,4 +497,69 @@ p {
 .cookie-learn-more {
     color: #fff;
     text-decoration: underline;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Responsive pop-out sidebar: always allow pop-out, never cut off icon labels */
+
+/* Remove width restriction on hover for all screen sizes */
+.navigation-sidebar:hover {
+    width: 25vw !important; /* Sidebar pops out to 25% of viewport width */
+    min-width: 200px !important; /* Ensure enough space for labels */
+    max-width: 350px !important;
+    box-shadow: 2px 0 16px rgba(0, 0, 0, 0.08);
+    align-items: flex-start;
+}
+
+/* Ensure icon labels are always visible and not cut off on pop-out */
+.navigation-sidebar:hover .nav-icon-button[aria-label]:after {
+    opacity: 1;
+    max-width: none;
+    overflow: visible;
+    text-overflow: unset;
+    white-space: nowrap;
+    left: 1px;
+    padding-left: 4px;   /* Was 16px, now 4px */
+    margin-left: 2.5px;  /* Was 10px, now 2.5px */
+    position: relative;
+}
+
+/* On small screens, sidebar is collapsed by default but still pops out on hover */
+@media (max-width: 640px) {
+    .navigation-sidebar {
+        width: 35.5px !important;
+        min-width: 35.5px !important;
+        max-width: 35.5px !important;
+        transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .navigation-sidebar:hover {
+        width: 80vw !important; /* Pop out to 80% of viewport width on small screens */
+        min-width: 180px !important;
+        max-width: 95vw !important;
+    }
+    .main-content {
+        margin-left: 35.5px !important;
+    }
+    .navigation-sidebar:hover ~ .main-content {
+        margin-left: 80vw !important;
+    }
+}
+
+/* Ensure icon labels are never cut off on any screen size */
+.nav-icon-button[aria-label]:after {
+    white-space: nowrap;
+    overflow: visible;
+    text-overflow: unset;
+    max-width: none;
+}
+
+body,
+.main-container,
+.main-content {
+    background: #fff !important;
 }
