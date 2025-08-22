@@ -392,7 +392,7 @@ function loadEwasteFacts() {
         factsDiv = document.createElement('div');
         factsDiv.id = 'ewaste-facts';
         factsDiv.style.margin = '32px auto 0 auto';
-        factsDiv.style.maxWidth = '600px';
+        factsDiv.style.maxWidth = '1200px'; // 2x bigger than before (was 600px)
         factsDiv.style.background = '#f7f9fc';
         factsDiv.style.border = '1px solid #3766A5';
         factsDiv.style.borderRadius = '12px';
@@ -403,11 +403,9 @@ function loadEwasteFacts() {
         factsDiv.innerHTML = `
             <div style="font-size:1.5rem;margin-bottom:12px;text-align:center;">🌍 Why Recycling Tech Matters: 5 Key Facts</div>
             <ul style="padding-left:18px;line-height:1.7;">
-                <li><b>Precious metals are inside</b> – Old electronics contain gold, silver, copper, palladium, and rare earth elements. Recycling helps recover these resources instead of mining new ones.</li>
-                <li><b>Improper disposal is toxic</b> – Devices often contain lead, mercury, and cadmium. If thrown in the trash, these chemicals can leak into soil and water, harming the environment and public health.</li>
-                <li><b>E-waste is the fastest-growing waste stream</b> – Globally, we produce over 60 million tons of electronic waste every year, and less than 20% is properly recycled.</li>
-                <li><b>Certified recyclers matter</b> – Not all “recyclers” are equal. Some illegally ship e-waste overseas, where it’s dismantled unsafely. Using R2 or e-Stewards certified recyclers ensures responsible handling.</li>
-                <li><b>Recycling laptops saves big energy</b> – Recycling one million laptops saves enough energy to power over 3,600 U.S. homes for a year.</li>
+                <li><b> Current Problem:</b> Many organizations (government offices, schools, manufacturers, and small businesses) struggle to find reliable electronics recycling or reuse partners because existing directories are outdated and links are broken.</li>
+                <li><b>Our Solution: </b> The Suggestion Engine provides real-time connections to verified facilities—recyclers, repair shops, and reintegration partners—tailored to your location, asset type, and needs.</li>
+                <li><b>The Outcome:</b>Organizations can decommission electronics more efficiently and sustainably, saving time and ensuring assets are reused or recycled responsibly instead of going to landfills.</li>
             </ul>
         `;
         // Insert after loader
@@ -417,6 +415,7 @@ function loadEwasteFacts() {
         }
     } else {
         factsDiv.style.display = '';
+        factsDiv.style.maxWidth = '1200px'; // Ensure width is updated if already exists
     }
 }
 
