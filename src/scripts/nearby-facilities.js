@@ -68,7 +68,21 @@ async function initMap() {
             Repair
         `;
     
-        optionsDiv.append(placeAutocomplete, repairBtn, recycleBtn);
+        const r2Btn = document.createElement("button");
+        r2Btn.type = "button";
+        r2Btn.classList.add("btn", "r2-button");
+        // Style the R2 button with the nav bar blue color
+        r2Btn.style.background = "#3766A5";
+        r2Btn.style.color = "#fff";
+        r2Btn.style.border = "none";
+        r2Btn.style.fontWeight = "bold";
+        r2Btn.style.letterSpacing = "1px";
+        r2Btn.style.padding = "8px 18px";
+        r2Btn.style.borderRadius = "6px";
+        r2Btn.textContent = "R2 & RIOS";
+    
+        // Insert the R2 button next to the other buttons
+        optionsDiv.append(placeAutocomplete, repairBtn, recycleBtn, r2Btn);
         map.controls[google.maps.ControlPosition.TOP_LEFT].push(optionsDiv);
     
         // listeners for search input and filter options
@@ -91,6 +105,15 @@ async function initMap() {
     
         repairBtn.addEventListener("click", async () => {
             await searchText();
+        });
+    
+        r2Btn.addEventListener("click", () => {
+            Swal.fire({
+                title: "Coming Soon",
+                text: "R2 & RIOS certified facility search will be available in a future update.",
+                confirmButtonText: "OK",
+                confirmButtonColor: "#3766A5"
+            });
         });
     }
 }
