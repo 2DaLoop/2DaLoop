@@ -50,11 +50,22 @@ let importButton = document.querySelector('.import-btn');
 importButton.addEventListener('click', function (e) {
     e.preventDefault();
     Swal.fire({
-        title: 'Example of accepted data',
-        html: `<img src="src/assets/images/CSVExample.png" alt="Example of accepted data" style="width:700px;max-width:95vw;border-radius:8px;margin-bottom:10px;display:block;margin-left:auto;margin-right:auto;">`,
+        title: 'Accepted CSV Data: CSV Format (example.csv)',
+        html: `
+            <div style="display: flex; justify-content: center; align-items: flex-start; gap: 24px; flex-wrap: wrap;">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                    <div style="font-weight: bold; margin-bottom: 8px;">example1.csv</div>
+                    <img src="src/assets/images/CSVExample.png" alt="Example 1" style="width:340px;max-width:45vw;border-radius:8px;display:block;">
+                </div>
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                    <div style="font-weight: bold; margin-bottom: 8px;">example2.csv</div>
+                    <img src="src/assets/images/notepad.png" alt="Example 2" style="width:340px;max-width:45vw;border-radius:8px;display:block;">
+                </div>
+            </div>
+        `,
         confirmButtonText: 'OK',
         confirmButtonColor: '#3766A5',
-        width: 750
+        width: 800
     }).then((result) => {
         if (result.isConfirmed) {
             triggerFileInput();
