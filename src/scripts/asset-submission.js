@@ -416,7 +416,7 @@ function loadEwasteFacts() {
             <ul style="padding-left:18px;line-height:1.7;">
                 <li><b> Current Problem:</b> Many organizations (government offices, schools, manufacturers, and small businesses) struggle to find reliable electronics recycling or reuse partners because existing directories are outdated and links are broken.</li>
                 <li><b>Our Solution: </b> The Suggestion Engine provides real-time connections to verified facilities—recyclers, repair shops, and reintegration partners—tailored to your location, asset type, and needs.</li>
-                <li><b>The Outcome:</b>Organizations can decommission electronics more efficiently and sustainably, saving time and ensuring assets are reused or recycled responsibly instead of going to landfills.</li>
+                <li><b>The Outcome:</b> Organizations can decommission electronics more efficiently and sustainably, saving time and ensuring assets are reused or recycled responsibly instead of going to landfills.</li>
             </ul>
         `;
         // Insert after loader
