@@ -20,12 +20,14 @@
     "preview": "vite preview",
     "start": "/2DaLoop/src/index.js"
   },
+  "engines": {
+  "node": ">=20"
+  },
   "dependencies": {
     "@supabase/supabase-js": "^2.50.2",
     "apexcharts": "^4.7.0",
     "cors": "^2.8.5",
     "express": "^5.1.0",
-    "node": "24.x",
     "puppeteer": "^24.10.2"
   },
   "devDependencies": {
