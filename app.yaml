@@ -18,8 +18,3 @@ env_variables:
 # Start your server
 entrypoint: node backend/server.js
 
-# Enable access to the browser
-network:
-  forwarded_ports:
-    - 8080
-
