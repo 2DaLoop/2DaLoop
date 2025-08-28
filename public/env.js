@@ -1,0 +1,6 @@
+window.ENV = {
+    API_KEY: "AIzaSyC4qPgdicYgIIp2uxGi_ZkkjKlhr8B-_0E",
+    SUPABASE_URL: "https://ttswhygqrukmssbcpjps.supabase.co",
+    SUPABASE_ANON_KEY: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InR0c3doeWdxcnVrbXNzYmNwanBzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDk1ODEwNDMsImV4cCI6MjA2NTE1NzA0M30.2wVoSxkmt_CjyHtXNJVQu_7S75rNA6wmso2b3ZfGVwI",
+};
+//testing in public folder
