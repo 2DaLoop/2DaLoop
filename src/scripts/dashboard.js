@@ -281,16 +281,21 @@ function insertValues(data) {
 }
 
 function showFullReport() {
-    // show comparison chart
-    document.getElementById('comparison-section').classList.remove('hidden');
+    // if data exists
     const data = JSON.parse(sessionStorage.getItem('comparisonData'))
-    loadChart(data);
+    if (data) {
+        // show comparison chart
+        document.getElementById('comparison-section').classList.remove('hidden');
+        loadChart(data);
 
-    // show location
-    document.getElementById('location-section').classList.remove('hidden');
-    const location = JSON.parse(sessionStorage.getItem('searchedLocation'))?.address;
-    if (location) {
-        document.querySelector('.location-text').textContent = location;
+        // show location
+        document.getElementById('location-section').classList.remove('hidden');
+        const location = JSON.parse(sessionStorage.getItem('searchedLocation'))?.address;
+        if (location) {
+            document.querySelector('.location-text').textContent = location;
+        } else {
+            document.querySelector('.location-text').textContent = "No Location Provided";
+        }
     }
 }
 
