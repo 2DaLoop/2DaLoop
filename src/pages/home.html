@@ -1,5 +1,10 @@
 <div class="main-container">
+    <!-- Background image as a faded overlay -->
+ 
     <main class="main-content" id="main-content">
+        <!-- add this image as a background picture for the page -->
+        <div class="background-image-container">
+       <img src="https://images.squarespace-cdn.com/content/v1/67ec6dc28932c808987a9bb6/1754684184532-H3O7AVEDEBMYWU0YRR2E/unsplash-image-puCEUxEr3xk.jpg" alt="Open laptop with internal components, circuit boards, wires, and tools on a workbench." width="2500" height="1667">  </div>
         <section class="hero-section">
             <header class="hero-content">
                 <h1 class="hero-title">Revolutionizing E-Waste Management for a Sustainable Future</h1>
@@ -73,3 +78,27 @@
         </footer>
     </main>
 </div>
+<style>
+.background-image-container {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    z-index: -1;
+    overflow: hidden;
+}
+.background-image-container img {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    object-position: center;
+    opacity: 0.22; /* Adjust for more/less fade */
+    filter: brightness(0.8) blur(0.5px);
+    pointer-events: none;
+    user-select: none;
+}
+.main-container, .main-content {
+    min-height: 100vh;
+    position: relative;
+    z-index: 1;
+}
+</style>
