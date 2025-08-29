@@ -122,6 +122,36 @@ async function initMap() {
             });
         });
     }
+
+    // Responsive: stack buttons vertically under search bar on medium/small screens
+    const responsiveStyleId = 'search-bar-buttons-responsive-style';
+    if (!document.getElementById(responsiveStyleId)) {
+        const style = document.createElement('style');
+        style.id = responsiveStyleId;
+        style.innerHTML = `
+            .card.card-body.gap-2 {
+                width: 100% !important;
+                box-sizing: border-box !important;
+            }
+            .card.card-body.gap-2 > * {
+                min-width: 0 !important;
+            }
+            @media (max-width: 900px) {
+                .card.card-body.gap-2 {
+                    flex-direction: column !important;
+                    align-items: stretch !important;
+                    gap: 10px !important;
+                    width: 100% !important;
+                }
+                .card.card-body.gap-2 > * {
+                    width: 100% !important;
+                    min-width: 0 !important;
+                    box-sizing: border-box !important;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    }
 }
 
 // load GeoJSON data for recyclers and manually filter on radius
