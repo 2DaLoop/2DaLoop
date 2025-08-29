@@ -253,6 +253,21 @@ async function searchGeoJson() {
                     });
                 });
                 marker.element.addEventListener('mouseleave', removeHoverPopup);
+                // Add for touch/click (mobile/tablet)
+                marker.element.addEventListener('touchstart', (e) => {
+                    showHoverPopup({
+                        name: feature.properties.Name,
+                        address: feature.properties.Address
+                    });
+                    e.preventDefault();
+                });
+                marker.element.addEventListener('touchend', removeHoverPopup);
+                marker.element.addEventListener('click', () => {
+                    showHoverPopup({
+                        name: feature.properties.Name,
+                        address: feature.properties.Address
+                    });
+                });
             }
         });
 
@@ -335,6 +350,22 @@ async function searchText(location) {
                         });
                     });
                     marker.element.addEventListener('mouseleave', removeHoverPopup);
+                    // Add for touch/click (mobile/tablet)
+                    marker.element.addEventListener('touchstart', (e) => {
+                        showHoverPopup({
+                            displayName: place.displayName,
+                            formattedAddress: place.formattedAddress
+                        });
+                        // Prevent simulated mouse events
+                        e.preventDefault();
+                    });
+                    marker.element.addEventListener('touchend', removeHoverPopup);
+                    marker.element.addEventListener('click', () => {
+                        showHoverPopup({
+                            displayName: place.displayName,
+                            formattedAddress: place.formattedAddress
+                        });
+                    });
                 }
             });
     
