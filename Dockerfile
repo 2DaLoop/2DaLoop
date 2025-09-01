@@ -43,10 +43,12 @@ COPY . .
 # Expose port (Cloud Run expects port 8080)
 ENV PORT=8080
 ENV NODE_ENV=production
+EXPOSE 8080
+
 
 # Puppeteer requirement: disable sandbox in cloud environments
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
 ENV PUPPETEER_EXECUTABLE_PATH=/usr/bin/google-chrome-stable
 
 # Launch app
-CMD ["node backend/server.js"]
+CMD ["node", "backend/server.js"]
