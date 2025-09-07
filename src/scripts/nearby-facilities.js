@@ -122,6 +122,74 @@ async function initMap() {
             });
         });
     }
+
+    // Responsive: stack buttons vertically under search bar on medium/small screens
+    const responsiveStyleId = 'search-bar-buttons-responsive-style';
+    if (!document.getElementById(responsiveStyleId)) {
+        const style = document.createElement('style');
+        style.id = responsiveStyleId;
+        style.innerHTML = `
+            .card.card-body.gap-2 {
+                width: 100% !important;
+                box-sizing: border-box !important;
+            }
+            .card.card-body.gap-2 > * {
+                min-width: 0 !important;
+            }
+            @media (max-width: 900px) {
+                .card.card-body.gap-2 {
+                    flex-direction: column !important;
+                    align-items: stretch !important;
+                    gap: 10px !important;
+                    width: 100% !important;
+                }
+                .card.card-body.gap-2 > * {
+                    width: 100% !important;
+                    min-width: 0 !important;
+                    box-sizing: border-box !important;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    }
+}
+
+// Add this helper function near the top of your file
+function showHoverPopup({ name, displayName, address, formattedAddress }) {
+    // Remove any existing popup
+    let existing = document.getElementById('hover-location-popup');
+    if (existing) existing.remove();
+
+    // Create popup
+    const popup = document.createElement('div');
+    popup.id = 'hover-location-popup';
+    popup.style.position = 'fixed';
+    popup.style.top = '50%';
+    popup.style.left = '50%';
+    popup.style.transform = 'translate(-50%, -50%)';
+    popup.style.background = '#fff';
+    popup.style.border = '2px solid #3766A5';
+    popup.style.borderRadius = '16px';
+    popup.style.boxShadow = '0 4px 24px rgba(55,102,165,0.18)';
+    popup.style.padding = '28px 24px';
+    popup.style.zIndex = '20000';
+    popup.style.minWidth = '220px';
+    popup.style.maxWidth = '90vw';
+    popup.style.textAlign = 'center';
+    popup.style.pointerEvents = 'none'; // So it doesn't block map interaction
+
+    popup.innerHTML = `
+        <strong style="font-size:20px;color:#3766A5;">${displayName || name || 'Unknown'}</strong><br>
+        <span style="font-size:16px;">${formattedAddress || address || ''}</span>
+    `;
+
+    document.body.appendChild(popup);
+}
+
+// Remove popup on mouseout
+function removeHoverPopup() {
+    let existing = document.getElementById('hover-location-popup');
+    if (existing) existing.remove();
 }
 
 // load GeoJSON data for recyclers and manually filter on radius
@@ -177,37 +245,33 @@ async function searchGeoJson() {
                 markers.push(marker);
                 bounds.extend(point);
 
-                // Add click event to marker to show only the corresponding card
-                marker.addListener('click', () => {
-                    const sidebar = document.getElementById('facilities-list');
-                    if (!sidebar) return;
-                    let list = document.getElementById('facility-items');
-                    if (!list) return;
-                    // Find the facility index
-                    const facilityIndex = sidebarFacilities.findIndex(f => f.name === feature.properties.Name);
-                    if (facilityIndex !== -1) {
-                        // Only show the matching card
-                        const lis = list.querySelectorAll('li');
-                        lis.forEach((li, idx) => {
-                            li.style.display = (idx === facilityIndex) ? '' : 'none';
-                        });
-                    }
+                // --- Use element.addEventListener for hover popup ---
+                marker.element.addEventListener('mouseenter', () => {
+                    showHoverPopup({
+                        name: feature.properties.Name,
+                        address: feature.properties.Address
+                    });
                 });
-
-                // Collect info for sidebar
-                sidebarFacilities.push({
-                    name: feature.properties.Name,
-                    address: feature.properties.Address || '',
-                    phone: feature.properties.Phone || '',
-                    hours: feature.properties.Hours || ''
+                marker.element.addEventListener('mouseleave', removeHoverPopup);
+                // Add for touch/click (mobile/tablet)
+                marker.element.addEventListener('touchstart', (e) => {
+                    showHoverPopup({
+                        name: feature.properties.Name,
+                        address: feature.properties.Address
+                    });
+                    e.preventDefault();
+                });
+                marker.element.addEventListener('touchend', removeHoverPopup);
+                marker.element.addEventListener('click', () => {
+                    showHoverPopup({
+                        name: feature.properties.Name,
+                        address: feature.properties.Address
+                    });
                 });
             }
         });
 
         fixBounds(bounds);
-
-        // Update the sidebar with recycler locations
-        updateSidebarWithRecyclers(sidebarFacilities);
     }
 }
 
@@ -278,30 +342,35 @@ async function searchText(location) {
                     markers.push(marker);
                     bounds.extend(place.location);
 
-                    // Add click event to marker to show only the corresponding card
-                    marker.addListener('click', () => {
-                        const sidebar = document.getElementById('facilities-list');
-                        if (!sidebar) return;
-                        let list = document.getElementById('facility-items');
-                        if (!list) return;
-                        // Find the place index
-                        const placeIndex = sidebarPlaces.findIndex(f => f.displayName === place.displayName);
-                        if (placeIndex !== -1) {
-                            // Only show the matching card
-                            const lis = list.querySelectorAll('li');
-                            lis.forEach((li, idx) => {
-                                li.style.display = (idx === placeIndex) ? '' : 'none';
-                            });
-                        }
+                    // Add hover event for repair pins
+                    marker.element.addEventListener('mouseenter', () => {
+                        showHoverPopup({
+                            displayName: place.displayName,
+                            formattedAddress: place.formattedAddress
+                        });
                     });
-                    sidebarPlaces.push(place);
+                    marker.element.addEventListener('mouseleave', removeHoverPopup);
+                    // Add for touch/click (mobile/tablet)
+                    marker.element.addEventListener('touchstart', (e) => {
+                        showHoverPopup({
+                            displayName: place.displayName,
+                            formattedAddress: place.formattedAddress
+                        });
+                        // Prevent simulated mouse events
+                        e.preventDefault();
+                    });
+                    marker.element.addEventListener('touchend', removeHoverPopup);
+                    marker.element.addEventListener('click', () => {
+                        showHoverPopup({
+                            displayName: place.displayName,
+                            formattedAddress: place.formattedAddress
+                        });
+                    });
                 }
             });
     
             fixBounds(bounds);
-    
-            // Update the sidebar with repair locations
-            updateSidebarWithRepairs(sidebarPlaces);
+
         } else {
             // Clear sidebar if no results
             updateSidebarWithRepairs([]);
@@ -384,21 +453,7 @@ function updateSidebarWithRecyclers(facilities) {
     }
     title.textContent = 'Recycle';
 
-    // Get the list container or create it
-    let list = document.getElementById('facility-items');
-    if (!list) {
-        list = document.createElement('ul');
-        list.id = 'facility-items';
-        list.style.listStyle = 'none';
-        list.style.padding = '0';
-        list.style.margin = '0';
-        sidebar.appendChild(list);
-    }
-    list.innerHTML = '';
-
-    // Sort alphabetically by name if available
-    facilities.sort((a, b) => (a.name || '').localeCompare(b.name || ''));
-
+    
     // Add each facility as a card
     facilities.forEach((facility) => {
         const li = document.createElement('li');
@@ -416,25 +471,6 @@ function updateSidebarWithRecyclers(facilities) {
             ${facility.phone ? `<span style="font-size:15px;">Phone: ${facility.phone}</span><br>` : ''}
             ${facility.hours ? `<span style="font-size:15px;">Hours: ${facility.hours}</span><br>` : ''}
         `;
-
-        // Find the marker that matches this facility by name and address
-        li.onclick = function () {
-            const marker = markers.find(m =>
-                m.title === facility.name
-            );
-            if (marker) {
-                map.panTo(marker.position);
-                map.setZoom(16); // Zoom in closer to the pin
-                if (marker.element) {
-                    marker.element.style.filter = 'drop-shadow(0 0 8px #3766A5)';
-                    setTimeout(() => {
-                        marker.element.style.filter = '';
-                    }, 1200);
-                }
-            }
-        };
-
-        list.appendChild(li);
     });
 
     // Center and fit the map to show all recycling pins
@@ -474,3 +510,10 @@ function fixBounds(bounds) {
         }
     }
 }
+
+
+
+
+
+
+
