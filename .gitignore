@@ -1,4 +1,4 @@
-env.js
+.env
 .config/
 backend/profile
 node_modules/
