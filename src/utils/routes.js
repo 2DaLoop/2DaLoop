@@ -1,26 +1,31 @@
+import HomeScript from '../scripts/home.js?url';
+import NearbyFacilitiesScript from '../scripts/nearby-facilities.js?url';
+import AssetSubmissionScript from '../scripts/asset-submission.js?url';
+import DashboardScript from '../scripts/dashboard.js?url';
+
 export const ROUTES = {
     '#/': {
-        page: 'src/pages/home.html',
-        script: 'src/scripts/home.js'
+        page: '/pages/home.html',
+        script: HomeScript
     },
     '#/nearby-facilities': {
-        page: 'src/pages/nearby-facilities.html',
-        script: 'src/scripts/nearby-facilities.js'
+        page: '/pages/nearby-facilities.html',
+        script: NearbyFacilitiesScript
     },
     '#/asset-submission': {
-        page: 'src/pages/asset-submission.html',
-        script: 'src/scripts/asset-submission.js'
+        page: '/pages/asset-submission.html',
+        script: AssetSubmissionScript
     },
     '#/dashboard': {
-        page: 'src/pages/dashboard.html',
-        script: 'src/scripts/dashboard.js'
+        page: '/pages/dashboard.html',
+        script: DashboardScript
     },
     '#/help': {
-        page: 'src/pages/help.html',
-        script: 'src/scripts/help.js'
+        page: '/pages/help.html',
+        script: ''
     },
     '#/faq': {
-        page: 'src/pages/faq.html',
-        script: 'src/scripts/faq.js'
+        page: '/pages/faq.html',
+        script: ''
     },
 }

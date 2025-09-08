@@ -29,7 +29,7 @@ const renderContent = async (route) => {
         if (routeInfo.script) {
             const script = document.createElement('script');
             script.type = 'module';
-            script.src = `${routeInfo.script}?t=${Date.now()}`;
+            script.src = routeInfo.script;
             script.setAttribute("data-route-script", "true");
             document.body.appendChild(script);
         }
@@ -63,4 +63,5 @@ const initializeRoutes = async () => {
     renderContent(initialRoute);
 }
 
-export { initializeRoutes, navigate };
+window.navigate = navigate;
+window.initializeRoutes = initializeRoutes;
