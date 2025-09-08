@@ -1,5 +1,3 @@
-import ApexCharts from 'apexcharts';
-
 initDashboard();
 
 document.getElementById('waitlist-btn').addEventListener('click', () => {
