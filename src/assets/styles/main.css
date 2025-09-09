@@ -295,7 +295,7 @@ body {
 .next-button {
     width: 100%;
     padding: 12px 16px;
-    color: white;
+    color: white !important;
     border: none;
     border-radius: 8px;
     font-size: 16px;

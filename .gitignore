@@ -1,3 +1,5 @@
+.env
 .config/
-#backend/profile
+backend/profile
 #node_modules/
+dist/

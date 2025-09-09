@@ -4,25 +4,24 @@ const API_KEY = import.meta.env.VITE_API_KEY;
     v: "weekly",
 });
 
-import { initializeRoutes } from "./utils/pageRouter.js";
 import { loadSidebar } from './components/sidebar.js';
 
-loadSidebar();
-initializeRoutes();
+document.addEventListener("DOMContentLoaded", () => {
+    loadSidebar();
+    window.initializeRoutes();
 
-// Show cookie popup if not accepted
-if (!localStorage.getItem('cookieAccepted')) {
-    const cookieEl = document.getElementById('cookie-popup');
-    if (cookieEl) {
-        cookieEl.classList.remove('hidden');
-        fetch('src/components/cookie-popup.html')
-            .then(response => response.text())
-            .then(html => {
-                cookieEl.innerHTML = html;
+    if (!localStorage.getItem('cookieAccepted')) {
+        const cookieEl = document.getElementById('cookie-popup');
+        if (cookieEl) {
+            fetch('/components/cookie-popup.html')
+                .then(response => response.text())
+                .then(html => {
+                    cookieEl.innerHTML = html;
 
-                const script = document.createElement('script');
-                script.src = 'src/components/cookie-popup.js';
-                document.body.appendChild(script);
-            })
+                    const script = document.createElement('script');
+                    script.src = '/scripts/cookie-popup.js';
+                    document.body.appendChild(script);
+                });
+        }
     }
-}
+});

@@ -1,8 +1,6 @@
 import express from 'express';
 import cors from 'cors';
 import puppeteer from 'puppeteer';
-
-
 import path from 'path';
 import { fileURLToPath } from 'url';
 
@@ -17,7 +15,7 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, '..', 'dist')));
 
 app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, '..', '..', 'dist', 'index.html'));
+    res.sendFile(path.join(__dirname, '..', 'dist', 'index.html'));
 });
 
 const sleep = ms => new Promise(res => setTimeout(res, ms));
@@ -51,10 +49,13 @@ app.post("/calculate/budget", async (req, res) => {
 
         // go to itad calculator
         const browser = await puppeteer.launch({
-            headless: 'shell',
-            args: ['--enable-gpu'],
-            enableExtensions: true,
-            userDataDir: "./profile",
+            headless: 'true',
+            args: [
+                "--no-sandbox",
+                "--disable-setuid-sandbox",
+                "--disable-dev-shm-usage",
+                "--disable-gpu"
+            ],
         });
         const page = await browser.newPage();
         await page.goto("https://calculator.itadusa.com/");
@@ -140,10 +141,13 @@ app.post("/calculate/ghg", async (req, res) => {
         ];
 
         const browser = await puppeteer.launch({
-            headless: 'shell',
-            args: ['--enable-gpu'],
-            enableExtensions: true,
-            userDataDir: "./profile",
+            headless: 'true',
+            args: [
+                "--no-sandbox",
+                "--disable-setuid-sandbox",
+                "--disable-dev-shm-usage",
+                "--disable-gpu"
+            ],
         });
         const page = await browser.newPage();
         await page.goto("https://www.greenteksolutionsllc.com/itad-environmental-impact-calculator/", {
@@ -208,10 +212,6 @@ app.post("/calculate/ghg", async (req, res) => {
         });
     }    
 })
-
-app.get("/", (req, res) => {
-    res.status(200).json({ message: "Hello World" });
-});
 
 app.listen(HTTP_PORT, () => {
     console.log("Server running on", HTTP_PORT);

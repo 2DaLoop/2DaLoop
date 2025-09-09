@@ -1,0 +1,18 @@
+# .dockerignore
+
+# Node modules 
+node_modules
+
+# Build output
+# dist
+# build
+
+# Git and editor files
+.git
+.gitignore
+
+
+# Google Cloud SDK and config
+.config/
+.gcloud/
+google-cloud-sdk/

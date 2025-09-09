@@ -1,7 +1,3 @@
-import ApexCharts from 'apexcharts';
-import { supabase } from '../supabase/supabaseClient.js';
-import { navigate } from '../utils/pageRouter.js';
-
 // clear button functionality for asset submission page
 let btnclear = document.querySelector('.clear-btn');
 let inputs = document.querySelectorAll('.quantity-input, .age-input');
@@ -55,11 +51,11 @@ importButton.addEventListener('click', function (e) {
             <div style="display: flex; justify-content: center; align-items: flex-start; gap: 24px; flex-wrap: wrap;">
                 <div style="display: flex; flex-direction: column; align-items: center;">
                     <div style="font-weight: bold; margin-bottom: 8px;">example1.csv</div>
-                    <img src="src/assets/images/CSVExample.png" alt="Example 1" style="width:340px;max-width:45vw;border-radius:8px;display:block;">
+                    <img src="/images/CSVExample.png" alt="Example 1" style="width:340px;max-width:45vw;border-radius:8px;display:block;">
                 </div>
                 <div style="display: flex; flex-direction: column; align-items: center;">
                     <div style="font-weight: bold; margin-bottom: 8px;">example2.csv</div>
-                    <img src="src/assets/images/notepad.png" alt="Example 2" style="width:340px;max-width:45vw;border-radius:8px;display:block;">
+                    <img src="/images/notepad.png" alt="Example 2" style="width:340px;max-width:45vw;border-radius:8px;display:block;">
                 </div>
             </div>
         `,
@@ -252,7 +248,7 @@ document.querySelector('.calculate-btn').addEventListener('click', async () => {
 
 // submit to esg calculator and go to dashbaord
 document.querySelector('#next-btn').addEventListener('click', async () => {
-    navigate('#/dashboard')
+    window.navigate('#/dashboard')
 })
 
 // calculate totals for budget
@@ -301,7 +297,7 @@ async function submitAssetsForGHG(quantityInputs) {
 
 // store in supabase
 async function storeData(quantityInputs, ageInputs) {
-    const { error } = await supabase
+    const { error } = await window.supabase
         .from('tblAssetSubmission')
         .insert({
             desktop_quantity: quantityInputs[0].value || 0,

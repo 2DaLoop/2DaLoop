@@ -1,9 +1,8 @@
 import { ROUTES } from './routes.js';
 
 const app = document.querySelector('#app');
-let currentRoute = location.hash || '#/'; // default to home
 
-// load content for a route
+// Always render content for the current route
 const renderContent = async (route) => {
     try {
         const routeInfo = ROUTES[route];
@@ -19,17 +18,17 @@ const renderContent = async (route) => {
         const content = await response.text();
         app.innerHTML = content;
 
-        // remove previously loaded script
+        // Remove previously loaded route script
         const existingScript = document.querySelector(`script[data-route-script]`);
         if (existingScript) {
             existingScript.remove();
         }
 
-        // load current script for a route
+        // Load current script for the route
         if (routeInfo.script) {
             const script = document.createElement('script');
             script.type = 'module';
-            script.src = `${routeInfo.script}?t=${Date.now()}`;
+            script.src = routeInfo.script + `?t=${Date.now()}`; // cache busting
             script.setAttribute("data-route-script", "true");
             document.body.appendChild(script);
         }
@@ -39,28 +38,26 @@ const renderContent = async (route) => {
     }
 };
 
-// use to navigate to new route
-const navigate = async (route) => {
-    const routeInfo = ROUTES[route];
-
+// Use to navigate to a new route
+const navigate = (route) => {
     if (location.hash !== route) {
         location.hash = route;
+    } else {
+        renderContent(route);
     }
 };
 
-window.addEventListener('hashchange', async () => {
+// Always render content on hash change
+window.addEventListener('hashchange', () => {
     const newRoute = location.hash || '#/';
-    const routeInfo = ROUTES[newRoute];
-    if (newRoute !== currentRoute) {
-        currentRoute = newRoute;
-        renderContent(newRoute);
-    }
+    renderContent(newRoute);
 });
 
-// load initial content
-const initializeRoutes = async () => {
+// Load initial content
+const initializeRoutes = () => {
     const initialRoute = location.hash || '#/';
     renderContent(initialRoute);
-}
+};
 
-export { initializeRoutes, navigate };
+window.navigate = navigate;
+window.initializeRoutes = initializeRoutes;
