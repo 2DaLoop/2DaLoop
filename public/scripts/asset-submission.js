@@ -409,7 +409,7 @@ function loadEwasteFacts() {
         factsDiv.style.color = '#222';
         factsDiv.style.boxShadow = '0 2px 12px rgba(55,102,165,0.08)';
         factsDiv.innerHTML = `
-            <div style="font-size:1.5rem;margin-bottom:12px;text-align:center;">🌍 Why Recycling Tech Matters: 5 Key Facts</div>
+            <div style="font-size:1.5rem;margin-bottom:12px;text-align:center;">🌍 Why Recycling Electronic Commodities Matters</div>
             <ul style="padding-left:18px;line-height:1.7;">
                 <li><b> Current Problem:</b> Many organizations (government offices, schools, manufacturers, and small businesses) struggle to find reliable electronics recycling or reuse partners because existing directories are outdated and links are broken.</li>
                 <li><b>Our Solution: </b> The Suggestion Engine provides real-time connections to verified facilities—recyclers, repair shops, and reintegration partners—tailored to your location, asset type, and needs.</li>
