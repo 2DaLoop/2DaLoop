@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (!localStorage.getItem('cookieAccepted')) {
         const cookieEl = document.getElementById('cookie-popup');
+        cookieEl.classList.remove('hidden');
         if (cookieEl) {
             fetch('/components/cookie-popup.html')
                 .then(response => response.text())

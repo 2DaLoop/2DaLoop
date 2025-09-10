@@ -21,7 +21,6 @@ document.querySelector('#next-btn').addEventListener('click', async () => {
 
 // initialize map centered on the U.S.
 async function initMap() {
-    console.log('initializing map')
     const mapDiv = document.getElementById("map")
     if (mapDiv) {
         map = new Map(mapDiv, {
