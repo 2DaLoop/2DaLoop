@@ -281,7 +281,7 @@ function insertValues(data) {
 function showFullReport() {
     // if data exists
     const data = JSON.parse(sessionStorage.getItem('comparisonData'))
-    if (data) {
+    if (data && Object.keys(data).length > 0) {
         // show comparison chart
         document.getElementById('comparison-section').classList.remove('hidden');
         loadChart(data);

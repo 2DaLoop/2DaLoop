@@ -221,7 +221,6 @@ document.querySelector('.calculate-btn').addEventListener('click', async () => {
                 document.querySelector('.loader').classList.remove('hidden');
                 loadEwasteFacts();
 
-
                 // get budget results
                 const budgetResponse = await submitAssetsForBudget(quantityInputs, ageInputs);
                 const data = convertToNums(budgetResponse.data);
@@ -232,7 +231,9 @@ document.querySelector('.calculate-btn').addEventListener('click', async () => {
                 document.getElementById('ewaste-facts').style.display = "none";
                 document.querySelector('.loader').classList.add('hidden');
                 document.getElementById('comparison-chart').classList.remove('hidden');
-                loadChart(data);
+                if (data && Object.keys(data).length > 0) {
+                    loadChart(data);
+                }
 
                 // get ghg results
                 const ghgResults = await submitAssetsForGHG(quantityInputs);

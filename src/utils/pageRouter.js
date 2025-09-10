@@ -29,7 +29,7 @@ const renderContent = async (route) => {
         if (routeInfo.script) {
             const script = document.createElement('script');
             script.type = 'module';
-            script.src = routeInfo.script;
+            script.src = `${routeInfo.script}?t=${Date.now()}`;
             script.setAttribute("data-route-script", "true");
             document.body.appendChild(script);
         }
