@@ -49,7 +49,7 @@ app.post("/calculate/budget", async (req, res) => {
 
         // go to itad calculator
         const browser = await puppeteer.launch({
-            headless: 'false',
+            headless: 'true',
             args: [
                 "--no-sandbox",
                 "--disable-setuid-sandbox",
