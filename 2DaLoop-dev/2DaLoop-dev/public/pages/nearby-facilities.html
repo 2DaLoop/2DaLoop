@@ -1,0 +1,33 @@
+<div class="main-container" style="height: 100vh;">
+    <div class="main-content">
+        <p class="map-disclaimer">*For best results search City, State.</p>
+        <div id="map"></div>
+        <button class="next-button mt-3 mb-3" id="next-btn">Next</button>
+    </div>
+    <!-- Facilities List Sidebar -->
+    <div id="facilities-list"
+        style="width: 350px; background: #f7f9fc; border-left: 1px solid #3766A5; padding: 24px; overflow-y: auto; display: none;">
+        <h3 style="color: #3766A5; font-family: 'Nunito Sans', sans-serif;">Nearby Facilities</h3>
+        <ul id="facility-items" style="list-style: none; padding: 0; margin: 0;">
+            <!-- Facility items will be injected here by JS -->
+        </ul>
+    </div>
+</div>
+<script>
+    // Hide sidebar if there are no location cards
+    function updateFacilitiesSidebarVisibility() {
+        const sidebar = document.getElementById('facilities-list');
+        const facilityItems = document.getElementById('facility-items');
+        if (!sidebar || !facilityItems) return;
+        sidebar.style.display = facilityItems.children.length > 0 ? 'block' : 'none';
+    }
+
+    // Observe changes to the facility-items list
+    const facilityItemsList = document.getElementById('facility-items');
+    if (facilityItemsList) {
+        const observer = new MutationObserver(updateFacilitiesSidebarVisibility);
+        observer.observe(facilityItemsList, { childList: true });
+    }
+    // Initial check
+    updateFacilitiesSidebarVisibility();
+</script>
