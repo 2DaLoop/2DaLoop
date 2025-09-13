@@ -1,0 +1,31 @@
+{
+  "name": "2daloop",
+  "version": "1.0.0",
+  "description": "2DaLoop Summer Launch",
+  "homepage": "https://github.com/eglong/2DaLoop#readme",
+  "bugs": {
+    "url": "https://github.com/eglong/2DaLoop/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eglong/2DaLoop.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.56.0",
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "puppeteer": "^24.17.0"
+  },
+  "devDependencies": {
+    "vite": "^7.0.1"
+  }
+}

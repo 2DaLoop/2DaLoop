@@ -1,0 +1,36 @@
+.repair-button, #repair-btn {
+    background-color: #e53935; /* Red to match repair pins */
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 22px;
+    font-size: 16px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.repair-button:hover, #repair-btn:hover {
+    background-color: #b71c1c; /* Darker red on hover */
+}
+
+.recycle-button, #recycle-btn {
+    background-color: #43a047; /* Green to match recycle pins */
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 22px;
+    font-size: 16px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.recycle-button:hover, #recycle-btn:hover {
+    background-color: #2e7031; /* Darker green on hover */
+}
+
+.map-disclaimer {
+    margin-bottom: 0;
+    padding: 7px;
+}

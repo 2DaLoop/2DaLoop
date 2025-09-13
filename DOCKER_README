@@ -1,0 +1,43 @@
+Steps to getting the docker development environment working
+
+1. Clone this branch (duh)
+2. Installed Docker Desktop, make sure it's up and running
+3. Using the Command Line or Powershell, go into the project's directory
+4. Run this command: docker-compose build
+   This will build the docker image (and only the docker image)
+5. Inside of Docker Desktop, click on "Images" from the left hand menu
+   You will see a new image named "2daloop-server"
+6. In line with the image, the right hand side will say "Actions", there will be an icon that looks like a play button. Click this icon to Run the image, and this will trigger screen to make a Docker Container
+7. From the "Run a new container" dialog box, click the down chevron to the right of "Optional settings"
+8. Container name: 2DaLoop (can be anything, but better to have some standards)
+9. Host port: 8080 (you will see that this maps to ":3000/tcp" which is the node.js server port for this program)
+   NOTE: If you change the port in the program code, you will need to delete the docker container and image, and redo this from scratch to map the port again.
+10. Volumes: <---- VERY IMPORTANT
+    Host path: This is going to be the folder in which you have the files you downloaded from Github. This folder contains the program and all the dependencies. Click the "..." icon, and use the file dialog box to point to the folder.
+    Container path: /app
+    This is the location of the program within the docker image/container.
+    NOTE: When you built the image (Step 4 above) in effect you copied the contents of the git repository into the image. This is important because we are going to use this same docker file for deployment to Google Cloud Run. However, in the development environment, we need to be able to make changes to the code and see those changes, which is why we are mounting the "Host path" and "Container path". When you set up this Volume mount, whatever is in the "Host path" folder on your local computer will overwrite the "Container path" folder in the docker image/container. This also means that if you have to do any node_module updates, these will be written to the "Host path" folder as well, and should be re-committed into the Github repository so that everyone is on the same page. You can use a terminal into the Docker image/container to do this, though the image being pulled by Docker "node:20" is very light and does not have a lot of normal Linux utilities. Be warned.
+11. Environmental variables: These are blank. You would be pulling your environmental variables from the .env file in the project. Take note that the .env file in this repo is blank, and is only there as a place holder for the Dockerfile build. Please take care not to push API keys in the .env file back into a public Github repo.
+12. Click "Run" This should start the container, and launch the node.js backend.
+
+Special notes on node.js. It would seem that changes made to the code require the node.js server to be restarted. This is a function of node.js, not Docker. Because this docker image/container is set up for both development AND Google Cloud Run production, the easiest way to do this will be to simply stop the Docker Container from within the Docker Desk and re-run it. This will relaunch the node.js server.
+
+To use the program, open a web browser to http://localhost:8080 or http://127.0.0.1:8080
+
+Sending to Google Cloud Run Production server.
+
+1. Install and Setup Google Cloud CLI - This includes the command "gcloud init" to authenticate your install to your Google account.
+2. Using Command Line or Powershell, go to the directory with the program, and run the command:
+   "gcloud builds submit --tag #######" where ####### is the gcr.io/project/artifact_repo that you have permission to upload into.
+3. Build you Google Cloud project (Deploy container)
+4. Select the Container image URL that you just uploaded in Step 2.
+5. Select your Region (needs to be the same as the region you uploaded into on Step 2, but it all should be a "default" region set when you did the gcloud init command)
+6. Authentication: Allow Public Access
+7. Containers, Volumes, Networking, Security (Click the down chevron)
+8. Look for the "Variables & Secrets" tab, click it.
+9. Use the "+ Add variable" button to add in all of your items from a working .env file. i.e. API_KEY=wcojcnwonwec
+10. Click "Create" and the container should deploy. The URL to access it will be at the top of the page.
+
+Once you have a working container, to deploy any new versions, you simply need to run Step 2 again to push the new code to Google, then "Edit & deploy new revision" the instance, and select the new Container image URL. No need to recreate the instance or add back in the "Variables & Secrets".
+
+It is a best practice to have a single member of your team who is in charge of deploying to the production server. Otherwise you may become trapped in a bottleless pit of working out Google IAM permissions.

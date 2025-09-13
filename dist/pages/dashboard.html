@@ -1,0 +1,140 @@
+<div class="dashboard-container">
+    <main class="main-content">
+        <h1 class="dashboard-title" style="margin-bottom: 32px;">Sustainability Dashboard</h1>
+        <section class="card-container">
+            <button class="join-waitlist-btn" id="waitlist-btn">Join Waitlist to See Full Report</button>
+            <button class="export-pdf-btn" id="export-pdf-btn">Export Dashboard to PDF</button>
+        </section>
+        <section class="card-container">
+            <div class="chart-card">
+                <div class="card-title">Annual CO₂ Emissions</div>
+                <div id="carbon-footprint-chart"></div>
+                <div class="data-source">Data Source: Global Carbon Budget (2024) – with major processing by Our World in Data</div>
+            </div>
+
+            <div class="chart-card">
+                <div class="card-title">Electronic Waste Recycling Rate</div>
+                <div id="ewaste-chart"></div>
+                <div class="data-source">Data Source: United Nations Environment Programme, United Nations Statistics Division and the United Nations Institute for Training and Research – processed by Our World in Data</div>
+            </div>
+        </section>
+
+        <section class="card-container" id="emissions-section">
+            <div class="emissions-card">
+                <p class="emissions-label" id="ghg-emissions">Greenhouse Gas Emissions Reduced by </p>
+            </div>
+        </section>
+
+        <section class="equivalents-section" id="equivalents-section">
+            <h2 class="equivalents-title">This Is Equivalent To:</h2>
+            <div class="metrics-grid" style="grid-template-rows: 1fr; min-height: 220px;">
+                <article class="metric-card" style="min-height: 220px;">
+                    <div class="metric-icon-container">
+                        <img src="/images/co2_cloud_icon.png"
+                            alt="CO2 Cloud Icon" class="co2-icon">
+                    </div>
+                    <p class="metric-action">Carbon Footprint Reduction</p>
+                    <div class="metric-value-bar" id="carbon-footprint"></div>
+                    <p class="metric-description">lb(s)</p>
+                </article>
+
+                <article class="metric-card" style="min-height: 220px;">
+                    <div class="metric-icon-container">
+                        <img src="https://api.builder.io/api/v1/image/assets/TEMP/d48d6c0f4a07a306db0155a700cf7300aec89597?width=124"
+                            alt="Power icon" class="metric-icon">
+                    </div>
+                    <p class="metric-action">Powering</p>
+                    <div class="metric-value-bar" id="powering-houses"></div>
+                    <p class="metric-description">US household(s) in a year</p>
+                </article>
+
+                <article class="metric-card" style="min-height: 220px;">
+                    <div class="metric-icon-container">
+                        <img src="https://api.builder.io/api/v1/image/assets/TEMP/faa71636cda24eddbbae4365a660cc37f86e60c9?width=114"
+                            alt="Car icon" class="metric-icon">
+                    </div>
+                    <p class="metric-action">Removing</p>
+                    <div class="metric-value-bar" id="removing-cars"></div>
+                    <p class="metric-description">passenger car(s) from the road per year</p>
+                </article>
+
+                <article class="metric-card" style="min-height: 220px;">
+                    <div class="metric-icon-container">
+                        <img src="https://api.builder.io/api/v1/image/assets/TEMP/4312dc80d817dae03f8002b23e1ccef3566d7741?width=114"
+                            alt="Waste icon" class="metric-icon">
+                    </div>
+                    <p class="metric-action">Solid waste reduced by</p>
+                    <div class="metric-value-bar" id="solid-waste"></div>
+                    <p class="metric-description">US household(s) in a year</p>
+                </article>
+
+                <article class="metric-card" style="min-height: 220px;">
+                    <div class="metric-icon-container">
+                        <img src="https://api.builder.io/api/v1/image/assets/TEMP/3b8925578d303767167d8f916f8cb46397670d30?width=114"
+                            alt="Air emissions icon" class="metric-icon">
+                    </div>
+                    <p class="metric-action">Air emissions =</p>
+                    <div class="metric-value-bar" id="air-emissions"></div>
+                    <p class="metric-description">metric ton(s)</p>
+                </article>
+
+                <article class="metric-card" style="min-height: 220px;">
+                    <div class="metric-icon-container">
+                        <img src="https://api.builder.io/api/v1/image/assets/TEMP/406639cd7ac73473ed1edd11b370363f13426b0c?width=114"
+                            alt="Water emissions icon" class="metric-icon">
+                    </div>
+                    <p class="metric-action">Water emissions =</p>
+                    <div class="metric-value-bar" id="water-emissions"></div>
+                    <p class="metric-description">metric ton(s)</p>
+                </article>
+            </div>
+        </section>
+        <section>
+            <div class="overlay"></div>
+            <div class="ghl-form hidden">
+                <iframe
+                    src="https://api.leadconnectorhq.com/widget/form/U2IRuZSbtnyxBHIcinWQ"
+                    style="width:100%;height:100%;border:none;border-radius:3px"
+                    id="inline-U2IRuZSbtnyxBHIcinWQ" 
+                    data-layout="{'id':'INLINE'}"
+                    data-trigger-type="alwaysShow"
+                    data-trigger-value=""
+                    data-activation-type="alwaysActivated"
+                    data-activation-value=""
+                    data-deactivation-type="neverDeactivate"
+                    data-deactivation-value=""
+                    data-form-name="Form 4 - Waitlist Form [Recycler / Manufacture / Retailer]"
+                    data-height="1072"
+                    data-layout-iframe-id="inline-U2IRuZSbtnyxBHIcinWQ"
+                    data-form-id="U2IRuZSbtnyxBHIcinWQ"
+                    title="Form 4 - Waitlist Form [Recycler / Manufacture / Retailer]"
+                        >
+                </iframe>
+            </div>
+        </section>
+        <section class="hidden mt-3" id="location-section">
+            <h2 class="location-title">Searched Location:</h2>
+            <div class="card-container">
+                <div class="location-card">
+                    <p class="location-text"></p>
+                </div>
+            </div>
+        </section>
+        <section class="hidden mt-3" id="comparison-section">
+            <h2 class="comparison-title">Standard Burden Shift ITAD Process vs 2DaLoop Reintegration Potential</h2>
+            <div class="card p-5">
+                <div id="grouped-bar-chart"></div>
+            </div>
+            <!-- Disclaimer box -->
+            <div class="disclaimer-box">
+                <p>
+                    There are many variables which can affect an item's life expectancy that should be taken into consideration when determining actual cash value. Some items may devalue more rapidly due to consumer preferences or technological advancements.
+                    For residential household and personal items, lifespan will vary depending on the quality of materials and workmanship, frequency of use or misuse, storage conditions and care. Life expectancy of building components will vary depending on a range of environmental conditions, quality of materials, quality of installation, design, use and maintenance.
+                    An item that is still in use and functional for its intended purpose should not be depreciated beyond 90%.
+                    The information provided in this tool was obtained and averaged from a variety of sources including but not limited to: manufacturers, repairers, builders and home inspector associations, and insurers.
+                </p>
+            </div>
+        </section>
+    </main>
+</div>
+<script src="https://link.msgsndr.com/js/form_embed.js"></script>
