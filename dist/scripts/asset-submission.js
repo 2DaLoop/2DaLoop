@@ -254,7 +254,7 @@ document.querySelector('#next-btn').addEventListener('click', async () => {
 
 // calculate totals for budget
 async function submitAssetsForBudget(quantityInputs, ageInputs) {
-    return await fetch('http://localhost:3000/calculate/budget', {
+    return await fetch('/calculate/budget', {
         method: 'POST',
         headers: { "Content-Type":"application/json" },
         body: JSON.stringify({
@@ -277,7 +277,7 @@ async function submitAssetsForBudget(quantityInputs, ageInputs) {
 
 // calculate results for emissions, etc
 async function submitAssetsForGHG(quantityInputs) {
-    return await fetch('http://localhost:3000/calculate/ghg', {
+    return await fetch('/calculate/ghg', {
         method: 'POST',
         headers: { "Content-Type":"application/json" },
         body: JSON.stringify({
