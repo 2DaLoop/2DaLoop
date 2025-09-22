@@ -1,3 +1,5 @@
+import { navigate } from '/utils/pageRouter.js';
+
 let selectedPlace = null;
 
 initAutoComplete();
@@ -17,7 +19,7 @@ document.getElementById("btnCurrLocation").addEventListener("click", async () =>
                     address: "Current Location"
                 }));
 
-                window.navigate('#/nearby-facilities');
+                navigate('#/nearby-facilities');
             },
             function (error) {
                 let strError = '';
@@ -67,7 +69,7 @@ document.getElementById('btnNext').addEventListener('click', async function() {
             address: place.formattedAddress
         }));
 
-        window.navigate('#/nearby-facilities');
+        navigate('#/nearby-facilities');
         return;
     }
     // If no place is selected, show SweetAlert2

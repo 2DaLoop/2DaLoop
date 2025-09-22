@@ -2,6 +2,7 @@ const { Map } = await google.maps.importLibrary("maps");
 const { Place } = await google.maps.importLibrary("places");
 const { AdvancedMarkerElement, PinElement } = await google.maps.importLibrary("marker");
 const { LatLngBounds, event } = await google.maps.importLibrary("core");
+import { navigate } from '/utils/pageRouter.js';
 
 const centerPosition = { lat: 39.8283, lng: -98.5795 }; // Geographic center of continental U.S.
 let searchedLocation = JSON.parse(sessionStorage.getItem("searchedLocation")) || null;
@@ -16,7 +17,7 @@ if (searchedLocation) {
 }
 
 document.querySelector('#next-btn').addEventListener('click', async () => {
-    window.navigate('#/asset-submission')
+    navigate('#/asset-submission')
 })
 
 // initialize map centered on the U.S.
@@ -199,8 +200,8 @@ async function searchGeoJson() {
 
         // get geojson data
         const [res1, res2] = await Promise.all([
-            fetch("/geojson/MRFs.geojson"),
-            fetch("/geojson/ElectronicsRecyclers.geojson"),
+            fetch("/assets/geojson/MRFs.geojson"),
+            fetch("/assets/geojson/ElectronicsRecyclers.geojson"),
         ]);
 
         const [geojson1, geojson2] = await Promise.all([
@@ -509,10 +510,3 @@ function fixBounds(bounds) {
         }
     }
 }
-
-
-
-
-
-
-

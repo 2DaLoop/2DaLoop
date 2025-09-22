@@ -63,5 +63,4 @@ const initializeRoutes = async () => {
     renderContent(initialRoute);
 }
 
-window.navigate = navigate;
-window.initializeRoutes = initializeRoutes;
+export { initializeRoutes, navigate };
