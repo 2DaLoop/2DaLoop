@@ -89,7 +89,7 @@ async function initMap() {
     
         // Insert the R2 button next to the other buttons
         optionsDiv.append(placeAutocomplete, repairBtn, recycleBtn, r2Btn);
-        map.controls[google.maps.ControlPosition.TOP_LEFT].push(optionsDiv);
+        document.querySelector('.map-disclaimer').after(optionsDiv);
     
         // listeners for search input and filter options
         placeAutocomplete.addEventListener("gmp-select", async ({ placePrediction }) => {
