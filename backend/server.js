@@ -20,6 +20,23 @@ app.get("/", (req, res) => {
 
 const sleep = ms => new Promise(res => setTimeout(res, ms));
 
+app.get("/facilities/seri", async (req, res) => {
+    try {
+        const response = await fetch("https://api.sustainableelectronics.org/api/v2/GetFacilities?pageSize=10000", {
+            method: "GET",
+            headers: {
+                "Authorization": `Bearer ${process.env.VITE_SERI_TOKEN}`,
+            }
+        });
+
+        const data = await response.json();
+        res.json(data);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json(error)
+    }
+})
+
 app.post("/calculate/budget", async (req, res) => {
     try {
         const { inputValues } = req.body;

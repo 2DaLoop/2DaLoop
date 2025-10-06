@@ -112,13 +112,15 @@ async function initMap() {
             await searchText();
         });
     
-        r2Btn.addEventListener("click", () => {
-            Swal.fire({
-                title: "Coming Soon",
-                text: "R2 & RIOS certified facility search will be available in a future update.",
-                confirmButtonText: "OK",
-                confirmButtonColor: "#3766A5"
-            });
+        r2Btn.addEventListener("click", async () => {
+            await searchSERI();
+            
+            // Swal.fire({
+            //     title: "Coming Soon",
+            //     text: "R2 & RIOS certified facility search will be available in a future update.",
+            //     confirmButtonText: "OK",
+            //     confirmButtonColor: "#3766A5"
+            // });
         });
     }
 
@@ -189,6 +191,76 @@ function showHoverPopup({ name, displayName, address, formattedAddress }) {
 function removeHoverPopup() {
     let existing = document.getElementById('hover-location-popup');
     if (existing) existing.remove();
+}
+
+// load SERI data
+async function searchSERI() {
+    if (searchedLocation) {
+        await google.maps.importLibrary("geometry");
+        clearMarkers();
+
+        const response = await fetch('/facilities/seri')
+        const data = await response.json();
+        const recordsArray = [...data.records];
+
+        const radius = 40000;
+
+        const bounds = new LatLngBounds();
+        recordsArray.forEach(record => {
+            // create LatLng object for each record
+            const [lng, lat] = [record.Longitude, record.Latitude];
+            const point = new google.maps.LatLng(lat, lng);
+
+            // calc distance from searched location
+            const distance = google.maps.geometry.spherical.computeDistanceBetween(
+                searchedLocation,
+                point,
+            );
+
+            if (distance <= radius) {
+                // custom marker for SERI facilities
+                const bluePin = new PinElement({
+                    background: "#5796e7ff",
+                    borderColor: "#3766a5",
+                    glyphColor: "#3766a5",
+                });
+                const marker = new AdvancedMarkerElement({
+                    map,
+                    position: point,
+                    title: record.Name,
+                    content: bluePin.element,
+                });
+                markers.push(marker);
+                bounds.extend(point);
+
+                // --- Use element.addEventListener for hover popup ---
+                marker.element.addEventListener('mouseenter', () => {
+                    showHoverPopup({
+                        name: record.Name,
+                        address: `${record.Street}, ${record.City}, ${record.State} ${record.PostalCode} ${record.Country}`
+                    });
+                });
+                marker.element.addEventListener('mouseleave', removeHoverPopup);
+                // Add for touch/click (mobile/tablet)
+                marker.element.addEventListener('touchstart', (e) => {
+                    showHoverPopup({
+                        name: record.Name,
+                        address: `${record.Street}, ${record.City}, ${record.State} ${record.PostalCode} ${record.Country}`
+                    });
+                    e.preventDefault();
+                });
+                marker.element.addEventListener('touchend', removeHoverPopup);
+                marker.element.addEventListener('click', () => {
+                    showHoverPopup({
+                        name: record.Name,
+                        address: `${record.Street}, ${record.City}, ${record.State} ${record.PostalCode} ${record.Country}`
+                    });
+                });
+            }
+        });
+
+        fixBounds(bounds);
+    }
 }
 
 // load GeoJSON data for recyclers and manually filter on radius
@@ -509,10 +581,3 @@ function fixBounds(bounds) {
         }
     }
 }
-
-
-
-
-
-
-
