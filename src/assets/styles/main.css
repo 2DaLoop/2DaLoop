@@ -92,8 +92,8 @@ body {
 
 .nav-icon-button svg,
 .nav-icon-button img {
-    width: 36px;
-    height: 36px;
+    width: 27px;
+    height: 27px;
 }
 
 
@@ -109,9 +109,12 @@ body {
 }
 
 .navigation-sidebar:hover .nav-icon-button img,
-.navigation-sidebar:hover .nav-icon-button svg {
+.navigation-sidebar:hover .nav-icon-button svg,
+.navigation-sidebar:hover .nav-icon-button img {
     margin-right: 8px !important;   /* Was 32px, now 8px */
     margin-left: 8px !important;    /* Was 32px, now 8px */
+    width: 27px !important;
+    height: 27px !important;
 }
 
 .nav-icon-button[aria-label]:after {
@@ -375,10 +378,10 @@ body {
     }
     .nav-icon-button svg,
     .nav-icon-button img {
-        width: 24px !important;   /* Increased from 18px to 24px */
-        height: 24px !important;
-        min-width: 24px !important;
-        min-height: 24px !important;
+        width: 18px !important;   /* Reduced by 25% from 24px */
+        height: 18px !important;
+        min-width: 18px !important;
+        min-height: 18px !important;
     }
     .navigation-sidebar .nav-icon-button:first-child,
     .navigation-sidebar .nav-icon-button:first-child svg,
