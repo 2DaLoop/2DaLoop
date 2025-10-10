@@ -50,7 +50,7 @@ body {
     padding-bottom: 40px;
     gap: 0;
     /* Increased gap to add more spacing between each icon */
-    background-color: #3766a5;
+    background-color: #025393;
     transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     overflow: hidden;
     z-index: 1000;
@@ -271,11 +271,11 @@ body {
     cursor: pointer;
     transition: background-color 0.2s ease;
     margin-bottom: 16px;
-    background-color: #4a90e2;
+    background-color: #025393;
 }
 
 .current-location-button:hover {
-    background-color: #357abd;
+    background-color: #0362ab;
 }
 
 .next-button {
