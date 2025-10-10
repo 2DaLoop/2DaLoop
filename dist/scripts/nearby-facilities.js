@@ -67,11 +67,30 @@ async function initMap() {
             Repair
         `;
     
+        const seriBtn = document.createElement("button");
+        seriBtn.type = "button";
+        seriBtn.classList.add("btn");
+        // Style the R2 button with the nav bar blue color
+        seriBtn.style.background = "#3766A5";
+        seriBtn.style.color = "#fff";
+        seriBtn.style.border = "none";
+        seriBtn.style.fontWeight = "bold";
+        seriBtn.style.letterSpacing = "1px";
+        seriBtn.style.padding = "8px 18px";
+        seriBtn.style.borderRadius = "6px";
+        // Add a certificate SVG icon before the text
+        seriBtn.innerHTML = `
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-leaf" viewBox="0 0 16 16">
+            <path d="M1.4 1.7c.216.289.65.84 1.725 1.274 1.093.44 2.884.774 5.834.528l.37-.023c1.823-.06 3.117.598 3.956 1.579C14.16 6.082 14.5 7.41 14.5 8.5c0 .58-.032 1.285-.229 1.997q.198.248.382.54c.756 1.2 1.19 2.563 1.348 3.966a1 1 0 0 1-1.98.198c-.13-.97-.397-1.913-.868-2.77C12.173 13.386 10.565 14 8 14c-1.854 0-3.32-.544-4.45-1.435-1.125-.887-1.89-2.095-2.391-3.383C.16 6.62.16 3.646.509 1.902L.73.806zm-.05 1.39c-.146 1.609-.008 3.809.74 5.728.457 1.17 1.13 2.213 2.079 2.961.942.744 2.185 1.22 3.83 1.221 2.588 0 3.91-.66 4.609-1.445-1.789-2.46-4.121-1.213-6.342-2.68-.74-.488-1.735-1.323-1.844-2.308-.023-.214.237-.274.38-.112 1.4 1.6 3.573 1.757 5.59 2.045 1.227.215 2.21.526 3.033 1.158.058-.39.075-.782.075-1.158 0-.91-.288-1.988-.975-2.792-.626-.732-1.622-1.281-3.167-1.229l-.316.02c-3.05.253-5.01-.08-6.291-.598a5.3 5.3 0 0 1-1.4-.811"/>
+            </svg>
+            SERI
+        `;
+
         const r2Btn = document.createElement("button");
         r2Btn.type = "button";
         r2Btn.classList.add("btn", "r2-button");
         // Style the R2 button with the nav bar blue color
-        r2Btn.style.background = "#3766A5";
+        r2Btn.style.background = "#4FB749";
         r2Btn.style.color = "#fff";
         r2Btn.style.border = "none";
         r2Btn.style.fontWeight = "bold";
@@ -87,8 +106,8 @@ async function initMap() {
         `;
     
         // Insert the R2 button next to the other buttons
-        optionsDiv.append(placeAutocomplete, repairBtn, recycleBtn, r2Btn);
-        map.controls[google.maps.ControlPosition.TOP_LEFT].push(optionsDiv);
+        optionsDiv.append(placeAutocomplete, repairBtn, recycleBtn, seriBtn, r2Btn);
+        document.querySelector('.map-disclaimer').after(optionsDiv);
     
         // listeners for search input and filter options
         placeAutocomplete.addEventListener("gmp-select", async ({ placePrediction }) => {
@@ -112,13 +131,12 @@ async function initMap() {
             await searchText();
         });
     
-        r2Btn.addEventListener("click", () => {
-            Swal.fire({
-                title: "Coming Soon",
-                text: "R2 & RIOS certified facility search will be available in a future update.",
-                confirmButtonText: "OK",
-                confirmButtonColor: "#3766A5"
-            });
+        seriBtn.addEventListener("click", async () => {
+            await searchSERI();
+        });
+
+        r2Btn.addEventListener("click", async () => {
+            await searchRIOS();
         });
     }
 
@@ -189,6 +207,134 @@ function showHoverPopup({ name, displayName, address, formattedAddress }) {
 function removeHoverPopup() {
     let existing = document.getElementById('hover-location-popup');
     if (existing) existing.remove();
+}
+
+// load SERI data
+async function searchSERI() {
+    if (searchedLocation) {
+        await google.maps.importLibrary("geometry");
+        clearMarkers();
+
+        const response = await fetch(`/facilities/seri?searchedLocation=${JSON.stringify(searchedLocation)}`)
+        const data = await response.json();
+        if (data.records) {
+            const recordsArray = [...data.records];
+            const bounds = new LatLngBounds();
+
+            recordsArray.forEach(record => {
+                // custom marker for SERI facilities
+                const point = new google.maps.LatLng(record.Latitude, record.Longitude);
+                const bluePin = new PinElement({
+                    background: "#5796e7ff",
+                    borderColor: "#3766a5",
+                    glyphColor: "#3766a5",
+                });
+                const marker = new AdvancedMarkerElement({
+                    map,
+                    position: point,
+                    title: record.Name,
+                    content: bluePin.element,
+                });
+                markers.push(marker);
+                bounds.extend(point);
+        
+                // --- Use element.addEventListener for hover popup ---
+                marker.element.addEventListener('mouseenter', () => {
+                    showHoverPopup({
+                        name: record.Name,
+                        address: `${record.Street}, ${record.City}, ${record.State} ${record.PostalCode} ${record.Country}`
+                    });
+                });
+                marker.element.addEventListener('mouseleave', removeHoverPopup);
+                // Add for touch/click (mobile/tablet)
+                marker.element.addEventListener('touchstart', (e) => {
+                    showHoverPopup({
+                        name: record.Name,
+                        address: `${record.Street}, ${record.City}, ${record.State} ${record.PostalCode} ${record.Country}`
+                    });
+                    e.preventDefault();
+                });
+                marker.element.addEventListener('touchend', removeHoverPopup);
+                marker.element.addEventListener('click', () => {
+                    showHoverPopup({
+                        name: record.Name,
+                        address: `${record.Street}, ${record.City}, ${record.State} ${record.PostalCode} ${record.Country}`
+                    });
+                });
+            })
+
+            fixBounds(bounds);
+        }
+    }
+}
+
+// load RIOS data
+async function searchRIOS() {
+    if (searchedLocation) {
+        await google.maps.importLibrary("geometry");
+        clearMarkers();
+
+        // get geojson data
+        const response = await fetch("/geojson/RIOS.geojson");
+        const data = await response.json();
+        const geojson = [...data.features];
+        const radius = 50000;
+
+        const bounds = new LatLngBounds();
+        geojson.forEach(feature => {
+            // create LatLng object for each feature
+            const [lng, lat] = feature.geometry.coordinates;
+            const point = new google.maps.LatLng(lat, lng);
+
+            // calc distance from searched location
+            const distance = google.maps.geometry.spherical.computeDistanceBetween(
+                searchedLocation,
+                point,
+            );
+
+            if (distance <= radius) {
+                const greenPin = new PinElement({
+                    background: "lightgreen",
+                    borderColor: "green",
+                    glyphColor: "green",
+                });
+                const marker = new AdvancedMarkerElement({
+                    map,
+                    position: point,
+                    title: feature.properties.name,
+                    content: greenPin.element,
+                });
+                markers.push(marker);
+                bounds.extend(point);
+
+                // --- Use element.addEventListener for hover popup ---
+                marker.element.addEventListener('mouseenter', () => {
+                    showHoverPopup({
+                        name: feature.properties.name,
+                        address: feature.properties.address
+                    });
+                });
+                marker.element.addEventListener('mouseleave', removeHoverPopup);
+                // Add for touch/click (mobile/tablet)
+                marker.element.addEventListener('touchstart', (e) => {
+                    showHoverPopup({
+                        name: feature.properties.name,
+                        address: feature.properties.address
+                    });
+                    e.preventDefault();
+                });
+                marker.element.addEventListener('touchend', removeHoverPopup);
+                marker.element.addEventListener('click', () => {
+                    showHoverPopup({
+                        name: feature.properties.name,
+                        address: feature.properties.address
+                    });
+                });
+            }
+        });
+
+        fixBounds(bounds);
+    }
 }
 
 // load GeoJSON data for recyclers and manually filter on radius
@@ -509,10 +655,3 @@ function fixBounds(bounds) {
         }
     }
 }
-
-
-
-
-
-
-
