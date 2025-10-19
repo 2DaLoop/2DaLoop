@@ -85,7 +85,7 @@ async function initMap() {
         r2Btn.type = "button";
         r2Btn.classList.add("btn", "r2-button");
         // Style the R2 button with the nav bar blue color
-        r2Btn.style.background = "#4FB749";
+        r2Btn.style.background = "#0b0b0b";
         r2Btn.style.color = "#fff";
         r2Btn.style.border = "none";
         r2Btn.style.fontWeight = "bold";

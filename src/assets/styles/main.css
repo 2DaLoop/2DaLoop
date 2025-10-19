@@ -282,18 +282,18 @@ body {
 .next-button {
     width: 100%;
     padding: 12px 16px;
-    color: white !important;
+    color: #fff !important;
     border: none;
     border-radius: 8px;
     font-size: 16px;
     font-weight: 500;
     cursor: pointer;
     transition: background-color 0.2s ease;
-    background-color: #142850; /* dark navy blue */
+    background-color: #025393; /* SERI button color */
 }
 
 .next-button:hover {
-    background-color: #223a5f; /* slightly lighter navy blue for hover */
+    background-color: #3766a5; /* slightly lighter blue for hover */
 }
 
 /* Fine-tune spacing for Help and Learn More icons to match other icons */

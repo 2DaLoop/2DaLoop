@@ -48,6 +48,13 @@ async function initMap() {
         const recycleBtn = document.createElement("button");
         recycleBtn.type = "button";
         recycleBtn.classList.add("btn", "recycle-button");
+        recycleBtn.style.background = "#0b0b0b";
+        recycleBtn.style.color = "#fff";
+        recycleBtn.style.border = "none";
+        recycleBtn.style.fontWeight = "bold";
+        recycleBtn.style.letterSpacing = "1px";
+        recycleBtn.style.padding = "8px 18px";
+        recycleBtn.style.borderRadius = "6px";
         // Add a small recycle SVG icon before the text
         recycleBtn.innerHTML = `
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-recycle" viewBox="0 0 16 16">
@@ -59,6 +66,14 @@ async function initMap() {
         const repairBtn = document.createElement("button");
         repairBtn.type = "button";
         repairBtn.classList.add("btn", "repair-button");
+        // Style the Repair button with the SERI button color
+        repairBtn.style.background = "#025393";
+        repairBtn.style.color = "#fff";
+        repairBtn.style.border = "none";
+        repairBtn.style.fontWeight = "bold";
+        repairBtn.style.letterSpacing = "1px";
+        repairBtn.style.padding = "8px 18px";
+        repairBtn.style.borderRadius = "6px";
         // Add a small repair (wrench) SVG icon before the text
         repairBtn.innerHTML = `
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-tools" viewBox="0 0 16 16">
@@ -71,7 +86,7 @@ async function initMap() {
         seriBtn.type = "button";
         seriBtn.classList.add("btn");
         // Style the R2 button with the nav bar blue color
-        seriBtn.style.background = "#3766A5";
+        seriBtn.style.background = "#025393";
         seriBtn.style.color = "#fff";
         seriBtn.style.border = "none";
         seriBtn.style.fontWeight = "bold";
@@ -79,13 +94,17 @@ async function initMap() {
         seriBtn.style.padding = "8px 18px";
         seriBtn.style.borderRadius = "6px";
         // Add a certificate SVG icon before the text
-        seriBtn.innerHTML = `SERI`;
+        seriBtn.innerHTML = ` 
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cpu" viewBox="0 0 16 16">
+            <path d="M5 0a.5.5 0 0 1 .5.5V2h1V.5a.5.5 0 0 1 1 0V2h1V.5a.5.5 0 0 1 1 0V2h1V.5a.5.5 0 0 1 1 0V2A2.5 2.5 0 0 1 14 4.5h1.5a.5.5 0 0 1 0 1H14v1h1.5a.5.5 0 0 1 0 1H14v1h1.5a.5.5 0 0 1 0 1H14v1h1.5a.5.5 0 0 1 0 1H14a2.5 2.5 0 0 1-2.5 2.5v1.5a.5.5 0 0 1-1 0V14h-1v1.5a.5.5 0 0 1-1 0V14h-1v1.5a.5.5 0 0 1-1 0V14h-1v1.5a.5.5 0 0 1-1 0V14A2.5 2.5 0 0 1 2 11.5H.5a.5.5 0 0 1 0-1H2v-1H.5a.5.5 0 0 1 0-1H2v-1H.5a.5.5 0 0 1 0-1H2v-1H.5a.5.5 0 0 1 0-1H2A2.5 2.5 0 0 1 4.5 2V.5A.5.5 0 0 1 5 0m-.5 3A1.5 1.5 0 0 0 3 4.5v7A1.5 1.5 0 0 0 4.5 13h7a1.5 1.5 0 0 0 1.5-1.5v-7A1.5 1.5 0 0 0 11.5 3zM5 6.5A1.5 1.5 0 0 1 6.5 5h3A1.5 1.5 0 0 1 11 6.5v3A1.5 1.5 0 0 1 9.5 11h-3A1.5 1.5 0 0 1 5 9.5zM6.5 6a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5z"/>
+            </svg> 
+            SERI
+        `;
 
         const r2Btn = document.createElement("button");
         r2Btn.type = "button";
         r2Btn.classList.add("btn", "r2-button");
-        // Style the R2 button with the nav bar blue color
-        r2Btn.style.background = "#4FB749";
+        r2Btn.style.background = "#0b0b0b";
         r2Btn.style.color = "#fff";
         r2Btn.style.border = "none";
         r2Btn.style.fontWeight = "bold";
@@ -179,7 +198,7 @@ function showHoverPopup({ name, displayName, address, formattedAddress }) {
     popup.style.left = '50%';
     popup.style.transform = 'translate(-50%, -50%)';
     popup.style.background = '#fff';
-    popup.style.border = '2px solid #3766A5';
+    popup.style.border = '2px solid #025393';
     popup.style.borderRadius = '16px';
     popup.style.boxShadow = '0 4px 24px rgba(55,102,165,0.18)';
     popup.style.padding = '28px 24px';
@@ -220,8 +239,8 @@ async function searchSERI() {
                 const point = new google.maps.LatLng(record.Latitude, record.Longitude);
                 const bluePin = new PinElement({
                     background: "#5796e7ff",
-                    borderColor: "#3766a5",
-                    glyphColor: "#3766a5",
+                    borderColor: "#025393",
+                    glyphColor: "#025393",
                 });
                 const marker = new AdvancedMarkerElement({
                     map,
