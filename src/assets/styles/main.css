@@ -1,9 +1,4 @@
-/* Add white outline to home icon image in sidebar */
-.nav-icon-button[aria-label="Home"] img {
-    outline: 2px solid #fff;
-    outline-offset: 2px;
-    border-radius: 6px;
-}
+
 /* Hide sidebar label when sidebar is collapsed */
 .navigation-sidebar .nav-label {
     display: none;
