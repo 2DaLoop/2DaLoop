@@ -67,11 +67,25 @@ async function initMap() {
             Repair
         `;
     
+        const seriBtn = document.createElement("button");
+        seriBtn.type = "button";
+        seriBtn.classList.add("btn");
+        // Style the R2 button with the nav bar blue color
+        seriBtn.style.background = "#3766A5";
+        seriBtn.style.color = "#fff";
+        seriBtn.style.border = "none";
+        seriBtn.style.fontWeight = "bold";
+        seriBtn.style.letterSpacing = "1px";
+        seriBtn.style.padding = "8px 18px";
+        seriBtn.style.borderRadius = "6px";
+        // Add a certificate SVG icon before the text
+        seriBtn.innerHTML = `SERI`;
+
         const r2Btn = document.createElement("button");
         r2Btn.type = "button";
         r2Btn.classList.add("btn", "r2-button");
         // Style the R2 button with the nav bar blue color
-        r2Btn.style.background = "#3766A5";
+        r2Btn.style.background = "#4FB749";
         r2Btn.style.color = "#fff";
         r2Btn.style.border = "none";
         r2Btn.style.fontWeight = "bold";
@@ -86,8 +100,7 @@ async function initMap() {
             RIOS
         `;
     
-        // Insert the R2 button next to the other buttons
-        optionsDiv.append(placeAutocomplete, repairBtn, recycleBtn, r2Btn);
+        optionsDiv.append(placeAutocomplete, repairBtn, recycleBtn, seriBtn, r2Btn);
         document.querySelector('.map-disclaimer').after(optionsDiv);
     
         // listeners for search input and filter options
@@ -112,13 +125,12 @@ async function initMap() {
             await searchText();
         });
     
-        r2Btn.addEventListener("click", () => {
-            Swal.fire({
-                title: "Coming Soon",
-                text: "R2 & RIOS certified facility search will be available in a future update.",
-                confirmButtonText: "OK",
-                confirmButtonColor: "#3766A5"
-            });
+        seriBtn.addEventListener("click", async () => {
+            await searchSERI();
+        });
+
+        r2Btn.addEventListener("click", async () => {
+            await searchRIOS();
         });
     }
 
@@ -189,6 +201,134 @@ function showHoverPopup({ name, displayName, address, formattedAddress }) {
 function removeHoverPopup() {
     let existing = document.getElementById('hover-location-popup');
     if (existing) existing.remove();
+}
+
+// load SERI data
+async function searchSERI() {
+    if (searchedLocation) {
+        await google.maps.importLibrary("geometry");
+        clearMarkers();
+
+        const response = await fetch(`/facilities/seri?searchedLocation=${JSON.stringify(searchedLocation)}`)
+        const data = await response.json();
+        if (data.records) {
+            const recordsArray = [...data.records];
+            const bounds = new LatLngBounds();
+
+            recordsArray.forEach(record => {
+                // custom marker for SERI facilities
+                const point = new google.maps.LatLng(record.Latitude, record.Longitude);
+                const bluePin = new PinElement({
+                    background: "#5796e7ff",
+                    borderColor: "#3766a5",
+                    glyphColor: "#3766a5",
+                });
+                const marker = new AdvancedMarkerElement({
+                    map,
+                    position: point,
+                    title: record.Name,
+                    content: bluePin.element,
+                });
+                markers.push(marker);
+                bounds.extend(point);
+        
+                // --- Use element.addEventListener for hover popup ---
+                marker.element.addEventListener('mouseenter', () => {
+                    showHoverPopup({
+                        name: record.Name,
+                        address: `${record.Street}, ${record.City}, ${record.State} ${record.PostalCode} ${record.Country}`
+                    });
+                });
+                marker.element.addEventListener('mouseleave', removeHoverPopup);
+                // Add for touch/click (mobile/tablet)
+                marker.element.addEventListener('touchstart', (e) => {
+                    showHoverPopup({
+                        name: record.Name,
+                        address: `${record.Street}, ${record.City}, ${record.State} ${record.PostalCode} ${record.Country}`
+                    });
+                    e.preventDefault();
+                });
+                marker.element.addEventListener('touchend', removeHoverPopup);
+                marker.element.addEventListener('click', () => {
+                    showHoverPopup({
+                        name: record.Name,
+                        address: `${record.Street}, ${record.City}, ${record.State} ${record.PostalCode} ${record.Country}`
+                    });
+                });
+            })
+
+            fixBounds(bounds);
+        }
+    }
+}
+
+// load RIOS data
+async function searchRIOS() {
+    if (searchedLocation) {
+        await google.maps.importLibrary("geometry");
+        clearMarkers();
+
+        // get geojson data
+        const response = await fetch("/geojson/RIOS.geojson");
+        const data = await response.json();
+        const geojson = [...data.features];
+        const radius = 50000;
+
+        const bounds = new LatLngBounds();
+        geojson.forEach(feature => {
+            // create LatLng object for each feature
+            const [lng, lat] = feature.geometry.coordinates;
+            const point = new google.maps.LatLng(lat, lng);
+
+            // calc distance from searched location
+            const distance = google.maps.geometry.spherical.computeDistanceBetween(
+                searchedLocation,
+                point,
+            );
+
+            if (distance <= radius) {
+                const greenPin = new PinElement({
+                    background: "lightgreen",
+                    borderColor: "green",
+                    glyphColor: "green",
+                });
+                const marker = new AdvancedMarkerElement({
+                    map,
+                    position: point,
+                    title: feature.properties.name,
+                    content: greenPin.element,
+                });
+                markers.push(marker);
+                bounds.extend(point);
+
+                // --- Use element.addEventListener for hover popup ---
+                marker.element.addEventListener('mouseenter', () => {
+                    showHoverPopup({
+                        name: feature.properties.name,
+                        address: feature.properties.address
+                    });
+                });
+                marker.element.addEventListener('mouseleave', removeHoverPopup);
+                // Add for touch/click (mobile/tablet)
+                marker.element.addEventListener('touchstart', (e) => {
+                    showHoverPopup({
+                        name: feature.properties.name,
+                        address: feature.properties.address
+                    });
+                    e.preventDefault();
+                });
+                marker.element.addEventListener('touchend', removeHoverPopup);
+                marker.element.addEventListener('click', () => {
+                    showHoverPopup({
+                        name: feature.properties.name,
+                        address: feature.properties.address
+                    });
+                });
+            }
+        });
+
+        fixBounds(bounds);
+    }
 }
 
 // load GeoJSON data for recyclers and manually filter on radius
@@ -509,10 +649,3 @@ function fixBounds(bounds) {
         }
     }
 }
-
-
-
-
-
-
-

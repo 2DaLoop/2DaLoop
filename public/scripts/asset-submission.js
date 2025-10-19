@@ -342,7 +342,7 @@ function loadChart(data) {
                 -(Number(data.packing.total_pickup_cost)) || 0,
                 Number(data.packing.net_financial_settlement) || 0
             ]}, {
-            name: '2DaLoop Potential',
+            name: 'Georgia Pacific Potential',
             data: [
                 Number(data.noPacking.total_value_recovery) || 0,
                 -(Number(data.noPacking.total_pickup_cost)) || 0,
@@ -350,7 +350,7 @@ function loadChart(data) {
             ]
         }],
         title: {
-            text: 'Standard Burden Shift ITAD Process vs 2DaLoop Reintegration Potential',
+            text: 'Standard Burden Shift ITAD Process vs Georgia Pacific Reintegration Potential',
             align: 'center',
             style: {
                 fontSize: '20px'

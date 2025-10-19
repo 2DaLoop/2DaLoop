@@ -79,9 +79,7 @@ async function initMap() {
         seriBtn.style.padding = "8px 18px";
         seriBtn.style.borderRadius = "6px";
         // Add a certificate SVG icon before the text
-        seriBtn.innerHTML = `
-            SERI
-        `;
+        seriBtn.innerHTML = `SERI`;
 
         const r2Btn = document.createElement("button");
         r2Btn.type = "button";
@@ -102,7 +100,6 @@ async function initMap() {
             RIOS
         `;
     
-        // Insert the R2 button next to the other buttons
         optionsDiv.append(placeAutocomplete, repairBtn, recycleBtn, seriBtn, r2Btn);
         document.querySelector('.map-disclaimer').after(optionsDiv);
     
