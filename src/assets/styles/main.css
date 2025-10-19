@@ -1,3 +1,9 @@
+/* Add white outline to home icon image in sidebar */
+.nav-icon-button[aria-label="Home"] img {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+    border-radius: 6px;
+}
 /* Hide sidebar label when sidebar is collapsed */
 .navigation-sidebar .nav-label {
     display: none;
@@ -275,7 +281,7 @@ body {
 }
 
 .current-location-button:hover {
-    background-color: #0362ab;
+    background-color: #025393;
 }
 
 .next-button {
@@ -460,7 +466,7 @@ p {
     bottom: 24px;
     left: 50%;
     transform: translateX(-50%);
-    background: #3766A5;
+    background: #025393;
     color: #fff;
     padding: 24px 32px;
     border-radius: 12px;
@@ -472,7 +478,7 @@ p {
 #accept-cookie-btn {
     margin-left: 24px;
     background: #fff;
-    color: #3766A5;
+    color: #025393;
     border: none;
     border-radius: 6px;
     padding: 8px 18px;
