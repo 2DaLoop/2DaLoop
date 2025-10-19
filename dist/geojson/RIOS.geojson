@@ -1,0 +1,7184 @@
+﻿{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "A Better Way Computer Recycling",
+        "address": "899 Airport Park Rd Ste K, Glen Burnie, MD 21061-2557",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "certifications": [
+          "R2v3"
+        ],
+        "commodities": [
+          "Data Destruction",
+          "Data Wiping",
+          "Downstream Vendor Management",
+          "Electronics Refurbishing & Repair"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.6446935,
+          39.1716483
+        ]
+      },
+      "bbox": [
+        -76.6446935,
+        39.1716483,
+        -76.6446935,
+        39.1716483
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "A STOCK WIRELESS LLC",
+        "address": "7791 NW 46 Street, Suite 414, Doral, FL 33166",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.3235983,
+          25.8157363
+        ]
+      },
+      "bbox": [
+        -80.3235983,
+        25.8157363,
+        -80.3235983,
+        25.8157363
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "A1 Assets Inc.",
+        "address": "150 National PL, Longwood, FL 32750-5495",
+        "phone": "888-474-3784",
+        "email": null,
+        "website": "a1assets.com/site/",
+        "certifications": [
+          "R2v3"
+        ],
+        "commodities": [
+          "Electronics Recycling"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.3474183,
+          28.6879322
+        ]
+      },
+      "bbox": [
+        -81.3474183,
+        28.6879322,
+        -81.3474183,
+        28.6879322
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ABC Recyclers LLC",
+        "address": "815 E. Gilbert St., Wichita, KS  67211",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.3285343,
+          37.6742088
+        ]
+      },
+      "bbox": [
+        -97.3285343,
+        37.6742088,
+        -97.3285343,
+        37.6742088
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Abdali Tech LLC",
+        "address": "1580 South 500 West, Ste 100, Salt Lake City, UT  84115",
+        "phone": "(619) 402-4580",
+        "email": null,
+        "website": null,
+        "certifications": [
+          "R2v3"
+        ],
+        "commodities": [
+          "Downstream Vendor Management",
+          "Electronics Refurbishing & Repair",
+          "Reuse and Recycling of Mobile Devices"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.9058465,
+          40.7359076
+        ]
+      },
+      "bbox": [
+        -111.9058465,
+        40.7359076,
+        -111.9058465,
+        40.7359076
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Abington Reldan Metals",
+        "address": "550 Old Bordentown Rd, Fairless Hills, PA 19030",
+        "phone": "267-316-2000",
+        "email": null,
+        "website": "reldan.com/",
+        "certifications": [
+          "E-Stewards",
+          "ISO 14001",
+          "ISO 45001",
+          "ISO 9001",
+          "R2"
+        ],
+        "commodities": [
+          "Ferrous Metals",
+          "Non-Ferrous Metals"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.75645519999999,
+          40.16691670000001
+        ]
+      },
+      "bbox": [
+        -74.75645519999999,
+        40.16691670000001,
+        -74.75645519999999,
+        40.16691670000001
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ADL Process Inc.",
+        "address": "500 Keele St, Toronto, ON M6N 3C9",
+        "phone": "416-769-5625",
+        "email": null,
+        "website": "www.adlprocess.com/",
+        "certifications": [
+          "R2"
+        ],
+        "commodities": [
+          "Electronics Recycling"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.4671452,
+          43.6685797
+        ]
+      },
+      "bbox": [
+        -79.4671452,
+        43.6685797,
+        -79.4671452,
+        43.6685797
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Advanced Micro, LLC",
+        "address": "7184 Maygan Drive, Olive Branch, MS 38654",
+        "phone": "662-895-1266",
+        "email": null,
+        "website": null,
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.85989839999999,
+          34.9778386
+        ]
+      },
+      "bbox": [
+        -89.85989839999999,
+        34.9778386,
+        -89.85989839999999,
+        34.9778386
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "AER Worldwide",
+        "address": "19 Butterfield Trail, El Paso, TX 79906",
+        "phone": "510-933-0518",
+        "email": null,
+        "website": "aerworldwide.com",
+        "certifications": [],
+        "commodities": [
+          "Electronics Recycling",
+          "Electronics Refurbishing & Repair"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.3964038,
+          31.8140073
+        ]
+      },
+      "bbox": [
+        -106.3964038,
+        31.8140073,
+        -106.3964038,
+        31.8140073
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "AER Worldwide",
+        "address": "790 Berry Shoals Rd., Duncan, SC 29334",
+        "phone": "510-933-0518",
+        "email": null,
+        "website": "aerworldwide.com",
+        "certifications": [],
+        "commodities": [
+          "Electronics Recycling",
+          "Electronics Refurbishing & Repair"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.129623,
+          34.8803719
+        ]
+      },
+      "bbox": [
+        -82.129623,
+        34.8803719,
+        -82.129623,
+        34.8803719
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "AERC Recycling Solutions, A Clean Earth Company",
+        "address": "1733 Morgan Road, Modesto, CA 95358",
+        "phone": "610-433-4011",
+        "email": null,
+        "website": "www.cleanearthinc.com/materials/electronic-waste",
+        "certifications": [
+          "R2"
+        ],
+        "commodities": [
+          "Electronics Recycling",
+          "Electronics Refurbishing & Repair"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -120.9766977,
+          37.6043944
+        ]
+      },
+      "bbox": [
+        -120.9766977,
+        37.6043944,
+        -120.9766977,
+        37.6043944
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "AERC Recycling Solutions, A Clean Earth Company",
+        "address": "2230 26th Street Southwest, Allentown, PA 18103",
+        "phone": "610-433-4011",
+        "email": null,
+        "website": "www.cleanearthinc.com/materials/electronic-waste",
+        "certifications": [
+          "R2"
+        ],
+        "commodities": [
+          "Electronics Recycling",
+          "Electronics Refurbishing & Repair"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.47801129999999,
+          40.5669492
+        ]
+      },
+      "bbox": [
+        -75.47801129999999,
+        40.5669492,
+        -75.47801129999999,
+        40.5669492
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "AERC Recycling Solutions, A Clean Earth Company",
+        "address": "3301 Rosedale Avenue, Richmond, VA 23230",
+        "phone": "610-433-4011",
+        "email": null,
+        "website": "www.cleanearthinc.com/materials/electronic-waste",
+        "certifications": [
+          "R2"
+        ],
+        "commodities": [
+          "Electronics Recycling",
+          "Electronics Refurbishing & Repair"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.4693669,
+          37.5770203
+        ]
+      },
+      "bbox": [
+        -77.4693669,
+        37.5770203,
+        -77.4693669,
+        37.5770203
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "AERC Recycling Solutions, A Clean Earth Company",
+        "address": "4317 Fortune Drive, Suite J, West Melbourne, FL 32940",
+        "phone": "610-433-4011",
+        "email": null,
+        "website": "www.cleanearthinc.com/materials/electronic-waste",
+        "certifications": [
+          "R2"
+        ],
+        "commodities": [
+          "Electronics Recycling",
+          "Electronics Refurbishing & Repair"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.65338779999999,
+          28.0716832
+        ]
+      },
+      "bbox": [
+        -80.65338779999999,
+        28.0716832,
+        -80.65338779999999,
+        28.0716832
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "All In Metal, LLC and Gem Iron & Metal Inc. DBA: Gem Lifecycle Solutions",
+        "address": "1275 W. State St, Ontario, CA 91762",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.6749762,
+          34.0589549
+        ]
+      },
+      "bbox": [
+        -117.6749762,
+        34.0589549,
+        -117.6749762,
+        34.0589549
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "All In Metal, LLC and Gem Iron & Metal Inc. DBA: Gem Lifecycle Solutions",
+        "address": "1275 W. State St., Ontario CA 91762",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.6749762,
+          34.0589549
+        ]
+      },
+      "bbox": [
+        -117.6749762,
+        34.0589549,
+        -117.6749762,
+        34.0589549
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Allan Company",
+        "address": "14530 Joanbridge Street, Baldwin Park, CA 91706",
+        "phone": "626-962-4047",
+        "email": null,
+        "website": "www.allancompany.com/",
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9575528,
+          34.1051637
+        ]
+      },
+      "bbox": [
+        -117.9575528,
+        34.1051637,
+        -117.9575528,
+        34.1051637
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Allan Company",
+        "address": "14604 Arrow Highway, Baldwin Park, CA 91706",
+        "phone": "626-962-4047",
+        "email": null,
+        "website": "www.allancompany.com/",
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.957237,
+          34.10622900000001
+        ]
+      },
+      "bbox": [
+        -117.957237,
+        34.10622900000001,
+        -117.957237,
+        34.10622900000001
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Allan Company",
+        "address": "14618 Arrow Highway, Baldwin Park, CA 91706",
+        "phone": "626-962-4047",
+        "email": null,
+        "website": "www.allancompany.com/",
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9568499,
+          34.1062686
+        ]
+      },
+      "bbox": [
+        -117.9568499,
+        34.1062686,
+        -117.9568499,
+        34.1062686
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Allan Company",
+        "address": "14620 Joanbridge Street, Baldwin Park, CA 91706",
+        "phone": "626-962-4047",
+        "email": null,
+        "website": "www.allancompany.com/",
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9570703,
+          34.1053881
+        ]
+      },
+      "bbox": [
+        -117.9570703,
+        34.1053881,
+        -117.9570703,
+        34.1053881
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Allan Company",
+        "address": "14634 Joanbridge Street, Baldwin Park, CA 91706",
+        "phone": "626-962-4047",
+        "email": null,
+        "website": "www.allancompany.com/",
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9562485,
+          34.105354
+        ]
+      },
+      "bbox": [
+        -117.9562485,
+        34.105354,
+        -117.9562485,
+        34.105354
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Allan Company",
+        "address": "14635 Joanbridge Street, Baldwin Park, CA 91706",
+        "phone": "626-962-4047",
+        "email": null,
+        "website": "www.allancompany.com/",
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9562428,
+          34.1062581
+        ]
+      },
+      "bbox": [
+        -117.9562428,
+        34.1062581,
+        -117.9562428,
+        34.1062581
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Allan Company",
+        "address": "5115 Bleecker Street, Baldwin Park, CA 91706",
+        "phone": "626-962-4047",
+        "email": null,
+        "website": "www.allancompany.com/",
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9556754,
+          34.10521290000001
+        ]
+      },
+      "bbox": [
+        -117.9556754,
+        34.10521290000001,
+        -117.9556754,
+        34.10521290000001
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Allan Company",
+        "address": "5129 Bleecker Street, Baldwin Park, CA 91706",
+        "phone": "626-962-4047",
+        "email": null,
+        "website": "www.allancompany.com/",
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9552966,
+          34.1057596
+        ]
+      },
+      "bbox": [
+        -117.9552966,
+        34.1057596,
+        -117.9552966,
+        34.1057596
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "American Cellular Solutions",
+        "address": "29313 Clemens Rd. Suite 2L, Westlake, OH 44145",
+        "phone": "440-935-9666",
+        "email": null,
+        "website": "shopacs.co/",
+        "certifications": [
+          "R2",
+          "ISO 14001",
+          "ISO 45001",
+          "ISO 9001"
+        ],
+        "commodities": [
+          "Electronics Refurbishing & Repair"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.94649280000002,
+          41.4695829
+        ]
+      },
+      "bbox": [
+        -81.94649280000002,
+        41.4695829,
+        -81.94649280000002,
+        41.4695829
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "American Cellular Solutions",
+        "address": "29313 Clemens Rd Ste 2L, Westlake, OH 44145",
+        "phone": "440-935-9666",
+        "email": null,
+        "website": "shopacs.co/",
+        "certifications": [
+          "R2",
+          "ISO 14001",
+          "ISO 45001",
+          "ISO 9001"
+        ],
+        "commodities": [
+          "Electronics Refurbishing & Repair"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.94649280000002,
+          41.4695829
+        ]
+      },
+      "bbox": [
+        -81.94649280000002,
+        41.4695829,
+        -81.94649280000002,
+        41.4695829
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "American Liquidations LLC dba Recycle Pro",
+        "address": "562 Captain Neville Drive, Waterbury, CT  06705",
+        "phone": "203-558-8035",
+        "email": null,
+        "website": "www.recyclepro.com/",
+        "certifications": [],
+        "commodities": [
+          "Collection",
+          "Data Sanitization",
+          "Reuse and Recycling of Mobile Devices"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.9690123,
+          41.5359615
+        ]
+      },
+      "bbox": [
+        -72.9690123,
+        41.5359615,
+        -72.9690123,
+        41.5359615
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Ancom Group Company LLC",
+        "address": "2424 E York St Unit 227, Philadelphia, PA 19125",
+        "phone": null,
+        "email": null,
+        "website": "ancom-group.com/",
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.1245282,
+          39.9774533
+        ]
+      },
+      "bbox": [
+        -75.1245282,
+        39.9774533,
+        -75.1245282,
+        39.9774533
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Ariel Suppliers Corp. DBA Upcycled Gadget",
+        "address": "115 Rocklyn Ave Unit A, Lynbrook, NY 11563",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.6624506,
+          40.6561117
+        ]
+      },
+      "bbox": [
+        -73.6624506,
+        40.6561117,
+        -73.6624506,
+        40.6561117
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Arrow Scrap Corporation",
+        "address": "1120 Lincoln Avenue, Holbrook, NY 11741",
+        "phone": "631-491-3061",
+        "email": null,
+        "website": "www.arrowscrap.com/",
+        "certifications": [
+          "R2"
+        ],
+        "commodities": [
+          "Electronics Recycling",
+          "Electronics Refurbishing & Repair",
+          "Ferrous Metals",
+          "Non-Ferrous Metals"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.08454789999999,
+          40.776096
+        ]
+      },
+      "bbox": [
+        -73.08454789999999,
+        40.776096,
+        -73.08454789999999,
+        40.776096
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Arrow Scrap Corporation",
+        "address": "83 Kean Street, West Babylon, NY 11704",
+        "phone": "631-491-3061",
+        "email": null,
+        "website": "www.arrowscrap.com/",
+        "certifications": [
+          "R2"
+        ],
+        "commodities": [
+          "Electronics Recycling",
+          "Electronics Refurbishing & Repair",
+          "Ferrous Metals",
+          "Non-Ferrous Metals"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.3797233,
+          40.7374466
+        ]
+      },
+      "bbox": [
+        -73.3797233,
+        40.7374466,
+        -73.3797233,
+        40.7374466
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Asset Management and Disposal dba RetirePC",
+        "address": "2747 Oakland Ave, Garland, TX 75041",
+        "phone": null,
+        "email": null,
+        "website": "www.retirepc.com/",
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.6703273,
+          32.876796
+        ]
+      },
+      "bbox": [
+        -96.6703273,
+        32.876796,
+        -96.6703273,
+        32.876796
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Asset Recycling Company of America, LLC dba ARCOA",
+        "address": "50 Noll Street,, 57 Noll Street, Suite B, Waukegan, IL 60085",
+        "phone": "847-599-9001",
+        "email": null,
+        "website": "www.thinkarcoa.com/",
+        "certifications": [
+          "ISO 14001",
+          "R2"
+        ],
+        "commodities": [
+          "Electronics Recycling"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.8827877,
+          42.3612746
+        ]
+      },
+      "bbox": [
+        -87.8827877,
+        42.3612746,
+        -87.8827877,
+        42.3612746
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Associated Steel Industries Ltd. (ASI)",
+        "address": "7140 Route 132, Sainte-Catherine, Québec, Canada- J5C 1B6",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.6049717,
+          45.3970186
+        ]
+      },
+      "bbox": [
+        -73.6049717,
+        45.3970186,
+        -73.6049717,
+        45.3970186
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Assurant, Inc. / HYLA Mobile, Inc.",
+        "address": "601 Mason Rd, Suite 180, La Vergne, TN 37086",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -86.5806049,
+          35.9869205
+        ]
+      },
+      "bbox": [
+        -86.5806049,
+        35.9869205,
+        -86.5806049,
+        35.9869205
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Assure EWaste Management, Inc.",
+        "address": "1431 Potrero Ave. Unit B, South El Monte, CA  91733",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "certifications": [],
+        "commodities": [
+          "Data Sanitization",
+          "Downstream Vendor Management",
+          "Electronic Refurbishment and Recycling"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.0562818,
+          34.0454933
+        ]
+      },
+      "bbox": [
+        -118.0562818,
+        34.0454933,
+        -118.0562818,
+        34.0454933
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Austin Elements Inc.",
+        "address": "4315 South Dr., Houston, TX 77053",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.44406920000002,
+          29.5853124
+        ]
+      },
+      "bbox": [
+        -95.44406920000002,
+        29.5853124,
+        -95.44406920000002,
+        29.5853124
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Avitar Unlimited, Inc.",
+        "address": "1875 East Lake Mary Boulevard, Sanford, FL 32773",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.2583459,
+          28.7597512
+        ]
+      },
+      "bbox": [
+        -81.2583459,
+        28.7597512,
+        -81.2583459,
+        28.7597512
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "B & K Technology Solutions LLC dba Advanced Technology Recycling",
+        "address": "1130 S 3800 W Ste 200 Salt Lake City, UT 84104",
+        "phone": "877-781-7779",
+        "email": null,
+        "website": "www.atrecycle.com/",
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.983738,
+          40.7447081
+        ]
+      },
+      "bbox": [
+        -111.983738,
+        40.7447081,
+        -111.983738,
+        40.7447081
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "B & K Technology Solutions LLC dba Advanced Technology Recycling",
+        "address": "4120 W Windmill LN Ste 105, Las Vegas, NV 89139",
+        "phone": "877-781-7779",
+        "email": null,
+        "website": "www.atrecycle.com/",
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.193616,
+          36.0451545
+        ]
+      },
+      "bbox": [
+        -115.193616,
+        36.0451545,
+        -115.193616,
+        36.0451545
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "B & K Technology Solutions LLC dba Advanced Technology Recycling",
+        "address": "1139 Lehigh Ave Suite 150, Whitehall, PA 18052",
+        "phone": "877-781-7779",
+        "email": null,
+        "website": "www.atrecycle.com/",
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.46552129999999,
+          40.6399798
+        ]
+      },
+      "bbox": [
+        -75.46552129999999,
+        40.6399798,
+        -75.46552129999999,
+        40.6399798
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "B & K Technology Solutions LLC dba Advanced Technology Recycling",
+        "address": "103 Shades Creek Cir Ste D, Birmingham, AL 35211",
+        "phone": "877-781-7779",
+        "email": null,
+        "website": "www.atrecycle.com/",
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -86.84628529999999,
+          33.4302142
+        ]
+      },
+      "bbox": [
+        -86.84628529999999,
+        33.4302142,
+        -86.84628529999999,
+        33.4302142
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "B & K Technology Solutions LLC dba Advanced Technology Recycling",
+        "address": "5060 Commerce Park Cir, Pensacola, FL 32505",
+        "phone": "877-781-7779",
+        "email": null,
+        "website": "www.atrecycle.com/",
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.269965,
+          30.4734174
+        ]
+      },
+      "bbox": [
+        -87.269965,
+        30.4734174,
+        -87.269965,
+        30.4734174
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "B & K Technology Solutions LLC dba Advanced Technology Recycling",
+        "address": "902 N Hazel St, Pontiac, IL 61764",
+        "phone": "877-781-7779",
+        "email": null,
+        "website": "www.atrecycle.com/",
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -88.6237012,
+          40.8860821
+        ]
+      },
+      "bbox": [
+        -88.6237012,
+        40.8860821,
+        -88.6237012,
+        40.8860821
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "B & K Technology Solutions LLC dba Advanced Technology Recycling",
+        "address": "8559 NE Interstate Loop 410 Suite B-144, San Antonio, TX 78219",
+        "phone": "877-781-7779",
+        "email": null,
+        "website": "www.atrecycle.com/",
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.3962067,
+          29.4438271
+        ]
+      },
+      "bbox": [
+        -98.3962067,
+        29.4438271,
+        -98.3962067,
+        29.4438271
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "BDI Logistics LLC",
+        "address": "7555 E Pleasant Valley Rd Suite 180, Independence, OH 44131",
+        "phone": "480-221-9495",
+        "email": null,
+        "website": "www.bdiexpress.com/selectCountry",
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.6284368,
+          41.3628758
+        ]
+      },
+      "bbox": [
+        -81.6284368,
+        41.3628758,
+        -81.6284368,
+        41.3628758
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Best Cell Inc.",
+        "address": "1609 McDonald Ave, Brooklyn, NY 11230",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9735807,
+          40.6136102
+        ]
+      },
+      "bbox": [
+        -73.9735807,
+        40.6136102,
+        -73.9735807,
+        40.6136102
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Big Data Supply, Inc",
+        "address": "1736 E Borchard Ave, Santa Ana, CA 92705-4605",
+        "phone": "714-647-9000",
+        "email": null,
+        "website": "bigdatasupplyinc.com/",
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.8435212,
+          33.7288721
+        ]
+      },
+      "bbox": [
+        -117.8435212,
+        33.7288721,
+        -117.8435212,
+        33.7288721
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Blair Tech Lifecycle Services",
+        "address": "170 West 43rd Street, Covington, KY 41015",
+        "phone": "859-727-4300",
+        "email": null,
+        "website": "blairtechdirect.com/lcs/",
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.50840830000001,
+          39.0431962
+        ]
+      },
+      "bbox": [
+        -84.50840830000001,
+        39.0431962,
+        -84.50840830000001,
+        39.0431962
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Broadtech LLC.",
+        "address": "1401 Lakeway Drive #A, Lewisville, TX 75057",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.9785134,
+          33.0253861
+        ]
+      },
+      "bbox": [
+        -96.9785134,
+        33.0253861,
+        -96.9785134,
+        33.0253861
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "C1 International Miami LLC",
+        "address": "3450 NW 114th Ave, Doral, FL 33178",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.381914,
+          25.805547
+        ]
+      },
+      "bbox": [
+        -80.381914,
+        25.805547,
+        -80.381914,
+        25.805547
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cameron Electronics",
+        "address": "800 1/2 A Williams Street Marlin, TX 76661",
+        "phone": "254-804-9800",
+        "email": null,
+        "website": "www.cameronelectronics.com/",
+        "certifications": [
+          "R2"
+        ],
+        "commodities": [
+          "Electronics Recycling"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.89927159999999,
+          31.2984795
+        ]
+      },
+      "bbox": [
+        -96.89927159999999,
+        31.2984795,
+        -96.89927159999999,
+        31.2984795
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cameron Electronics",
+        "address": "800 Williams Street Marlin, TX 76661",
+        "phone": "254-804-9800",
+        "email": null,
+        "website": "www.cameronelectronics.com/",
+        "certifications": [
+          "R2"
+        ],
+        "commodities": [
+          "Electronics Recycling"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.89927159999999,
+          31.2984795
+        ]
+      },
+      "bbox": [
+        -96.89927159999999,
+        31.2984795,
+        -96.89927159999999,
+        31.2984795
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Capital Area Corporate Recycling Council",
+        "address": "1400 Main Street, Baton Rouge, LA 70802",
+        "phone": "225-379-3577",
+        "email": null,
+        "website": "www.cacrc.com/",
+        "certifications": [
+          "R2"
+        ],
+        "commodities": [
+          "Electronics Recycling",
+          "Electronics Refurbishing & Repair"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.174724,
+          30.4517176
+        ]
+      },
+      "bbox": [
+        -91.174724,
+        30.4517176,
+        -91.174724,
+        30.4517176
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cbrx2 Sales, LLC",
+        "address": "2315 Frederick Ave, Saint Joseph, MO 64506 USA",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -94.8321533,
+          39.7766501
+        ]
+      },
+      "bbox": [
+        -94.8321533,
+        39.7766501,
+        -94.8321533,
+        39.7766501
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CCQT Inc.",
+        "address": "2915 21 Street NE, Suite 112, Calgary, AB T2E 7T1",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.0099071,
+          51.078384
+        ]
+      },
+      "bbox": [
+        -114.0099071,
+        51.078384,
+        -114.0099071,
+        51.078384
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CCQT Inc.",
+        "address": "66 E Escalon Avenue, Suite 111, Fresno, CA 93710",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -119.7888796,
+          36.8270007
+        ]
+      },
+      "bbox": [
+        -119.7888796,
+        36.8270007,
+        -119.7888796,
+        36.8270007
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cellify LLC",
+        "address": "2137 Knapp St., Brooklyn, NY  11229",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "certifications": [
+          "R2v3"
+        ],
+        "commodities": [
+          "Data Wiping/Erasure & Destruction",
+          "Downstream Vendor Management",
+          "Electronics Refurbishing & Repair"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9338692,
+          40.6001734
+        ]
+      },
+      "bbox": [
+        -73.9338692,
+        40.6001734,
+        -73.9338692,
+        40.6001734
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Champion Communication, Inc.",
+        "address": "32640 Dequindre Rd. Suite B, Warren, FL 48092",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -83.0857011,
+          42.5319844
+        ]
+      },
+      "bbox": [
+        -83.0857011,
+        42.5319844,
+        -83.0857011,
+        42.5319844
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cirba Solutions",
+        "address": "4930 Holtz Drive, Wixom, MI 48393",
+        "phone": "248-446-5631",
+        "email": null,
+        "website": "cirbasolutions.com",
+        "certifications": [],
+        "commodities": [
+          "Electronics Recycling",
+          "Electronics Refurbishing & Repair"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -83.5659409,
+          42.5243631
+        ]
+      },
+      "bbox": [
+        -83.5659409,
+        42.5243631,
+        -83.5659409,
+        42.5243631
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cirba Solutions",
+        "address": "618 E. Auto Center Drive, Suite 111, Mesa, AZ 85204",
+        "phone": "248-446-5631",
+        "email": null,
+        "website": "cirbasolutions.com",
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.8181686,
+          33.3851699
+        ]
+      },
+      "bbox": [
+        -111.8181686,
+        33.3851699,
+        -111.8181686,
+        33.3851699
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CITI ZONE USA INC.",
+        "address": "7931 NW 68th Street, Miami FL 33166",
+        "phone": "786-761-9555",
+        "email": null,
+        "website": "www.citizoneusa.com",
+        "certifications": [],
+        "commodities": [
+          "Electronics Recycling",
+          "Electronics Refurbishing & Repair"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.3260509,
+          25.835788
+        ]
+      },
+      "bbox": [
+        -80.3260509,
+        25.835788,
+        -80.3260509,
+        25.835788
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CJD E-Cycling, Inc.",
+        "address": "5257 N State Route 157, Edwardsville, IL 62025",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.8907608,
+          38.8496555
+        ]
+      },
+      "bbox": [
+        -89.8907608,
+        38.8496555,
+        -89.8907608,
+        38.8496555
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Clean Earth Specialty Waste Solutions Inc.",
+        "address": "945 E Pleasant Run RD, Lancaster, TX 75146",
+        "phone": "972-329-1200",
+        "email": null,
+        "website": "www.cleanearthinc.com/",
+        "certifications": [],
+        "commodities": [
+          "Electronics Recycling",
+          "Electronics Refurbishing & Repair"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.741517,
+          32.6050571
+        ]
+      },
+      "bbox": [
+        -96.741517,
+        32.6050571,
+        -96.741517,
+        32.6050571
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Clutec Inc.",
+        "address": "88 Cummings Park Drive, Woburn, MA 01801",
+        "phone": "339-999-2180",
+        "email": null,
+        "website": "clutec.com/",
+        "certifications": [
+          "R2"
+        ],
+        "commodities": [
+          "Electronics Recycling",
+          "Electronics Refurbishing & Repair"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.12129,
+          42.499451
+        ]
+      },
+      "bbox": [
+        -71.12129,
+        42.499451,
+        -71.12129,
+        42.499451
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CMB Wireless Group, LLC dba CWG",
+        "address": "2580 Esters Boulevard, Irving, TX 75261",
+        "phone": null,
+        "email": null,
+        "website": "www.cwg.com",
+        "certifications": [],
+        "commodities": [
+          "Electronics Recycling",
+          "Electronics Refurbishing & Repair"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.03181479999999,
+          32.931206
+        ]
+      },
+      "bbox": [
+        -97.03181479999999,
+        32.931206,
+        -97.03181479999999,
+        32.931206
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CoastTec, LLC",
+        "address": "1533 Progress Way, Suite 113, Eldersburg, MD 21784",
+        "phone": "410-521-1000",
+        "email": null,
+        "website": "coasttec.com/",
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.9437713,
+          39.4112625
+        ]
+      },
+      "bbox": [
+        -76.9437713,
+        39.4112625,
+        -76.9437713,
+        39.4112625
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cohen Electronics Inc. DBA: Cobalt",
+        "address": "3120 S. Verity Pkwy., Middletown, OH 45044",
+        "phone": "513-425-6911",
+        "email": null,
+        "website": "www.cohenusa.com/",
+        "certifications": [
+          "R2"
+        ],
+        "commodities": [
+          "Electronics Recycling",
+          "Ferrous Metals",
+          "Non-Ferrous Metals"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.4132631,
+          39.4830707
+        ]
+      },
+      "bbox": [
+        -84.4132631,
+        39.4830707,
+        -84.4132631,
+        39.4830707
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Columbus Micro Systems, Inc.",
+        "address": "5087 Westerville Road, Columbus, OH 43231",
+        "phone": "614-901-1336",
+        "email": null,
+        "website": "columbusmicro.com/",
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.929242,
+          40.0763344
+        ]
+      },
+      "bbox": [
+        -82.929242,
+        40.0763344,
+        -82.929242,
+        40.0763344
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Commonwealth Computer Recycling DBA CyberCrunch®",
+        "address": "1 Judy Way, Aston, PA 19014",
+        "phone": "866-925-2354",
+        "email": null,
+        "website": "ccrcyber.com/",
+        "certifications": [
+          "R2"
+        ],
+        "commodities": [
+          "Electronics Recycling",
+          "Electronics Refurbishing & Repair",
+          "Paper"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.4006105,
+          39.8607854
+        ]
+      },
+      "bbox": [
+        -75.4006105,
+        39.8607854,
+        -75.4006105,
+        39.8607854
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Commonwealth Computer Recycling DBA CyberCrunch®",
+        "address": "1628 Roseytown Road, Unit 8, Greensburg, PA 15601",
+        "phone": "866-925-2354",
+        "email": null,
+        "website": "ccrcyber.com/",
+        "certifications": [
+          "R2"
+        ],
+        "commodities": [
+          "Electronics Recycling",
+          "Electronics Refurbishing & Repair",
+          "Paper"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.5151017,
+          40.3104209
+        ]
+      },
+      "bbox": [
+        -79.5151017,
+        40.3104209,
+        -79.5151017,
+        40.3104209
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Compupoint USA LLC",
+        "address": "111 Fredrix Alley, Lawrenceville, GA 30046",
+        "phone": null,
+        "email": null,
+        "website": "www.compupointusa.com/",
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -83.9777653,
+          33.9718209
+        ]
+      },
+      "bbox": [
+        -83.9777653,
+        33.9718209,
+        -83.9777653,
+        33.9718209
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Computer Connection of CNY., Inc./ dba CCNY Tech",
+        "address": "145 New Hartford St., New Hartford, NC 13413",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.29365349999999,
+          43.0838346
+        ]
+      },
+      "bbox": [
+        -75.29365349999999,
+        43.0838346,
+        -75.29365349999999,
+        43.0838346
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Converge Metal Recycling, Inc.",
+        "address": "618 West Finger Street, Suite B, Maiden, NC 28650",
+        "phone": null,
+        "email": null,
+        "website": "www.convergemetalrecycling.com/",
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.224796,
+          35.5778676
+        ]
+      },
+      "bbox": [
+        -81.224796,
+        35.5778676,
+        -81.224796,
+        35.5778676
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Coretek Enterprises, LLC dba Technology Exchange, Inc.",
+        "address": "290-B International Drive, Concord, NC 28027",
+        "phone": "704-792-2221",
+        "email": null,
+        "website": "www.coretek.us",
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.6535504,
+          35.4198258
+        ]
+      },
+      "bbox": [
+        -80.6535504,
+        35.4198258,
+        -80.6535504,
+        35.4198258
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cozzi Recycling",
+        "address": "2501 Grant Ave, Bellwood, IL 60104",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.86440119999999,
+          41.8899802
+        ]
+      },
+      "bbox": [
+        -87.86440119999999,
+        41.8899802,
+        -87.86440119999999,
+        41.8899802
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cozzi Recycling",
+        "address": "2400 Main Street, Melrose Park, IL 60160",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.8633321,
+          41.89141619999999
+        ]
+      },
+      "bbox": [
+        -87.8633321,
+        41.89141619999999,
+        -87.8633321,
+        41.89141619999999
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CWG Asia Limited dba CWG",
+        "address": "838 Lai Chi Kok Road, Units 204-205, Laford Centre, Chueng Sha Wan, Hong Kong- KOWLOON",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.1473438,
+          22.3357181
+        ]
+      },
+      "bbox": [
+        114.1473438,
+        22.3357181,
+        114.1473438,
+        22.3357181
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CWork Solutions, LP",
+        "address": "625 Willow Springs Lane, York, PA 17406",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.746197,
+          40.0494171
+        ]
+      },
+      "bbox": [
+        -76.746197,
+        40.0494171,
+        -76.746197,
+        40.0494171
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "DAF Enterprises LLC DBA E Cyclers of Idaho",
+        "address": "1976 N Yellowstone Hwy, Idaho Falls, ID 83401",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.0105998,
+          43.513707
+        ]
+      },
+      "bbox": [
+        -112.0105998,
+        43.513707,
+        -112.0105998,
+        43.513707
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "DBA CERS International DBA CERS Lifecycle DBA Electrobargoon",
+        "address": "80 Pacific Court, Unit 12, London, ON N5V 3K4 London, ON N5V 3K4",
+        "phone": "888-935-2377",
+        "email": null,
+        "website": "www.cerslifecycle.com/",
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.17501539999999,
+          43.0092603
+        ]
+      },
+      "bbox": [
+        -81.17501539999999,
+        43.0092603,
+        -81.17501539999999,
+        43.0092603
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Device Circles, Inc. DBA Device Cycle",
+        "address": "11635 Harry Hines Blvd Ste 100, Dallas, TX 75229-2204",
+        "phone": "469-867-7046",
+        "email": null,
+        "website": "devicecycles.com/",
+        "certifications": [],
+        "commodities": [
+          "Electronics Refurbishing & Repair"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.8955143,
+          32.9053501
+        ]
+      },
+      "bbox": [
+        -96.8955143,
+        32.9053501,
+        -96.8955143,
+        32.9053501
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Didion ORF Recycling, Inc.",
+        "address": "206 Didion Drive, Saint Peters, MO 63376",
+        "phone": "636-397-6060",
+        "email": null,
+        "website": "www.didionorfrecycling.com/",
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.6166786,
+          38.8035373
+        ]
+      },
+      "bbox": [
+        -90.6166786,
+        38.8035373,
+        -90.6166786,
+        38.8035373
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Divanti Group, LLC",
+        "address": "26055 Emery Rd # C, Cleveland, OH 44128",
+        "phone": "216-469-3409",
+        "email": null,
+        "website": "divantigroup.com/",
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.4943344,
+          41.4362124
+        ]
+      },
+      "bbox": [
+        -81.4943344,
+        41.4362124,
+        -81.4943344,
+        41.4362124
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "DR REFIX LLC",
+        "address": "10572 Acacia St., STE C5, Rancho Cucamonga, CA  91730",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "certifications": [],
+        "commodities": [
+          "Electronic Refurbishment and Recycling",
+          "Electronics Refurbishing & Repair"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.5742916,
+          34.0912197
+        ]
+      },
+      "bbox": [
+        -117.5742916,
+        34.0912197,
+        -117.5742916,
+        34.0912197
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Dynamic Metal Services",
+        "address": "18901 Euclid Avenue, Cleveland, OH 44117",
+        "phone": "216-478-0200",
+        "email": null,
+        "website": "www.dynmet.com",
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.548536,
+          41.559204
+        ]
+      },
+      "bbox": [
+        -81.548536,
+        41.559204,
+        -81.548536,
+        41.559204
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "E Save LLC",
+        "address": "1864 Broadway STE A, Placerville, CA 95667",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -120.762181,
+          38.7299499
+        ]
+      },
+      "bbox": [
+        -120.762181,
+        38.7299499,
+        -120.762181,
+        38.7299499
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "e-Recycling of California",
+        "address": "31702 Hayman Street, Hayward, CA 94544",
+        "phone": "800-795-0993",
+        "email": null,
+        "website": "erecyclingofca.com/",
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.0438956,
+          37.6118448
+        ]
+      },
+      "bbox": [
+        -122.0438956,
+        37.6118448,
+        -122.0438956,
+        37.6118448
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "e-Recycling of California",
+        "address": "7201 Petterson Lane Paramount, CA 90723",
+        "phone": "800-795-0993",
+        "email": null,
+        "website": "erecyclingofca.com/",
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.1730619,
+          33.9072387
+        ]
+      },
+      "bbox": [
+        -118.1730619,
+        33.9072387,
+        -118.1730619,
+        33.9072387
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "e-Recycling of California",
+        "address": "7230 Petterson Lane Paramount, CA 90723",
+        "phone": "800-795-0993",
+        "email": null,
+        "website": "erecyclingofca.com/",
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.1722852,
+          33.9070896
+        ]
+      },
+      "bbox": [
+        -118.1722852,
+        33.9070896,
+        -118.1722852,
+        33.9070896
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "e-Recycling of California",
+        "address": "8065 Marine Way, Bldg. 297, Irvine, CA 92618",
+        "phone": "800-795-0993",
+        "email": null,
+        "website": "erecyclingofca.com/",
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.7351382,
+          33.6653969
+        ]
+      },
+      "bbox": [
+        -117.7351382,
+        33.6653969,
+        -117.7351382,
+        33.6653969
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "E-Scrap Solutions, LLC",
+        "address": "7510 Bittern Avenue, Cleveland, OH 44103",
+        "phone": "216-431-0796",
+        "email": null,
+        "website": "escraprecycling.com/",
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.6380448,
+          41.5334792
+        ]
+      },
+      "bbox": [
+        -81.6380448,
+        41.5334792,
+        -81.6380448,
+        41.5334792
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "eAsset Solutions, LLC",
+        "address": "2816-A Fallfax Dr. Falls Church, VA 22042",
+        "phone": "703-534-5865",
+        "email": null,
+        "website": "www.eassetsolutions.com/",
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.2081635,
+          38.87703399999999
+        ]
+      },
+      "bbox": [
+        -77.2081635,
+        38.87703399999999,
+        -77.2081635,
+        38.87703399999999
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "eAsset Solutions, LLC",
+        "address": "427 N. Maple Avenue Falls Church, VA 22046",
+        "phone": "703-534-5865",
+        "email": null,
+        "website": "www.eassetsolutions.com/",
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.1664079,
+          38.8868119
+        ]
+      },
+      "bbox": [
+        -77.1664079,
+        38.8868119,
+        -77.1664079,
+        38.8868119
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "EcoTech Management, Inc.",
+        "address": "935 Lincoln Ave., Holbrook, NY",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "certifications": [
+          "R2v3"
+        ],
+        "commodities": [
+          "Electronic Refurbishment and Recycling"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.0827691,
+          40.7743803
+        ]
+      },
+      "bbox": [
+        -73.0827691,
+        40.7743803,
+        -73.0827691,
+        40.7743803
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Ecovery, LLC",
+        "address": "26266A Railroad Avenue, Loxley, AL 36551",
+        "phone": "251-272-3630",
+        "email": null,
+        "website": "www.ecoveryllc.com/",
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.73893199999999,
+          30.60675749999999
+        ]
+      },
+      "bbox": [
+        -87.73893199999999,
+        30.60675749999999,
+        -87.73893199999999,
+        30.60675749999999
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Ecovery, LLC",
+        "address": "26320 Railroad Avenue, Loxley, AL 36551",
+        "phone": "251-272-3630",
+        "email": null,
+        "website": "www.ecoveryllc.com/",
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.73987670000001,
+          30.6090061
+        ]
+      },
+      "bbox": [
+        -87.73987670000001,
+        30.6090061,
+        -87.73987670000001,
+        30.6090061
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "eCycle Opportunities, LLC",
+        "address": "29699 Southfield Road, Southfield, MI 48076",
+        "phone": "248-233-4200",
+        "email": null,
+        "website": "www.ecycleopps.org",
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -83.2239594,
+          42.5073756
+        ]
+      },
+      "bbox": [
+        -83.2239594,
+        42.5073756,
+        -83.2239594,
+        42.5073756
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "eCycleSecure, LLC",
+        "address": "9100-C Perimeter Woods Drive, Charlotte, NC 28216",
+        "phone": "704-376-1116",
+        "email": null,
+        "website": "www.ecyclesecure.com",
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.85101,
+          35.34463
+        ]
+      },
+      "bbox": [
+        -80.85101,
+        35.34463,
+        -80.85101,
+        35.34463
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Electronics Bazar Inc",
+        "address": "151 Regal Row, STE 201,\tDallas,\tTX 75247",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.90053119999999,
+          32.8130452
+        ]
+      },
+      "bbox": [
+        -96.90053119999999,
+        32.8130452,
+        -96.90053119999999,
+        32.8130452
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Elemental, Inc.",
+        "address": "2371 Church Street, Philadelphia, PA 19124",
+        "phone": "215-289-1475",
+        "email": null,
+        "website": "eleminc.com/",
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.082195,
+          40.0051827
+        ]
+      },
+      "bbox": [
+        -75.082195,
+        40.0051827,
+        -75.082195,
+        40.0051827
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "eLot Recycling, Inc.",
+        "address": "64 Hannay Lane, Glenmont, NY 12077",
+        "phone": "518-226-9385",
+        "email": null,
+        "website": "www.elotrecycling.com",
+        "certifications": [
+          "R2"
+        ],
+        "commodities": [
+          "Electronics Recycling",
+          "Non-Ferrous Metals",
+          "Ferrous Metals"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.7867964,
+          42.62379190000001
+        ]
+      },
+      "bbox": [
+        -73.7867964,
+        42.62379190000001,
+        -73.7867964,
+        42.62379190000001
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "EnviroCircuit – A Division of EnviroMetal Technologies Inc.",
+        "address": "19239 96th Avenue, Surrey, BC V4N 4C4",
+        "phone": "604-428-2400",
+        "email": null,
+        "website": "envirocircuit.com",
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.6892325,
+          49.1774514
+        ]
+      },
+      "bbox": [
+        -122.6892325,
+        49.1774514,
+        -122.6892325,
+        49.1774514
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ERDAY INC",
+        "address": "1320 South Johnson Drive,\tCity Of Industry,\tCA\t91745",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9465612,
+          34.0033702
+        ]
+      },
+      "bbox": [
+        -117.9465612,
+        34.0033702,
+        -117.9465612,
+        34.0033702
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Estaso Trading LLC",
+        "address": "8140 Walnut Hill Lane, Suite 820, Dallas, TX 75231",
+        "phone": "469-708-7570",
+        "email": null,
+        "website": "www.estaso.com/",
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7663784,
+          32.8792665
+        ]
+      },
+      "bbox": [
+        -96.7663784,
+        32.8792665,
+        -96.7663784,
+        32.8792665
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Evolution E-Cycling, LLC",
+        "address": "2235 Mary ST Ste A Pittsburgh, PA 15203",
+        "phone": null,
+        "email": null,
+        "website": "evolutionecycling.com/",
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.9735383,
+          40.4258524
+        ]
+      },
+      "bbox": [
+        -79.9735383,
+        40.4258524,
+        -79.9735383,
+        40.4258524
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Evterra Recycling, LLC",
+        "address": "1085 Alper Center Dr, Suite 110,\tHenderson,\tNV\t89052",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.1294851,
+          35.9883366
+        ]
+      },
+      "bbox": [
+        -115.1294851,
+        35.9883366,
+        -115.1294851,
+        35.9883366
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Evterra Recycling, LLC",
+        "address": "300 Corporate Drive,\tElgin,\tIL\t60123",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -88.2820591,
+          42.07332299999999
+        ]
+      },
+      "bbox": [
+        -88.2820591,
+        42.07332299999999,
+        -88.2820591,
+        42.07332299999999
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Evterra Recycling, LLC",
+        "address": "300 Corporate Drive,\tElgin,\tIL\t60123",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -88.2820591,
+          42.07332299999999
+        ]
+      },
+      "bbox": [
+        -88.2820591,
+        42.07332299999999,
+        -88.2820591,
+        42.07332299999999
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Evterra Recycling, LLC",
+        "address": "5367 Dietrich Road, Suite 110,\tSan Antonio,\tTX\t78219",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.3851799,
+          29.44358859999999
+        ]
+      },
+      "bbox": [
+        -98.3851799,
+        29.44358859999999,
+        -98.3851799,
+        29.44358859999999
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "evterra Recycling, LLC",
+        "address": "1500 Southpoint Drive, Suite 200, Forest Park, GA 30297",
+        "phone": "972-514-2405",
+        "email": null,
+        "website": "evterrarecycling.com/",
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.3832702,
+          33.633467
+        ]
+      },
+      "bbox": [
+        -84.3832702,
+        33.633467,
+        -84.3832702,
+        33.633467
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Far West Metals",
+        "address": "9665 SW Tualatin-Sherwood Rd., Tualatin, OR 97062",
+        "phone": "503-200-5014",
+        "email": null,
+        "website": "www.farwestmetals.com/",
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.7767071,
+          45.3812181
+        ]
+      },
+      "bbox": [
+        -122.7767071,
+        45.3812181,
+        -122.7767071,
+        45.3812181
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Far West Recycling",
+        "address": "12820 NE Marx Street, Portland, OR 97230",
+        "phone": "503) 255 2299",
+        "email": null,
+        "website": "www.farwestrecycling.com/",
+        "certifications": [],
+        "commodities": [
+          "Electronics Recycling",
+          "Ferrous Metals",
+          "Non-Ferrous Metals",
+          "Paper",
+          "Plastic"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.5322259,
+          45.5577944
+        ]
+      },
+      "bbox": [
+        -122.5322259,
+        45.5577944,
+        -122.5322259,
+        45.5577944
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Far West Recycling",
+        "address": "6440 SE Alexander St, Hillsboro, OR 97123",
+        "phone": null,
+        "email": null,
+        "website": "www.farwestrecycling.com/",
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.9154527,
+          45.4957266
+        ]
+      },
+      "bbox": [
+        -122.9154527,
+        45.4957266,
+        -122.9154527,
+        45.4957266
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Fort Lauderdale Scrap Inc",
+        "address": "745 NW 7th Avenue,\tFort Lauderdale,\tFL\t33311",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.15113800000002,
+          26.1327726
+        ]
+      },
+      "bbox": [
+        -80.15113800000002,
+        26.1327726,
+        -80.15113800000002,
+        26.1327726
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Fortune Group",
+        "address": "1 Crow Point Road, Central Falls, RI 02865",
+        "phone": "732-388-0709",
+        "email": null,
+        "website": "www.fortunegroup.net",
+        "certifications": [
+          "R2"
+        ],
+        "commodities": [
+          "Electronics Recycling",
+          "Electronics Refurbishing & Repair",
+          "Ferrous Metals",
+          "Non-Ferrous Metals"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.4024072,
+          41.8861552
+        ]
+      },
+      "bbox": [
+        -71.4024072,
+        41.8861552,
+        -71.4024072,
+        41.8861552
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Fortune Group",
+        "address": "1 Landing Avenue, Avenel, NJ 07065",
+        "phone": "732-388-0709",
+        "email": null,
+        "website": "www.fortunegroup.net",
+        "certifications": [
+          "R2"
+        ],
+        "commodities": [
+          "Electronics Recycling",
+          "Electronics Refurbishing & Repair",
+          "Ferrous Metals",
+          "Non-Ferrous Metals"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.27925479999999,
+          40.5905189
+        ]
+      },
+      "bbox": [
+        -74.27925479999999,
+        40.5905189,
+        -74.27925479999999,
+        40.5905189
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Fortune Group",
+        "address": "1010 N22nd Avenue, Phoenix, AZ 85009",
+        "phone": "732-388-0709",
+        "email": null,
+        "website": "www.fortunegroup.net",
+        "certifications": [
+          "R2"
+        ],
+        "commodities": [
+          "Electronics Recycling",
+          "Electronics Refurbishing & Repair",
+          "Ferrous Metals",
+          "Non-Ferrous Metals"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.1064176,
+          33.4584459
+        ]
+      },
+      "bbox": [
+        -112.1064176,
+        33.4584459,
+        -112.1064176,
+        33.4584459
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Fortune Group",
+        "address": "1119 Pendale Road, El Paso, TX 79907",
+        "phone": "732-388-0709",
+        "email": null,
+        "website": "www.fortunegroup.net",
+        "certifications": [
+          "R2"
+        ],
+        "commodities": [
+          "Electronics Recycling",
+          "Electronics Refurbishing & Repair",
+          "Ferrous Metals",
+          "Non-Ferrous Metals"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.3188026,
+          31.73023839999999
+        ]
+      },
+      "bbox": [
+        -106.3188026,
+        31.73023839999999,
+        -106.3188026,
+        31.73023839999999
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Fortune Group",
+        "address": "1212 East 6th Street, Sandwich, IL 60548",
+        "phone": "732-388-0709",
+        "email": null,
+        "website": "www.fortunegroup.net",
+        "certifications": [
+          "R2"
+        ],
+        "commodities": [
+          "Electronics Recycling",
+          "Electronics Refurbishing & Repair",
+          "Ferrous Metals",
+          "Non-Ferrous Metals"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -88.6039531,
+          41.65003
+        ]
+      },
+      "bbox": [
+        -88.6039531,
+        41.65003,
+        -88.6039531,
+        41.65003
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Fortune Group",
+        "address": "13105 East 38th Street, Denver, CO 80239",
+        "phone": "732-388-0709",
+        "email": null,
+        "website": "www.fortunegroup.net",
+        "certifications": [
+          "R2"
+        ],
+        "commodities": [
+          "Electronics Recycling",
+          "Electronics Refurbishing & Repair",
+          "Ferrous Metals",
+          "Non-Ferrous Metals"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.8352781,
+          39.7697729
+        ]
+      },
+      "bbox": [
+        -104.8352781,
+        39.7697729,
+        -104.8352781,
+        39.7697729
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Fortune Group",
+        "address": "19421 Quinn Road Bakersfield, CA 93308",
+        "phone": "732-388-0709",
+        "email": null,
+        "website": "www.fortunegroup.net",
+        "certifications": [
+          "R2"
+        ],
+        "commodities": [
+          "Electronics Recycling",
+          "Electronics Refurbishing & Repair",
+          "Ferrous Metals",
+          "Non-Ferrous Metals"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -119.0833452,
+          35.4465867
+        ]
+      },
+      "bbox": [
+        -119.0833452,
+        35.4465867,
+        -119.0833452,
+        35.4465867
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Fortune Group",
+        "address": "2 Crow Point Road, Lincoln, RI 02865",
+        "phone": "732-388-0709",
+        "email": null,
+        "website": "www.fortunegroup.net",
+        "certifications": [
+          "R2"
+        ],
+        "commodities": [
+          "Electronics Recycling",
+          "Electronics Refurbishing & Repair",
+          "Ferrous Metals",
+          "Non-Ferrous Metals"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.4056774,
+          41.8840964
+        ]
+      },
+      "bbox": [
+        -71.4056774,
+        41.8840964,
+        -71.4056774,
+        41.8840964
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Fortune Group",
+        "address": "3333 East Kiest Boulevard, Dallas, TX 75203",
+        "phone": "732-388-0709",
+        "email": null,
+        "website": "www.fortunegroup.net",
+        "certifications": [
+          "R2"
+        ],
+        "commodities": [
+          "Electronics Recycling",
+          "Electronics Refurbishing & Repair",
+          "Ferrous Metals",
+          "Non-Ferrous Metals"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7857868,
+          32.7312588
+        ]
+      },
+      "bbox": [
+        -96.7857868,
+        32.7312588,
+        -96.7857868,
+        32.7312588
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Fortune Group",
+        "address": "37750 Freightway Lane, Sandy, OR 97055",
+        "phone": "732-388-0709",
+        "email": null,
+        "website": "www.fortunegroup.net",
+        "certifications": [
+          "R2"
+        ],
+        "commodities": [
+          "Electronics Recycling",
+          "Electronics Refurbishing & Repair",
+          "Ferrous Metals",
+          "Non-Ferrous Metals"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.27711,
+          45.3992812
+        ]
+      },
+      "bbox": [
+        -122.27711,
+        45.3992812,
+        -122.27711,
+        45.3992812
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Fortune Group",
+        "address": "4950 Quality Drive, Fredericksburg, VA 22408",
+        "phone": "732-388-0709",
+        "email": null,
+        "website": "www.fortunegroup.net",
+        "certifications": [
+          "R2"
+        ],
+        "commodities": [
+          "Electronics Recycling",
+          "Electronics Refurbishing & Repair",
+          "Ferrous Metals",
+          "Non-Ferrous Metals"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.50605639999999,
+          38.2609955
+        ]
+      },
+      "bbox": [
+        -77.50605639999999,
+        38.2609955,
+        -77.50605639999999,
+        38.2609955
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Fortune Group",
+        "address": "6970 Jonesboro Road, Morrow, GA 30260",
+        "phone": "732-388-0709",
+        "email": null,
+        "website": "www.fortunegroup.net",
+        "certifications": [
+          "R2"
+        ],
+        "commodities": [
+          "Electronics Recycling",
+          "Electronics Refurbishing & Repair",
+          "Ferrous Metals",
+          "Non-Ferrous Metals"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.34329730000002,
+          33.5654239
+        ]
+      },
+      "bbox": [
+        -84.34329730000002,
+        33.5654239,
+        -84.34329730000002,
+        33.5654239
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Fortune Group",
+        "address": "900 Leesville Avenue, Rahway, NJ 07065",
+        "phone": "732-388-0709",
+        "email": null,
+        "website": "www.fortunegroup.net",
+        "certifications": [
+          "R2"
+        ],
+        "commodities": [
+          "Electronics Recycling",
+          "Electronics Refurbishing & Repair",
+          "Ferrous Metals",
+          "Non-Ferrous Metals"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.2817513,
+          40.59314579999999
+        ]
+      },
+      "bbox": [
+        -74.2817513,
+        40.59314579999999,
+        -74.2817513,
+        40.59314579999999
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Fortune Group",
+        "address": "Av. El Puente S/N, Parque Industrial El Puente, Reynosa, Tamaulipas 88783 México",
+        "phone": "732-388-0709",
+        "email": null,
+        "website": "www.fortunegroup.net",
+        "certifications": [
+          "R2"
+        ],
+        "commodities": [
+          "Electronics Recycling",
+          "Electronics Refurbishing & Repair",
+          "Ferrous Metals",
+          "Non-Ferrous Metals"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.186121,
+          26.0109056
+        ]
+      },
+      "bbox": [
+        -98.186121,
+        26.0109056,
+        -98.186121,
+        26.0109056
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Freeman Trading LLC",
+        "address": "7823 Sandy Farm Rd,\tSevern,\tMD\t21144",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.682621,
+          39.146285
+        ]
+      },
+      "bbox": [
+        -76.682621,
+        39.146285,
+        -76.682621,
+        39.146285
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Galide, LLC dba Just Mac",
+        "address": "15825 State Highway 249 Suite 3,\tHouston,\tTX\t77086",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.52202229999999,
+          29.940484
+        ]
+      },
+      "bbox": [
+        -95.52202229999999,
+        29.940484,
+        -95.52202229999999,
+        29.940484
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "GALLERIA WIRELESS WORLD & GARMENTS INC.",
+        "address": "11076 Harry Hines Boulevard, Suite 300,\tDallas,\tTX\t75229",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.88683150000001,
+          32.886063
+        ]
+      },
+      "bbox": [
+        -96.88683150000001,
+        32.886063,
+        -96.88683150000001,
+        32.886063
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Garten Services, Inc.",
+        "address": "3334 Industrial Way NE, Salem, OR 97301",
+        "phone": "503-581-4472",
+        "email": null,
+        "website": "garten.org",
+        "certifications": [
+          "R2"
+        ],
+        "commodities": [
+          "Electronics Recycling",
+          "Electronics Refurbishing & Repair",
+          "Ferrous Metals",
+          "Non-Ferrous Metals",
+          "Paper",
+          "Plastic"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -123.0103149,
+          44.9683337
+        ]
+      },
+      "bbox": [
+        -123.0103149,
+        44.9683337,
+        -123.0103149,
+        44.9683337
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Gen-Tek LLC",
+        "address": "4721 Eagle Street NW, North Canton, OH 44720",
+        "phone": "234-209-9771",
+        "email": null,
+        "website": "www.gen-tekinc.com/",
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.435604,
+          40.8841488
+        ]
+      },
+      "bbox": [
+        -81.435604,
+        40.8841488,
+        -81.435604,
+        40.8841488
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Genesis Electronics Recycling, Inc, Genesis Dome a Division of Genesis Electronics Recycling, Inc.",
+        "address": "201 Hastings Dr.,\tBuffalo Grove,\tIL\t60089",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.9374679,
+          42.1565234
+        ]
+      },
+      "bbox": [
+        -87.9374679,
+        42.1565234,
+        -87.9374679,
+        42.1565234
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "GER Solutions LLC",
+        "address": "635 S Tenth St, Unit 600,\tAllentown,\tPA\t18103",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.4750578,
+          40.5948439
+        ]
+      },
+      "bbox": [
+        -75.4750578,
+        40.5948439,
+        -75.4750578,
+        40.5948439
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Global Cell-Tech Inc dba Top Cell",
+        "address": "2858 NW 72nd Ave,\tMiami,\tFL\t33122",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.31359599999999,
+          25.8005023
+        ]
+      },
+      "bbox": [
+        -80.31359599999999,
+        25.8005023,
+        -80.31359599999999,
+        25.8005023
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Global Depot Inc dba GDI Trading",
+        "address": "1111 Jefferson Avenue, Suite A,\tElizabeth,\tNJ\t07201",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.1993142,
+          40.6866128
+        ]
+      },
+      "bbox": [
+        -74.1993142,
+        40.6866128,
+        -74.1993142,
+        40.6866128
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Great Lakes Recycling",
+        "address": "26500 Harding Street, Oak Park, MI 48237",
+        "phone": "248-547-5700",
+        "email": null,
+        "website": "www.glradvanced.com/",
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -83.1986076,
+          42.4867215
+        ]
+      },
+      "bbox": [
+        -83.1986076,
+        42.4867215,
+        -83.1986076,
+        42.4867215
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Great Lakes Recycling",
+        "address": "26500 Harding St, Oak Park, MI 48237",
+        "phone": null,
+        "email": null,
+        "website": "www.glrescrap.com/",
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -83.1986076,
+          42.4867215
+        ]
+      },
+      "bbox": [
+        -83.1986076,
+        42.4867215,
+        -83.1986076,
+        42.4867215
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Green Star Services Inc.",
+        "address": "557 Clark Ave, Pittsburg, CA 94565-5025",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8789325,
+          38.0124083
+        ]
+      },
+      "bbox": [
+        -121.8789325,
+        38.0124083,
+        -121.8789325,
+        38.0124083
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Harvey’s Discount Warehouse LLC DBA eWaste Solutions",
+        "address": "342 Circuit Street Unit 4, Hanover, MA, United States, North America",
+        "phone": "781-924-3071",
+        "email": null,
+        "website": "ewastesolutionsusa.com/",
+        "certifications": [
+          "R2v3"
+        ],
+        "commodities": [
+          "Data Wiping/Erasure & Destruction",
+          "Downstream Vendor Management",
+          "Electronic Refurbishment and Recycling"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.86549049999999,
+          42.10946999999999
+        ]
+      },
+      "bbox": [
+        -70.86549049999999,
+        42.10946999999999,
+        -70.86549049999999,
+        42.10946999999999
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Health Connect America dba Electronics Recycling Solutions",
+        "address": "547 Airport Road, Suite 101, Gallatin, TN 37066",
+        "phone": "615-989-1010",
+        "email": null,
+        "website": "www.healthconnectamerica.com/electronic-recycling-solutions/",
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -86.4035423,
+          36.3938685
+        ]
+      },
+      "bbox": [
+        -86.4035423,
+        36.3938685,
+        -86.4035423,
+        36.3938685
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Henry Fligeltaub Company",
+        "address": "Henry Fligeltaub Co, 1719 W. Louisiana St., Evansville, IN  47710",
+        "phone": "812-499-3362",
+        "email": null,
+        "website": "fligeltaub.com/",
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.588292,
+          37.989392
+        ]
+      },
+      "bbox": [
+        -87.588292,
+        37.989392,
+        -87.588292,
+        37.989392
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "HOBI International, Inc.",
+        "address": "1202 Nagel Boulevard, Batavia, IL 60510",
+        "phone": "214-951-0143",
+        "email": null,
+        "website": "hobi.com/",
+        "certifications": [
+          "R2",
+          "ISO 14001"
+        ],
+        "commodities": [
+          "Electronics Recycling",
+          "Electronics Refurbishing & Repair"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -88.2972745,
+          41.8630969
+        ]
+      },
+      "bbox": [
+        -88.2972745,
+        41.8630969,
+        -88.2972745,
+        41.8630969
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "HOBI International, Inc.",
+        "address": "7601 Ambassador Row, Dallas, Texas 75247",
+        "phone": "214-951-0143",
+        "email": null,
+        "website": "hobi.com/",
+        "certifications": [
+          "R2",
+          "ISO 14001"
+        ],
+        "commodities": [
+          "Electronics Recycling",
+          "Electronics Refurbishing & Repair"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.87598039999999,
+          32.8156066
+        ]
+      },
+      "bbox": [
+        -96.87598039999999,
+        32.8156066,
+        -96.87598039999999,
+        32.8156066
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "HOBI International, Inc.",
+        "address": "9191 West Buckeye Road, Suite 119, Tolleson, AZ 85353",
+        "phone": "214-951-0143",
+        "email": null,
+        "website": "hobi.com/",
+        "certifications": [
+          "R2",
+          "ISO 14001"
+        ],
+        "commodities": [
+          "Electronics Recycling",
+          "Electronics Refurbishing & Repair"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.2573486,
+          33.43506
+        ]
+      },
+      "bbox": [
+        -112.2573486,
+        33.43506,
+        -112.2573486,
+        33.43506
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "HubX LLC",
+        "address": "10900 Northwest 97th Street, Suite 102, 103, 104, Miami, FL 33178",
+        "phone": "786-600-6505",
+        "email": null,
+        "website": "hubx.com",
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.3731415,
+          25.8617721
+        ]
+      },
+      "bbox": [
+        -80.3731415,
+        25.8617721,
+        -80.3731415,
+        25.8617721
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Hyper Microsystems Inc",
+        "address": "900 Carnegie Street,\tRolling Meadows,\tIL\t60008",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -88.0285153,
+          42.1004259
+        ]
+      },
+      "bbox": [
+        -88.0285153,
+        42.1004259,
+        -88.0285153,
+        42.1004259
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Infinite Electronics Recycling, LLC",
+        "address": "110 Main Street, Lower Level, Wintersville, OH 43953",
+        "phone": "443-255-9439",
+        "email": null,
+        "website": "www.ierusa.com/",
+        "certifications": [],
+        "commodities": [
+          "Electronics Recycling",
+          "Electronics Refurbishing & Repair"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.68869169999999,
+          40.369742
+        ]
+      },
+      "bbox": [
+        -80.68869169999999,
+        40.369742,
+        -80.68869169999999,
+        40.369742
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Information Technology Exchange – give IT. get IT.",
+        "address": "60 Industrial Street, Waterville, ME 04901",
+        "phone": "207-938-4614",
+        "email": null,
+        "website": "www.giveitgetit.org/",
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -69.6314799,
+          44.5734231
+        ]
+      },
+      "bbox": [
+        -69.6314799,
+        44.5734231,
+        -69.6314799,
+        44.5734231
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "IT Supply Solutions, LLC",
+        "address": "7067 Production Ct., Florence, KY 41042",
+        "phone": "859-534-2323",
+        "email": null,
+        "website": "itsupplysolutions.com/",
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.6016369,
+          38.9743166
+        ]
+      },
+      "bbox": [
+        -84.6016369,
+        38.9743166,
+        -84.6016369,
+        38.9743166
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "IT Supply Solutions, LLC",
+        "address": "8063 Production Road, Florence, KY 41042",
+        "phone": "859-534-2323",
+        "email": null,
+        "website": "itsupplysolutions.com/",
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.6033854,
+          38.9740032
+        ]
+      },
+      "bbox": [
+        -84.6033854,
+        38.9740032,
+        -84.6033854,
+        38.9740032
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "IT Supply Solutions, LLC",
+        "address": "7067 Production Ct, Florence, KY 41042",
+        "phone": "859-534-2323",
+        "email": null,
+        "website": "itsupplysolutions.com/",
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.6016369,
+          38.9743166
+        ]
+      },
+      "bbox": [
+        -84.6016369,
+        38.9743166,
+        -84.6016369,
+        38.9743166
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ITEC Inc.",
+        "address": "2841 S Croddy Way, Santa Ana, CA 92704",
+        "phone": "714-206-7757",
+        "email": null,
+        "website": "itec.net/",
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9214792,
+          33.7095963
+        ]
+      },
+      "bbox": [
+        -117.9214792,
+        33.7095963,
+        -117.9214792,
+        33.7095963
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Jazme, LLC",
+        "address": "115 31St Ave N Minneapolis, MN 55411",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -93.2796104,
+          45.0116124
+        ]
+      },
+      "bbox": [
+        -93.2796104,
+        45.0116124,
+        -93.2796104,
+        45.0116124
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "JC Logistics Inc.",
+        "address": "12440 Firestone Blvd, STE 108,\tNorwalk,\tCA\t90650",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.0686423,
+          33.9046666
+        ]
+      },
+      "bbox": [
+        -118.0686423,
+        33.9046666,
+        -118.0686423,
+        33.9046666
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "JCM Computers, LLC",
+        "address": "225 Wales Street, Abington, MA 02351",
+        "phone": "781-982-7100",
+        "email": null,
+        "website": "www.jcmcomputers.com/",
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.94149780000001,
+          42.1297605
+        ]
+      },
+      "bbox": [
+        -70.94149780000001,
+        42.1297605,
+        -70.94149780000001,
+        42.1297605
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "JCM Computers, LLC",
+        "address": "225 Wales St,\tAbington,\tMA\t02351",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.94149780000001,
+          42.1297605
+        ]
+      },
+      "bbox": [
+        -70.94149780000001,
+        42.1297605,
+        -70.94149780000001,
+        42.1297605
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "K Wireless Wholesale, Inc.",
+        "address": "7506 Reindeer Trl, San Antonio, TX 78238",
+        "phone": "210-851-6645",
+        "email": null,
+        "website": "www.kwirelesswholesale.com/",
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.6299264,
+          29.5003955
+        ]
+      },
+      "bbox": [
+        -98.6299264,
+        29.5003955,
+        -98.6299264,
+        29.5003955
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Kawabata American, Inc.",
+        "address": "1950 S. Santa Fe Ave., Compton, CA 90221",
+        "phone": "310-638-6183",
+        "email": null,
+        "website": "www.kbtmetal.com/",
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.2148328,
+          33.878816
+        ]
+      },
+      "bbox": [
+        -118.2148328,
+        33.878816,
+        -118.2148328,
+        33.878816
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "KT Corp",
+        "address": "1320 S. Johnson Drive,\tCity Of Industry,\tCA\t91745",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9465612,
+          34.0033702
+        ]
+      },
+      "bbox": [
+        -117.9465612,
+        34.0033702,
+        -117.9465612,
+        34.0033702
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Life Cycle Solutions, Inc.",
+        "address": "8701 Torresdale Ave Ste. O,\tPhiladelphia,\tPA\t19136",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.00892449999999,
+          40.043574
+        ]
+      },
+      "bbox": [
+        -75.00892449999999,
+        40.043574,
+        -75.00892449999999,
+        40.043574
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "M&E Investments dba TECHREUP",
+        "address": "28310 Industrial Blvd Suite F,\tHayward,\tCA\t94545",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.0946624,
+          37.6182495
+        ]
+      },
+      "bbox": [
+        -122.0946624,
+        37.6182495,
+        -122.0946624,
+        37.6182495
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Magnolia Data Solutions, LLC",
+        "address": "160 Fairbanks Street,\tJackson,\tMS\t39202",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.1871457,
+          32.3167182
+        ]
+      },
+      "bbox": [
+        -90.1871457,
+        32.3167182,
+        -90.1871457,
+        32.3167182
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Maven Technologies, LLC",
+        "address": "1450 Lyell Ave, Rochester, NY 14606",
+        "phone": "585-458-2460",
+        "email": null,
+        "website": "www.maventech.com/",
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.6616785,
+          43.1664234
+        ]
+      },
+      "bbox": [
+        -77.6616785,
+        43.1664234,
+        -77.6616785,
+        43.1664234
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Maywei Inc.",
+        "address": "1210 E. 223rd Street, Suite 305, Carson, CA, 90745",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.251703,
+          33.8232469
+        ]
+      },
+      "bbox": [
+        -118.251703,
+        33.8232469,
+        -118.251703,
+        33.8232469
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Maywei Inc.",
+        "address": "8220 NW 14th Street, Doral, FL 33126",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.32925689999999,
+          25.7850284
+        ]
+      },
+      "bbox": [
+        -80.32925689999999,
+        25.7850284,
+        -80.32925689999999,
+        25.7850284
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "MC Computer LLC dba Motor City Computer",
+        "address": "1610 Highwood E, Pontiac, MI 48340",
+        "phone": "248-454-2017",
+        "email": null,
+        "website": "www.motorcitycomputer.com/",
+        "certifications": [],
+        "commodities": [
+          "Electronics Recycling",
+          "Electronics Refurbishing & Repair"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -83.28673959999999,
+          42.6826725
+        ]
+      },
+      "bbox": [
+        -83.28673959999999,
+        42.6826725,
+        -83.28673959999999,
+        42.6826725
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Melex/PHONEBULANCE",
+        "address": "30100 Crown Valley Pkwy Suite 11-10,\tLaguna Niguel,\tCA\t92677",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.7117789,
+          33.525439
+        ]
+      },
+      "bbox": [
+        -117.7117789,
+        33.525439,
+        -117.7117789,
+        33.525439
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Memking Inc.",
+        "address": "1625 Crescent Cir STE 300, Carrollton, TX 75006",
+        "phone": null,
+        "email": null,
+        "website": "memking.com/",
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.9191525,
+          32.9618707
+        ]
+      },
+      "bbox": [
+        -96.9191525,
+        32.9618707,
+        -96.9191525,
+        32.9618707
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "MergTech Inc.",
+        "address": "48 N Main ST, Hughesville, PA 17737",
+        "phone": "570-584-3388",
+        "email": null,
+        "website": "www.ebay.com/str/gilco4020",
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.723243,
+          41.24172799999999
+        ]
+      },
+      "bbox": [
+        -76.723243,
+        41.24172799999999,
+        -76.723243,
+        41.24172799999999
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Metal Recycling and Processing Co., Inc. (MRP Co)",
+        "address": "260 Schilling Circle\tHunt Valley\tMD\t21031",
+        "phone": "410-771-1007",
+        "email": null,
+        "website": "mrpcompany.com/",
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.6622663,
+          39.4886286
+        ]
+      },
+      "bbox": [
+        -76.6622663,
+        39.4886286,
+        -76.6622663,
+        39.4886286
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Microtem LLC dba Technova Wireless",
+        "address": "6451 Northwest 102 Avenue, Unit 10, Doral, FL  33178",
+        "phone": "786-526-7353",
+        "email": null,
+        "website": null,
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.3595294,
+          25.8317726
+        ]
+      },
+      "bbox": [
+        -80.3595294,
+        25.8317726,
+        -80.3595294,
+        25.8317726
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Midwest Material Recovery DBA Arch City Technology",
+        "address": "6746 Romiss Court,\tSt. Louis,\tMO\t63134",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.34129759999999,
+          38.76305
+        ]
+      },
+      "bbox": [
+        -90.34129759999999,
+        38.76305,
+        -90.34129759999999,
+        38.76305
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Minnesota Computers LLC",
+        "address": "1275 Corporate Center Drive,\tEagan,\tMN\t55121",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -93.1580573,
+          44.8544449
+        ]
+      },
+      "bbox": [
+        -93.1580573,
+        44.8544449,
+        -93.1580573,
+        44.8544449
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "MK Electronics",
+        "address": "13037 Lakeland Road, Suite A, Santa Fe Springs, CA  90670",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "certifications": [],
+        "commodities": [
+          "Data Sanitization",
+          "Downstream Vendor Management",
+          "Electronics Refurbishing & Repair"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.0538111,
+          33.9323148
+        ]
+      },
+      "bbox": [
+        -118.0538111,
+        33.9323148,
+        -118.0538111,
+        33.9323148
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Mr. Cellular LLC",
+        "address": "209 E. 2nd St., Elgin, TX  78621",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.36926700000001,
+          30.34977889999999
+        ]
+      },
+      "bbox": [
+        -97.36926700000001,
+        30.34977889999999,
+        -97.36926700000001,
+        30.34977889999999
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "MRC I, LLC DBA MRC Recycling",
+        "address": "915 5th St\tPark Hills\tMO\t63601",
+        "phone": "636-223-0150",
+        "email": null,
+        "website": "mrcrecycling.net/",
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.4978721,
+          37.854523
+        ]
+      },
+      "bbox": [
+        -90.4978721,
+        37.854523,
+        -90.4978721,
+        37.854523
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "MSZ Holdings, LLC DBA ATX Global Trading",
+        "address": "4125 Felter Lane,\tAustin,\tTX\t78744",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.70513129999999,
+          30.1963312
+        ]
+      },
+      "bbox": [
+        -97.70513129999999,
+        30.1963312,
+        -97.70513129999999,
+        30.1963312
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Munir Metal International Trading LLC dba Munir Metal & Electronics",
+        "address": "216 Rosen Drive,\tDalton,\tGA\t30721",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.9635869,
+          34.7979328
+        ]
+      },
+      "bbox": [
+        -84.9635869,
+        34.7979328,
+        -84.9635869,
+        34.7979328
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "National Computer Liquidators dba IT Asset Management Group dba RefurbConnect",
+        "address": "110 Bi County Blvd, Suite 106,\tFarmingdale,\tNY\t11735",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.42918499999999,
+          40.7264187
+        ]
+      },
+      "bbox": [
+        -73.42918499999999,
+        40.7264187,
+        -73.42918499999999,
+        40.7264187
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "National Computer Liquidators dba IT Asset Management Group dba RefurbConnect",
+        "address": "10 Bi County Blvd Ste 106, Farmingdale, NY 11735-3923",
+        "phone": "516-681-3550",
+        "email": null,
+        "website": null,
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.4294906,
+          40.7239272
+        ]
+      },
+      "bbox": [
+        -73.4294906,
+        40.7239272,
+        -73.4294906,
+        40.7239272
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "NCS Global Services LLC",
+        "address": "32 Innovation Drive, Rochester, NH 03867",
+        "phone": "603-926-4300",
+        "email": null,
+        "website": "ncsglobalinc.com/",
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.9194033,
+          43.2800103
+        ]
+      },
+      "bbox": [
+        -70.9194033,
+        43.2800103,
+        -70.9194033,
+        43.2800103
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Novus Solutions LLC",
+        "address": "925 Industrial Park Drive, Marietta, GA 30062 USA",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.5384618,
+          33.974276
+        ]
+      },
+      "bbox": [
+        -84.5384618,
+        33.974276,
+        -84.5384618,
+        33.974276
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "NuGreen Metals LLC",
+        "address": "7043 Industrial Way, San Antonio, TX  78252",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "certifications": [
+          "R2v3"
+        ],
+        "commodities": [
+          "Data Sanitization",
+          "Downstream Vendor Management",
+          "Electronics Recycling",
+          "Electronics Refurbishing & Repair"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.63424889999999,
+          29.3267699
+        ]
+      },
+      "bbox": [
+        -98.63424889999999,
+        29.3267699,
+        -98.63424889999999,
+        29.3267699
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "O&M Electronic Inc. DBA O&M Wireless",
+        "address": "7515 Santa Fe Dr,\tHodgkin,\tIL\t60525",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.8671009,
+          41.7528929
+        ]
+      },
+      "bbox": [
+        -87.8671009,
+        41.7528929,
+        -87.8671009,
+        41.7528929
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Office Management Systems dba Logista",
+        "address": "401 Yorkville Rd E,\tColumbus,\tMS\t39702",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -88.38198090000002,
+          33.4791485
+        ]
+      },
+      "bbox": [
+        -88.38198090000002,
+        33.4791485,
+        -88.38198090000002,
+        33.4791485
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Office Recycling Solutions, LLC",
+        "address": "1372 Main St.\tCoventry\tRI\t2816",
+        "phone": "401-580-7882",
+        "email": null,
+        "website": "www.officerecyclingsolutions.com/index.php?id=home",
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.5759201,
+          41.6947801
+        ]
+      },
+      "bbox": [
+        -71.5759201,
+        41.6947801,
+        -71.5759201,
+        41.6947801
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Ontronics LLC",
+        "address": "1701 10th Street, Suite #100,\tPlano,\tTX\t75074",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.6891402,
+          33.0133063
+        ]
+      },
+      "bbox": [
+        -96.6891402,
+        33.0133063,
+        -96.6891402,
+        33.0133063
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Owl Electronic Recycling",
+        "address": "668 Gravel Pike Ste 300, East Greenville, PA 18041-2150",
+        "phone": "267-313-4042",
+        "email": null,
+        "website": null,
+        "certifications": [],
+        "commodities": [
+          "Electronics Recycling",
+          "Electronics Refurbishing & Repair"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.5159543,
+          40.4157792
+        ]
+      },
+      "bbox": [
+        -75.5159543,
+        40.4157792,
+        -75.5159543,
+        40.4157792
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Pacific Hide & Fur Depot dba Pacific Steel & Recycling dba Pacific E-Recycling",
+        "address": "1508 11th Avenue North,\tNampa,\tID\t83687",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.5409217,
+          43.5943906
+        ]
+      },
+      "bbox": [
+        -116.5409217,
+        43.5943906,
+        -116.5409217,
+        43.5943906
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "PB Industry",
+        "address": "1930 S. Vinyard Ave.,\tOntario,\tCA\t91761",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.6121343,
+          34.0385344
+        ]
+      },
+      "bbox": [
+        -117.6121343,
+        34.0385344,
+        -117.6121343,
+        34.0385344
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "PC Parts Global",
+        "address": "29603 Hall Street, Solon, OH 44139",
+        "phone": "440-975-9302",
+        "email": null,
+        "website": "www.globalpcparts.com/",
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.47024789999999,
+          41.3777724
+        ]
+      },
+      "bbox": [
+        -81.47024789999999,
+        41.3777724,
+        -81.47024789999999,
+        41.3777724
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "PC Recyclers of Idaho",
+        "address": "1260 E Watertower St, Meridian, ID 83642-5028",
+        "phone": "208-860-4571",
+        "email": null,
+        "website": "pcidaho.com/",
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.3785314,
+          43.6008107
+        ]
+      },
+      "bbox": [
+        -116.3785314,
+        43.6008107,
+        -116.3785314,
+        43.6008107
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "People Advancing Reintegration, Inc dba PAR-Recycle Works",
+        "address": "2024 W Hunting Park Avenue,\tPhiladelphia,\tPA\t19140",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.1610915,
+          40.0122657
+        ]
+      },
+      "bbox": [
+        -75.1610915,
+        40.0122657,
+        -75.1610915,
+        40.0122657
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Platinum Connections Inc. dba CHUBBIESTECH, dba CELLFEEE",
+        "address": "31-16 20th Avenue,\tQueens,\tNY\t11105",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.90606009999999,
+          40.77934399999999
+        ]
+      },
+      "bbox": [
+        -73.90606009999999,
+        40.77934399999999,
+        -73.90606009999999,
+        40.77934399999999
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Potomac eCycle LLC.",
+        "address": "Main: 7941 Wellingford Dr. Manassas, VA 20109, Campus 2: 7010 Wellington Rd. Manassas, VA 20109",
+        "phone": "571-292-5772",
+        "email": null,
+        "website": "potomacecycle.com/",
+        "certifications": [
+          "R2v3"
+        ],
+        "commodities": [
+          "Data Wiping/Erasure & Destruction",
+          "Electronics Recycling",
+          "Electronics Refurbishing & Repair"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.5558145,
+          38.7848502
+        ]
+      },
+      "bbox": [
+        -77.5558145,
+        38.7848502,
+        -77.5558145,
+        38.7848502
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Premier Surplus, Inc.",
+        "address": "12 Asset Recycling Way, Dawsonville, GA 30534",
+        "phone": "706-525-3050",
+        "email": null,
+        "website": "www.premiersurplus.com/",
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.1190804,
+          34.4212052
+        ]
+      },
+      "bbox": [
+        -84.1190804,
+        34.4212052,
+        -84.1190804,
+        34.4212052
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Prime Electronics LLC. DBA Klymen.com",
+        "address": "1225 Jefferson Rd., Ste 23,\tRochester,\tNY\t14623",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.6013407,
+          43.0853198
+        ]
+      },
+      "bbox": [
+        -77.6013407,
+        43.0853198,
+        -77.6013407,
+        43.0853198
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Recycle America Co., L.L.C.",
+        "address": "800 Capitol Street, Houston, TX 77002",
+        "phone": "651-261-1990",
+        "email": null,
+        "website": null,
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.3649185,
+          29.7594758
+        ]
+      },
+      "bbox": [
+        -95.3649185,
+        29.7594758,
+        -95.3649185,
+        29.7594758
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "RET3 Job Corp., Inc.",
+        "address": "1814 East 40th Street\tCleveland\tOH\t44103",
+        "phone": "216-361-9991",
+        "email": null,
+        "website": "ret3.org/",
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.65992539999999,
+          41.5085763
+        ]
+      },
+      "bbox": [
+        -81.65992539999999,
+        41.5085763,
+        -81.65992539999999,
+        41.5085763
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Retech Solutions LLC",
+        "address": "756 NW 27th Ave, Fort Lauderdale, FL, 33311",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "certifications": [
+          "R2v3"
+        ],
+        "commodities": [
+          "Downstream Vendor Management",
+          "Electronics Refurbishing & Repair",
+          "Testing"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.1773142,
+          26.1306312
+        ]
+      },
+      "bbox": [
+        -80.1773142,
+        26.1306312,
+        -80.1773142,
+        26.1306312
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Revalue Tech LLC",
+        "address": "1 A E Chimney Rock Rd Bound Brook, NJ 08805",
+        "phone": null,
+        "email": null,
+        "website": "revaluetech.com/",
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.5620566,
+          40.5709942
+        ]
+      },
+      "bbox": [
+        -74.5620566,
+        40.5709942,
+        -74.5620566,
+        40.5709942
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Riaz Global Hitech LLC DBA RGH Assets",
+        "address": "10709 Tube Drive, Suite 100, Hurst, TX  76053",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "certifications": [
+          "R2v3"
+        ],
+        "commodities": [
+          "Data Sanitization",
+          "Downstream Vendor Management",
+          "Electronic Refurbishment and Recycling"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.1384831,
+          32.8122727
+        ]
+      },
+      "bbox": [
+        -97.1384831,
+        32.8122727,
+        -97.1384831,
+        32.8122727
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Rochester Computer Recycling and Recovery, LLC dba EWASTE+, ESOURCE+",
+        "address": "7318 Victor Mendon Road, Victor, NY 14564",
+        "phone": "585-924-3840",
+        "email": null,
+        "website": "ewaste.com",
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.4338014,
+          42.99581269999999
+        ]
+      },
+      "bbox": [
+        -77.4338014,
+        42.99581269999999,
+        -77.4338014,
+        42.99581269999999
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "RSR Partners, LLC dba Regency Technologies",
+        "address": "11600 South Burley Avenue, Chicago, IL 60617",
+        "phone": "440-287-7222",
+        "email": null,
+        "website": "regencytechnologies.com/",
+        "certifications": [
+          "E-Stewards",
+          "ISO 14001"
+        ],
+        "commodities": [
+          "Electronics Recycling",
+          "Electronics Refurbishing & Repair"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.54721719999999,
+          41.6832686
+        ]
+      },
+      "bbox": [
+        -87.54721719999999,
+        41.6832686,
+        -87.54721719999999,
+        41.6832686
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "RSR Partners, LLC dba Regency Technologies",
+        "address": "1815 E. Deer Valley Dr., Phoenix, AZ 85024",
+        "phone": "440-287-7222",
+        "email": null,
+        "website": "regencytechnologies.com/",
+        "certifications": [
+          "E-Stewards",
+          ""
+        ],
+        "commodities": [
+          "Electronics Recycling",
+          "Electronics Refurbishing & Repair"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.0437371,
+          33.6872843
+        ]
+      },
+      "bbox": [
+        -112.0437371,
+        33.6872843,
+        -112.0437371,
+        33.6872843
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "RSR Partners, LLC dba Regency Technologies",
+        "address": "2005 Broad Street, Brooksville, FL 34604",
+        "phone": "440-287-7222",
+        "email": null,
+        "website": "regencytechnologies.com/",
+        "certifications": [
+          "E-Stewards",
+          ""
+        ],
+        "commodities": [
+          "Electronics Recycling",
+          "Electronics Refurbishing & Repair"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.4483685,
+          28.4611805
+        ]
+      },
+      "bbox": [
+        -82.4483685,
+        28.4611805,
+        -82.4483685,
+        28.4611805
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "RSR Partners, LLC dba Regency Technologies",
+        "address": "2501 N Great Southwest Pkwy, Grand Prairie, TX 75050",
+        "phone": "440-287-7222",
+        "email": null,
+        "website": "regencytechnologies.com/",
+        "certifications": [
+          "E-Stewards",
+          ""
+        ],
+        "commodities": [
+          "Electronics Recycling",
+          "Electronics Refurbishing & Repair"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.047958,
+          32.7923226
+        ]
+      },
+      "bbox": [
+        -97.047958,
+        32.7923226,
+        -97.047958,
+        32.7923226
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "RSR Partners, LLC dba Regency Technologies",
+        "address": "2710 Weck Drive, Durham, NC 27713",
+        "phone": "440-287-7222",
+        "email": null,
+        "website": "regencytechnologies.com/",
+        "certifications": [
+          "E-Stewards",
+          ""
+        ],
+        "commodities": [
+          "Electronics Recycling",
+          "Electronics Refurbishing & Repair"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.85116479999999,
+          35.9290709
+        ]
+      },
+      "bbox": [
+        -78.85116479999999,
+        35.9290709,
+        -78.85116479999999,
+        35.9290709
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "RSR Partners, LLC dba Regency Technologies",
+        "address": "2989 Humphries Hill Road, Austell, GA 30106",
+        "phone": "440-287-7222",
+        "email": null,
+        "website": "regencytechnologies.com/",
+        "certifications": [
+          "E-Stewards",
+          ""
+        ],
+        "commodities": [
+          "Electronics Recycling",
+          "Electronics Refurbishing & Repair"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.6427621,
+          33.8100344
+        ]
+      },
+      "bbox": [
+        -84.6427621,
+        33.8100344,
+        -84.6427621,
+        33.8100344
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "RSR Partners, LLC dba Regency Technologies",
+        "address": "4550 Darrow Rd., Stow, OH 44224",
+        "phone": "440-287-7222",
+        "email": null,
+        "website": "regencytechnologies.com/",
+        "certifications": [
+          "E-Stewards",
+          ""
+        ],
+        "commodities": [
+          "Electronics Recycling",
+          "Electronics Refurbishing & Repair"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.4411994,
+          41.1893636
+        ]
+      },
+      "bbox": [
+        -81.4411994,
+        41.1893636,
+        -81.4411994,
+        41.1893636
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "SA Recycling",
+        "address": "3200 East Frontera Street\tAnaheim\tCA\t92806",
+        "phone": "714-630-8901",
+        "email": null,
+        "website": "www.sarecycling.com/yard/sa-recycling-cleveland/",
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.8508487,
+          33.848196
+        ]
+      },
+      "bbox": [
+        -117.8508487,
+        33.848196,
+        -117.8508487,
+        33.848196
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "SBE USA Inc.",
+        "address": "108 Security Parkway,\tNew Albany,\tIN\t47150",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.80969089999999,
+          38.3632517
+        ]
+      },
+      "bbox": [
+        -85.80969089999999,
+        38.3632517,
+        -85.80969089999999,
+        38.3632517
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Schupan & Sons, Inc. dba Schupan Asset Management",
+        "address": "216 Peekstok Road, Kalamazoo, MI 49001",
+        "phone": "269-998-8092",
+        "email": null,
+        "website": "www.schupan.com/",
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.577772,
+          42.2526838
+        ]
+      },
+      "bbox": [
+        -85.577772,
+        42.2526838,
+        -85.577772,
+        42.2526838
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "SECURE ITADS, LLC dba Secure Recycling",
+        "address": "29601 Solon Rd,\tSolon,\tOH\t44139",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.47029859999999,
+          41.3881711
+        ]
+      },
+      "bbox": [
+        -81.47029859999999,
+        41.3881711,
+        -81.47029859999999,
+        41.3881711
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Siristek Inc.",
+        "address": "14814 Venture Dr,\tFarmers Branch,\tTX\t75234",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.85844379999999,
+          32.9507346
+        ]
+      },
+      "bbox": [
+        -96.85844379999999,
+        32.9507346,
+        -96.85844379999999,
+        32.9507346
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Solshi, Inc.",
+        "address": "309 Fellowship Road, East Gate Center, Suite 215, 2nd FL Mount Laurel NJ 08054",
+        "phone": "856-533-2363",
+        "email": null,
+        "website": null,
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.95217889999999,
+          39.943969
+        ]
+      },
+      "bbox": [
+        -74.95217889999999,
+        39.943969,
+        -74.95217889999999,
+        39.943969
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Spectrum Ecycle Solutions, Inc.",
+        "address": "1521 Page Industrial Blvd.,\tSt. Louis,\tMO\t63132",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.3862618,
+          38.6873233
+        ]
+      },
+      "bbox": [
+        -90.3862618,
+        38.6873233,
+        -90.3862618,
+        38.6873233
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Square Group LLC",
+        "address": "14516 Lee Road A, Chantilly, VA 20151 USA",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.4484497,
+          38.8971237
+        ]
+      },
+      "bbox": [
+        -77.4484497,
+        38.8971237,
+        -77.4484497,
+        38.8971237
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "SSM Holdings LLC dba Ontronics",
+        "address": "1701 10th Street, Suite #100, Plano, TX 75074",
+        "phone": null,
+        "email": null,
+        "website": "ontronics.com/",
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.6891402,
+          33.0133063
+        ]
+      },
+      "bbox": [
+        -96.6891402,
+        33.0133063,
+        -96.6891402,
+        33.0133063
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Suffolk Industrial Recovery Corp. dba PK Metals",
+        "address": "3542 Route 112, Coram, NY 11727",
+        "phone": "631-732-6403",
+        "email": null,
+        "website": "www.pkmetals.com/",
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.0004929,
+          40.85575
+        ]
+      },
+      "bbox": [
+        -73.0004929,
+        40.85575,
+        -73.0004929,
+        40.85575
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Sunion EcoCycle Inc.",
+        "address": "130 McCormick Ave. Site 104, Costa Mesa, CA  92626",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "certifications": [],
+        "commodities": [
+          "Data Sanitization",
+          "Downstream Vendor Management",
+          "Electronic Refurbishment and Recycling"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.8731756,
+          33.6834747
+        ]
+      },
+      "bbox": [
+        -117.8731756,
+        33.6834747,
+        -117.8731756,
+        33.6834747
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Sunnking, Inc.",
+        "address": "272 Oriskany Boulevard, Whitesboro, NY 13492",
+        "phone": "585-391-1509",
+        "email": null,
+        "website": "www.sunnking.com/",
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.2989284,
+          43.1290246
+        ]
+      },
+      "bbox": [
+        -75.2989284,
+        43.1290246,
+        -75.2989284,
+        43.1290246
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Sunnking, Inc.",
+        "address": "4 Owens Road, Brockport, NY 14420",
+        "phone": "585-391-1509",
+        "email": null,
+        "website": "www.sunnking.com/",
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.92450939999999,
+          43.2112934
+        ]
+      },
+      "bbox": [
+        -77.92450939999999,
+        43.2112934,
+        -77.92450939999999,
+        43.2112934
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Suntech Recycle Mèxico S.A. de C.V.",
+        "address": "Avenida Cucba No. 175 Int. 41,, Parque Pinar Empresarial,, Zapopan, Jalisco C.P. 45221",
+        "phone": "201-897-2372",
+        "email": null,
+        "website": "suntechrecycle.com/",
+        "certifications": [
+          "R2"
+        ],
+        "commodities": [
+          "Electronics Recycling",
+          "Electronics Refurbishing & Repair"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -103.5168284,
+          20.7300687
+        ]
+      },
+      "bbox": [
+        -103.5168284,
+        20.7300687,
+        -103.5168284,
+        20.7300687
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "SURANI SOLUTIONS, Inc. DBA RE-LCD / REVIVETECH",
+        "address": "2099 Valley View LN Ste 160, Dallas, TX 75234",
+        "phone": "469-804-7490",
+        "email": null,
+        "website": "www.suranisolutions.com/",
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.90800689999999,
+          32.9228645
+        ]
+      },
+      "bbox": [
+        -96.90800689999999,
+        32.9228645,
+        -96.90800689999999,
+        32.9228645
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Synergy Recycling, LLC",
+        "address": "320 South Gibson Drive, Madison, NC 27025",
+        "phone": "336-548-7014",
+        "email": null,
+        "website": "www.synergyrecycling.com",
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.9992517,
+          36.3800125
+        ]
+      },
+      "bbox": [
+        -79.9992517,
+        36.3800125,
+        -79.9992517,
+        36.3800125
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "TCPG Wireless LLC.",
+        "address": "813 8th Street, Suite 507,\tWichita Falls,\tTX\t76301",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.4925921,
+          33.911095
+        ]
+      },
+      "bbox": [
+        -98.4925921,
+        33.911095,
+        -98.4925921,
+        33.911095
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Tech Smart International",
+        "address": "700 McCue Rd, Suite 7-12,\tLakeland,\tFL\t33815",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.03312249999999,
+          28.0366213
+        ]
+      },
+      "bbox": [
+        -82.03312249999999,
+        28.0366213,
+        -82.03312249999999,
+        28.0366213
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Tech Visions Ycz Inc.",
+        "address": "320 N Eucalyptus Avenue, Suite B,\tInglewood,\tCA\t90302",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.358928,
+          33.9663706
+        ]
+      },
+      "bbox": [
+        -118.358928,
+        33.9663706,
+        -118.358928,
+        33.9663706
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Technology Conservation Group de Mexico",
+        "address": "Periférico Sur No. 6350 G-2 - Col. Artesanos Industrial - Tlaquepaque - Jalisco - 45610 - Mexico",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -103.36883,
+          20.580463
+        ]
+      },
+      "bbox": [
+        -103.36883,
+        20.580463,
+        -103.36883,
+        20.580463
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Technology Conservation Group, Inc.",
+        "address": "4851 Jennings Lane - Louisville - Kentucky - 40218",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.67906850000001,
+          38.1824928
+        ]
+      },
+      "bbox": [
+        -85.67906850000001,
+        38.1824928,
+        -85.67906850000001,
+        38.1824928
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Technology Conservation Group, Inc.",
+        "address": "705 South Easy Street, Lecanto, FL 34461",
+        "phone": "352-527-2534",
+        "email": null,
+        "website": "www.tcgrecycling.com",
+        "certifications": [],
+        "commodities": [
+          "Electronics Recycling",
+          "Electronics Refurbishing & Repair"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.45479639999999,
+          28.8532773
+        ]
+      },
+      "bbox": [
+        -82.45479639999999,
+        28.8532773,
+        -82.45479639999999,
+        28.8532773
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Technology Recyclers LLC",
+        "address": "8401 E. Washington Street Suite #100\tIndianapolis\tIN\t46219-7721",
+        "phone": "800-237-3887",
+        "email": null,
+        "website": "tech-recyclers.com/",
+        "certifications": [],
+        "commodities": [
+          "Electronics Recycling",
+          "Electronics Refurbishing & Repair"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -86.0193551,
+          39.7717904
+        ]
+      },
+      "bbox": [
+        -86.0193551,
+        39.7717904,
+        -86.0193551,
+        39.7717904
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Technology Xchange Solutions Corporation",
+        "address": "8515 S. Freeway Dr. Ste C/D/E, Macedonia, OH 44045",
+        "phone": "(818) 305-6429",
+        "email": null,
+        "website": "www.txscorp.com/",
+        "certifications": [
+          "R2v3"
+        ],
+        "commodities": [
+          "Data Sanitization",
+          "Downstream Vendor Management",
+          "Electronic Refurbishment and Recycling",
+          "ITAD"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.512041,
+          41.317993
+        ]
+      },
+      "bbox": [
+        -81.512041,
+        41.317993,
+        -81.512041,
+        41.317993
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "TechReviv LLC",
+        "address": "4770 Van Epps Road, Unit 109, Brooklyn Heights, OH  44131",
+        "phone": "(216) 269-6142",
+        "email": null,
+        "website": null,
+        "certifications": [],
+        "commodities": [
+          "Data Wiping/Erasure & Destruction",
+          "Downstream Vendor Management",
+          "Recycling of Electronic Equipment and Reuse of Computers"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.67795579999999,
+          41.4253779
+        ]
+      },
+      "bbox": [
+        -81.67795579999999,
+        41.4253779,
+        -81.67795579999999,
+        41.4253779
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "The Alchemist Tech & Electronics",
+        "address": "4042 Enterprise Way Suite 120\tFlowery Branch \tGA\t30542",
+        "phone": "770-377-6881",
+        "email": null,
+        "website": "tech-recyclers.com//",
+        "certifications": [],
+        "commodities": [
+          "Electronics Recycling",
+          "Electronics Refurbishing & Repair"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -83.88728700000001,
+          34.215197
+        ]
+      },
+      "bbox": [
+        -83.88728700000001,
+        34.215197,
+        -83.88728700000001,
+        34.215197
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "The Louis Padnos Iron and Metal Company, Inc. DBA PADNOS Electronics Recycling",
+        "address": "1862 Alpine Ave NW, Grand Rapids, MI  49504",
+        "phone": "800-442-3509",
+        "email": null,
+        "website": "padnos.com/sell-your-scrap/sell-electronics/",
+        "certifications": [],
+        "commodities": [
+          "Electronics Recycling",
+          "Electronics Refurbishing & Repair"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.6878309,
+          42.997232
+        ]
+      },
+      "bbox": [
+        -85.6878309,
+        42.997232,
+        -85.6878309,
+        42.997232
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "TMS International, LLC",
+        "address": "516 Delwar Rd.\tPittsburgh\tPA\t15236",
+        "phone": "412-675-7105",
+        "email": null,
+        "website": "www.tmsinternational.com/",
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.9549431,
+          40.3501626
+        ]
+      },
+      "bbox": [
+        -79.9549431,
+        40.3501626,
+        -79.9549431,
+        40.3501626
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "TNR Group Inc",
+        "address": "13860 Benson Ave Unit A\tChino\tCA\t91710",
+        "phone": "310-613-5918",
+        "email": null,
+        "website": "tnrgroupinc.com/",
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.6807323,
+          34.0012237
+        ]
+      },
+      "bbox": [
+        -117.6807323,
+        34.0012237,
+        -117.6807323,
+        34.0012237
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Total Reclaim, Inc.",
+        "address": "7021 South 220th Street,\tKent,\tWA\t98032",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.245082,
+          47.404296
+        ]
+      },
+      "bbox": [
+        -122.245082,
+        47.404296,
+        -122.245082,
+        47.404296
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "TPC Group Inc.",
+        "address": "5006 Veterans Memorial Highway, Holbrook, NY 11741",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.0721727,
+          40.7764842
+        ]
+      },
+      "bbox": [
+        -73.0721727,
+        40.7764842,
+        -73.0721727,
+        40.7764842
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Tri-State Iron and Metal",
+        "address": "1725 East 9th St, Texarkana, AR 71854, United States",
+        "phone": "(870) 773-8409",
+        "email": null,
+        "website": "tsimco.com/",
+        "certifications": [],
+        "commodities": [
+          "Ferrous and Non-Ferrous Metals"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -94.0232527,
+          33.4332155
+        ]
+      },
+      "bbox": [
+        -94.0232527,
+        33.4332155,
+        -94.0232527,
+        33.4332155
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Trinity Metals LLC",
+        "address": "420 S. Kitley Ave\tIndianapolis\tIN\t46219",
+        "phone": "317-358-8265",
+        "email": null,
+        "website": "trinitymetals.net/",
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -86.05546969999999,
+          39.7626747
+        ]
+      },
+      "bbox": [
+        -86.05546969999999,
+        39.7626747,
+        -86.05546969999999,
+        39.7626747
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "TT-General LLC",
+        "address": "10001 Derekwood Ln ste 203,\tLanham,\tMD\t20706",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.83344459999999,
+          38.9481869
+        ]
+      },
+      "bbox": [
+        -76.83344459999999,
+        38.9481869,
+        -76.83344459999999,
+        38.9481869
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Two Rivers Recovery, LLC dba Two Rivers ITAD Solutions",
+        "address": "6700 Tribble Street, Lithonia, GA 30058",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.11499069999999,
+          33.7193347
+        ]
+      },
+      "bbox": [
+        -84.11499069999999,
+        33.7193347,
+        -84.11499069999999,
+        33.7193347
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "U.S. Technology Recycling Group LTD",
+        "address": "4231 Leap Rd., Suite H,\tHilliard,\tOH\t43026",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -83.1409734,
+          40.0407661
+        ]
+      },
+      "bbox": [
+        -83.1409734,
+        40.0407661,
+        -83.1409734,
+        40.0407661
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Uni Wireless Inc.",
+        "address": "4615 NW 72nd Ave, Unit 109,\tMiami,\tFL\t33166",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.3128507,
+          25.8159193
+        ]
+      },
+      "bbox": [
+        -80.3128507,
+        25.8159193,
+        -80.3128507,
+        25.8159193
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "UNICOR",
+        "address": "1 Federal Way, Atwater, CA 95301",
+        "phone": "570-544-7331",
+        "email": null,
+        "website": "www.unicor.gov/",
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -120.5587741,
+          37.3840277
+        ]
+      },
+      "bbox": [
+        -120.5587741,
+        37.3840277,
+        -120.5587741,
+        37.3840277
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "UNICOR",
+        "address": "1299 S. Seaside Avenue, San Pedro, CA 90731",
+        "phone": "570-544-7331",
+        "email": null,
+        "website": "www.unicor.gov/",
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.268127,
+          33.7278834
+        ]
+      },
+      "bbox": [
+        -118.268127,
+        33.7278834,
+        -118.268127,
+        33.7278834
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "UNICOR",
+        "address": "1300 Metropolitan Avenue, Leavenworth, KS 66048",
+        "phone": "570-544-7331",
+        "email": null,
+        "website": "www.unicor.gov/",
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -94.93634980000002,
+          39.3299481
+        ]
+      },
+      "bbox": [
+        -94.93634980000002,
+        39.3299481,
+        -94.93634980000002,
+        39.3299481
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "UNICOR",
+        "address": "Electronics Recycling Factory, 4001 Leopard Drive, Texarkana, TX 75501",
+        "phone": "570-544-7331",
+        "email": null,
+        "website": "www.unicor.gov/",
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -94.08937089999999,
+          33.3769889
+        ]
+      },
+      "bbox": [
+        -94.08937089999999,
+        33.3769889,
+        -94.08937089999999,
+        33.3769889
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "UNICOR",
+        "address": "Electronics Recycling Factory , 3625 FCI Road, Marianna, FL 32446",
+        "phone": "570-544-7331",
+        "email": null,
+        "website": "www.unicor.gov/",
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.1885868,
+          30.8267248
+        ]
+      },
+      "bbox": [
+        -85.1885868,
+        30.8267248,
+        -85.1885868,
+        30.8267248
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "UNICOR",
+        "address": "Interstate 81 & Route 901W, Minersville, PA 17954",
+        "phone": "570-544-7331",
+        "email": null,
+        "website": "www.unicor.gov/",
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.1491874,
+          36.6256571
+        ]
+      },
+      "bbox": [
+        -82.1491874,
+        36.6256571,
+        -82.1491874,
+        36.6256571
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "United Electronic Recycling, LLC dba Mobile Shred It",
+        "address": "505 Airline Dr.,\tCoppell,\tTX\t75019",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.00398419999999,
+          32.9430407
+        ]
+      },
+      "bbox": [
+        -97.00398419999999,
+        32.9430407,
+        -97.00398419999999,
+        32.9430407
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "United Scrap Metal",
+        "address": "2900 Terminal Ave\tRichmond\tVA\t23234",
+        "phone": "804-727-2951",
+        "email": null,
+        "website": "unitedscrap.com/",
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.4510142,
+          37.4834792
+        ]
+      },
+      "bbox": [
+        -77.4510142,
+        37.4834792,
+        -77.4510142,
+        37.4834792
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "United Scrap Metal",
+        "address": "4301 Wissahickon Avenue\tPhiladelphia\tPA\t19129",
+        "phone": "215-223-1600",
+        "email": null,
+        "website": "unitedscrap.com/",
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.164675,
+          40.0149334
+        ]
+      },
+      "bbox": [
+        -75.164675,
+        40.0149334,
+        -75.164675,
+        40.0149334
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "United Scrap Metal",
+        "address": "3808 Weber Road\tSt. Louis\tMO\t63125",
+        "phone": "314-631-0300",
+        "email": null,
+        "website": "unitedscrap.com/",
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.279141,
+          38.547668
+        ]
+      },
+      "bbox": [
+        -90.279141,
+        38.547668,
+        -90.279141,
+        38.547668
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "United Scrap Metal",
+        "address": "751 West Boomer Way\tShelbyville\tIN\t46176",
+        "phone": "708-735-8780",
+        "email": null,
+        "website": "unitedscrap.com/",
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.787122,
+          39.536128
+        ]
+      },
+      "bbox": [
+        -85.787122,
+        39.536128,
+        -85.787122,
+        39.536128
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "United Scrap Metal",
+        "address": "1545 South Cicero Avenue\tCicero\tIL\t60804",
+        "phone": "708-780-6800",
+        "email": null,
+        "website": "unitedscrap.com/",
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.74426780000002,
+          41.859407
+        ]
+      },
+      "bbox": [
+        -87.74426780000002,
+        41.859407,
+        -87.74426780000002,
+        41.859407
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "United Scrap Metal",
+        "address": "9925 Brookford Street \tCharlotte\tNC\t28273",
+        "phone": "804-621-7000",
+        "email": null,
+        "website": "unitedscrap.com/",
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.9416383,
+          35.1210844
+        ]
+      },
+      "bbox": [
+        -80.9416383,
+        35.1210844,
+        -80.9416383,
+        35.1210844
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "United Wireless Group",
+        "address": "3380 Green Park Circle, Charlotte, NC  28217",
+        "phone": null,
+        "email": null,
+        "website": "www.unitedwirelessgroup.com/",
+        "certifications": [
+          "R2v3"
+        ],
+        "commodities": [
+          "Data Sanitization",
+          "Downstream Vendor Management",
+          "Electronics Refurbishing & Repair"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.9342412,
+          35.1715979
+        ]
+      },
+      "bbox": [
+        -80.9342412,
+        35.1715979,
+        -80.9342412,
+        35.1715979
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Universal Scrap Metal, Inc.",
+        "address": "2500 W Fulton Street, Chicago, IL 60612",
+        "phone": "312-666-0011",
+        "email": null,
+        "website": "usmrecycles.com",
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.6891728,
+          41.8869066
+        ]
+      },
+      "bbox": [
+        -87.6891728,
+        41.8869066,
+        -87.6891728,
+        41.8869066
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Vital Visions, Inc. dba All Printer Recycling.com",
+        "address": "8500 Carbide Court,\tSacramento,\tCA\t95828",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.390145,
+          38.4748346
+        ]
+      },
+      "bbox": [
+        -121.390145,
+        38.4748346,
+        -121.390145,
+        38.4748346
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Workforce, Inc./Recycleforce",
+        "address": "1255 Roosevelt Avenue, Indianapolis, IN 46202",
+        "phone": "317-532-1367",
+        "email": null,
+        "website": "recycleforce.org/",
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -86.1365924,
+          39.784035
+        ]
+      },
+      "bbox": [
+        -86.1365924,
+        39.784035,
+        -86.1365924,
+        39.784035
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "WT World Trading Inc.",
+        "address": "7332 Westminster Blvd,\tWestminster,\tCA\t92683",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.0009735,
+          33.7587394
+        ]
+      },
+      "bbox": [
+        -118.0009735,
+        33.7587394,
+        -118.0009735,
+        33.7587394
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Zeemo Electronics LLC",
+        "address": "16135 Preston Road, Suite 116,\tDallas,\tTX\t75248",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "certifications": [],
+        "commodities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.8049269,
+          32.9692322
+        ]
+      },
+      "bbox": [
+        -96.8049269,
+        32.9692322,
+        -96.8049269,
+        32.9692322
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Zero Waste ITAD Solutions Inc.",
+        "address": "7380 Coca Cola Dr.  Suite 109, Hanover, MD  21076",
+        "phone": "(410) 600-3556",
+        "email": null,
+        "website": "www.zerowasteitad.com/",
+        "certifications": [
+          "R2v3"
+        ],
+        "commodities": [
+          "Data Wiping/Erasure & Destruction",
+          "Downstream Vendor Management",
+          "Electronic Refurbishment and Recycling"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.7283059,
+          39.186521
+        ]
+      },
+      "bbox": [
+        -76.7283059,
+        39.186521,
+        -76.7283059,
+        39.186521
+      ]
+    }
+  ]
+}

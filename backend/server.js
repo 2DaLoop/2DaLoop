@@ -2,8 +2,10 @@ import express from 'express';
 import cors from 'cors';
 import puppeteer from 'puppeteer';
 import path from 'path';
+import dotenv from 'dotenv';
 import { fileURLToPath } from 'url';
 
+dotenv.config();
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -19,6 +21,24 @@ app.get("/", (req, res) => {
 });
 
 const sleep = ms => new Promise(res => setTimeout(res, ms));
+
+app.get("/facilities/seri", async (req, res) => {
+    try {
+        const { lat, lng } = (JSON.parse(req.query.searchedLocation));
+        const response = await fetch(`https://api.sustainableelectronics.org/api/v2/GetFacilities?pageSize=1000&currentLatitude=${lat}&currentLongitude=${lng}&maxDistance=50`, {
+            method: "GET",
+            headers: {
+                "Authorization": `Bearer ${process.env.SERI_TOKEN}`,
+            }
+        });
+
+        const data = await response.json();
+        res.json(data);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json(error)
+    }
+})
 
 app.post("/calculate/budget", async (req, res) => {
     try {
