@@ -48,7 +48,7 @@ async function initMap() {
         const recycleBtn = document.createElement("button");
         recycleBtn.type = "button";
         recycleBtn.classList.add("btn", "recycle-button");
-        recycleBtn.style.background = "#0b0b0b";
+    recycleBtn.style.background = "#025393";
         recycleBtn.style.color = "#fff";
         recycleBtn.style.border = "none";
         recycleBtn.style.fontWeight = "bold";
@@ -67,7 +67,7 @@ async function initMap() {
         repairBtn.type = "button";
         repairBtn.classList.add("btn", "repair-button");
         // Style the Repair button with the SERI button color
-        repairBtn.style.background = "#025393";
+    repairBtn.style.background = "#025393";
         repairBtn.style.color = "#fff";
         repairBtn.style.border = "none";
         repairBtn.style.fontWeight = "bold";
@@ -84,9 +84,9 @@ async function initMap() {
     
         const seriBtn = document.createElement("button");
         seriBtn.type = "button";
-        seriBtn.classList.add("btn");
+    seriBtn.classList.add("btn", "seri-button");
         // Style the R2 button with the nav bar blue color
-        seriBtn.style.background = "#025393";
+    seriBtn.style.background = "#025393";
         seriBtn.style.color = "#fff";
         seriBtn.style.border = "none";
         seriBtn.style.fontWeight = "bold";
@@ -104,7 +104,7 @@ async function initMap() {
         const r2Btn = document.createElement("button");
         r2Btn.type = "button";
         r2Btn.classList.add("btn", "r2-button");
-        r2Btn.style.background = "#0b0b0b";
+    r2Btn.style.background = "#025393";
         r2Btn.style.color = "#fff";
         r2Btn.style.border = "none";
         r2Btn.style.fontWeight = "bold";
