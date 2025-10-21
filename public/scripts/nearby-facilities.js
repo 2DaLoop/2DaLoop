@@ -48,7 +48,7 @@ async function initMap() {
         const recycleBtn = document.createElement("button");
         recycleBtn.type = "button";
         recycleBtn.classList.add("btn", "recycle-button");
-    recycleBtn.style.background = "#025393";
+        recycleBtn.style.background = "#025393";
         recycleBtn.style.color = "#fff";
         recycleBtn.style.border = "none";
         recycleBtn.style.fontWeight = "bold";
