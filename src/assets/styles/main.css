@@ -71,9 +71,9 @@ body {
 }
 
 .navigation-sidebar:hover {
-    width: 25vw !important; /* Sidebar pops out to 25% of viewport width */
+    width: 12vw !important; /* Sidebar pops out to 12% of viewport width (half as much) */
     min-width: 200px !important; /* Ensure enough space for labels */
-    max-width: 350px !important;
+    max-width: 55px !important;
     box-shadow: 2px 0 16px rgba(0, 0, 0, 0.08);
     align-items: flex-start;
 }
