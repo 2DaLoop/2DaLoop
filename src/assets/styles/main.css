@@ -1,3 +1,8 @@
+/* Black hover effect for Next button on nearby facility page */
+.next-button:hover {
+    background-color: #0b0b0b !important;
+    color: #fff !important;
+}
 /* Match hover effect for facility page buttons to Next button */
 .repair-button:hover,
 .recycle-button:hover,
