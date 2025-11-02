@@ -145,11 +145,51 @@ async function initMap() {
         });
     
         seriBtn.addEventListener("click", async () => {
-            await searchSERI();
+            // Show 'Coming Soon' popup
+            const popup = document.createElement('div');
+            popup.id = 'coming-soon-popup';
+            popup.style.position = 'fixed';
+            popup.style.top = '50%';
+            popup.style.left = '50%';
+            popup.style.transform = 'translate(-50%, -50%)';
+            popup.style.background = '#fff';
+            popup.style.border = '2px solid #025393';
+            popup.style.borderRadius = '16px';
+            popup.style.boxShadow = '0 4px 24px rgba(55,102,165,0.18)';
+            popup.style.padding = '28px 24px';
+            popup.style.zIndex = '20000';
+            popup.style.minWidth = '220px';
+            popup.style.maxWidth = '90vw';
+            popup.style.textAlign = 'center';
+            popup.innerHTML = `<strong style="font-size:22px;color:#3766A5;">SERI Facilities</strong><br><span style="font-size:18px;">Coming Soon!</span>`;
+            document.body.appendChild(popup);
+            setTimeout(() => { popup.remove(); }, 1800);
+            // Optionally, skip searchSERI for now
+            // await searchSERI();
         });
 
         r2Btn.addEventListener("click", async () => {
-            await searchRIOS();
+            // Show 'Coming Soon' popup
+            const popup = document.createElement('div');
+            popup.id = 'coming-soon-popup';
+            popup.style.position = 'fixed';
+            popup.style.top = '50%';
+            popup.style.left = '50%';
+            popup.style.transform = 'translate(-50%, -50%)';
+            popup.style.background = '#fff';
+            popup.style.border = '2px solid #025393';
+            popup.style.borderRadius = '16px';
+            popup.style.boxShadow = '0 4px 24px rgba(55,102,165,0.18)';
+            popup.style.padding = '28px 24px';
+            popup.style.zIndex = '20000';
+            popup.style.minWidth = '220px';
+            popup.style.maxWidth = '90vw';
+            popup.style.textAlign = 'center';
+            popup.innerHTML = `<strong style=\"font-size:22px;color:#3766A5;\">RIOS Facilities</strong><br><span style=\"font-size:18px;\">Coming Soon!</span>`;
+            document.body.appendChild(popup);
+            setTimeout(() => { popup.remove(); }, 1800);
+            // Optionally, skip searchRIOS for now
+            // await searchRIOS();
         });
     }
 
